@@ -1,6 +1,6 @@
-# الفيديو الأول: مقدمة في الشبكات (Introduction to Networks)
+# الموضوع الأول: مقدمة في الشبكات (Introduction to Networks)
 
-> المصدر: شرح Sameh Ramadan / IT Dose
+> المصدر: شرح Sameh Ramadan / IT Dose / research
 
 ---
 
