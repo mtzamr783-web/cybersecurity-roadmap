@@ -1,6 +1,5 @@
 # الفيديو الأول: مقدمة في الشبكات (Introduction to Networks)
 
-> جزء من رحلة: Network+ (N10-009) → Security+ → CEH/eJPT
 > المصدر: شرح Sameh Ramadan / IT Dose
 
 ---
