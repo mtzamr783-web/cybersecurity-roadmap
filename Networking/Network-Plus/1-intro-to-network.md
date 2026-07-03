@@ -115,7 +115,7 @@
 
 - **Bus Topology:** كل الأجهزة متوصلة على كابل واحد رئيسي (Backbone). بسيطة ورخيصة، لكن لو الكابل الرئيسي حصل فيه عطل الشبكة كلها بتقف.
 
-  ![Bus Topology](./images/topology_bus.svg)
+  ![Bus Topology](./images/topology_bus_.svg)
 
 - **Star Topology:** كل الأجهزة متوصلة بجهاز مركزي (زي Switch أو Hub). الأكثر استخدامًا حاليًا، سهلة الإدارة وعزل الأعطال، لكن لو الجهاز المركزي عطل، الشبكة كلها بتتأثر.
 
@@ -128,11 +128,11 @@
 
 - **Mesh Topology:** كل جهاز متوصل بكل الأجهزة التانية. أعلى درجة في الموثوقية (Reliability) لأن لو أي وصلة عطلت، فيه طرق تانية بديلة، لكنها مكلفة جدًا وصعبة التركيب.
 
-  ![Mesh Topology](./images/topology_mesh.svg)
+  ![Mesh Topology](./images/topology_mesh_.svg)
 
 - **Hybrid Topology:** مزيج بين شكلين أو أكتر من الأشكال السابقة، وهي الأكثر شيوعًا في الشبكات الحقيقية الكبيرة.
 
-  ![Hybrid Topology](./images/topology_hybrid.svg)
+  ![Hybrid Topology](./images/topology_hybrid_.svg)
 
 ### ب) Logical Topology (الطوبولوجيا المنطقية)
 هي **الطريقة اللي البيانات بتتحرك بيها فعليًا** بين الأجهزة، بغض النظر عن الشكل الفيزيائي للتوصيل.
