@@ -1,7 +1,5 @@
 # الموضوع الأول: مقدمة في الشبكات (Introduction to Networks)
 
-> المصدر: شرح Sameh Ramadan / IT Dose / research
-
 ---
 
 ## 1. يعني إيه شبكة أصلاً؟ (What is a Network?)

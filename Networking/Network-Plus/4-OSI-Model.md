@@ -1,6 +1,6 @@
+<div align="center">
+
 # نموذج OSI (OSI Model)
- 
-> المصدر: شرح Sameh Ramadan / IT Dose / research
  
 ---
  
@@ -19,9 +19,12 @@
 | [6) طبقة الـ Data Link Layer](#6-طبقة-الـ-data-link-layer-الطبقة-الثانية) |
 | [7) طبقة الـ Physical Layer](#7-طبقة-الـ-physical-layer-الطبقة-الأولى) |
 | [جدول ملخص لكل الطبقات السبعة](#جدول-ملخص-لكل-الطبقات-السبعة-للمراجعة-السريعة) |
+| [مقارنة سريعة: OSI مقابل TCP/IP](#مقارنة-سريعة-osi-مقابل-tcpip) |
+| [طريقة حفظ ترتيب الطبقات (Mnemonic)](#طريقة-حفظ-ترتيب-الطبقات-mnemonic) |
 | [خلاصة سريعة](#خلاصة-سريعة) |
  
 ---
+</div>
  
 ## مقدمة عن الموضوع
  
@@ -43,8 +46,8 @@
  
 | المجموعة | الطبقات | الوصف |
 |---|---|---|
-| **Upper Layers (طبقات عليا)** | Application – Presentation – Session (7, 6, 5) | قريبة من المستخدم، وظيفتها التعامل مع البيانات وتجهيزها بشكل يفهمه البرنامج والمستخدم |
-| **Lower Layers (طبقات سفلى)** | Transport – Network – Data Link – Physical (4, 3, 2, 1) | قريبة من الشبكة والوسط الناقل (Media)، ووظيفتها نقل البيانات فعليًا من جهاز لجهاز |
+| **<span dir="ltr">Upper Layers</span> (طبقات عليا)** | <span dir="ltr">Application – Presentation – Session (7, 6, 5)</span> | قريبة من المستخدم، وظيفتها التعامل مع البيانات وتجهيزها بشكل يفهمه البرنامج والمستخدم |
+| **<span dir="ltr">Lower Layers</span> (طبقات سفلى)** | <span dir="ltr">Transport – Network – Data Link – Physical (4, 3, 2, 1)</span> | قريبة من الشبكة والوسط الناقل (<span dir="ltr">Media</span>)، ووظيفتها نقل البيانات فعليًا من جهاز لجهاز |
  
 ### 2. كل طبقة عندها وحدة بيانات خاصة بيها (PDU - Protocol Data Unit)
  
@@ -242,17 +245,30 @@ Packet = [ IP Source | IP Destination | Data Segment ]
  
 | البروتوكول | الاسم الكامل | الفكرة |
 |---|---|---|
-| **RIP** | Routing Information Protocol | بيحدد أفضل مسار بناءً على أقل عدد من القفزات (Hop Count) بين الشبكات |
-| **OSPF** | Open Shortest Path First | بروتوكول أكثر تطورًا، بيحسب أقصر مسار فعليًا بناءً على حالة الروابط (Link State) مش بس عدد القفزات، وده بيخليه أدق وأنسب للشبكات الكبيرة |
- 
-**أمثلة أخرى على بروتوكولات الطبقة دي:** IP، ICMP، IPSec.
+| **<span dir="ltr">RIP</span>** | <span dir="ltr">Routing Information Protocol</span> | بيحدد أفضل مسار بناءً على أقل عدد من القفزات (<span dir="ltr">Hop Count</span>) بين الشبكات |
+| **<span dir="ltr">OSPF</span>** | <span dir="ltr">Open Shortest Path First</span> | بروتوكول أكثر تطورًا، بيحسب أقصر مسار فعليًا بناءً على حالة الروابط (<span dir="ltr">Link State</span>) مش بس عدد القفزات، وده بيخليه أدق وأنسب للشبكات الكبيرة |
+| **<span dir="ltr">EIGRP</span>** | <span dir="ltr">Enhanced Interior Gateway Routing Protocol</span> | بروتوكول خاص بشركة <span dir="ltr">Cisco</span>، بيجمع بين مميزات البروتوكولات اللي بتعتمد على عدد القفزات واللي بتعتمد على حالة الروابط، وبيُستخدم غالبًا جوه الشبكة الداخلية للمؤسسة الواحدة |
+| **<span dir="ltr">BGP</span>** | <span dir="ltr">Border Gateway Protocol</span> | البروتوكول المسؤول عن توجيه البيانات **بين الشبكات الكبيرة المختلفة** (زي الشركات ومزودي خدمة الإنترنت)، وهو أساسًا اللي بيشغل الإنترنت العالمي ويوصل بين كل الـ <span dir="ltr">Networks</span> المستقلة عن بعضها |
+
+**أمثلة أخرى على بروتوكولات الطبقة دي:** <span dir="ltr">IP</span>، <span dir="ltr">ICMP</span>، <span dir="ltr">IPSec</span>.
  
 ---
  
 ## 6) طبقة الـ Data Link Layer (الطبقة الثانية)
  
 هي الطبقة المسؤولة عن **تجهيز البيانات بشكل نهائي قبل ما تتحول لإشارات فعلية على الوسط الناقل**، وكمان مسؤولة عن التأكد من وصول البيانات بدون أخطاء بين جهازين متصلين مباشرة على نفس الشبكة المحلية.
- 
+
+### تقسيم الطبقة لـ Sublayers
+
+فعليًا، الطبقة دي بتتقسم لطبقتين فرعيتين (<span dir="ltr">Sublayers</span>) عشان تقدر توزع مسؤولياتها بشكل أدق:
+
+| الـ <span dir="ltr">Sublayer</span> | المسؤولية |
+|---|---|
+| **<span dir="ltr">LLC (Logical Link Control)</span>** | الجزء العلوي، بيتواصل مباشرة مع طبقة الـ <span dir="ltr">Network</span> اللي فوقها، ومسؤول عن التحكم في تدفق البيانات (<span dir="ltr">Flow Control</span>) واكتشاف الأخطاء (<span dir="ltr">Error Detection</span>)، وكمان بيحدد نوع البروتوكول اللي هيُستخدم في الطبقة اللي فوقه (زي <span dir="ltr">IP</span>) |
+| **<span dir="ltr">MAC (Media Access Control)</span>** | الجزء السفلي، وهو المسؤول عن العنونة الفيزيائية (<span dir="ltr">MAC Addressing</span>) وتنظيم الوصول للوسط الناقل المشترك بين الأجهزة |
+
+> **ملحوظة:** لازم متلخبطش بين اختصار الـ **<span dir="ltr">MAC</span>** الخاص بالـ <span dir="ltr">Sublayer</span> دي، واختصار الـ **<span dir="ltr">MAC Address</span>** نفسه؛ الاتنين مرتبطين ببعض لكن مش نفس الحاجة بالظبط.
+
 ### وظائف الطبقة بالتفصيل
  
 #### أ) Framing (التأطير)
@@ -283,8 +299,15 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 #### ج) Access for Media for Upper Layers (التحكم في الوصول للوسط الناقل)
 الطبقة دي كمان بتنظم إزاي الأجهزة المتصلة على نفس الوسط الناقل (زي كابل واحد أو شبكة لاسلكية واحدة) تقدر "تاخد دورها" في الإرسال من غير ما يحصل تصادم (Collision) بين البيانات المرسلة من أكتر من جهاز في نفس الوقت.
  
-من أهم التقنيات المستخدمة في الموضوع ده: **CSMA (Carrier Sense Multiple Access)**، وفكرتها إن الجهاز قبل ما يبعت بياناته، بيتأكد الأول (Sense) إن الوسط الناقل (Carrier) فاضي ومفيهوش نقل بيانات تاني شغال، عشان يتجنب حدوث تصادم (Collision) مع بيانات جهاز تاني بيرسل في نفس اللحظة.
- 
+من أهم التقنيات المستخدمة في الموضوع ده: **<span dir="ltr">CSMA (Carrier Sense Multiple Access)</span>**، وفكرتها إن الجهاز قبل ما يبعت بياناته، بيتأكد الأول (<span dir="ltr">Sense</span>) إن الوسط الناقل (<span dir="ltr">Carrier</span>) فاضي ومفيهوش نقل بيانات تاني شغال، عشان يتجنب حدوث تصادم (<span dir="ltr">Collision</span>) مع بيانات جهاز تاني بيرسل في نفس اللحظة.
+
+وليها نوعين مختلفين حسب نوع الشبكة، ومهم جدًا متتلخبطش بينهم لأنهم بيتلخبط فيهم ناس كتير وقت المذاكرة:
+
+| النوع | يُستخدم في | الفكرة |
+|---|---|---|
+| **<span dir="ltr">CSMA/CD (Collision Detection)</span>** | الشبكات السلكية القديمة (<span dir="ltr">Ethernet</span> بالـ <span dir="ltr">Hubs</span>) | الجهاز بيبعت بياناته، ولو حصل تصادم فعليًا مع جهاز تاني، الاتنين بيكتشفوا التصادم ده وبيوقفوا الإرسال ويعيدوا المحاولة بعد فترة عشوائية |
+| **<span dir="ltr">CSMA/CA (Collision Avoidance)</span>** | الشبكات اللاسلكية (<span dir="ltr">Wi-Fi</span>) | لأن الأجهزة اللاسلكية مش قادرة تكتشف التصادم فعليًا زي السلكية، فبتحاول **تتجنبه من الأساس** قبل ما يحصل، عن طريق إرسال إشارة صغيرة الأول تحجز بيها الوسط الناقل لفترة معينة قبل ما تبعت البيانات الفعلية |
+
 ![توضيح لفكرة CSMA وتجنب التصادم بين الأجهزة المشتركة في نفس الوسط الناقل](images/csma-collision-diagram.png)
  
 ![مثال عملي يوضح دور الـ Data Link Layer في عملية الـ Framing والوصول للوسط الناقل بين راوترين](images/datalink-framing-access-media.png)
@@ -302,9 +325,24 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 - المُوصِّلات (Connectors) زي RJ45.
 - طبيعة الإشارة نفسها: هل هي **كهربائية** (عبر كابلات النحاس)، **ضوئية** (عبر الألياف الضوئية Fiber)، ولا **راديوية** (عبر الموجات اللاسلكية Wi-Fi)؟
 - سرعة النقل (Data Rate) ومواصفات المنافذ (Ports) والأجهزة المستخدمة في التوصيل الفيزيائي.
-عند الاستقبال، العملية بتحصل بالعكس تمامًا: الجهاز المُستقبِل بيستقبل الإشارة الفيزيائية، ويحولها مرة تانية لـ Bits، وبعدين يبعتها لطبقة الـ Data Link عشان تبدأ رحلة الـ Decapsulation صعودًا لحد ما توصل البيانات لصورتها الأصلية عند المستخدم.
- 
-**أمثلة على مكونات/تقنيات الطبقة دي:** الكابلات (Cables)، الألياف الضوئية (Fiber Optic)، الموجات الراديوية (Radio Waves)، الموزعات (Hubs)، المُكررات (Repeaters).
+عند الاستقبال، العملية بتحصل بالعكس تمامًا: الجهاز المُستقبِل بيستقبل الإشارة الفيزيائية، ويحولها مرة تانية لـ <span dir="ltr">Bits</span>، وبعدين يبعتها لطبقة الـ <span dir="ltr">Data Link</span> عشان تبدأ رحلة الـ <span dir="ltr">Decapsulation</span> صعودًا لحد ما توصل البيانات لصورتها الأصلية عند المستخدم.
+
+### Encoding: إزاي الـ Bits بتتحول لإشارة فعلية؟
+
+مش كفاية إن الجهاز يبعت الإشارة، لازم كمان الجهاز المستقبِل يعرف يميز أصلًا مين الـ **0** ومين الـ **1** جوه الإشارة اللي وصلته. العملية دي اسمها **<span dir="ltr">Encoding</span>**، ومن أشهر طرقها: **<span dir="ltr">Manchester Encoding</span>**، وهي طريقة بتعتمد على تغيير اتجاه الإشارة (من عالي لواطي أو العكس) في منتصف كل نبضة (<span dir="ltr">Pulse</span>) عشان تحدد هل دي 0 ولا 1، وده بيدي ميزة إضافية إن الجهاز المستقبِل يقدر "يتزامن" (<span dir="ltr">Synchronize</span>) مع توقيت الإرسال بسهولة أكتر.
+
+### معايير الـ Ethernet الشائعة
+
+كل معيار من معايير الـ <span dir="ltr">Ethernet</span> بيحدد نوع الكابل المستخدم والسرعة القصوى للنقل، وده جزء أساسي من مسؤوليات الـ <span dir="ltr">Physical Layer</span>:
+
+| المعيار | السرعة | نوع الكابل |
+|---|---|---|
+| **<span dir="ltr">10BASE-T</span>** | 10 <span dir="ltr">Mbps</span> | نحاس (<span dir="ltr">Copper</span>) |
+| **<span dir="ltr">100BASE-TX</span>** | 100 <span dir="ltr">Mbps</span> (<span dir="ltr">Fast Ethernet</span>) | نحاس (<span dir="ltr">Copper</span>) |
+| **<span dir="ltr">1000BASE-T</span>** | 1 <span dir="ltr">Gbps</span> (<span dir="ltr">Gigabit Ethernet</span>) | نحاس (<span dir="ltr">Copper</span>) |
+| **<span dir="ltr">10GBASE-T</span>** | 10 <span dir="ltr">Gbps</span> | نحاس (<span dir="ltr">Copper</span>) أو ألياف ضوئية |
+
+**أمثلة على مكونات/تقنيات الطبقة دي:** الكابلات (<span dir="ltr">Cables</span>)، الألياف الضوئية (<span dir="ltr">Fiber Optic</span>)، الموجات الراديوية (<span dir="ltr">Radio Waves</span>)، الموزعات (<span dir="ltr">Hubs</span>)، المُكررات (<span dir="ltr">Repeaters</span>).
  
 ---
  
@@ -323,10 +361,43 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | 1 | **Physical** | Bits | تحويل البيانات لإشارات فيزيائية ونقلها عبر الوسط الناقل الفعلي | Cables, Fiber Optic, Radio Waves |
  
 ---
+
+## مقارنة سريعة: OSI مقابل TCP/IP
+
+زي ما اتقال في المقدمة، الـ <span dir="ltr">TCP/IP Model</span> هو النموذج العملي المستخدم فعليًا، وبيدمج بعض طبقات الـ <span dir="ltr">OSI</span> مع بعضها في طبقة واحدة. الجدول ده بس تمهيد سريع، وهنتكلم عنه بالتفصيل في ملف منفصل:
+
+| طبقات الـ <span dir="ltr">OSI</span> (7 طبقات) | الطبقة المقابلة في <span dir="ltr">TCP/IP</span> (4 طبقات) |
+|---|---|
+| <span dir="ltr">Application</span> / <span dir="ltr">Presentation</span> / <span dir="ltr">Session</span> | <span dir="ltr">Application</span> |
+| <span dir="ltr">Transport</span> | <span dir="ltr">Transport</span> |
+| <span dir="ltr">Network</span> | <span dir="ltr">Internet</span> |
+| <span dir="ltr">Data Link</span> / <span dir="ltr">Physical</span> | <span dir="ltr">Network Access (Link)</span> |
+
+---
+
+## طريقة حفظ ترتيب الطبقات (<span dir="ltr">Mnemonic</span>)
+
+عشان تحفظ ترتيب الطبقات السبعة بسهولة من فوق لتحت (7 لـ 1)، فيه جملة إنجليزية شهيرة أول حرف من كل كلمة فيها بيرمز لاسم الطبقة:
+
+> **<span dir="ltr">"All People Seem To Need Data Processing"</span>**
+
+| الكلمة | أول حرف | الطبقة |
+|---|---|---|
+| <span dir="ltr">All</span> | <span dir="ltr">A</span> | <span dir="ltr">Application</span> |
+| <span dir="ltr">People</span> | <span dir="ltr">P</span> | <span dir="ltr">Presentation</span> |
+| <span dir="ltr">Seem</span> | <span dir="ltr">S</span> | <span dir="ltr">Session</span> |
+| <span dir="ltr">To</span> | <span dir="ltr">T</span> | <span dir="ltr">Transport</span> |
+| <span dir="ltr">Need</span> | <span dir="ltr">N</span> | <span dir="ltr">Network</span> |
+| <span dir="ltr">Data</span> | <span dir="ltr">D</span> | <span dir="ltr">Data Link</span> |
+| <span dir="ltr">Processing</span> | <span dir="ltr">P</span> | <span dir="ltr">Physical</span> |
+
+---
  
 ## خلاصة سريعة
  
 - الـ OSI Model بيقسم عملية الاتصال لـ **7 طبقات**، كل طبقة ليها وظيفة مستقلة ومحددة.
 - الطبقات العليا (7, 6, 5) قريبة من المستخدم، والطبقات السفلى (4, 3, 2, 1) قريبة من الوسط الناقل.
 - كل طبقة بتضيف Header خاص بيها على البيانات (عملية Encapsulation)، وعند الاستقبال بيحصل العكس (Decapsulation).
-- أهم طبقتين لازم تتفهموا كويس جدًا في مجال الشبكات والأمن السيبراني هما طبقة الـ **Transport** (TCP/UDP) وطبقة الـ **Network** (IP والـ Routing)، لأنهم أساس أي هجوم أو دفاع في الشبكات.
+- أهم طبقتين لازم تتفهموا كويس جدًا في مجال الشبكات والأمن السيبراني هما طبقة الـ **<span dir="ltr">Transport</span>** (<span dir="ltr">TCP/UDP</span>) وطبقة الـ **<span dir="ltr">Network</span>** (<span dir="ltr">IP</span> والـ <span dir="ltr">Routing</span>)، لأنهم أساس أي هجوم أو دفاع في الشبكات.
+
+</div>
