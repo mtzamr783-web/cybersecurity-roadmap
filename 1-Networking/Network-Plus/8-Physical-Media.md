@@ -10,11 +10,13 @@
 | :--- | :--- |
 | **[مقدمة](#intro)** | - |
 | **[أولاً: الكابلات المحورية](#coaxial)** | • [تعريف الكابل المحوري](#coaxial-def)<br>• [مكونات الكابل المحوري](#coaxial-components)<br>• [الأنواع الرئيسية: Thick و Thin](#coaxial-types)<br>• [معايير RG للكابلات المحورية](#coaxial-rg)<br>• [موصلات الكابل المحوري](#coaxial-connectors) |
-| **[ثانياً: الكابلات المجدولة](#twisted-pair)** | • [تعريف الكابل المجدول](#twisted-pair-def)<br>• [مكانة الكابل المجدول في الشبكات](#twisted-pair-status)<br>• [مكونات الكابل المجدول](#twisted-pair-components)<br>• [ترتيب الألوان (T568A / T568B)](#color-order)<br>• [أنماط توصيل الكابل: Straight / Crossover / Rollover](#cable-patterns)<br>• [أنواع الكابل المجدول من ناحية التغليف: UTP و STP](#utp-stp)<br>• [أطراف رؤوس الكابل المجدول](#twisted-pair-connectors)<br>• [فئات الكابلات المجدولة (Cat)](#cable-categories) |
-| **[ثالثاً: كابلات الألياف الضوئية](#fiber)** | • [تعريف كابل الألياف الضوئية واستخداماته](#fiber-def)<br>• [مكونات كابل الألياف الضوئية](#fiber-components)<br>• [أقسام تصنيع الألياف الضوئية: Single-mode و Multi-mode](#fiber-modes)<br>• [أطراف رؤوس كابلات الألياف الضوئية](#fiber-connectors)<br>• [منافذ الكابلات الضوئية](#fiber-ports)<br>• [مميزات وعيوب الألياف الضوئية](#fiber-pros-cons) |
+| **[ثانياً: الكابلات المجدولة](#twisted-pair)** | • [تعريف الكابل المجدول](#twisted-pair-def)<br>• [مكانة الكابل المجدول في الشبكات](#twisted-pair-status)<br>• [مكونات الكابل المجدول](#twisted-pair-components)<br>• [ترتيب الألوان (T568A / T568B)](#color-order)<br>• [أنماط توصيل الكابل: Straight / Crossover / Rollover](#cable-patterns)<br>• [أنواع الكابل المجدول من ناحية التغليف: UTP و STP](#utp-stp)<br>• [أطراف رؤوس الكابل المجدول](#twisted-pair-connectors)<br>• [فئات الكابلات المجدولة (Cat)](#cable-categories)<br>• [التغذية الكهربائية عبر الكابل PoE](#poe) |
+| **[ثالثاً: كابلات الألياف الضوئية](#fiber)** | • [تعريف كابل الألياف الضوئية واستخداماته](#fiber-def)<br>• [مكونات كابل الألياف الضوئية](#fiber-components)<br>• [أقسام تصنيع الألياف الضوئية: Single-mode و Multi-mode](#fiber-modes)<br>• [أطوال الموجة الضوئية المستخدمة](#fiber-wavelengths)<br>• [أطراف رؤوس كابلات الألياف الضوئية](#fiber-connectors)<br>• [منافذ الكابلات الضوئية](#fiber-ports)<br>• [تقنيات WDM / CWDM / DWDM](#fiber-wdm)<br>• [مميزات وعيوب الألياف الضوئية](#fiber-pros-cons) |
 | **[رابعاً: الكابلات المتسلسلة ومنافذها](#serial)** | • [تعريف الكابل المتسلسل واستخدامه](#serial-def)<br>• [الـ DTE والـ DCE](#dte-dce)<br>• [طريقة التوصيل بالأجهزة](#serial-connection) |
 | **[خامساً: لوحة تجميع الكابلات](#patch-panel)** | • [تعريفها وأنواعها](#patch-panel-types) |
-| **[سادساً: خصائص كابلات الشبكة](#cable-properties)** | • [سرعة النقل والمسافة](#speed-distance)<br>• [اتجاه الإرسال: Simplex / Half Duplex / Full Duplex](#duplex-modes) |
+| **[سادساً: معايير تسمية الإيثرنت](#ethernet-naming)** | - |
+| **[سابعاً: معيار الأسلاك المهيكلة TIA/EIA-568](#structured-cabling)** | - |
+| **[ثامناً: خصائص كابلات الشبكة](#cable-properties)** | • [سرعة النقل والمسافة](#speed-distance)<br>• [مشاكل الكابلات الشائعة](#cable-problems)<br>• [اتجاه الإرسال: Simplex / Half Duplex / Full Duplex](#duplex-modes) |
 | **[ملخص شامل للمقارنة بين كل الكابلات](#summary-table)** | - |
 
 <h2 id="intro" dir="rtl" align="right">مقدمة</h2>
@@ -292,6 +294,24 @@
 <em>مقارنة فيزيائية بين فئات UTP/SFTP المختلفة</em>
 </div>
 
+<h3 id="poe" dir="rtl" align="right">التغذية الكهربائية عبر الكابل <span dir="ltr">(Power over Ethernet - PoE)</span></h3>
+
+تقنية <span dir="ltr">PoE</span> بتسمح بنقل الكهرباء والبيانات **في نفس كابل الشبكة المجدول** في آن واحد، من غير الحاجة لسلك كهرباء منفصل. الفايدة الأساسية إنها بتسهّل تركيب أجهزة زي كاميرات المراقبة <span dir="ltr">(IP Cameras)</span>، نقاط الوصول اللاسلكي <span dir="ltr">(Access Points)</span>، وهواتف الـ <span dir="ltr">VoIP</span> في أي مكان من غير الحاجة لمقبس كهرباء قريب.
+
+**مكونات نظام PoE:**
+- **<span dir="ltr">PSE (Power Sourcing Equipment)</span>**: الجهاز اللي بيوفر الكهرباء، زي السويتش الداعم لـ PoE أو حقن كهرباء خارجي <span dir="ltr">(PoE Injector)</span>.
+- **<span dir="ltr">PD (Powered Device)</span>**: الجهاز اللي بيستقبل الكهرباء، زي الكاميرا أو الـ Access Point.
+
+**معايير PoE:**
+
+| المعيار | الاسم الشائع | أقصى قدرة عند المصدر |
+|:---:|:---:|:---:|
+| <span dir="ltr">802.3af</span> | <span dir="ltr">PoE</span> | حتى 15.4 <span dir="ltr">واط</span> |
+| <span dir="ltr">802.3at</span> | <span dir="ltr">PoE+</span> | حتى 30 <span dir="ltr">واط</span> |
+| <span dir="ltr">802.3bt</span> | <span dir="ltr">PoE++ / 4PPoE</span> | حتى 60-100 <span dir="ltr">واط</span> |
+
+> لازم يكون الكابل المستخدم **Cat 5e فأعلى** عشان يتحمل التيار الكهربائي المار فيه من غير ما يسخن بشكل خطر، خصوصًا في المعايير الأحدث (PoE+ و PoE++) اللي بتنقل قدرة أعلى.
+
 ---
 
 <h2 id="fiber" dir="rtl" align="right">ثالثاً: كابلات الألياف الضوئية <span dir="ltr">Fiber Optic Cables</span></h2>
@@ -370,6 +390,18 @@
 <em>الفرق بين مسار الضوء في Single-Mode و Multi-Mode</em>
 </div>
 
+<h3 id="fiber-wavelengths" dir="rtl" align="right">أطوال الموجة الضوئية المستخدمة</h3>
+
+الضوء المستخدم في الألياف الضوئية مش ضوء عادي مرئي، لكنه شعاع بطول موجي محدد في نطاق الأشعة تحت الحمراء <span dir="ltr">(Infrared)</span>، واختيار طول الموجة بيأثر مباشرة في مقدار الفقد <span dir="ltr">(Attenuation)</span> والمسافة اللي ممكن توصلها الإشارة:
+
+| طول الموجة | النوع المستخدم معاه | الملاحظات |
+|:---:|:---:|:---:|
+| <span dir="ltr">850 nm</span> | <span dir="ltr">Multi-Mode</span> | أقصر مسافة، أرخص معدات (LED/VCSEL) |
+| <span dir="ltr">1310 nm</span> | <span dir="ltr">Single-Mode</span> (غالبًا) و <span dir="ltr">Multi-Mode</span> | فقد أقل من 850nm، مسافات متوسطة لبعيدة |
+| <span dir="ltr">1550 nm</span> | <span dir="ltr">Single-Mode</span> | أقل فقد للإشارة، بيُستخدم في المسافات الطويلة جدًا والخطوط البحرية |
+
+> كل ما طول الموجة زاد، كل ما الفقد في الإشارة قل والمسافة المدعومة زادت، وده سبب استخدام 1550nm في خطوط الإنترنت البحرية بين القارات.
+
 <h3 id="fiber-connectors" dir="rtl" align="right">أطراف رؤوس كابلات الألياف الضوئية</h3>
 
 - **<span dir="ltr">SC (Subscriber Connector)</span>**: موصل مربع الشكل، بيتركب بدفعة بسيطة (Push-Pull)، من أكتر الأنواع شيوعًا.
@@ -383,6 +415,15 @@
 - **<span dir="ltr">SFP (Small Form-factor Pluggable)</span>**: وحدة صغيرة قابلة للفك والتركيب، بتدعم سرعات تصل لـ 1 <span dir="ltr">Gbps</span>.
 - **<span dir="ltr">SFP+</span>**: نسخة محسّنة بتدعم سرعات تصل لـ 10 <span dir="ltr">Gbps</span>.
 - **<span dir="ltr">QSFP</span>**: بيدعم سرعات أعلى (40 <span dir="ltr">Gbps</span> فأكثر)، بيُستخدم في مراكز البيانات الكبيرة.
+
+<h3 id="fiber-wdm" dir="rtl" align="right">تقنيات مضاعفة الإرسال الضوئي <span dir="ltr">WDM / CWDM / DWDM</span></h3>
+
+تقنية <span dir="ltr">WDM (Wavelength Division Multiplexing)</span> بتسمح بنقل **أكتر من إشارة ضوئية في نفس الوقت على نفس كابل الألياف الضوئية الواحد**، عن طريق استخدام أطوال موجة ضوئية مختلفة لكل إشارة، بحيث كل إشارة بتسافر على "قناة لونية" منفصلة من غير ما تتداخل مع الباقي.
+
+- **<span dir="ltr">CWDM (Coarse WDM)</span>**: بيدعم عدد قليل نسبيًا من القنوات (عادة حتى 16 قناة)، بفواصل واسعة بين أطوال الموجة، وتكلفته أقل. بيُستخدم في المسافات المتوسطة زي الربط بين مباني نفس الشركة.
+- **<span dir="ltr">DWDM (Dense WDM)</span>**: بيدعم عدد كبير جدًا من القنوات (ممكن يوصل لأكتر من 80 قناة) بفواصل ضيقة جدًا بين أطوال الموجة، وبيحتاج معدات أدق وأغلى. بيُستخدم في شبكات الـ Backbone الكبيرة وخطوط الاتصالات بين المدن والدول لزيادة سعة نقل البيانات من غير مد كابلات إضافية.
+
+> الفايدة الأساسية من الـ WDM إنها بتوفر تكلفة مد كابلات جديدة، لأنها بتزود سعة الكابل الموجود بالفعل بدل ما تحتاج تمد كابل تاني كل ما احتجت سعة أكبر.
 
 <h3 id="fiber-pros-cons" dir="rtl" align="right">مميزات وعيوب استخدام كابلات الألياف الضوئية</h3>
 
@@ -445,7 +486,55 @@
 
 ---
 
-<h2 id="cable-properties" dir="rtl" align="right">سادساً: خصائص كابلات الشبكة</h2>
+<h2 id="ethernet-naming" dir="rtl" align="right">سادساً: معايير تسمية الإيثرنت <span dir="ltr">Ethernet Naming Standards</span></h2>
+
+أسماء معايير الإيثرنت (زي <span dir="ltr">10BaseT</span> أو <span dir="ltr">1000BaseT</span>) مش أسماء عشوائية، لكل جزء منها معنى محدد بيوصف سرعة النقل ونوع الإشارة والوسيط المستخدم. الصيغة العامة هي:
+
+<div align="center">
+
+**<span dir="ltr">[السرعة] Base [نوع الإشارة/المسافة] [الوسيط]</span>**
+
+</div>
+
+- **الرقم الأول**: السرعة القصوى بالـ <span dir="ltr">Mbps</span> أو <span dir="ltr">Gbps</span> (مثلاً 10، 100، 1000).
+- **كلمة <span dir="ltr">Base</span>**: اختصار لـ <span dir="ltr">Baseband</span>، يعني الكابل بينقل إشارة رقمية واحدة بس (مش عدة إشارات في نفس الوقت زي الـ Broadband).
+- **الجزء الأخير**: إما بيوصف نوع الوسيط (<span dir="ltr">T</span> = Twisted Pair نحاس، <span dir="ltr">F</span> = Fiber ألياف ضوئية) أو المسافة/التقنية (زي <span dir="ltr">5</span> و <span dir="ltr">2</span> في الكابل المحوري القديم، أو <span dir="ltr">SR/LR</span> في الألياف الحديثة).
+
+| المعيار | السرعة | الوسيط | ملاحظات |
+|:---:|:---:|:---:|:---:|
+| <span dir="ltr">10Base5</span> | 10 <span dir="ltr">Mbps</span> | كابل محوري سميك | مسافة حتى 500 م (Thicknet) |
+| <span dir="ltr">10Base2</span> | 10 <span dir="ltr">Mbps</span> | كابل محوري رفيع | مسافة حتى 185 م (Thinnet) |
+| <span dir="ltr">10BaseT</span> | 10 <span dir="ltr">Mbps</span> | كابل مجدول نحاسي | الحرف T = Twisted Pair |
+| <span dir="ltr">100BaseTX</span> | 100 <span dir="ltr">Mbps</span> | كابل مجدول (Cat 5 فأعلى) | يُعرف بـ Fast Ethernet |
+| <span dir="ltr">1000BaseT</span> | 1 <span dir="ltr">Gbps</span> | كابل مجدول (Cat 5e فأعلى) | يُعرف بـ Gigabit Ethernet |
+| <span dir="ltr">1000BaseSX</span> | 1 <span dir="ltr">Gbps</span> | ألياف ضوئية Multi-Mode | الحرف S = Short wavelength (850nm) |
+| <span dir="ltr">1000BaseLX</span> | 1 <span dir="ltr">Gbps</span> | ألياف ضوئية Single-Mode | الحرف L = Long wavelength (1310nm) |
+| <span dir="ltr">10GBaseT</span> | 10 <span dir="ltr">Gbps</span> | كابل مجدول (Cat 6a فأعلى) | مسافة حتى 100 م |
+| <span dir="ltr">10GBaseSR</span> | 10 <span dir="ltr">Gbps</span> | ألياف ضوئية Multi-Mode | الحرف R = مشتق من ترميز الإشارة، مسافات قصيرة |
+| <span dir="ltr">10GBaseLR</span> | 10 <span dir="ltr">Gbps</span> | ألياف ضوئية Single-Mode | مسافات طويلة (كيلومترات) |
+
+> **نصيحة للحفظ**: أي معيار ينتهي بحرف <span dir="ltr">T</span> يبقى نحاس مجدول، وأي معيار فيه <span dir="ltr">S</span> أو <span dir="ltr">L</span> أو <span dir="ltr">X</span> غالبًا بيبقى ألياف ضوئية (Short/Long wavelength).
+
+---
+
+<h2 id="structured-cabling" dir="rtl" align="right">سابعاً: معيار الأسلاك المهيكلة <span dir="ltr">TIA/EIA-568</span></h2>
+
+معيار <span dir="ltr">TIA/EIA-568</span> هو المعيار العالمي اللي بيحدد إزاي تُصمم وتُمد أسلاك الشبكة داخل المباني بشكل منظم وقابل للتوسع، بدل ما يكون التمديد عشوائي. بيعرّف المعيار عدة عناصر أساسية:
+
+- **<span dir="ltr">Entrance Facility (EF)</span>**: نقطة دخول خدمة الإنترنت أو الاتصالات للمبنى من مزود الخدمة الخارجي.
+- **<span dir="ltr">Demarcation Point (Demarc)</span>**: النقطة اللي بتفصل مسؤولية مزود الخدمة <span dir="ltr">(ISP)</span> عن مسؤولية صاحب المبنى - أي عطل قبلها مسؤولية الشركة، وأي عطل بعدها مسؤولية صاحب المبنى.
+- **<span dir="ltr">MDF (Main Distribution Frame)</span>**: الغرفة أو النقطة الرئيسية اللي بيتجمع فيها كل أسلاك المبنى ككل، وبتحتوي عادة على المعدات الأساسية زي الراوترات الرئيسية.
+- **<span dir="ltr">IDF (Intermediate Distribution Frame)</span>**: نقاط توزيع فرعية (عادة واحدة لكل طابق أو قسم)، بتتصل بالـ MDF وبتوزع الاتصال على المستخدمين في منطقتها.
+- **<span dir="ltr">Telecommunications Room (TR)</span>**: الغرفة اللي بتتواجد فيها معدات التوزيع (زي الـ Patch Panel والـ Switch) لكل طابق أو منطقة.
+- **<span dir="ltr">Horizontal Cabling</span>**: الأسلاك اللي بتمتد أفقيًا من غرفة الاتصالات (TR/IDF) لحد نقطة الشبكة في مكتب المستخدم، وأقصى طول مسموح بيه 90 متر + 10 أمتار احتياطي لكابلات التوصيل (Patch Cables) = 100 متر إجمالي.
+- **<span dir="ltr">Vertical / Backbone Cabling</span>**: الأسلاك اللي بتربط بين الطوابق المختلفة أو بين الـ MDF والـ IDFs المختلفة، وغالبًا بتكون ألياف ضوئية عشان تتحمل مسافات أطول.
+- **<span dir="ltr">Work Area</span>**: منطقة المستخدم النهائي، من نقطة الشبكة على الحائط لحد جهاز الكمبيوتر.
+
+> فهم المعيار ده مهم جدًا في أي تصميم شبكة لمبنى كبير، لأنه بيحدد أقصى أطوال مسموح بيها لكل نوع كابل، وبيوضح حدود المسؤولية بين مزود الخدمة والشركة نفسها (وده مهم من الناحية الأمنية والتعاقدية كمان).
+
+---
+
+<h2 id="cable-properties" dir="rtl" align="right">ثامناً: خصائص كابلات الشبكة</h2>
 
 <h3 id="speed-distance" dir="rtl" align="right">سرعة النقل والمسافة</h3>
 
@@ -458,6 +547,21 @@
 | <span dir="ltr">UTP Cat 5e/6</span> | 1-10 <span dir="ltr">Gbps</span> | 100 م |
 | <span dir="ltr">Multi-Mode Fiber</span> | 10+ <span dir="ltr">Gbps</span> | حتى 550 م |
 | <span dir="ltr">Single-Mode Fiber</span> | 100+ <span dir="ltr">Gbps</span> | عشرات الكيلومترات |
+
+<h3 id="cable-problems" dir="rtl" align="right">مشاكل الكابلات الشائعة</h3>
+
+فيه ظواهر فيزيائية بتأثر على جودة الإشارة في أي وسيط نقل، ومعرفتها مهمة جدًا في استكشاف أخطاء الشبكة <span dir="ltr">(Troubleshooting)</span>:
+
+- **<span dir="ltr">Attenuation (التوهين)</span>**: ضعف تدريجي في قوة الإشارة كل ما زادت المسافة اللي قطعتها على الكابل، وهو السبب في وجود حد أقصى لطول كل نوع كابل (زي الـ 100 متر في النحاس). بيُقاس بوحدة <span dir="ltr">dB Loss</span>، والحل بيكون باستخدام مكرر إشارة <span dir="ltr">(Repeater)</span> أو تقليل المسافة.
+- **<span dir="ltr">Crosstalk (التداخل بين الأسلاك)</span>**: تسرب إشارة من سلك لسلك جنبه بسبب المجال الكهرومغناطيسي الناتج عن مرور التيار، وله نوعين:
+  - **<span dir="ltr">NEXT (Near-End Crosstalk)</span>**: التداخل بيتقاس عند نفس الطرف اللي بتُرسل منه الإشارة.
+  - **<span dir="ltr">FEXT (Far-End Crosstalk)</span>**: التداخل بيتقاس عند الطرف البعيد (المستقبل).
+  - الحل الأساسي ليها هو **اللف** (Twisting) في الكابل المجدول، وده سبب اختلاف عدد لفات كل زوج عن التاني.
+- **<span dir="ltr">EMI (Electromagnetic Interference)</span>**: تداخل كهرومغناطيسي من مصادر خارجية زي المحولات الكهربائية والمعدات الصناعية الثقيلة، بيأثر بشكل خاص على الكابل النحاسي غير المحمي (UTP).
+- **<span dir="ltr">RFI (Radio Frequency Interference)</span>**: نوع خاص من التداخل ناتج عن موجات الراديو (زي أجهزة اللاسلكي أو محطات البث القريبة).
+- **<span dir="ltr">dB Loss (فقد الديسيبل)</span>**: وحدة قياس مقدار الفقد في قوة الإشارة بين نقطتين على الكابل، وكل ما كانت القيمة أعلى (بالسالب) كل ما كان الفقد أكبر، وهي المقياس العملي اللي بيستخدمه الفنيين لتقييم جودة أي وصلة كابل.
+
+> الكابل المجدول المحمي <span dir="ltr">(STP)</span> والألياف الضوئية بيقاوموا الـ EMI/RFI بشكل أكبر بكتير من الـ UTP العادي، وده أحد أهم أسباب اختيار نوع الكابل حسب بيئة التركيب.
 
 <h3 id="duplex-modes" dir="rtl" align="right">اتجاه الإرسال بين الأجهزة</h3>
 
@@ -540,5 +644,10 @@
 - <span dir="ltr">Single-Mode</span> = مسافات طويلة وليزر، <span dir="ltr">Multi-Mode</span> = مسافات قصيرة و LED.
 - <span dir="ltr">DTE</span> بيستقبل/يولّد البيانات، <span dir="ltr">DCE</span> بيوفر التوقيت (Clocking).
 - <span dir="ltr">Full Duplex</span> = إرسال واستقبال في نفس الوقت (Switch)، <span dir="ltr">Half Duplex</span> = بالتناوب (Hub).
+- <span dir="ltr">PoE</span>: كهرباء وبيانات في نفس الكابل، 802.3af (15.4W) / 802.3at (30W) / 802.3bt (60-100W).
+- تسمية الإيثرنت: الرقم = السرعة، <span dir="ltr">T</span> = نحاس مجدول، <span dir="ltr">S/L</span> = ألياف ضوئية (Short/Long wavelength).
+- <span dir="ltr">TIA/EIA-568</span>: أقصى طول للـ Horizontal Cabling هو 90م + 10م Patch Cables = 100م إجمالي.
+- أطوال موجة الألياف: <span dir="ltr">850nm</span> (Multi-Mode)، <span dir="ltr">1310nm/1550nm</span> (Single-Mode، فقد أقل كل ما الطول زاد).
+- <span dir="ltr">Crosstalk</span> بيتقلل باللف (Twisting)، و<span dir="ltr">Attenuation</span> بيتقاس بالـ dB Loss.
 
 </div>
