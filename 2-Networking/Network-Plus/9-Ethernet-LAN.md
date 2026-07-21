@@ -10,24 +10,24 @@
 
 | المحتويات |
 |---|
-| [1. مقدمة عن الموضوع](#intro) |
-| [2. التقنيات الثلاث المستخدمة في الشبكات المحلية](#lan-technologies) |
-| [3. أولاً: تقنية Token Ring](#token-ring) |
-| &nbsp;&nbsp;&nbsp;[3.1 جهاز الـ MAU: الاستخدام وطريقة العمل](#token-ring-mau) |
-| [4. خاصية Token Passing و Ring Topology](#token-passing) |
-| [5. ثانياً: تقنية ARC-Net](#arcnet) |
-| [6. ثالثاً: تقنية Ethernet](#ethernet) |
-| &nbsp;&nbsp;&nbsp;[6.1 المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds) |
-| &nbsp;&nbsp;&nbsp;[6.2 الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks) |
-| &nbsp;&nbsp;&nbsp;[6.3 عنوان الإيثرنت (MAC Address)](#ethernet-mac-address) |
-| &nbsp;&nbsp;&nbsp;[6.4 صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format) |
-| &nbsp;&nbsp;&nbsp;[6.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
-| [7. مقارنة سريعة بين التقنيات الثلاث](#lan-tech-comparison) |
-| [8. جدول ملخص شامل للمراجعة السريعة](#summary-table) |
+| [1️⃣ مقدمة عن الموضوع](#intro) |
+| [2️⃣ التقنيات الثلاث المستخدمة في الشبكات المحلية](#lan-technologies) |
+| [3️⃣ أولاً: تقنية Token Ring](#token-ring) |
+| &nbsp;&nbsp;&nbsp;[3️⃣.1 جهاز الـ MAU: الاستخدام وطريقة العمل](#token-ring-mau) |
+| [4️⃣ خاصية Token Passing و Ring Topology](#token-passing) |
+| [5️⃣ ثانياً: تقنية ARC-Net](#arcnet) |
+| [6️⃣ ثالثاً: تقنية Ethernet](#ethernet) |
+| &nbsp;&nbsp;&nbsp;[6️⃣.1 المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds) |
+| &nbsp;&nbsp;&nbsp;[6️⃣.2 الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks) |
+| &nbsp;&nbsp;&nbsp;[6️⃣.3 عنوان الإيثرنت (MAC Address)](#ethernet-mac-address) |
+| &nbsp;&nbsp;&nbsp;[6️⃣.4 صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format) |
+| &nbsp;&nbsp;&nbsp;[6️⃣.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
+| [7️⃣ مقارنة سريعة بين التقنيات الثلاث](#lan-tech-comparison) |
+| [📝 جدول ملخص شامل للمراجعة السريعة](#summary-table) |
 
 ---
 
-<h2 dir="rtl" align="right" id="intro">1. مقدمة عن الموضوع</h2>
+<h2 dir="rtl" align="right" id="intro">1️⃣ مقدمة عن الموضوع</h2>
 
 الـ **الشبكة المحلية (<span dir="ltr">LAN - Local Area Network</span>)** هي شبكة بتربط مجموعة من الأجهزة (كمبيوترات، سيرفرات، طابعات) في نطاق جغرافي محدود ومتقارب، زي مبنى واحد أو مكتب أو حرم جامعي واحد.
 
@@ -37,7 +37,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="lan-technologies">2. التقنيات الثلاث المستخدمة في الشبكات المحلية</h2>
+<h2 dir="rtl" align="right" id="lan-technologies">2️⃣ التقنيات الثلاث المستخدمة في الشبكات المحلية</h2>
 
 قبل ما نتعمق في كل تقنية، مهم تعرف إن التقنيات التلاتة دي كانت بتتنافس مع بعضها في التسعينات وأول الألفية، وكل واحدة كان ليها طريقة مختلفة تمامًا في التحكم في الوصول للوسيط الناقل (<span dir="ltr">Media Access Control</span>) ومنع تصادم البيانات:
 
@@ -57,7 +57,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="token-ring">3. أولاً: تقنية Token Ring</h2>
+<h2 dir="rtl" align="right" id="token-ring">3️⃣ أولاً: تقنية Token Ring</h2>
 
 **<span dir="ltr">Token Ring</span>** هي تقنية شبكات محلية طورتها شركة **<span dir="ltr">IBM</span>** في الثمانينات، وبتعتمد على مبدأ تمرير "رمز" إلكتروني صغير اسمه **<span dir="ltr">Token</span>** بين الأجهزة، بحيث تكون الأجهزة مرتبة **منطقيًا** على هيئة حلقة (<span dir="ltr">Ring</span>)، والجهاز اللي بيمسك الـ <span dir="ltr">Token</span> هو الوحيد اللي يحق له الإرسال في تلك اللحظة. المعيار الرسمي المعتمد من <span dir="ltr">IEEE</span> للتقنية دي هو **<span dir="ltr">IEEE 802.5</span>**.
 
@@ -69,7 +69,7 @@
 <em>الشكل المنطقي البسيط لطوبولوجيا الحلقة (Ring) اللي بتشتغل عليها Token Ring</em>
 </div>
 
-<h3 dir="rtl" align="right" id="token-ring-mau">3.1 جهاز الـ MAU: الاستخدام وطريقة العمل</h3>
+<h3 dir="rtl" align="right" id="token-ring-mau">3️⃣.1 جهاز الـ MAU: الاستخدام وطريقة العمل</h3>
 
 كانت <span dir="ltr">Token Ring</span> بتستخدم في الشبكات المؤسسية (خصوصًا شبكات <span dir="ltr">IBM</span> وأجهزة <span dir="ltr">Mainframe</span>) في الثمانينات والتسعينات قبل ما تنتشر الإيثرنت. من الناحية الفيزيائية، الأجهزة مش بتتوصل فعليًا على شكل حلقة دائرية بكابلات، وإنما بتتوصل بجهاز مركزي اسمه **<span dir="ltr">MAU</span> (Multistation Access Unit)**، وهو اللي بيمثل الحلقة **منطقيًا** من جواه، فالشكل الفيزيائي للتوصيل بيبقى **نجمة (Star)** بينما الشكل المنطقي لحركة البيانات بيفضل **حلقة (Ring)**.
 
@@ -89,7 +89,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="token-passing">4. خاصية Token Passing و Ring Topology</h2>
+<h2 dir="rtl" align="right" id="token-passing">4️⃣ خاصية Token Passing و Ring Topology</h2>
 
 **<span dir="ltr">Token Passing</span>** هي طريقة (Method) للتحكم في الوصول للوسيط الناقل، بتعتمد على تمرير إطار خاص صغير جدًا اسمه <span dir="ltr">Token</span> بين الأجهزة بترتيب معين، والجهاز اللي معاه الـ <span dir="ltr">Token</span> هو الوحيد اللي مسموحله يرسل بيانات. أما **<span dir="ltr">Ring Topology</span>** فهي الشكل المنطقي (Logical Topology) اللي بتتحرك بيه البيانات، بحيث كل جهاز متصل بجهازين بس (اللي قبله واللي بعده) في شكل دائري مغلق.
 
@@ -107,7 +107,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="arcnet">5. ثانياً: تقنية ARC-Net</h2>
+<h2 dir="rtl" align="right" id="arcnet">5️⃣ ثانياً: تقنية ARC-Net</h2>
 
 **<span dir="ltr">ARC-Net (Attached Resource Computer Network)</span>** هي من **أقدم تقنيات الشبكات المحلية التجارية** على الإطلاق، طورتها شركة <span dir="ltr">Datapoint Corporation</span> سنة 1977، يعني سبقت حتى الإيثرنت في الانتشار التجاري الواسع بفترة. كانت بتُستخدم بكثرة في البيئات **الصناعية وأنظمة التحكم الآلي (Industrial Control Systems)**، بسبب موثوقيتها العالية واستقرارها حتى لو كانت أبطأ من التقنيات التانية. ظهرت لاحقًا نسخة محسّنة اسمها **<span dir="ltr">ARCnet Plus</span>** بسرعة أعلى بكتير (توصل لـ 20 Mbps) مقارنة بالنسخة الأصلية (2.5 Mbps)، في محاولة للمنافسة مع الإيثرنت اللي كانت بتنمو بسرعة في نفس الفترة.
 
@@ -129,7 +129,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="ethernet">6. ثالثاً: تقنية Ethernet</h2>
+<h2 dir="rtl" align="right" id="ethernet">6️⃣ ثالثاً: تقنية Ethernet</h2>
 
 **<span dir="ltr">Ethernet</span>** هي التقنية الأشهر والأكثر انتشارًا على الإطلاق لنقل البيانات داخل الشبكات المحلية (<span dir="ltr">LAN</span>)، وهي دلوقتي **المعيار العالمي الفعلي** لكل الشبكات السلكية تقريبًا. بتغطي الطبقتين السفليتين من نموذج <span dir="ltr">OSI</span>: طبقة **<span dir="ltr">Data Link Layer</span>** (الثانية) وطبقة **<span dir="ltr">Physical Layer</span>** (الأولى)، وأهم جهاز مرتبط بيها هو **<span dir="ltr">Switch</span>**، بالإضافة لكرت الشبكة **<span dir="ltr">NIC</span>** الموجود في كل جهاز (وكان فيه قديمًا جهاز <span dir="ltr">Hub</span> لكنه اختفى تقريبًا لصالح السويتش).
 
@@ -139,7 +139,7 @@
 
 نتيجة التحالف ده، اتنشرت أول نسخة موحّدة رسميًا باسم **<span dir="ltr">Ethernet II (DIX Ethernet)</span>** سنة 1982، بسرعة نقل بيانات **10 Mbps**. وبعد نجاح معيار <span dir="ltr">DIX</span>، تبنّت هيئة **<span dir="ltr">IEEE</span>** التقنية دي رسميًا سنة 1983 تحت مظلة لجنة **<span dir="ltr">IEEE 802.3</span>**، وأصدرت معيارها الرسمي الخاص بيها (بفروقات بسيطة عن نسخة DIX الأصلية زي استبدال حقل <span dir="ltr">Type</span> بحقل <span dir="ltr">Length</span> في الإطار). ومن ساعتها بقت الإيثرنت معيار عالمي رسمي مفتوح للجميع.
 
-<h3 dir="rtl" align="right" id="ethernet-standards-speeds">6.1 المعايير، نظام التسمية، والسرعات</h3>
+<h3 dir="rtl" align="right" id="ethernet-standards-speeds">6️⃣.1 المعايير، نظام التسمية، والسرعات</h3>
 
 | المعيار | الاسم الشائع | السرعة | التاريخ |
 |:---:|:---:|:---:|:---:|
@@ -208,7 +208,7 @@
 <em>Auto-Negotiation: الجهاز بيتفاوض تلقائيًا على السرعة (10/100/1000 Mbps) ووضع الإرسال (Half/Full Duplex)</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-topology-tasks">6.2 الطوبولوجيا ومهام الإيثرنت الأساسية</h3>
+<h3 dir="rtl" align="right" id="ethernet-topology-tasks">6️⃣.2 الطوبولوجيا ومهام الإيثرنت الأساسية</h3>
 
 الإيثرنت **الحديثة** بتشتغل فيزيائيًا بطوبولوجيا **<span dir="ltr">Star</span>**، يعني كل جهاز متصل بشكل مباشر ومستقل بمنفذ على الـ Switch المركزي (بعكس الأجيال الأولى اللي كانت بتستخدم طوبولوجيا <span dir="ltr">Bus</span> على كابل محوري مشترك). أهم مميزات ده: **عزل الأعطال** (كابل جهاز واحد لو اتقطع، الباقي مش بيتأثر)، **سهولة التوسع والإدارة**، و**أداء أعلى** لأن كل جهاز بياخد مجال تصادم منفصل بمفرده.
 
@@ -226,7 +226,7 @@
 <em>تحويل تسلسل البتات (0 و 1) لإشارة كهربائية متذبذبة (Coding and Encoding)</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-mac-address">6.3 عنوان الإيثرنت (MAC Address)</h3>
+<h3 dir="rtl" align="right" id="ethernet-mac-address">6️⃣.3 عنوان الإيثرنت (MAC Address)</h3>
 
 عنوان الإيثرنت أو **<span dir="ltr">MAC Address (Media Access Control Address)</span>** هو عنوان فيزيائي فريد بطول **48 بت (6 بايت)**، مبرمج على كرت الشبكة (<span dir="ltr">NIC</span>) من المصنّع نفسه، وبيُكتب عادة بصيغة **Hexadecimal** مقسّم لستة أزواج مفصولة بـ `:` أو `-`، مثال: `00:1A:2B:3C:4D:5E`. بيُستخدم للتوصيل والتوجيه على مستوى **الشبكة المحلية فقط (Layer 2)**، بعكس عنوان الـ IP اللي بيُستخدم للتوجيه بين الشبكات المختلفة (Layer 3).
 
@@ -238,7 +238,7 @@
 <em>تركيبة عنوان الإيثرنت: Vendor OUI + Serial UAA، وأمثلة على OUI لشركات زي Cisco و 3COM/HP</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-frame-format">6.4 صيغة إطار الإيثرنت (Ethernet Frame Format)</h3>
+<h3 dir="rtl" align="right" id="ethernet-frame-format">6️⃣.4 صيغة إطار الإيثرنت (Ethernet Frame Format)</h3>
 
 الإطار (<span dir="ltr">Frame</span>) بتاع الإيثرنت بيتكون من الحقول التالية بالترتيب:
 
@@ -286,7 +286,7 @@
 | <span dir="ltr">IEEE 802.3at</span> | PoE+ | ~30 وات |
 | <span dir="ltr">IEEE 802.3bt</span> | PoE++ / 4PPoE | 60 – 100 وات |
 
-<h3 dir="rtl" align="right" id="ethernet-osi-concepts">6.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة</h3>
+<h3 dir="rtl" align="right" id="ethernet-osi-concepts">6️⃣.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة</h3>
 
 زي ما اتذكر في البداية، الإيثرنت بتغطي طبقتين بس من السبعة طبقات بتاعة نموذج OSI: طبقة **<span dir="ltr">Data Link Layer</span>** (وبتنقسم فرعيًا لـ **<span dir="ltr">LLC</span>** و**<span dir="ltr">MAC</span>**) وطبقة **<span dir="ltr">Physical Layer</span>**.
 
@@ -312,7 +312,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="lan-tech-comparison">7. مقارنة سريعة بين التقنيات الثلاث</h2>
+<h2 dir="rtl" align="right" id="lan-tech-comparison">7️⃣ مقارنة سريعة بين التقنيات الثلاث</h2>
 
 دلوقتي بعد ما خلّصنا شرح التقنيات التلاتة بالتفصيل، الجدول ده بيلخّصلك الفروقات الجوهرية بينهم في مكان واحد للمراجعة السريعة:
 
@@ -337,7 +337,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="summary-table">8. جدول ملخص شامل للمراجعة السريعة</h2>
+<h2 dir="rtl" align="right" id="summary-table">📝 جدول ملخص شامل للمراجعة السريعة</h2>
 
 | النقطة | التفاصيل |
 |:---:|:---|
