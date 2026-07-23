@@ -154,8 +154,6 @@
 
 </div>
 
-**ملحوظة على الإضافات:** <span dir="ltr">TFTP, NTP, NetBIOS, SMB, RDP</span> اتضافوا لطبقة الـ <span dir="ltr">Application</span> لأنهم موجودين أصلاً في جدول البورتات الشائعة (القسم 1️⃣1️⃣) لكن ماكانوش متذكورين هنا. وبروتوكول <span dir="ltr">IGMP (Internet Group Management Protocol)</span> اتضاف لطبقة الـ <span dir="ltr">Internet</span> لأنه المسؤول عن إدارة عضوية مجموعات الإرسال المتعدد (<span dir="ltr">Multicast Groups</span>) اللي هنشرحها في القسم الجاي.
-
 ---
 
 <h2 dir="rtl" align="right" id="7-الفرق-بين-tcp-و-udp">7️⃣ الفرق بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span></h2>
