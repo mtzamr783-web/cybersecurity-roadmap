@@ -15,7 +15,7 @@
 | 3 | [أولاً: تقنية Token Ring](#token-ring) | [جهاز الـ MAU: الاستخدام وطريقة العمل](#token-ring-mau) |
 | 4 | [خاصية Token Passing و Ring Topology](#token-passing) | - |
 | 5 | [ثانياً: تقنية ARC-Net](#arcnet) | - |
-| 6 | [ثالثاً: تقنية Ethernet](#ethernet) | [المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds)<br>[التحكم في الوصول للوسيط: مجالات التصادم والبث ووضعا الإرسال](#ethernet-media-access)<br>[الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks)<br>[عنوان الإيثرنت (MAC Address)](#ethernet-mac-address)<br>[صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format)<br>[تقنيات وبروتوكولات مكمّلة للإيثرنت](#ethernet-related-protocols)<br>[علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
+| 6 | [ثالثاً: تقنية Ethernet](#ethernet) | [المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds)<br>&nbsp;&nbsp;&nbsp;[معايير IEEE 802.3 وتطورها التاريخي](#ethernet-standards-history)<br>&nbsp;&nbsp;&nbsp;[نظام تسمية معايير الإيثرنت](#ethernet-naming-convention)<br>&nbsp;&nbsp;&nbsp;[تطور سرعات الإيثرنت عبر الزمن](#ethernet-speed-evolution)<br>[التحكم في الوصول للوسيط: مجالات التصادم والبث ووضعا الإرسال](#ethernet-media-access)<br>&nbsp;&nbsp;&nbsp;[مجالا التصادم والبث](#ethernet-collision-broadcast-domains)<br>&nbsp;&nbsp;&nbsp;[وضعا الإرسال وآلية CSMA/CD](#ethernet-duplex-csmacd)<br>[الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks)<br>[عنوان الإيثرنت (MAC Address)](#ethernet-mac-address)<br>[صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format)<br>[تقنيات وبروتوكولات مكمّلة للإيثرنت](#ethernet-related-protocols)<br>&nbsp;&nbsp;&nbsp;[تجميع الروابط (Channel Bonding)](#ethernet-channel-bonding)<br>&nbsp;&nbsp;&nbsp;[بروتوكول ARP](#ethernet-arp)<br>&nbsp;&nbsp;&nbsp;[تقنية PoE](#ethernet-poe)<br>[علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
 | 7 | [مقارنة سريعة بين التقنيات الثلاث](#lan-tech-comparison) | - |
 | 8 | [جدول ملخص شامل للمراجعة السريعة](#summary-table) | - |
 
@@ -135,6 +135,8 @@
 
 <h3 dir="rtl" align="right" id="ethernet-standards-speeds">6️⃣.1 المعايير، نظام التسمية، والسرعات</h3>
 
+<h4 dir="rtl" align="right" id="ethernet-standards-history">معايير IEEE 802.3 الرسمية وتطورها التاريخي</h4>
+
 | المعيار | الاسم الشائع | السرعة | التاريخ |
 |:---:|:---:|:---:|:---:|
 | — | Ethernet الأصلية | 2 Mbps | 1973 |
@@ -152,6 +154,8 @@
 <em>الخط الزمني لتطور معايير IEEE 802.3 من نشأة الإيثرنت لحد دعم PoE</em>
 </div>
 
+<h4 dir="rtl" align="right" id="ethernet-naming-convention">نظام تسمية معايير الإيثرنت</h4>
+
 كل معيار إيثرنت بياخد كمان اسم مختصر بيوضح ثلاث معلومات في نفس الوقت، بالصيغة العامة **`<السرعة><نوع الإشارة><نوع الوسيط>`**. مثال شهير: **<span dir="ltr">10BASE-T</span>** يعني `10` = السرعة (10 Mbps)، `BASE` = نوع الإشارة (Baseband)، و`T` = نوع الوسيط (Twisted Pair). أمثلة تانية شائعة:
 
 | الاسم | السرعة | الوسيط/المسافة |
@@ -162,6 +166,8 @@
 | <span dir="ltr">1000BASE-SX</span> | 1 Gbps | Fiber Optic (Multi-mode، مسافة قصيرة) |
 | <span dir="ltr">10GBASE-LR</span> | 10 Gbps | Fiber Optic (Single-mode، مسافة طويلة) |
 
+<h4 dir="rtl" align="right" id="ethernet-speed-evolution">تطور سرعات الإيثرنت عبر الزمن</h4>
+
 بشكل عام، السرعات اللي وصلتلها تقنية الإيثرنت عبر تطورها التاريخي: `10 Mbps → 100 Mbps → 1 Gbps → 10 Gbps → 40 Gbps → 100 Gbps` وأكتر حاليًا في مراكز البيانات الكبرى.
 
 <div align="center">
@@ -171,6 +177,8 @@
 </div>
 
 <h3 dir="rtl" align="right" id="ethernet-media-access">6️⃣.2 التحكم في الوصول للوسيط: مجالات التصادم والبث ووضعا الإرسال</h3>
+
+<h4 dir="rtl" align="right" id="ethernet-collision-broadcast-domains">مجالا التصادم والبث (Collision Domain و Broadcast Domain)</h4>
 
 بعد التعرف على المعايير والسرعات، الجزء ده بيوضح إزاي بتتحكم الإيثرنت في الوصول للوسيط الناقل ومنع تصادم البيانات، وأهم المفاهيم المرتبطة بيه. الأول هو **<span dir="ltr">Collision Domain</span> (مجال التصادم)**، وهي المنطقة أو المجموعة من الأجهزة اللي لو بعتوا بيانات في نفس اللحظة على نفس الوسيط المشترك، ممكن يحصل تصادم بين الإشارتين — كل الأجهزة المتصلة بجهاز <span dir="ltr">Hub</span> واحد بتكون في نفس مجال التصادم، أما كل منفذ في جهاز <span dir="ltr">Switch</span> فبيمثل مجال تصادم منفصل بمفرده.
 
@@ -189,6 +197,8 @@
 </div>
 
 > 💡 **قاعدة سريعة للحفظ:** الـ <span dir="ltr">Switch</span> بيقسّم مجالات التصادم (كل منفذ = مجال تصادم منفصل)، لكنه **مش** بيقسّم مجال البث. اللي بيقسّم مجال البث فعليًا هو **الراوتر** أو تقسيم الشبكة لـ <span dir="ltr">VLANs</span>.
+
+<h4 dir="rtl" align="right" id="ethernet-duplex-csmacd">وضعا الإرسال وآلية CSMA/CD (Half/Full Duplex)</h4>
 
 وعشان نفهم إزاي الإيثرنت بتتحكم فعليًا في الوصول للوسيط ومنع التصادم، لازم الأول نفرّق بين وضعين أساسيين للاتصال: **<span dir="ltr">Half Duplex</span>** (نصف مزدوج) اللي فيه الجهاز يقدر يرسل أو يستقبل بس في نفس اللحظة، وكان ده الوضع الإجباري وقت استخدام جهاز <span dir="ltr">Hub</span> لأن كل الأجهزة بتشارك نفس الوسيط، و**<span dir="ltr">Full Duplex</span>** (مزدوج كامل) اللي فيه الجهاز يقدر يرسل ويستقبل في نفس اللحظة بالظبط بفضل مسارين منفصلين، وهو الوضع الافتراضي دلوقتي مع أي اتصال عبر Switch وبيلغي احتمالية التصادم تمامًا.
 
@@ -266,7 +276,11 @@
 
 <h3 dir="rtl" align="right" id="ethernet-related-protocols">6️⃣.6 تقنيات وبروتوكولات مكمّلة للإيثرنت</h3>
 
+<h4 dir="rtl" align="right" id="ethernet-channel-bonding">تجميع الروابط (Channel Bonding / EtherChannel)</h4>
+
 فيه كمان خاصية وبروتوكولين مكمّلين لعمل الإيثرنت مهم تعرفهم: الأولى هي **<span dir="ltr">Channel Bonding</span>** (أو **<span dir="ltr">EtherChannel</span>** عند شركة Cisco)، وهي تقنية بتسمح بتجميع أكتر من رابط فيزيائي بين نفس الجهازين (غالبًا بين Switch وSwitch) عشان يشتغلوا سوا كأنهم رابط منطقي واحد بسرعة إجمالية أعلى، وبتوفر كمان تكرار احتياطي (Redundancy): لو رابط وقع، الباقي بيفضلوا شغالين.
+
+<h4 dir="rtl" align="right" id="ethernet-arp">بروتوكول ARP</h4>
 
 والتاني هو بروتوكول **<span dir="ltr">ARP (Address Resolution Protocol)</span>**، ومهمته إنه **يحوّل عنوان الـ IP (Layer 3) لعنوان MAC (Layer 2)** المقابل له، لأن الإيثرنت بتتعامل بعنوان MAC بس في بناء الإطار. الجهاز المُرسِل بيبعت طلب **<span dir="ltr">ARP Request</span>** على هيئة Broadcast يسأل فيه "مين معاه IP كذا؟"، والجهاز صاحب العنوان بيرد برسالة **<span dir="ltr">ARP Reply</span>** (Unicast) فيها عنوان الـ MAC بتاعه، وبيتخزن الاتنين في جدول مؤقت اسمه **<span dir="ltr">ARP Cache</span>** لتوفير الوقت في المرات الجاية.
 
@@ -275,6 +289,8 @@
 <br>
 <em>خطوات عمل بروتوكول ARP: طلب Broadcast، رد Unicast، وتحديث ARP Cache</em>
 </div>
+
+<h4 dir="rtl" align="right" id="ethernet-poe">تقنية PoE (Power over Ethernet)</h4>
 
 وأخيرًا **<span dir="ltr">PoE (Power over Ethernet)</span>**، وهي تقنية بتسمح بنقل الكهرباء مع البيانات في نفس كابل الإيثرنت (Cat5e أو Cat6)، وده بيلغي الحاجة لمصدر كهرباء منفصل لأجهزة زي كاميرات المراقبة IP ونقاط الوصول اللاسلكية وهواتف VoIP:
 
