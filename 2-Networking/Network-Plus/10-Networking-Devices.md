@@ -8,42 +8,17 @@
 
 ## 📌 جدول المحتويات
 
-| المحتويات |
-|---:|
-| [1️⃣ مقدمة عن الموضوع](#intro) |
-| [2️⃣ أولاً: مهايئات الشبكة (Network Adapters)](#adapters) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.1 كرت الشبكة (NIC)](#nic) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.2 المودم (Modem) وتقنية ADSL](#modem-adsl) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.3 مجمّع خطوط المشتركين الرقمية (DSLAM)](#dslam) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.4 الـ Transceiver: الأشكال والأنواع (SFP و XFP)](#transceiver) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.5 محول الوسائط (Media Converter)](#media-converter) |
-| &nbsp;&nbsp;&nbsp;[2️⃣.6 الموصلات ومقاومات الإنهاء (Connectors و Terminators)](#connectors-terminators) |
-| [3️⃣ ثانياً: أجهزة الشبكة الأساسية (Network Devices)](#network-devices) |
-| &nbsp;&nbsp;&nbsp;[3️⃣.1 Hub](#hub) |
-| &nbsp;&nbsp;&nbsp;[3️⃣.2 Bridge](#bridge) |
-| &nbsp;&nbsp;&nbsp;[3️⃣.3 Switch](#switch) |
-| &nbsp;&nbsp;&nbsp;[3️⃣.4 نقطة الوصول اللاسلكية (WAP) وطرق التنافس (Contention Methods)](#wap-contention) |
-| [4️⃣ ثالثاً: أجهزة الربط بين الشبكات (Internetwork Devices)](#internetwork-devices) |
-| &nbsp;&nbsp;&nbsp;[4️⃣.1 الراوتر (Router)](#router) |
-| &nbsp;&nbsp;&nbsp;[4️⃣.2 جدار الحماية (Firewall)](#firewall) |
-| &nbsp;&nbsp;&nbsp;[4️⃣.3 السويتش متعدد الطبقات (Multilayer Switch)](#multilayer-switch) |
-| [5️⃣ رابعاً: أجهزة وخدمات إضافية في الشبكة](#other-devices) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.1 Repeater](#repeater) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.2 IDS و IPS](#ids-ips) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.3 CSU/DSU](#csu-dsu) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.4 السيرفر (Server)](#server) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.5 موسّع المدى اللاسلكي (Wireless Range Extender)](#range-extender) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.6 موزّع الأحمال (Load Balancer)](#load-balancer) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.7 مُركّز الـ VPN (VPN Concentrator)](#vpn-concentrator) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.8 فلتر المحتوى ومُشكّل الحزم (Content Filter و Packet Shaper)](#content-filter-shaper) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.9 أجهزة الـ VoIP: Endpoint، PBX، وGateway](#voip-devices) |
-| &nbsp;&nbsp;&nbsp;[5️⃣.10 السيرفر الوسيط (Proxy Server)](#proxy-server) |
-| [6️⃣ خامساً: خدمتا DNS و DHCP](#dns-dhcp) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.1 خدمة DNS](#dns) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.2 خدمة DHCP وعملية DORA](#dhcp) |
-| [7️⃣ مقارنة شاملة بين كل الأجهزة](#devices-comparison) |
-| [8️⃣ البروتوكولات المستخدمة في كل جهاز](#devices-protocols) |
-| [📝 جدول ملخص شامل للمراجعة السريعة](#summary-table) |
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن الموضوع](#intro) | - |
+| 2 | [أولاً: مهايئات الشبكة (Network Adapters)](#adapters) | [كرت الشبكة (NIC)](#nic)<br>[المودم (Modem) وتقنية ADSL](#modem-adsl)<br>&nbsp;&nbsp;&nbsp;[تقنية ADSL](#adsl-technology)<br>[مجمّع خطوط المشتركين الرقمية (DSLAM)](#dslam)<br>[الـ Transceiver: الأشكال والأنواع (SFP و XFP)](#transceiver)<br>[محول الوسائط (Media Converter)](#media-converter)<br>[الموصلات ومقاومات الإنهاء (Connectors و Terminators)](#connectors-terminators) |
+| 3 | [ثانياً: أجهزة الشبكة الأساسية (Network Devices)](#network-devices) | [Hub](#hub)<br>[Bridge](#bridge)<br>[Switch](#switch)<br>&nbsp;&nbsp;&nbsp;[طرق التحويل الداخلية (Switching Modes)](#switch-modes)<br>[نقطة الوصول اللاسلكية (WAP) وطرق التنافس (Contention Methods)](#wap-contention)<br>&nbsp;&nbsp;&nbsp;[طرق التنافس على الوسيط](#wap-contention-methods) |
+| 4 | [ثالثاً: أجهزة الربط بين الشبكات (Internetwork Devices)](#internetwork-devices) | [الراوتر (Router)](#router)<br>&nbsp;&nbsp;&nbsp;[عملية الـ Forwarding بالتفصيل](#router-forwarding-process)<br>[جدار الحماية (Firewall)](#firewall)<br>[السويتش متعدد الطبقات (Multilayer Switch)](#multilayer-switch) |
+| 5 | [رابعاً: أجهزة وخدمات إضافية في الشبكة](#other-devices) | [Repeater](#repeater)<br>[IDS و IPS](#ids-ips)<br>[CSU/DSU](#csu-dsu)<br>[السيرفر (Server)](#server)<br>[موسّع المدى اللاسلكي (Wireless Range Extender)](#range-extender)<br>[موزّع الأحمال (Load Balancer)](#load-balancer)<br>[مُركّز الـ VPN (VPN Concentrator)](#vpn-concentrator)<br>[فلتر المحتوى ومُشكّل الحزم (Content Filter و Packet Shaper)](#content-filter-shaper)<br>[أجهزة الـ VoIP: Endpoint، PBX، وGateway](#voip-devices)<br>[السيرفر الوسيط (Proxy Server)](#proxy-server) |
+| 6 | [خامساً: خدمتا DNS و DHCP](#dns-dhcp) | [خدمة DNS](#dns)<br>&nbsp;&nbsp;&nbsp;[أنواع سجلات الـ DNS](#dns-records)<br>&nbsp;&nbsp;&nbsp;[الداخلي مقابل الخارجي](#dns-internal-external)<br>&nbsp;&nbsp;&nbsp;[الاستضافة عند طرف ثالث](#dns-third-party)<br>&nbsp;&nbsp;&nbsp;[التسلسل الهرمي](#dns-hierarchy)<br>&nbsp;&nbsp;&nbsp;[منطقة التوجيه مقابل العكس](#dns-zones)<br>[خدمة DHCP وعملية DORA](#dhcp)<br>&nbsp;&nbsp;&nbsp;[عملية DORA بالتفصيل](#dhcp-dora)<br>&nbsp;&nbsp;&nbsp;[إعدادات إدارة الـ DHCP](#dhcp-management) |
+| 7 | [مقارنة شاملة بين كل الأجهزة](#devices-comparison) | - |
+| 8 | [البروتوكولات المستخدمة في كل جهاز](#devices-protocols) | - |
+| 9 | [جدول ملخص شامل للمراجعة السريعة](#summary-table) | - |
 
 ---
 
@@ -98,7 +73,9 @@
 <em>فكرة اتصال المودم بخط الهاتف (Dial-up Connection) لربط الشبكة المحلية بالإنترنت</em>
 </div>
 
-**تقنية <span dir="ltr">ADSL (Asymmetric Digital Subscriber Line)</span>:** هي أشهر تقنية مودم مستخدمة لتوصيل الإنترنت عبر خطوط الهاتف النحاسية العادية، وسُميت **"Asymmetric" (غير متماثلة)** لأن سرعة التحميل (Download) بتكون أعلى بكتير من سرعة الرفع (Upload)، وده مناسب لطبيعة استخدام أغلب المستخدمين (تصفح وتحميل أكتر من رفع). الميزة الكبيرة فيها إنها بتستخدم **نطاق ترددي مختلف** عن نطاق المكالمات الصوتية العادية على نفس الخط، فتقدر تستخدم الإنترنت والتليفون في نفس الوقت من غير تعارض.
+<h4 dir="rtl" align="right" id="adsl-technology">تقنية <span dir="ltr">ADSL (Asymmetric Digital Subscriber Line)</span></h4>
+
+هي أشهر تقنية مودم مستخدمة لتوصيل الإنترنت عبر خطوط الهاتف النحاسية العادية، وسُميت **"Asymmetric" (غير متماثلة)** لأن سرعة التحميل (Download) بتكون أعلى بكتير من سرعة الرفع (Upload)، وده مناسب لطبيعة استخدام أغلب المستخدمين (تصفح وتحميل أكتر من رفع). الميزة الكبيرة فيها إنها بتستخدم **نطاق ترددي مختلف** عن نطاق المكالمات الصوتية العادية على نفس الخط، فتقدر تستخدم الإنترنت والتليفون في نفس الوقت من غير تعارض.
 
 **البروتوكولات المرتبطة:** بروتوكول <span dir="ltr">PPP (Point-to-Point Protocol)</span>، وبروتوكول <span dir="ltr">PPPoE (PPP over Ethernet)</span> في اتصالات ADSL الحديثة.
 
@@ -234,7 +211,9 @@
 
 **فكرة عمله (كيفية بناء جدول العناوين):** لما يستقبل السويتش أول Frame من جهاز معين على منفذ معين، بيسجّل في جدول داخلي اسمه **<span dir="ltr">MAC Address Table</span>** إن عنوان الـ MAC ده موجود على المنفذ ده. بعدين، لما يستقبل Frame وعنوان الوجهة بتاعه موجود في الجدول، بيبعته **مباشرة** على المنفذ الصح بس (Forwarding). لو عنوان الوجهة **مش** موجود في الجدول لسه، بيعمل **Flooding** (يبعته لكل المنافذ ماعدا اللي جاله منه) لحد ما الجهاز المطلوب يرد ويتسجل عنوانه في الجدول.
 
-**طرق التحويل الداخلية (Switching Modes):** السويتش بيقدر يعالج الإطار بأكتر من طريقة: **<span dir="ltr">Store-and-Forward</span>** (بيستقبل الإطار كامل ويتأكد من سلامته عن طريق FCS قبل ما يحوّله، أدق لكن أبطأ شوية)، و**<span dir="ltr">Cut-Through</span>** (بيبدأ يحوّل الإطار بمجرد ما يقرا عنوان الوجهة بس من غير انتظار الإطار كامل، أسرع لكن من غير فحص أخطاء)، و**<span dir="ltr">Fragment-Free</span>** (حل وسط بين الاتنين، بيستنى أول 64 بايت بس قبل التحويل).
+<h4 dir="rtl" align="right" id="switch-modes">طرق التحويل الداخلية (<span dir="ltr">Switching Modes</span>)</h4>
+
+السويتش بيقدر يعالج الإطار بأكتر من طريقة: **<span dir="ltr">Store-and-Forward</span>** (بيستقبل الإطار كامل ويتأكد من سلامته عن طريق FCS قبل ما يحوّله، أدق لكن أبطأ شوية)، و**<span dir="ltr">Cut-Through</span>** (بيبدأ يحوّل الإطار بمجرد ما يقرا عنوان الوجهة بس من غير انتظار الإطار كامل، أسرع لكن من غير فحص أخطاء)، و**<span dir="ltr">Fragment-Free</span>** (حل وسط بين الاتنين، بيستنى أول 64 بايت بس قبل التحويل).
 
 <div align="center">
 <img src="images/10-14-switching-modes.png" width="600">
@@ -262,7 +241,9 @@
 
 **فكرة عمله:** بيبث اسم الشبكة (<span dir="ltr">SSID</span>) عشان الأجهزة تقدر تكتشفه وتتصل بيه، وبيحوّل البيانات بين الإطارات اللاسلكية (802.11) وإطارات الإيثرنت السلكية العادية.
 
-**طرق التنافس على الوسيط (Contention Methods):** لأن الوسيط اللاسلكي **مشترك** بين كل الأجهزة (زي الهواء نفسه)، محتاجة آلية تحكم في الوصول له، وهنا بييجي الفرق بين طريقتين مهمين:
+<h4 dir="rtl" align="right" id="wap-contention-methods">طرق التنافس على الوسيط (<span dir="ltr">Contention Methods</span>)</h4>
+
+لأن الوسيط اللاسلكي **مشترك** بين كل الأجهزة (زي الهواء نفسه)، محتاجة آلية تحكم في الوصول له، وهنا بييجي الفرق بين طريقتين مهمين:
 
 - **<span dir="ltr">CSMA/CD (Carrier Sense Multiple Access with Collision **Detection**)</span>:** المستخدمة في الإيثرنت السلكية القديمة — الجهاز يكتشف التصادم **بعد** ما يحصل ويتعامل معاه.
 - **<span dir="ltr">CSMA/CA (Carrier Sense Multiple Access with Collision **Avoidance**)</span>:** المستخدمة في الشبكات اللاسلكية — بما إن اكتشاف التصادم صعب جدًا في الوسط اللاسلكي، الجهاز بيحاول **يتجنب** حدوث التصادم من الأساس، عن طريق انتظار فترة عشوائية قبل الإرسال وإرسال إشارة تنبيه (RTS/CTS) قبل البيانات الفعلية.
@@ -303,7 +284,9 @@
 <em>راوتر لاسلكي منزلي نموذجي</em>
 </div>
 
-**فكرة عمله (عملية الـ Forwarding بالتفصيل):** لما يستقبل الراوتر حزمة بيانات (Packet)، بيعمل الخطوات دي:
+<h4 dir="rtl" align="right" id="router-forwarding-process">فكرة عمله: عملية الـ Forwarding بالتفصيل</h4>
+
+لما يستقبل الراوتر حزمة بيانات (Packet)، بيعمل الخطوات دي:
 
 1. بيفك تغليف الإطار (Frame) لحد ما يوصل لطبقة الـ **IP (Layer 3)**، ويقرا عنوان الـ **IP الوجهة** الموجود في الـ Header بتاعها.
 2. بيرجع لجدول داخلي اسمه **<span dir="ltr">Routing Table</span>**، وبيدوّر على أفضل مسار (Best Path) يوصل بيه لشبكة عنوان الـ IP ده.
@@ -503,7 +486,9 @@
 
 **<span dir="ltr">DNS (Domain Name System)</span>** هي خدمة مهمتها **ترجمة أسماء النطاقات (Domain Names)** اللي بيكتبها المستخدم (زي `google.com`) لعنوان **IP** المقابل ليها اللي بيفهمه الجهاز فعليًا، لأن الإنسان بيتعامل بسهولة مع أسماء لكن الأجهزة بتتعامل بعناوين IP بس.
 
-**أنواع سجلات الـ DNS (<span dir="ltr">Record Types</span>):** كل نوع بيانات بيتخزن في نوع سجل مختلف داخل خادم DNS:
+<h4 dir="rtl" align="right" id="dns-records">أنواع سجلات الـ DNS (<span dir="ltr">Record Types</span>)</h4>
+
+كل نوع بيانات بيتخزن في نوع سجل مختلف داخل خادم DNS:
 
 <div align="center">
 
@@ -520,16 +505,20 @@
 
 </div>
 
-**الـ DNS الداخلي مقابل الخارجي (<span dir="ltr">Internal vs External DNS</span>):**
+<h4 dir="rtl" align="right" id="dns-internal-external">الـ DNS الداخلي مقابل الخارجي (<span dir="ltr">Internal vs External DNS</span>)</h4>
 
 * **<span dir="ltr">Internal DNS</span>:** سيرفر DNS خاص بشبكة داخلية (زي شبكة شركة)، بيترجم أسماء أجهزة وموارد داخلية مش متاحة أو معروفة على الإنترنت العام.
 * **<span dir="ltr">External DNS</span>:** سيرفرات DNS عامة بتترجم أسماء النطاقات المتاحة للجميع على الإنترنت.
 
-**استضافة الـ DNS عند طرف ثالث (<span dir="ltr">Third-party / Cloud-hosted DNS</span>):** بدل ما المؤسسة تدير سيرفر DNS بنفسها، ممكن تستخدم خدمة DNS جاهزة من طرف تالت (زي <span dir="ltr">Cloudflare</span> أو <span dir="ltr">Google DNS</span>)، وده بيوفر سرعة وموثوقية وحماية إضافية من غير عبء إدارة السيرفر بنفسها.
+<h4 dir="rtl" align="right" id="dns-third-party">استضافة الـ DNS عند طرف ثالث (<span dir="ltr">Third-party / Cloud-hosted DNS</span>)</h4>
 
-**التسلسل الهرمي للـ DNS (<span dir="ltr">Hierarchy</span>):** نظام الـ DNS بيشتغل بترتيب هرمي من أعلى لأسفل: **<span dir="ltr">Root Servers</span>** (الجذر، بيمثله `.` في آخر أي اسم نطاق) ⬅ **<span dir="ltr">TLD Servers</span>** (سيرفرات النطاقات العليا زي `.com` أو `.net`) ⬅ **<span dir="ltr">Authoritative Servers</span>** (السيرفر الرسمي المسؤول عن النطاق نفسه زي `example.com`)، وكل مستوى بيوجّه الطلب للمستوى اللي تحته لحد ما يوصل للإجابة النهائية.
+بدل ما المؤسسة تدير سيرفر DNS بنفسها، ممكن تستخدم خدمة DNS جاهزة من طرف تالت (زي <span dir="ltr">Cloudflare</span> أو <span dir="ltr">Google DNS</span>)، وده بيوفر سرعة وموثوقية وحماية إضافية من غير عبء إدارة السيرفر بنفسها.
 
-**منطقة التوجيه مقابل منطقة العكس (<span dir="ltr">Forward Zone vs Reverse Zone</span>):**
+<h4 dir="rtl" align="right" id="dns-hierarchy">التسلسل الهرمي للـ DNS (<span dir="ltr">Hierarchy</span>)</h4>
+
+نظام الـ DNS بيشتغل بترتيب هرمي من أعلى لأسفل: **<span dir="ltr">Root Servers</span>** (الجذر، بيمثله `.` في آخر أي اسم نطاق) ⬅ **<span dir="ltr">TLD Servers</span>** (سيرفرات النطاقات العليا زي `.com` أو `.net`) ⬅ **<span dir="ltr">Authoritative Servers</span>** (السيرفر الرسمي المسؤول عن النطاق نفسه زي `example.com`)، وكل مستوى بيوجّه الطلب للمستوى اللي تحته لحد ما يوصل للإجابة النهائية.
+
+<h4 dir="rtl" align="right" id="dns-zones">منطقة التوجيه مقابل منطقة العكس (<span dir="ltr">Forward Zone vs Reverse Zone</span>)</h4>
 
 * **<span dir="ltr">Forward Lookup Zone</span>:** بتترجم **اسم النطاق ➜ عنوان IP** (الاستخدام الأشهر والأكثر شيوعًا، زي سجل A).
 * **<span dir="ltr">Reverse Lookup Zone</span>:** بتترجم **عنوان IP ➜ اسم النطاق** (عن طريق سجل PTR)، وبتُستخدم غالبًا في أغراض أمنية وتشخيصية زي التحقق من مصدر بريد إلكتروني.
@@ -550,14 +539,18 @@
 
 **الإعدادات اللي بيوزعها:** عنوان الـ **IP Address**، **Subnet Mask**، عنوان الـ **Default Gateway**، عناوين **DNS Servers**، ومدة صلاحية العنوان (**Lease Time**).
 
-**عملية منح العنوان (DORA):** الجهاز الجديد على الشبكة بياخد عنوان الـ IP بتاعه من سيرفر الـ DHCP عبر 4 خطوات معروفة باسم **DORA**:
+<h4 dir="rtl" align="right" id="dhcp-dora">عملية منح العنوان (<span dir="ltr">DORA</span>)</h4>
+
+الجهاز الجديد على الشبكة بياخد عنوان الـ IP بتاعه من سيرفر الـ DHCP عبر 4 خطوات معروفة باسم **DORA**:
 
 1. **<span dir="ltr">D — Discover</span>:** الجهاز الجديد بيبعت رسالة Broadcast يسأل فيها "فيه سيرفر DHCP في الشبكة دي؟".
 2. **<span dir="ltr">O — Offer</span>:** سيرفر الـ DHCP (لو موجود) بيرد بعرض يحتوي على عنوان IP متاح وباقي الإعدادات.
 3. **<span dir="ltr">R — Request</span>:** الجهاز بيرد بطلب رسمي يأكد فيه إنه عايز يستخدم العنوان المعروض ده تحديدًا.
 4. **<span dir="ltr">A — Acknowledge</span>:** السيرفر بيأكد ويمنح العنوان رسميًا للجهاز، وبيبدأ عداد مدة الصلاحية (Lease Time).
 
-**إعدادات إدارة الـ DHCP بالتفصيل:** غير الإعدادات الأساسية اللي بيوزعها، فيه مصطلحات إدارية مهمة بتتحكم في طريقة توزيع العناوين:
+<h4 dir="rtl" align="right" id="dhcp-management">إعدادات إدارة الـ DHCP بالتفصيل</h4>
+
+غير الإعدادات الأساسية اللي بيوزعها، فيه مصطلحات إدارية مهمة بتتحكم في طريقة توزيع العناوين:
 
 <div align="center">
 
