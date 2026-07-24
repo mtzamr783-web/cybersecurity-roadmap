@@ -8,22 +8,16 @@
 
 ## 📌 جدول المحتويات
 
-| المحتويات |
-|---|
-| [1️⃣ مقدمة عن الموضوع](#intro) |
-| [2️⃣ التقنيات الثلاث المستخدمة في الشبكات المحلية](#lan-technologies) |
-| [3️⃣ أولاً: تقنية Token Ring](#token-ring) |
-| &nbsp;&nbsp;&nbsp;[3️⃣.1 جهاز الـ MAU: الاستخدام وطريقة العمل](#token-ring-mau) |
-| [4️⃣ خاصية Token Passing و Ring Topology](#token-passing) |
-| [5️⃣ ثانياً: تقنية ARC-Net](#arcnet) |
-| [6️⃣ ثالثاً: تقنية Ethernet](#ethernet) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.1 المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.2 الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.3 عنوان الإيثرنت (MAC Address)](#ethernet-mac-address) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.4 صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format) |
-| &nbsp;&nbsp;&nbsp;[6️⃣.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
-| [7️⃣ مقارنة سريعة بين التقنيات الثلاث](#lan-tech-comparison) |
-| [📝 جدول ملخص شامل للمراجعة السريعة](#summary-table) |
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن الموضوع](#intro) | - |
+| 2 | [التقنيات الثلاث المستخدمة في الشبكات المحلية](#lan-technologies) | - |
+| 3 | [أولاً: تقنية Token Ring](#token-ring) | [جهاز الـ MAU: الاستخدام وطريقة العمل](#token-ring-mau) |
+| 4 | [خاصية Token Passing و Ring Topology](#token-passing) | - |
+| 5 | [ثانياً: تقنية ARC-Net](#arcnet) | - |
+| 6 | [ثالثاً: تقنية Ethernet](#ethernet) | [المعايير، نظام التسمية، والسرعات](#ethernet-standards-speeds)<br>[التحكم في الوصول للوسيط: مجالات التصادم والبث ووضعا الإرسال](#ethernet-media-access)<br>[الطوبولوجيا ومهام الإيثرنت الأساسية](#ethernet-topology-tasks)<br>[عنوان الإيثرنت (MAC Address)](#ethernet-mac-address)<br>[صيغة إطار الإيثرنت (Ethernet Frame Format)](#ethernet-frame-format)<br>[تقنيات وبروتوكولات مكمّلة للإيثرنت](#ethernet-related-protocols)<br>[علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة](#ethernet-osi-concepts) |
+| 7 | [مقارنة سريعة بين التقنيات الثلاث](#lan-tech-comparison) | - |
+| 8 | [جدول ملخص شامل للمراجعة السريعة](#summary-table) | - |
 
 ---
 
@@ -176,7 +170,9 @@
 <em>السرعات المتتالية للإيثرنت من 10 ميجابت وصولاً لـ 10 جيجابت</em>
 </div>
 
-قبل ما ننتقل للطوبولوجيا، فيه مصطلحين ومفهومين أساسيين محتاج تعرفهم عن التحكم في الوصول للوسيط: الأول هو **<span dir="ltr">Collision Domain</span> (مجال التصادم)**، وهي المنطقة أو المجموعة من الأجهزة اللي لو بعتوا بيانات في نفس اللحظة على نفس الوسيط المشترك، ممكن يحصل تصادم بين الإشارتين — كل الأجهزة المتصلة بجهاز <span dir="ltr">Hub</span> واحد بتكون في نفس مجال التصادم، أما كل منفذ في جهاز <span dir="ltr">Switch</span> فبيمثل مجال تصادم منفصل بمفرده.
+<h3 dir="rtl" align="right" id="ethernet-media-access">6️⃣.2 التحكم في الوصول للوسيط: مجالات التصادم والبث ووضعا الإرسال</h3>
+
+بعد التعرف على المعايير والسرعات، الجزء ده بيوضح إزاي بتتحكم الإيثرنت في الوصول للوسيط الناقل ومنع تصادم البيانات، وأهم المفاهيم المرتبطة بيه. الأول هو **<span dir="ltr">Collision Domain</span> (مجال التصادم)**، وهي المنطقة أو المجموعة من الأجهزة اللي لو بعتوا بيانات في نفس اللحظة على نفس الوسيط المشترك، ممكن يحصل تصادم بين الإشارتين — كل الأجهزة المتصلة بجهاز <span dir="ltr">Hub</span> واحد بتكون في نفس مجال التصادم، أما كل منفذ في جهاز <span dir="ltr">Switch</span> فبيمثل مجال تصادم منفصل بمفرده.
 
 <div align="center">
 <img src="images/9-9-collision-domain.png" width="550">
@@ -208,7 +204,7 @@
 <em>Auto-Negotiation: الجهاز بيتفاوض تلقائيًا على السرعة (10/100/1000 Mbps) ووضع الإرسال (Half/Full Duplex)</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-topology-tasks">6️⃣.2 الطوبولوجيا ومهام الإيثرنت الأساسية</h3>
+<h3 dir="rtl" align="right" id="ethernet-topology-tasks">6️⃣.3 الطوبولوجيا ومهام الإيثرنت الأساسية</h3>
 
 الإيثرنت **الحديثة** بتشتغل فيزيائيًا بطوبولوجيا **<span dir="ltr">Star</span>**، يعني كل جهاز متصل بشكل مباشر ومستقل بمنفذ على الـ Switch المركزي (بعكس الأجيال الأولى اللي كانت بتستخدم طوبولوجيا <span dir="ltr">Bus</span> على كابل محوري مشترك). أهم مميزات ده: **عزل الأعطال** (كابل جهاز واحد لو اتقطع، الباقي مش بيتأثر)، **سهولة التوسع والإدارة**، و**أداء أعلى** لأن كل جهاز بياخد مجال تصادم منفصل بمفرده.
 
@@ -226,7 +222,7 @@
 <em>تحويل تسلسل البتات (0 و 1) لإشارة كهربائية متذبذبة (Coding and Encoding)</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-mac-address">6️⃣.3 عنوان الإيثرنت (MAC Address)</h3>
+<h3 dir="rtl" align="right" id="ethernet-mac-address">6️⃣.4 عنوان الإيثرنت (MAC Address)</h3>
 
 عنوان الإيثرنت أو **<span dir="ltr">MAC Address (Media Access Control Address)</span>** هو عنوان فيزيائي فريد بطول **48 بت (6 بايت)**، مبرمج على كرت الشبكة (<span dir="ltr">NIC</span>) من المصنّع نفسه، وبيُكتب عادة بصيغة **Hexadecimal** مقسّم لستة أزواج مفصولة بـ `:` أو `-`، مثال: `00:1A:2B:3C:4D:5E`. بيُستخدم للتوصيل والتوجيه على مستوى **الشبكة المحلية فقط (Layer 2)**، بعكس عنوان الـ IP اللي بيُستخدم للتوجيه بين الشبكات المختلفة (Layer 3).
 
@@ -238,7 +234,7 @@
 <em>تركيبة عنوان الإيثرنت: Vendor OUI + Serial UAA، وأمثلة على OUI لشركات زي Cisco و 3COM/HP</em>
 </div>
 
-<h3 dir="rtl" align="right" id="ethernet-frame-format">6️⃣.4 صيغة إطار الإيثرنت (Ethernet Frame Format)</h3>
+<h3 dir="rtl" align="right" id="ethernet-frame-format">6️⃣.5 صيغة إطار الإيثرنت (Ethernet Frame Format)</h3>
 
 الإطار (<span dir="ltr">Frame</span>) بتاع الإيثرنت بيتكون من الحقول التالية بالترتيب:
 
@@ -268,6 +264,8 @@
 <em>شرح تفصيلي أعمق لكل حقل من حقول إطار Ethernet II وقاعدة الـ Padding</em>
 </div>
 
+<h3 dir="rtl" align="right" id="ethernet-related-protocols">6️⃣.6 تقنيات وبروتوكولات مكمّلة للإيثرنت</h3>
+
 فيه كمان خاصية وبروتوكولين مكمّلين لعمل الإيثرنت مهم تعرفهم: الأولى هي **<span dir="ltr">Channel Bonding</span>** (أو **<span dir="ltr">EtherChannel</span>** عند شركة Cisco)، وهي تقنية بتسمح بتجميع أكتر من رابط فيزيائي بين نفس الجهازين (غالبًا بين Switch وSwitch) عشان يشتغلوا سوا كأنهم رابط منطقي واحد بسرعة إجمالية أعلى، وبتوفر كمان تكرار احتياطي (Redundancy): لو رابط وقع، الباقي بيفضلوا شغالين.
 
 والتاني هو بروتوكول **<span dir="ltr">ARP (Address Resolution Protocol)</span>**، ومهمته إنه **يحوّل عنوان الـ IP (Layer 3) لعنوان MAC (Layer 2)** المقابل له، لأن الإيثرنت بتتعامل بعنوان MAC بس في بناء الإطار. الجهاز المُرسِل بيبعت طلب **<span dir="ltr">ARP Request</span>** على هيئة Broadcast يسأل فيه "مين معاه IP كذا؟"، والجهاز صاحب العنوان بيرد برسالة **<span dir="ltr">ARP Reply</span>** (Unicast) فيها عنوان الـ MAC بتاعه، وبيتخزن الاتنين في جدول مؤقت اسمه **<span dir="ltr">ARP Cache</span>** لتوفير الوقت في المرات الجاية.
@@ -286,7 +284,7 @@
 | <span dir="ltr">IEEE 802.3at</span> | PoE+ | ~30 وات |
 | <span dir="ltr">IEEE 802.3bt</span> | PoE++ / 4PPoE | 60 – 100 وات |
 
-<h3 dir="rtl" align="right" id="ethernet-osi-concepts">6️⃣.5 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة</h3>
+<h3 dir="rtl" align="right" id="ethernet-osi-concepts">6️⃣.7 علاقة الإيثرنت بنموذج OSI والفروق المفاهيمية المهمة</h3>
 
 زي ما اتذكر في البداية، الإيثرنت بتغطي طبقتين بس من السبعة طبقات بتاعة نموذج OSI: طبقة **<span dir="ltr">Data Link Layer</span>** (وبتنقسم فرعيًا لـ **<span dir="ltr">LLC</span>** و**<span dir="ltr">MAC</span>**) وطبقة **<span dir="ltr">Physical Layer</span>**.
 
