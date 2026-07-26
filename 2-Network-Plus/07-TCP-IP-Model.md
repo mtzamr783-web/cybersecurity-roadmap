@@ -8,26 +8,26 @@
 
 ---
 
-<h2 dir="rtl" align="right">📌 الفهرس السريع</h2>
+<h2 dir="rtl" align="right">📌 جدول المحتويات</h2>
 
-| الرقم | الموضوع |
-|---|---|
-| 1 | [تعريف نموذج <span dir="ltr">TCP/IP</span> وأشكال استخدامه](#1-تعريف-نموذج-tcpip-وأشكال-استخدامه) |
-| 2 | [ليه لسه بندرس <span dir="ltr">OSI Model</span> والشغال فعليًا هو <span dir="ltr">TCP/IP</span>؟](#2-ليه-لسه-بندرس-osi-model-والشغال-فعليا-هو-tcpip) |
-| 3 | [النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)](#3-النسخة-القديمة-4-طبقات-مقابل-النسخة-المحدثة-5-طبقات) |
-| 4 | [المقارنة التفصيلية بين <span dir="ltr">OSI</span> و <span dir="ltr">TCP/IP</span>](#4-المقارنة-التفصيلية-بين-osi-و-tcpip) |
-| 5 | [وظيفة كل طبقة في نموذج <span dir="ltr">TCP/IP</span>](#5-وظيفة-كل-طبقة-في-نموذج-tcpip) |
-| 6 | [أهم البروتوكولات العاملة في كل طبقة](#6-أهم-البروتوكولات-العاملة-في-كل-طبقة) |
-| 7 | [الفرق بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span>](#7-الفرق-بين-tcp-و-udp) |
-| 8 | [عناوين الـ <span dir="ltr">IP</span> بالتفصيل](#8-عناوين-الـ-ip-بالتفصيل) |
-| 9 | [المسميات (<span dir="ltr">PDU</span>) وعملية <span dir="ltr">Encapsulation / Decapsulation</span> وحقول الهيدرز](#9-المسميات-pdu-وعملية-encapsulation--decapsulation-وحقول-الهيدرز) |
-| 10 | [سبب التسمية <span dir="ltr">TCP/IP</span>](#10-سبب-التسمية-tcpip) |
-| 11 | [جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)](#11-جدول-مرجعي-أشهر-20-بورت-مراجعة-سريعة) |
-| 12 | [كبسولة المذاكرة السريعة](#12-كبسولة-المذاكرة-السريعة) |
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [تعريف نموذج TCP/IP وأشكال استخدامه](#tcpip-definition) | - |
+| 2 | [ليه لسه بندرس OSI Model والشغال فعليًا هو TCP/IP؟](#why-osi-still-taught) | - |
+| 3 | [النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)](#tcpip-4-vs-5-layers) | - |
+| 4 | [المقارنة التفصيلية بين OSI و TCP/IP](#osi-tcpip-detailed-mapping) | - |
+| 5 | [وظيفة كل طبقة في نموذج TCP/IP](#tcpip-layer-functions) | - |
+| 6 | [أهم البروتوكولات العاملة في كل طبقة](#tcpip-protocols-by-layer) | - |
+| 7 | [الفرق بين TCP و UDP](#tcp-vs-udp) | - |
+| 8 | [عناوين الـ IP بالتفصيل](#ip-addressing) | [تعريف عنوان الـ IP وتركيب العنوان](#ip-definition-structure)<br>[فئات عناوين IPv4 (Classes) وسبب ظهور CIDR](#ip-classes-cidr)<br>[العناوين الخاصة والعامة (RFC 1918)](#ip-private-public)<br>[أنواع الإرسال (Unicast, Broadcast, Multicast, Anycast)](#ip-transmission-types)<br>[تركيب حزمة IP وحقول الهيدر](#ip-header-fields)<br>[مقارنة IPv4 و IPv6 وصيغ الكتابة](#ipv4-vs-ipv6)<br>[تقسيم الشبكات (Subnetting)](#subnetting) |
+| 9 | [المسميات (PDU) وعملية Encapsulation/Decapsulation وحقول الهيدرز](#pdu-encapsulation) | [مسميات البيانات في كل طبقة (PDU)](#pdu-table)<br>[عملية Encapsulation و Decapsulation ومبدأ Same-Layer Interaction](#encapsulation-decapsulation)<br>[حقول هيدر Frame (طبقة Network Access)](#frame-header-fields)<br>[حقول هيدر TCP و UDP](#tcp-udp-header-fields) |
+| 10 | [سبب التسمية TCP/IP](#tcpip-naming-reason) | - |
+| 11 | [جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)](#common-ports-reference) | - |
+| 12 | [كبسولة المذاكرة السريعة](#summary-table) | - |
 
 ---
 
-<h2 dir="rtl" align="right" id="1-تعريف-نموذج-tcpip-وأشكال-استخدامه">1️⃣ تعريف نموذج <span dir="ltr">TCP/IP</span> وأشكال استخدامه</h2>
+<h2 dir="rtl" align="right" id="tcpip-definition">1️⃣ تعريف نموذج <span dir="ltr">TCP/IP</span> وأشكال استخدامه</h2>
 
 نموذج <span dir="ltr">TCP/IP</span> (اختصار لـ <span dir="ltr">Transmission Control Protocol / Internet Protocol</span>) هو مجموعة البروتوكولات (<span dir="ltr">Protocol Suite</span>) اللي **فعليًا بتشغّل الإنترنت والشبكات في الواقع العملي**، على عكس نموذج <span dir="ltr">OSI</span> اللي هو نموذج نظري مرجعي بس.
 
@@ -54,7 +54,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="2-ليه-لسه-بندرس-osi-model-والشغال-فعليا-هو-tcpip">2️⃣ ليه لسه بندرس <span dir="ltr">OSI Model</span> والشغال فعليًا هو <span dir="ltr">TCP/IP</span>؟</h2>
+<h2 dir="rtl" align="right" id="why-osi-still-taught">2️⃣ ليه لسه بندرس <span dir="ltr">OSI Model</span> والشغال فعليًا هو <span dir="ltr">TCP/IP</span>؟</h2>
 
 سؤال منطقي جدًا وبيتسأل كتير: طالما <span dir="ltr">TCP/IP</span> هو اللي شغال فعليًا في كل الأجهزة والشبكات حوالينا، ليه بندرس <span dir="ltr">OSI Model</span> بـ 7 طبقات من الأساس؟ الإجابة في عدة نقاط:
 
@@ -67,7 +67,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="3-النسخة-القديمة-4-طبقات-مقابل-النسخة-المحدثة-5-طبقات">3️⃣ النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)</h2>
+<h2 dir="rtl" align="right" id="tcpip-4-vs-5-layers">3️⃣ النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)</h2>
 
 نموذج <span dir="ltr">TCP/IP</span> نفسه اتقدم بيه أكتر من وصف عبر السنين:
 
@@ -84,7 +84,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="4-المقارنة-التفصيلية-بين-osi-و-tcpip">4️⃣ المقارنة التفصيلية بين <span dir="ltr">OSI</span> و <span dir="ltr">TCP/IP</span></h2>
+<h2 dir="rtl" align="right" id="osi-tcpip-detailed-mapping">4️⃣ المقارنة التفصيلية بين <span dir="ltr">OSI</span> و <span dir="ltr">TCP/IP</span></h2>
 
 أهم نقطة لازم تتثبت في دماغك: **العدد مش هو المهم، المهم هو التطابق الوظيفي.** يعني طبقة الـ <span dir="ltr">Application</span> في <span dir="ltr">TCP/IP</span> مش بس "بديلة" لطبقة <span dir="ltr">Application</span> في <span dir="ltr">OSI</span>، لكنها **بتلخّص وتدمج وظائف 3 طبقات كاملة** من الـ <span dir="ltr">OSI</span> جوّاها.
 
@@ -130,7 +130,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="5-وظيفة-كل-طبقة-في-نموذج-tcpip">5️⃣ وظيفة كل طبقة في نموذج <span dir="ltr">TCP/IP</span></h2>
+<h2 dir="rtl" align="right" id="tcpip-layer-functions">5️⃣ وظيفة كل طبقة في نموذج <span dir="ltr">TCP/IP</span></h2>
 
 هنا هنشرح وظيفة كل طبقة (بالنسخة المحدثة بـ 5 طبقات) بترتيب من الأعلى للأسفل:
 
@@ -141,7 +141,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="6-أهم-البروتوكولات-العاملة-في-كل-طبقة">6️⃣ أهم البروتوكولات العاملة في كل طبقة</h2>
+<h2 dir="rtl" align="right" id="tcpip-protocols-by-layer">6️⃣ أهم البروتوكولات العاملة في كل طبقة</h2>
 
 <div align="center">
 
@@ -156,7 +156,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="7-الفرق-بين-tcp-و-udp">7️⃣ الفرق بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span></h2>
+<h2 dir="rtl" align="right" id="tcp-vs-udp">7️⃣ الفرق بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span></h2>
 
 أهم نقطة في طبقة الـ <span dir="ltr">Transport</span>، وأكتر حاجة بتتسأل في الامتحان بشكل مباشر:
 
@@ -176,11 +176,15 @@
 
 **قاعدة تفتكرها بيها بسهولة:** لو البيانات لازم توصل **كاملة وصح** حتى لو أبطأ ➜ <span dir="ltr">TCP</span>. لو البيانات لازم توصل **بسرعة** حتى لو جزء منها ضاع ➜ <span dir="ltr">UDP</span>.
 
+> 💡 خطوات الـ <span dir="ltr">3-Way Handshake</span> نفسها (اللي بيبدأ بيها اتصال TCP) سبق شرحها بالتفصيل عمليًا في ملف [06-Lab-OSI-Model.md](06-Lab-OSI-Model.md).
+
 ---
 
-<h2 dir="rtl" align="right" id="8-عناوين-الـ-ip-بالتفصيل">8️⃣ عناوين الـ <span dir="ltr">IP</span> بالتفصيل</h2>
+<h2 dir="rtl" align="right" id="ip-addressing">8️⃣ عناوين الـ <span dir="ltr">IP</span> بالتفصيل</h2>
 
 بعد ما اتكلمنا عن بروتوكولات طبقة الـ <span dir="ltr">Transport</span> بالتفصيل، هنركّز دلوقتي على أهم بروتوكول في طبقة الـ <span dir="ltr">Internet</span>: بروتوكول الـ **<span dir="ltr">IP (Internet Protocol)</span>** وعنونته.
+
+<h3 dir="rtl" align="right" id="ip-definition-structure">8️⃣.1 تعريف عنوان الـ IP وتركيب العنوان</h3>
 
 **تعريف عنوان الـ <span dir="ltr">IP</span>:** هو عنوان **منطقي (<span dir="ltr">Logical Address</span>)** بيتحدد بشكل برمجي (مش ثابت على الهاردوير زي عنوان الـ <span dir="ltr">MAC</span>)، ومهمته إنه يحدد هوية الجهاز على الشبكة وموقعه، بحيث تقدر البيانات توصله من أي شبكة تانية في العالم عن طريق التوجيه (<span dir="ltr">Routing</span>). وده الفرق الجوهري بينه وبين عنوان الـ <span dir="ltr">MAC</span> اللي بيشتغل بس جوه نفس الشبكة المحلية.
 
@@ -190,6 +194,8 @@
 * **جزء الجهاز (<span dir="ltr">Host Portion</span>):** بيحدد الجهاز نفسه بشكل فريد جوه الشبكة دي.
 
 الحد الفاصل بين الجزئين بيتحدد عن طريق **قناع الشبكة الفرعية (<span dir="ltr">Subnet Mask</span>)**؛ فمثلًا لو عندك عنوان `192.168.1.10` بقناع `255.255.255.0` (يعني `/24`)، الـ 24 بت الأولى (`192.168.1`) دي جزء الشبكة، والـ 8 بت الأخيرة (`10`) دي جزء الجهاز.
+
+<h3 dir="rtl" align="right" id="ip-classes-cidr">8️⃣.2 فئات عناوين IPv4 (Classes) وسبب ظهور CIDR</h3>
 
 **فئات العناوين (<span dir="ltr">Classes</span>) وأسباب تقسيمها:** قديمًا (قبل ظهور نظام الـ <span dir="ltr">CIDR</span> المرن)، كانت عناوين الـ <span dir="ltr">IPv4</span> بتتقسم لفئات ثابتة حسب حجم الشبكة المطلوبة، عشان تسهّل توزيع العناوين على المؤسسات المختلفة حسب حجمها:
 
@@ -207,6 +213,8 @@
 
 **سبب التقسيم:** الفكرة كانت توفير مرونة في توزيع العناوين حسب حجم المؤسسة (شبكة صغيرة مالهاش داعي تاخد نفس عدد العناوين اللي شبكة ضخمة محتاجاها)، لكن النظام ده أثبت إنه **مُهدر جدًا للعناوين** (لو مؤسسة محتاجة 300 جهاز بس، كانت مضطرة تاخد Class B كاملة وفيها أكتر من 65 ألف عنوان)، وده كان من أهم أسباب ظهور نظام الـ <span dir="ltr">CIDR (Classless Inter-Domain Routing)</span> لاحقًا اللي بيسمح بتقسيم مرن للعناوين بأي حجم مش بس الفئات الثابتة دي.
 
+<h3 dir="rtl" align="right" id="ip-private-public">8️⃣.3 العناوين الخاصة والعامة (RFC 1918)</h3>
+
 **العناوين الخاصة والعامة (<span dir="ltr">Private vs Public</span>) ونطاق الـ <span dir="ltr">RFC</span>:**
 
 * **العناوين العامة (<span dir="ltr">Public IP</span>):** فريدة على مستوى العالم كله، وقابلة للتوجيه مباشرة على الإنترنت.
@@ -222,6 +230,8 @@
 
 </div>
 
+<h3 dir="rtl" align="right" id="ip-transmission-types">8️⃣.4 أنواع الإرسال (Unicast, Broadcast, Multicast, Anycast)</h3>
+
 **أنواع الإرسال (<span dir="ltr">Transmission Types</span>) والفرق بينهم:**
 
 <div align="center">
@@ -234,6 +244,8 @@
 | <span dir="ltr">Anycast</span> | إرسال لأقرب جهاز من مجموعة أجهزة بتشترك في نفس العنوان (شائع في شبكات الـ CDN وسيرفرات الـ DNS) |
 
 </div>
+
+<h3 dir="rtl" align="right" id="ip-header-fields">8️⃣.5 تركيب حزمة IP وحقول الهيدر</h3>
 
 **تركيب حزمة الـ <span dir="ltr">IP</span> وحقول الهيدر:** كل حزمة <span dir="ltr">IP</span> بتتكون من هيدر بيحتوي على معلومات ضرورية للتوجيه والتسليم، أهم حقوله:
 
@@ -263,6 +275,8 @@
 
 </div>
 
+<h3 dir="rtl" align="right" id="ipv4-vs-ipv6">8️⃣.6 مقارنة IPv4 و IPv6 وصيغ الكتابة</h3>
+
 **عناوين الـ <span dir="ltr">IPv4</span> مقابل الـ <span dir="ltr">IPv6</span>:**
 
 <div align="center">
@@ -282,6 +296,8 @@
 * **<span dir="ltr">IPv4</span>:** بتتكتب بصيغة **عشرية مفصولة بنقاط (<span dir="ltr">Dotted Decimal Notation</span>)**، يعني 4 أرقام من 0 لـ 255 مفصولين بنقطة، وكل رقم منهم هو تمثيل عشري لـ 8 بت ثنائية (مثال: `11000000.10101000.00000001.00000001` = `192.168.1.1`).
 * **<span dir="ltr">IPv6</span>:** بتتكتب بصيغة **ست عشرية (<span dir="ltr">Hexadecimal</span>)** مقسّمة لـ 8 مجموعات (كل مجموعة 16 بت) مفصولة بنقطتين `:`، ومسموح باختصار أي مجموعة أصفار متتالية بعلامة `::` مرة واحدة بس في العنوان (مثال: `2001:db8::8a2e:370:7334`).
 
+<h3 dir="rtl" align="right" id="subnetting">8️⃣.7 تقسيم الشبكات (Subnetting)</h3>
+
 **تقسيمات الشبكات (<span dir="ltr">Subnetting</span>):** هي عملية تقسيم شبكة كبيرة واحدة لعدة شبكات فرعية أصغر (<span dir="ltr">Subnets</span>)، عن طريق "استعارة" بتات من جزء الجهاز وإضافتها لجزء الشبكة (باستخدام قناع شبكة فرعية مخصص، ومكتوب بصيغة <span dir="ltr">CIDR</span> زي `/26` أو `/28`). أهم أسباب استخدامها:
 
 * **استغلال أفضل للعناوين المتاحة** بدل هدرها في فئات ثابتة كبيرة.
@@ -290,9 +306,11 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="9-المسميات-pdu-وعملية-encapsulation--decapsulation-وحقول-الهيدرز">9️⃣ المسميات (<span dir="ltr">PDU</span>) وعملية <span dir="ltr">Encapsulation / Decapsulation</span> وحقول الهيدرز</h2>
+<h2 dir="rtl" align="right" id="pdu-encapsulation">9️⃣ المسميات (<span dir="ltr">PDU</span>) وعملية <span dir="ltr">Encapsulation / Decapsulation</span> وحقول الهيدرز</h2>
 
 كل طبقة من طبقات <span dir="ltr">TCP/IP</span> بتضيف "غلاف" (<span dir="ltr">Header</span>) خاص بيها فوق البيانات القادمة من الطبقة اللي فوقها، وده اللي بيتسمى **<span dir="ltr">Protocol Data Unit (PDU)</span>** - يعني اسم البيانات بيتغير حسب الطبقة اللي هي فيها دلوقتي:
+
+<h3 dir="rtl" align="right" id="pdu-table">9️⃣.1 مسميات البيانات في كل طبقة (PDU)</h3>
 
 <div align="center">
 
@@ -311,11 +329,15 @@
 
 </div>
 
+<h3 dir="rtl" align="right" id="encapsulation-decapsulation">9️⃣.2 عملية Encapsulation و Decapsulation ومبدأ Same-Layer Interaction</h3>
+
 **عملية <span dir="ltr">Encapsulation</span> (التغليف):** بتحصل عند **جهاز الإرسال**؛ البيانات بتنزل من طبقة <span dir="ltr">Application</span> للأسفل، وكل طبقة بتضيف <span dir="ltr">Header</span> خاص بيها (فيه معلومات زي رقم البورت، عنوان الـ <span dir="ltr">IP</span>، عنوان الـ <span dir="ltr">MAC</span>) لحد ما توصل لطبقة <span dir="ltr">Network Access</span> وتتحول لإشارات وتتبعت فعليًا على الوسط الناقل.
 
 **عملية <span dir="ltr">Decapsulation</span> (فك التغليف):** بتحصل عند **جهاز الاستقبال**، وهي عكس العملية بالظبط؛ البيانات بتطلع من طبقة <span dir="ltr">Network Access</span> لفوق، وكل طبقة بتشيل الـ <span dir="ltr">Header</span> بتاعها وتقرأ المعلومة اللي محتاجاها، وتسلّم الباقي للطبقة اللي فوقها، لحد ما توصل البيانات الأصلية لطبقة الـ <span dir="ltr">Application</span> عند المستقبل.
 
 **مفهوم <span dir="ltr">Same-Layer Interaction</span>:** المهم إنك تفهم إن كل طبقة عند جهاز الإرسال بتتواصل منطقيًا مع **نفس الطبقة بالظبط** عند جهاز الاستقبال (مثلًا طبقة <span dir="ltr">Transport</span> عند الاثنين بتتفاهم مع بعض بمنطق <span dir="ltr">Host-to-Host Communication</span>)، حتى لو فعليًا البيانات مرّت بكل الطبقات التانية وعدّت على أجهزة توجيه (<span dir="ltr">Routers</span>) في النص.
+
+<h3 dir="rtl" align="right" id="frame-header-fields">9️⃣.3 حقول هيدر Frame (طبقة Network Access)</h3>
 
 **حقول هيدر <span dir="ltr">Frame</span> (طبقة <span dir="ltr">Network Access</span>):** آخر هيدر بيتضاف في رحلة التغليف، وهو المسؤول عن التوصيل الفعلي جوه الشبكة المحلية باستخدام عنوان الـ <span dir="ltr">MAC</span>:
 
@@ -339,7 +361,9 @@
 
 دلوقتي بعد ما شفنا هيدر الطبقة الأخيرة، هنرجع نفصّل حقول هيدرات الطبقات اللي قبلها: طبقة الـ <span dir="ltr">Transport</span> (هيدر <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span>).
 
-**حقول هيدر <span dir="ltr">TCP</span>:** (هيدر الـ <span dir="ltr">IP</span> نفسه اتشرح بالتفصيل بحقوله كاملة في القسم 8️⃣ فوق، وده هيدر بروتوكولات طبقة الـ <span dir="ltr">Transport</span> اللي بتتغلف جواه)
+<h3 dir="rtl" align="right" id="tcp-udp-header-fields">9️⃣.4 حقول هيدر TCP و UDP</h3>
+
+**حقول هيدر <span dir="ltr">TCP</span>:** (هيدر الـ <span dir="ltr">IP</span> نفسه اتشرح بالتفصيل بحقوله كاملة في القسم 8️⃣.5 فوق، وده هيدر بروتوكولات طبقة الـ <span dir="ltr">Transport</span> اللي بتتغلف جواه)
 
 <div align="center">
 
@@ -376,7 +400,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="10-سبب-التسمية-tcpip">🔟 سبب التسمية <span dir="ltr">TCP/IP</span></h2>
+<h2 dir="rtl" align="right" id="tcpip-naming-reason">🔟 سبب التسمية <span dir="ltr">TCP/IP</span></h2>
 
 النموذج اتسمى بالاسم ده لأنه في الأساس مسمى على اسم **أهم وأشهر بروتوكولين** فيه، واللي بيمثلوا العمود الفقري لعملية النقل كلها:
 
@@ -387,9 +411,11 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="11-جدول-مرجعي-أشهر-20-بورت-مراجعة-سريعة">1️⃣1️⃣ جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)</h2>
+<h2 dir="rtl" align="right" id="common-ports-reference">1️⃣1️⃣ جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)</h2>
 
 جدول مرجعي سريع لأشهر البورتات اللي بتشتغل فوق طبقة الـ <span dir="ltr">Transport</span> (تفاصيلها الكاملة موجودة في ملف [05-Port-Number.md](05-Port-Number.md))، مفيد هنا كمراجعة سريعة وربط بين البروتوكول والطبقة اللي بيشتغل عليها:
+
+> 💡 مفهوم دمج الـ <span dir="ltr">IP Address</span> مع الـ <span dir="ltr">Port Number</span> (اللي بيتسمى <span dir="ltr">Socket</span>)، وإزاي السيرفر بيميّز بين اتصالات كذا كلاينت في نفس الوقت، اتشرحوا بالتفصيل في نفس الملف.
 
 <div align="center">
 
@@ -423,7 +449,7 @@
 
 ---
 
-<h2 dir="rtl" align="right" id="12-كبسولة-المذاكرة-السريعة">📝 كبسولة المذاكرة السريعة (<span dir="ltr">Cheat Sheet</span>)</h2>
+<h2 dir="rtl" align="right" id="summary-table">📝 كبسولة المذاكرة السريعة (<span dir="ltr">Cheat Sheet</span>)</h2>
 
 <div align="center">
 
