@@ -14,46 +14,47 @@
 |:---:|:---:|:---:|
 | - | <a href="#part1-ip-address">🟦 الجزء الأول: عنوان الـ IP</a> | - |
 | 1 | <a href="#ip-definition-importance">تعريف عنوان الـ IP وأهميته</a> | - |
-| 2 | <a href="#ipv4-components">مكونات عنوان الـ IPv4</a> | <span dir="ltr">Bit</span><br><span dir="ltr">Byte</span><br><span dir="ltr">Octet</span><br>&nbsp;&nbsp;&nbsp;نظام الأوكتت بالتفصيل (Dotted-Decimal, حدود الأوكتت) |
+| 2 | <a href="#ipv4-components">مكونات عنوان الـ IPv4</a> | <span dir="ltr">Bit / Byte / Octet</span><br>&nbsp;&nbsp;&nbsp;<a href="#octet-system">نظام الأوكتت بالتفصيل (Dotted-Decimal, حدود الأوكتت)</a> |
 | 3 | <a href="#ipv4-vs-ipv6">نبذة: <span dir="ltr">IPv4</span> مقابل <span dir="ltr">IPv6</span> (مقارنة كاملة)</a> | - |
 | 4 | <a href="#ip-layer-nature">الطبقة التي يعمل بها الـ IP وثباته</a> | - |
-| 5 | <a href="#ip-vs-mac">الفرق بين الـ <span dir="ltr">IP</span> والـ <span dir="ltr">MAC Address</span></a> | مراجعة الـ <span dir="ltr">MAC Address</span><br>&nbsp;&nbsp;&nbsp;جدول المقارنة الكامل<br>&nbsp;&nbsp;&nbsp;ليه محتاجين عنوانين مش واحد بس<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Flat</span> مقابل <span dir="ltr">Hierarchical</span> |
-| 6 | <a href="#iana">منظمة <span dir="ltr">IANA</span> وسجلات الإنترنت</a> | التسلسل الهرمي للسجلات<br>&nbsp;&nbsp;&nbsp;سجل <span dir="ltr">WHOIS</span> |
-| 7 | <a href="#ip-classes">فئات الـ <span dir="ltr">IP (Classes A–E)</span></a> | مدى كل فئة<br>&nbsp;&nbsp;&nbsp;الفرق بين الفئات<br>&nbsp;&nbsp;&nbsp;ليه <span dir="ltr">D, E</span> مالهمش <span dir="ltr">Subnet Mask</span> |
+| 5 | <a href="#ip-vs-mac">الفرق بين الـ <span dir="ltr">IP</span> والـ <span dir="ltr">MAC Address</span></a> | <a href="#mac-address-review">مراجعة الـ MAC Address</a><br>&nbsp;&nbsp;&nbsp;<a href="#mac-ip-comparison-table">جدول المقارنة الكامل</a><br>&nbsp;&nbsp;&nbsp;<a href="#why-two-addresses">ليه محتاجين عنوانين مش واحد بس</a><br>&nbsp;&nbsp;&nbsp;<a href="#flat-vs-hierarchical">Flat مقابل Hierarchical</a> |
+| 6 | <a href="#iana">منظمة <span dir="ltr">IANA</span> وسجلات الإنترنت</a> | <a href="#iana-registry-hierarchy">التسلسل الهرمي للسجلات</a><br>&nbsp;&nbsp;&nbsp;<a href="#whois-registry">سجل WHOIS</a> |
+| 7 | <a href="#ip-classes">فئات الـ <span dir="ltr">IP (Classes A–E)</span></a> | <a href="#class-ranges">مدى كل فئة</a><br>&nbsp;&nbsp;&nbsp;<a href="#class-network-host-split">الفرق بين الفئات</a><br>&nbsp;&nbsp;&nbsp;<a href="#why-d-e-no-mask">ليه D, E مالهمش Subnet Mask</a> |
 | 8 | <a href="#network-host-id">أجزاء عنوان الـ <span dir="ltr">IP</span>: <span dir="ltr">Network ID</span> و<span dir="ltr">Host ID</span></a> | - |
-| 9 | <a href="#network-host-broadcast">أنواع العناوين داخل الشبكة</a> | <span dir="ltr">Network Address</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Host Address</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Broadcast Address</span><br>&nbsp;&nbsp;&nbsp;3 أمثلة محلولة (Class A/B/C) |
-| 10 | <a href="#ip-types">أنواع عناوين الـ IP</a> | <span dir="ltr">Private</span> و<span dir="ltr">Public</span> (+فئات الـ Public لكل Class)<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">APIPA</span> (وأنه <span dir="ltr">Non-routable</span>)<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Virtual IP</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Multicast</span> (+عناوين شهيرة وربطها بالـ MAC)<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Loopback</span><br>&nbsp;&nbsp;&nbsp;عناوين محجوزة أخرى |
-| 11 | <a href="#network-address-benefit">فائدة عنوان الشبكة في التحكم والحماية</a> | <span dir="ltr">ACL</span><br>&nbsp;&nbsp;&nbsp;مثال الجدار الناري |
-| 12 | <a href="#ip-assignment-methods">طرق حصول الجهاز على عنوان <span dir="ltr">IP</span> وإعداداته</a> | <span dir="ltr">DHCP / DHCPv6 / Static / APIPA / EUI-64</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Default Gateway</span><br>&nbsp;&nbsp;&nbsp;الأجهزة التي تمتلك عنوان IP<br>&nbsp;&nbsp;&nbsp;أمر <span dir="ltr">ipconfig /renew</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">DHCP Relay Agent (Helper Address)</span> |
-| 13 | <a href="#routing">التوجيه: جدول التوجيه وأنواع المسارات</a> | جدول التوجيه<br>&nbsp;&nbsp;&nbsp;بروتوكولات التوجيه<br>&nbsp;&nbsp;&nbsp;كيف يستخدم الراوتر الـ IP للتوجيه<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Default Route</span> مقابل <span dir="ltr">Static Route</span> |
-| 14 | <a href="#ip-header">عملية التغليف وهيدر الـ IP</a> | حقول أساسية (Source/Destination/TTL/Protocol)<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">DSCP/ToS (QoS)</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Identification, Flags, Fragment Offset</span> (التجزئة) |
-| 15 | <a href="#ip-port-relationship">العلاقة بين IP والـ <span dir="ltr">Port Number</span></a> | مفهوم الـ <span dir="ltr">Socket</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Source</span> و<span dir="ltr">Destination Port</span><br>&nbsp;&nbsp;&nbsp;الـ <span dir="ltr">Ephemeral Ports</span> |
-| 16 | <a href="#nat">ترجمة عناوين الشبكة <span dir="ltr">NAT</span></a> | أنواعه<br>&nbsp;&nbsp;&nbsp;مثال: راوتر منزلي بـ <span dir="ltr">IP</span> عام واحد لأكثر من 10 أجهزة<br>&nbsp;&nbsp;&nbsp;سجلات <span dir="ltr">NAT (NAT Table)</span><br>&nbsp;&nbsp;&nbsp;مصطلحاته<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Port Forwarding</span> و<span dir="ltr">DMZ</span> |
+| 9 | <a href="#network-host-broadcast">أنواع العناوين داخل الشبكة</a> | <span dir="ltr">Network / Host / Broadcast Address</span><br>&nbsp;&nbsp;&nbsp;<a href="#quiz-examples">3 أمثلة محلولة (Class A/B/C)</a> |
+| 10 | <a href="#ip-types">أنواع عناوين الـ IP</a> | <a href="#private-public-ip">Private و Public (+فئات الـ Public لكل Class)</a><br>&nbsp;&nbsp;&nbsp;<a href="#apipa-virtual-ip">APIPA (وأنه Non-routable) و Virtual IP</a><br>&nbsp;&nbsp;&nbsp;<a href="#multicast-loopback">Multicast (+عناوين شهيرة وربطها بالـ MAC) و Loopback</a><br>&nbsp;&nbsp;&nbsp;<a href="#reserved-addresses">عناوين محجوزة أخرى</a> |
+| 11 | <a href="#network-address-benefit">فائدة عنوان الشبكة في التحكم والحماية</a> | <a href="#acl-concept">ACL</a><br>&nbsp;&nbsp;&nbsp;<a href="#firewall-example">مثال الجدار الناري</a> |
+| 12 | <a href="#ip-assignment-methods">طرق حصول الجهاز على عنوان <span dir="ltr">IP</span> وإعداداته</a> | <a href="#assignment-table">DHCP / DHCPv6 / Static / APIPA / EUI-64</a><br>&nbsp;&nbsp;&nbsp;<a href="#default-gateway">Default Gateway</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-with-ip">الأجهزة التي تمتلك عنوان IP</a><br>&nbsp;&nbsp;&nbsp;<a href="#ipconfig-renew">أمر ipconfig /renew</a><br>&nbsp;&nbsp;&nbsp;<a href="#dhcp-relay-agent">DHCP Relay Agent (Helper Address)</a> |
+| 13 | <a href="#routing">التوجيه: جدول التوجيه وأنواع المسارات</a> | <a href="#routing-table">جدول التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#routing-protocols">بروتوكولات التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#router-uses-ip">كيف يستخدم الراوتر الـ IP للتوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#default-vs-static-route">Default Route مقابل Static Route</a> |
+| 14 | <a href="#ip-header">عملية التغليف وهيدر الـ IP</a> | حقول أساسية (Source/Destination/TTL/Protocol)<br>&nbsp;&nbsp;&nbsp;DSCP/ToS (QoS)<br>&nbsp;&nbsp;&nbsp;Identification, Flags, Fragment Offset (التجزئة) |
+| 15 | <a href="#ip-port-relationship">العلاقة بين IP والـ <span dir="ltr">Port Number</span></a> | <a href="#socket-concept">مفهوم الـ Socket</a><br>&nbsp;&nbsp;&nbsp;<a href="#source-destination-port">Source و Destination Port</a><br>&nbsp;&nbsp;&nbsp;<a href="#ephemeral-ports">الـ Ephemeral Ports</a> |
+| 16 | <a href="#nat">ترجمة عناوين الشبكة <span dir="ltr">NAT</span></a> | <a href="#nat-types">أنواعه</a><br>&nbsp;&nbsp;&nbsp;<a href="#pat-home-router">مثال: راوتر منزلي بـ IP عام واحد لأكثر من 10 أجهزة</a><br>&nbsp;&nbsp;&nbsp;<a href="#nat-table-records">سجلات NAT (NAT Table)</a><br>&nbsp;&nbsp;&nbsp;<a href="#nat-terms">مصطلحاته</a><br>&nbsp;&nbsp;&nbsp;<a href="#port-forwarding-dmz">Port Forwarding و DMZ</a> |
 | 17 | <a href="#network-monitoring">مراقبة الشبكة عبر عنوان الـ IP</a> | - |
 | 18 | <a href="#transmission-types">طرق إرسال البيانات: <span dir="ltr">Unicast, Broadcast, Multicast</span></a> | - |
-| 19 | <a href="#ip-security-concepts">اعتبارات أمنية مرتبطة بعناوين IP والتقسيم</a> | عزل الشبكات و<span dir="ltr">VLANs</span><br>&nbsp;&nbsp;&nbsp;انتحال العناوين و<span dir="ltr">Broadcast Storms</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Classful</span> مقابل <span dir="ltr">Classless Routing</span> |
+| 19 | <a href="#ip-security-concepts">اعتبارات أمنية مرتبطة بعناوين IP والتقسيم</a> | <a href="#segmentation-vlans">عزل الشبكات و VLANs</a><br>&nbsp;&nbsp;&nbsp;<a href="#spoofing-broadcast-storms">انتحال العناوين و Broadcast Storms</a><br>&nbsp;&nbsp;&nbsp;<a href="#classful-vs-classless-routing">Classful مقابل Classless Routing</a> |
 | 20 | <a href="#cli-reference">أدوات التشخيص والأوامر العملية (<span dir="ltr">CLI</span>)</a> | - |
 | - | <a href="#part2-subnetting">🟩 الجزء الثاني: تقسيم الشبكات</a> | - |
 | 1 | <a href="#why-subnetting">مقدمة: ليه بنقسم الشبكة؟</a> | - |
 | 2 | <a href="#subnet-mask-basics"><span dir="ltr">Subnet Mask</span>: تعريفه وقواعده</a> | - |
 | 3 | <a href="#anding">عملية <span dir="ltr">ANDing</span></a> | - |
-| 4 | <a href="#number-systems">أنظمة العد وطرق التحويل بينها</a> | <span dir="ltr">Base 10 / Base 2 / Base 16</span> (+نبذة عن <span dir="ltr">Octal</span>)<br>&nbsp;&nbsp;&nbsp;جدول الأوزان (الجدول السحري)<br>&nbsp;&nbsp;&nbsp;تحويل ديسيمال ↔ باينري (+أمثلة إضافية)<br>&nbsp;&nbsp;&nbsp;طريقة القسمة المتتالية على 2<br>&nbsp;&nbsp;&nbsp;مثال شامل: تحويل IP كامل أوكتت بأوكتت<br>&nbsp;&nbsp;&nbsp;مدى الاحتمالات في الباينري<br>&nbsp;&nbsp;&nbsp;تحويل هيكس ↔ باينري<br>&nbsp;&nbsp;&nbsp;مدى الاحتمالات في الهيكس<br>&nbsp;&nbsp;&nbsp;معرفة عدد البتات لأي رقم (+مثال شامل)<br>&nbsp;&nbsp;&nbsp;التحويل المباشر ديسيمال↔هيكس |
-| 5 | <a href="#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | تعريف <span dir="ltr">Prefix Length</span><br>&nbsp;&nbsp;&nbsp;جدول <span dir="ltr">CIDR</span> المرجعي السريع (/8–/30)<br>&nbsp;&nbsp;&nbsp;شبكات الربط النقطي <span dir="ltr">/30</span> و<span dir="ltr">/31 (RFC 3021)</span> |
+| 4 | <a href="#number-systems">أنظمة العد وطرق التحويل بينها</a> | Base 10 / Base 2 / Base 16 (+نبذة عن Octal)<br>&nbsp;&nbsp;&nbsp;<a href="#weights-table">جدول الأوزان (الجدول السحري)</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-decimal-conversion">تحويل ديسيمال ↔ باينري (+أمثلة إضافية)</a><br>&nbsp;&nbsp;&nbsp;<a href="#division-method">طريقة القسمة المتتالية على 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#full-ip-binary-example">مثال شامل: تحويل IP كامل أوكتت بأوكتت</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-range">مدى الاحتمالات في الباينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-binary-conversion">تحويل هيكس ↔ باينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-range">مدى الاحتمالات في الهيكس</a><br>&nbsp;&nbsp;&nbsp;<a href="#bit-count-rule">معرفة عدد البتات لأي رقم (+مثال شامل)</a><br>&nbsp;&nbsp;&nbsp;<a href="#decimal-hex-direct">التحويل المباشر ديسيمال↔هيكس</a> |
+| 5 | <a href="#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | <a href="#prefix-length-def">تعريف Prefix Length</a><br>&nbsp;&nbsp;&nbsp;<a href="#cidr-cheat-sheet">جدول CIDR المرجعي السريع (/8–/30)</a><br>&nbsp;&nbsp;&nbsp;<a href="#point-to-point-links">شبكات الربط النقطي /30 و /31 (RFC 3021)</a> |
 | 6 | <a href="#subnetting-laws">القوانين الأساسية للتقسيم</a> | عدد الشبكات <span dir="ltr">2ⁿ</span><br>&nbsp;&nbsp;&nbsp;عدد الأجهزة <span dir="ltr">2ʰ − 2</span><br>&nbsp;&nbsp;&nbsp;حجم القفزة <span dir="ltr">Block Size</span> |
 | 7 | <a href="#solving-steps">خطوات حل أي مسألة <span dir="ltr">Subnetting</span></a> | - |
-| 8 | <a href="#worked-examples">أمثلة محلولة خطوة بخطوة</a> | مثال سهل<br>&nbsp;&nbsp;&nbsp;مثال متوسط (معطى: عدد الأجهزة)<br>&nbsp;&nbsp;&nbsp;مثال متقدم (معطى: عدد الشبكات) |
+| 8 | <a href="#worked-examples">أمثلة محلولة خطوة بخطوة</a> | <a href="#example-easy">مثال سهل</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-medium">مثال متوسط (معطى: عدد الأجهزة)</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-advanced">مثال متقدم (معطى: عدد الشبكات)</a> |
 | 9 | <a href="#subnet-id-boundaries">حساب <span dir="ltr">Subnet ID</span> وحدود كل شبكة فرعية</a> | - |
 | 10 | <a href="#vlsm"><span dir="ltr">VLSM</span>: التقسيم متغير الطول</a> | - |
-| 11 | <a href="#supernetting"><span dir="ltr">Supernetting</span></a> | مثال تلخيص 4 شبكات (Route Summarization) |
+| 11 | <a href="#supernetting"><span dir="ltr">Supernetting</span></a> | <a href="#route-summarization-example">مثال تلخيص 4 شبكات (Route Summarization)</a> |
 | 12 | <a href="#identify-class">معرفة الفئة من الـ <span dir="ltr">IP</span> والـ <span dir="ltr">Subnet Mask</span></a> | - |
 | 13 | <a href="#octet-split">تقسيم أوكتت واحد بين الشبكات والأجهزة</a> | - |
 | 14 | <a href="#find-network-of-host">إيجاد عنوان شبكة جهاز معين</a> | - |
-| 15 | <a href="#troubleshooting">مسائل الخدع والأخطاء الشائعة (Troubleshooting)</a> | نفس الـ Mask، شبكات مختلفة<br>&nbsp;&nbsp;&nbsp;تحديد العناوين غير الصالحة |
+| 15 | <a href="#troubleshooting">مسائل الخدع والأخطاء الشائعة (Troubleshooting)</a> | <a href="#same-mask-different-subnet">نفس الـ Mask، شبكات مختلفة</a><br>&nbsp;&nbsp;&nbsp;<a href="#invalid-ip-assignment">تحديد العناوين غير الصالحة</a> |
 | 16 | <a href="#case-study">دراسة حالة كاملة: تصميم شبكة شركة (<span dir="ltr">VLSM Case Study</span>)</a> | - |
-| 17 | <a href="#cheat-sheet-summary">ملخص شامل: كل القوانين الرياضية في جدول واحد</a> | جدول القوانين<br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Wildcard Mask</span> |
-| 18 | <a href="#cloud-subnetting">تطبيقات الـ Subnetting في البيئات السحابية</a> | <span dir="ltr">AWS VPC</span><br>&nbsp;&nbsp;&nbsp;<span dir="ltr">Azure VNet</span><br>&nbsp;&nbsp;&nbsp;حجز 5 عناوين بدل 2 |
-| 19 | <a href="#advanced-routing-concepts">مفاهيم هندسية متقدمة في التوجيه والعناوين</a> | <span dir="ltr">Anycast</span><br>&nbsp;&nbsp;&nbsp;تداخل العناوين و<span dir="ltr">Double/Twice NAT</span> |
-| 20 | <a href="#ipv6-appendix">ملحق: أساسيات عنونة وتقسيم <span dir="ltr">IPv6</span></a> | تركيب العنوان وأنواعه<br>&nbsp;&nbsp;&nbsp;تقسيم شبكات <span dir="ltr">IPv6</span> |
+| 17 | <a href="#cheat-sheet-summary">ملخص شامل: كل القوانين الرياضية في جدول واحد</a> | <a href="#all-formulas-table">جدول القوانين</a><br>&nbsp;&nbsp;&nbsp;<a href="#wildcard-mask">Wildcard Mask</a> |
+| 18 | <a href="#cloud-subnetting">تطبيقات الـ Subnetting في البيئات السحابية</a> | <a href="#aws-vpc">AWS VPC</a><br>&nbsp;&nbsp;&nbsp;<a href="#azure-vnet">Azure VNet</a><br>&nbsp;&nbsp;&nbsp;<a href="#aws-reservation-formula">حجز 5 عناوين بدل 2</a> |
+| 19 | <a href="#advanced-routing-concepts">مفاهيم هندسية متقدمة في التوجيه والعناوين</a> | <a href="#anycast">Anycast</a><br>&nbsp;&nbsp;&nbsp;<a href="#overlapping-ip">تداخل العناوين و Double/Twice NAT</a> |
+| 20 | <a href="#ipv6-appendix">ملحق: أساسيات عنونة وتقسيم <span dir="ltr">IPv6</span></a> | <a href="#ipv6-address-types">تركيب العنوان وأنواعه</a><br>&nbsp;&nbsp;&nbsp;<a href="#ipv6-subnetting">تقسيم شبكات IPv6</a> |
+| - | <a href="#practice-problems">📝 مسائل تدريب ذاتي (بدون حل مباشر)</a> | - |
 | - | <a href="#review-questions">❓ أسئلة المراجعة الشاملة</a> | - |
 
 ---
@@ -62,7 +63,7 @@
 
 <h3 dir="rtl" align="right" id="ip-definition-importance">1. تعريف عنوان الـ IP وأهميته</h3>
 
-عنوان الـ <span dir="ltr">IP (Internet Protocol Address)</span> هو عنوان **منطقي (Logical Address)** يُستخدم لتحديد هوية أي جهاز على الشبكة، ويعمل في **طبقة الشبكة (Network Layer)** — الطبقة الثالثة من نموذج الـ <span dir="ltr">OSI</span> (راجع <a href="../4-osi-model.md">الموضوع الرابع</a>)، وهو ما يقابله في نموذج الـ <span dir="ltr">TCP/IP</span> طبقة الـ <span dir="ltr">Internet Layer</span> (راجع <a href="../7-tcp-ip-model.md">الموضوع السابع</a>).
+عنوان الـ <span dir="ltr">IP (Internet Protocol Address)</span> هو عنوان **منطقي (Logical Address)** يُستخدم لتحديد هوية أي جهاز على الشبكة، ويعمل في **طبقة الشبكة (Network Layer)** — الطبقة الثالثة من نموذج الـ <span dir="ltr">OSI</span> (راجع <a href="../04-OSI-Model.md">الموضوع الرابع</a>)، وهو ما يقابله في نموذج الـ <span dir="ltr">TCP/IP</span> طبقة الـ <span dir="ltr">Internet Layer</span> (راجع <a href="../07-TCP-IP-Model.md">الموضوع السابع</a>).
 
 **أهمية عنوان الـ IP:**
 - بيسمح بتوجيه البيانات <span dir="ltr">(Routing)</span> بين شبكات مختلفة، وده أهم فرق بينه وبين عنوان الـ <span dir="ltr">MAC</span> اللي شغال جوه الشبكة الواحدة بس.
@@ -126,14 +127,16 @@
 
 <h3 dir="rtl" align="right" id="ip-layer-nature">4. الطبقة التي يعمل بها الـ IP وثباته</h3>
 
-- يعمل عنوان الـ <span dir="ltr">IP</span> في **طبقة الشبكة (Layer 3 – Network Layer)** من نموذج الـ <span dir="ltr">OSI</span>، وهي المسؤولة عن التوجيه <span dir="ltr">(Routing)</span> واختيار أفضل مسار للبيانات (راجع تفاصيل الطبقة في <a href="../4-osi-model.md">الموضوع الرابع</a> و<a href="../7-tcp-ip-model.md">الموضوع السابع</a>).
+- يعمل عنوان الـ <span dir="ltr">IP</span> في **طبقة الشبكة (Layer 3 – Network Layer)** من نموذج الـ <span dir="ltr">OSI</span>، وهي المسؤولة عن التوجيه <span dir="ltr">(Routing)</span> واختيار أفضل مسار للبيانات (راجع تفاصيل الطبقة في <a href="../04-OSI-Model.md">الموضوع الرابع</a> و<a href="../07-TCP-IP-Model.md">الموضوع السابع</a>).
 - عنوان الـ IP **قابل للتغيير**: يمكن أن يتغير حسب الشبكة التي يتصل بها الجهاز، أو حسب طريقة التوزيع (يدوي أو تلقائي عبر <span dir="ltr">DHCP</span>) — على عكس عنوان الـ <span dir="ltr">MAC</span> الثابت المحفور في كرت الشبكة.
 
 ---
 
 <h3 dir="rtl" align="right" id="ip-vs-mac">5. الفرق بين الـ IP والـ MAC Address</h3>
 
-قبل المقارنة، لازم نراجع تعريف عنوان الـ <span dir="ltr">MAC</span> نفسه (تم شرحه بالتفصيل في <a href="../9-ethernet-lan.md">الموضوع التاسع – Ethernet/LAN</a>)، ونلخص أهم عناصره هنا للمقارنة:
+<h4 dir="rtl" align="right" id="mac-address-review">أ. مراجعة عنوان MAC</h4>
+
+قبل المقارنة، لازم نراجع تعريف عنوان الـ <span dir="ltr">MAC</span> نفسه (تم شرحه بالتفصيل في <a href="../09-Ethernet-LAN.md">الموضوع التاسع – Ethernet/LAN</a>)، ونلخص أهم عناصره هنا للمقارنة:
 
 - **تعريفه:** عنوان **مادي (Physical Address)** محفور في كرت الشبكة <span dir="ltr">(NIC)</span> من المصنع.
 - **مكوناته ونظامه:** طوله 48 بت، ويُكتب بنظام <span dir="ltr">Hexadecimal (Base 16)</span> في صورة 6 أزواج (مثال: `00:1A:2B:3C:4D:5E`).
@@ -142,7 +145,7 @@
 - **ثباته:** ثابت لا يتغير (إلا بتقنيات معينة مثل <span dir="ltr">MAC Spoofing</span>).
 - **منظمته:** تُدار بواسطة <span dir="ltr">IEEE</span>، وهي المسؤولة عن توزيع أرقام الـ <span dir="ltr">OUI</span> على الشركات المصنّعة.
 
-**جدول المقارنة الكامل:**
+<h4 dir="rtl" align="right" id="mac-ip-comparison-table">ب. جدول المقارنة الكامل</h4>
 
 | وجه المقارنة | <span dir="ltr">IP Address</span> | <span dir="ltr">MAC Address</span> |
 |:---:|:---:|:---:|
@@ -155,16 +158,19 @@
 | نوع العنونة | هرمي <span dir="ltr">(Hierarchical)</span> | مسطح <span dir="ltr">(Flat)</span> |
 | الاستخدام | التوجيه بين شبكات مختلفة | التواصل داخل نفس الشبكة المحلية |
 
-**ليه محتاجين عنوانين مش عنوان واحد بس؟**
+<h4 dir="rtl" align="right" id="why-two-addresses">ج. ليه محتاجين عنوانين مش عنوان واحد بس؟</h4>
+
 لأن العنوان المادي (MAC) وحده لا يكفي للتوجيه بين شبكات مختلفة حول العالم — فهو غير هرمي <span dir="ltr">(Flat)</span> ولا يحمل أي معلومة عن موقع الجهاز أو الشبكة التي ينتمي إليها. عنوان الـ IP هرمي <span dir="ltr">(Hierarchical)</span> يحمل جزءًا يدل على الشبكة وجزءًا يدل على الجهاز، وهو ما يمكّن أجهزة التوجيه <span dir="ltr">(Routers)</span> من إيصال البيانات عبر شبكات متعددة دون معرفة تفاصيل كل جهاز على حدة.
 
-> 🔗 **خاصية الترتيب الهرمي مقابل المسطح:** عنوان الـ IP خاصية أساسية فيه أنه <span dir="ltr">Hierarchical Address</span> (به تدرج: شبكة ثم جهاز)، بينما عنوان الـ MAC هو <span dir="ltr">Flat Address</span> (لا تدرج فيه، كل عنوان مستقل تمامًا عن الآخر). هذا الفرق هو السبب الجوهري في إمكانية عمل الـ <span dir="ltr">Subnetting</span> على مستوى الـ IP فقط، وسنعتمد عليه بشكل كامل في <a href="#part2-subnetting">الجزء الثاني</a>.
+<h4 dir="rtl" align="right" id="flat-vs-hierarchical">د. Flat مقابل Hierarchical</h4>
+
+عنوان الـ IP خاصية أساسية فيه أنه <span dir="ltr">Hierarchical Address</span> (به تدرج: شبكة ثم جهاز)، بينما عنوان الـ MAC هو <span dir="ltr">Flat Address</span> (لا تدرج فيه، كل عنوان مستقل تمامًا عن الآخر). هذا الفرق هو السبب الجوهري في إمكانية عمل الـ <span dir="ltr">Subnetting</span> على مستوى الـ IP فقط، وسنعتمد عليه بشكل كامل في <a href="#part2-subnetting">الجزء الثاني</a>.
 
 ---
 
 <h3 dir="rtl" align="right" id="iana">6. منظمة IANA وسجلات الإنترنت</h3>
 
-<span dir="ltr">IANA (Internet Assigned Numbers Authority)</span> هي **السلطة العالمية المسؤولة عن تخصيص أرقام الإنترنت**، بما في ذلك توزيعات وأقسام وفئات وأنواع عناوين الـ <span dir="ltr">IP</span>، وكذلك أرقام الـ <span dir="ltr">Ports</span> (راجع <a href="../5-port-numbers.md">الموضوع الخامس</a>) والبروتوكولات.
+<span dir="ltr">IANA (Internet Assigned Numbers Authority)</span> هي **السلطة العالمية المسؤولة عن تخصيص أرقام الإنترنت**، بما في ذلك توزيعات وأقسام وفئات وأنواع عناوين الـ <span dir="ltr">IP</span>، وكذلك أرقام الـ <span dir="ltr">Ports</span> (راجع <a href="../05-Port-Number.md">الموضوع الخامس</a>) والبروتوكولات.
 
 تتفرع من IANA **خمس منظمات إقليمية (RIRs – Regional Internet Registries)** تتولى توزيع عناوين الـ IP على مستوى كل قارة/منطقة:
 
@@ -176,7 +182,8 @@
 | <span dir="ltr">LACNIC</span> | أمريكا اللاتينية والكاريبي |
 | <span dir="ltr">AFRINIC</span> | أفريقيا |
 
-**التسلسل الهرمي لسجلات الإنترنت (Internet Registries):**
+<h4 dir="rtl" align="right" id="iana-registry-hierarchy">أ. التسلسل الهرمي لسجلات الإنترنت</h4>
+
 توزيع عناوين الـ IP لا يحدث دفعة واحدة من IANA مباشرة لكل مستخدم، بل عبر تسلسل هرمي من السجلات:
 
 ```
@@ -189,11 +196,15 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 المستخدم النهائي (شركتك، منزلك)
 ```
 
-**سجل الـ <span dir="ltr">WHOIS</span>:** قاعدة بيانات عامة يمكن لأي شخص الاستعلام منها لمعرفة الجهة المالكة لأي عنوان IP عام أو نطاق (Domain)، وتُدار بيانات هذا السجل بواسطة الـ RIRs كل حسب منطقته.
+<h4 dir="rtl" align="right" id="whois-registry">ب. سجل الـ WHOIS</h4>
+
+قاعدة بيانات عامة يمكن لأي شخص الاستعلام منها لمعرفة الجهة المالكة لأي عنوان IP عام أو نطاق (Domain)، وتُدار بيانات هذا السجل بواسطة الـ RIRs كل حسب منطقته.
 
 ---
 
 <h3 dir="rtl" align="right" id="ip-classes">7. فئات الـ IP (Classes A–E)</h3>
+
+<h4 dir="rtl" align="right" id="class-ranges">أ. مدى كل فئة واستخدامها</h4>
 
 عناوين الـ <span dir="ltr">IPv4</span> مقسّمة إلى 5 فئات <span dir="ltr">(Classes)</span> حسب قيمة أول أوكتت:
 
@@ -227,6 +238,8 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 **كيف توزّع كل فئة الأوكتتات بين Network و Host:**
 
+<h4 dir="rtl" align="right" id="class-network-host-split">ب. توزيع Network/Host لكل فئة والفرق بينها</h4>
+
 <div align="center">
 <img src="images/11-6-classes-network-host-bits-diagram.png" width="600">
 <br><em>توزيع الأوكتتات الأربعة بين Network و Host لكل فئة</em>
@@ -251,7 +264,8 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 <br><em>Class C بالتفصيل: مدى الأوكتت الأول (192–223)، وخاصية "شبكات كثيرة بعدد أجهزة قليل" المناسبة للمنازل والشركات الصغيرة</em>
 </div>
 
-**ليه Class D و E مالهمش Subnet Mask؟**
+<h4 dir="rtl" align="right" id="why-d-e-no-mask">ج. ليه Class D و E مالهمش Subnet Mask؟</h4>
+
 لأنهما غير مخصصين لعناوين أجهزة عادية على الإطلاق:
 - <span dir="ltr">Class D</span> مخصصة بالكامل لعناوين البث المتعدد <span dir="ltr">(Multicast)</span>، وهي تمثل مجموعة من الأجهزة وليست جهازًا واحدًا، فلا معنى لتقسيمها إلى Network/Host.
 - <span dir="ltr">Class E</span> محجوزة للأغراض البحثية والتجريبية ولم تُطرح للاستخدام العام.
@@ -326,7 +340,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 | <span dir="ltr">Private IP</span> (خاص) | عناوين محجوزة للاستخدام داخل الشبكات المحلية فقط، غير قابلة للتوجيه على الإنترنت العام |
 | <span dir="ltr">Public IP</span> (عام) | عناوين فريدة عالميًا يمكن الوصول إليها عبر الإنترنت |
 
-**نطاقات الـ Private IP (RFC 1918)** — سبق ذكرها في <a href="../7-tcp-ip-model.md">الموضوع السابع</a>:
+**نطاقات الـ Private IP (RFC 1918)** — سبق ذكرها في <a href="../07-TCP-IP-Model.md">الموضوع السابع</a>:
 
 | الفئة | النطاق الخاص |
 |:---:|:---:|
@@ -388,9 +402,13 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <h3 dir="rtl" align="right" id="network-address-benefit">11. فائدة عنوان الشبكة في التحكم والحماية</h3>
 
+<h4 dir="rtl" align="right" id="acl-concept">أ. ACL (Access Control List)</h4>
+
 من أهم فوائد عنوان الشبكة أنه يسمح بتطبيق قواعد التحكم <span dir="ltr">(Access Control List – ACL)</span> على **شبكة كاملة بعنوان واحد**، بدلًا من التعامل مع كل جهاز على حدة. الـ <span dir="ltr">ACL</span> هي قائمة قواعد تُطبَّق عادةً على الراوتر أو الجدار الناري <span dir="ltr">(Firewall)</span> لتحديد أي حركة بيانات مسموح بها وأيها ممنوعة.
 
-**مثال تطبيقي:** لو عايزين نمنع شبكة فيها 200 جهاز من الوصول إلى الإنترنت، فبدلًا من إضافة 200 قاعدة منفصلة (عنوان كل جهاز على حدة) داخل سيرفر الجدار الناري، يكفي كتابة **قاعدة واحدة تستهدف عنوان الشبكة نفسه** (مثال: `192.168.10.0/24`)، وتُطبَّق تلقائيًا على كل الأجهزة المنتمية لهذه الشبكة.
+<h4 dir="rtl" align="right" id="firewall-example">ب. مثال الجدار الناري</h4>
+
+لو عايزين نمنع شبكة فيها 200 جهاز من الوصول إلى الإنترنت، فبدلًا من إضافة 200 قاعدة منفصلة (عنوان كل جهاز على حدة) داخل سيرفر الجدار الناري، يكفي كتابة **قاعدة واحدة تستهدف عنوان الشبكة نفسه** (مثال: `192.168.10.0/24`)، وتُطبَّق تلقائيًا على كل الأجهزة المنتمية لهذه الشبكة.
 
 هذا المبدأ نفسه هو أساس فائدة تقسيم مجال البث <span dir="ltr">(Broadcast Domain)</span> عن طريق الـ Subnetting: فكل ما كانت الشبكة أصغر (بعد التقسيم)، كل ما كان التحكم فيها والتعامل معها إداريًا وأمنيًا أسهل وأدق، وقلّ الازدحام الناتج عن رسائل البث (تفصيل كامل في <a href="#why-subnetting">بداية الجزء الثاني</a>).
 
@@ -402,7 +420,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 | الطريقة | الوصف |
 |:---:|:---:|
-| <span dir="ltr">DHCP</span> | توزيع تلقائي لعنوان IPv4 من سيرفر مخصص (راجع تفاصيل عملية <span dir="ltr">DORA</span> في <a href="../10-network-devices.md">الموضوع العاشر</a>) |
+| <span dir="ltr">DHCP</span> | توزيع تلقائي لعنوان IPv4 من سيرفر مخصص (راجع تفاصيل عملية <span dir="ltr">DORA</span> في <a href="../10-Networking-Devices.md">الموضوع العاشر</a>) |
 | <span dir="ltr">DHCPv6</span> | نفس فكرة DHCP لكن لتوزيع عناوين IPv6 |
 | <span dir="ltr">Static</span> | تعيين العنوان يدويًا من قِبل المسؤول عن الشبكة، ويظل ثابتًا حتى يُغيَّر يدويًا |
 | <span dir="ltr">APIPA</span> | تعيين ذاتي تلقائي (`169.254.x.x`) عند فشل الجهاز في الوصول لسيرفر DHCP |
@@ -412,7 +430,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <span dir="ltr">Default Gateway</span> هو عنوان الـ <span dir="ltr">IP</span> الخاص بالراوتر (أو أي جهاز توجيه) الذي يستخدمه الجهاز للخروج من شبكته المحلية إلى أي شبكة أخرى (بما في ذلك الإنترنت). أي بيانات وجهتها خارج نطاق الشبكة المحلية للجهاز تُرسَل أولًا إلى الـ Default Gateway ليتولى هو توجيهها.
 
-بالإضافة لعنوان الـ IP نفسه، يحتاج الجهاز عادة **إعدادات مصاحبة** حتى يقدر يتواصل بشكل كامل، أهمها: الـ <span dir="ltr">Subnet Mask</span>، والـ <span dir="ltr">Default Gateway</span>، وخادم الـ <span dir="ltr">DNS</span> (راجع تفاصيل الـ DNS في <a href="../10-network-devices.md">الموضوع العاشر</a>) — وكلها تُوزَّع تلقائيًا مع الـ IP عند استخدام DHCP.
+بالإضافة لعنوان الـ IP نفسه، يحتاج الجهاز عادة **إعدادات مصاحبة** حتى يقدر يتواصل بشكل كامل، أهمها: الـ <span dir="ltr">Subnet Mask</span>، والـ <span dir="ltr">Default Gateway</span>، وخادم الـ <span dir="ltr">DNS</span> (راجع تفاصيل الـ DNS في <a href="../10-Networking-Devices.md">الموضوع العاشر</a>) — وكلها تُوزَّع تلقائيًا مع الـ IP عند استخدام DHCP.
 
 <h4 dir="rtl" align="right" id="devices-with-ip">ج. الأجهزة التي تمتلك عنوان IP</h4>
 
@@ -466,7 +484,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <h3 dir="rtl" align="right" id="ip-header">14. عملية التغليف وهيدر الـ IP</h3>
 
-عند إرسال البيانات، يقوم الجهاز بعملية **التغليف <span dir="ltr">(Encapsulation)</span>** التي شُرحت بالتفصيل في <a href="../4-osi-model.md">الموضوع الرابع</a> و<a href="../7-tcp-ip-model.md">الموضوع السابع</a>، حيث تُضاف عند طبقة الشبكة معلومات **هيدر الـ IP <span dir="ltr">(IP Header)</span>** والتي تحتوي على أهم الحقول التالية:
+عند إرسال البيانات، يقوم الجهاز بعملية **التغليف <span dir="ltr">(Encapsulation)</span>** التي شُرحت بالتفصيل في <a href="../04-OSI-Model.md">الموضوع الرابع</a> و<a href="../07-TCP-IP-Model.md">الموضوع السابع</a>، حيث تُضاف عند طبقة الشبكة معلومات **هيدر الـ IP <span dir="ltr">(IP Header)</span>** والتي تحتوي على أهم الحقول التالية:
 
 <div align="center">
 <img src="images/7-9-ip-header-fields.png" width="600">
@@ -481,7 +499,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 | <span dir="ltr">Source IP</span> | عنوان الجهاز المُرسِل |
 | <span dir="ltr">Destination IP</span> | عنوان الجهاز المستقبِل |
 | <span dir="ltr">TTL (Time to Live)</span> | يحدد أقصى عدد قفزات <span dir="ltr">(Hops)</span> يمكن أن تمر بها الحزمة قبل إسقاطها، لمنع دورانها إلى الأبد |
-| <span dir="ltr">Protocol</span> | يوضح البروتوكول المستخدم في الطبقة الأعلى (مثل TCP أو UDP، راجع <a href="../7-tcp-ip-model.md">الموضوع السابع</a>) |
+| <span dir="ltr">Protocol</span> | يوضح البروتوكول المستخدم في الطبقة الأعلى (مثل TCP أو UDP، راجع <a href="../07-TCP-IP-Model.md">الموضوع السابع</a>) |
 | <span dir="ltr">Checksum</span> | قيمة تُستخدم للتحقق من سلامة الهيدر نفسه، والتأكد إنه لم يتعرض لأي تلف أثناء النقل |
 | <span dir="ltr">DSCP / ToS (Type of Service)</span> | حقل يُستخدم لتحديد **أولوية جودة الخدمة <span dir="ltr">(QoS)</span>** للحزمة، بحيث يقدر الراوتر يعطي أولوية أعلى لحزم حساسة للتأخير (مثل مكالمات الصوت VoIP) عن حزم أقل حساسية (مثل تحميل ملف) |
 | <span dir="ltr">Identification</span> | رقم تعريفي فريد يُعطى لكل حزمة أصلية **قبل** تقسيمها، بحيث لو الحزمة اتقسّمت لأجزاء (Fragments)، كل الأجزاء بتحمل نفس الرقم عشان الجهاز المستقبل يعرف إنها تابعة لنفس الحزمة الأصلية |
@@ -495,14 +513,18 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <h3 dir="rtl" align="right" id="ip-port-relationship">15. العلاقة بين IP والـ Port Number</h3>
 
-عنوان الـ <span dir="ltr">IP</span> وحده **يحدد الجهاز** فقط، لكنه لا يحدد **أي برنامج أو خدمة** داخل هذا الجهاز يجب أن يستقبل البيانات. هنا يأتي دور رقم الـ <span dir="ltr">Port</span> (تم شرحه بالتفصيل الكامل في <a href="../5-port-numbers.md">الموضوع الخامس</a>):
+<h4 dir="rtl" align="right" id="socket-concept">أ. مفهوم الـ Socket</h4>
+
+عنوان الـ <span dir="ltr">IP</span> وحده **يحدد الجهاز** فقط، لكنه لا يحدد **أي برنامج أو خدمة** داخل هذا الجهاز يجب أن يستقبل البيانات. هنا يأتي دور رقم الـ <span dir="ltr">Port</span> (تم شرحه بالتفصيل الكامل في <a href="../05-Port-Number.md">الموضوع الخامس</a>):
 
 | العنصر | الطبقة | الوظيفة |
 |:---:|:---:|:---:|
 | <span dir="ltr">IP Address</span> | Layer 3 – Network | يحدد **الجهاز** (مين المُرسِل ومين المستقبِل) |
 | <span dir="ltr">Port Number</span> | Layer 4 – Transport | يحدد **الخدمة/البرنامج** المطلوب داخل هذا الجهاز (مثل متصفح، بريد إلكتروني، لعبة أونلاين...) |
 
-**الـ Socket:** الدمج بين عنوان الـ IP ورقم الـ Port معًا (مثال: `192.168.1.10:443`) يُكوّن ما يُسمى <span dir="ltr">Socket</span>، وهو ما يحدد بدقة متناهية **جهازًا بعينه + خدمة بعينها عليه** — وهو نفس مفهوم الـ <span dir="ltr">Socket Pair / 4-Tuple</span> الذي شُرح بالتفصيل في <a href="../5-port-numbers.md">الموضوع الخامس</a>.
+الدمج بين عنوان الـ IP ورقم الـ Port معًا (مثال: `192.168.1.10:443`) يُكوّن ما يُسمى <span dir="ltr">Socket</span>، وهو ما يحدد بدقة متناهية **جهازًا بعينه + خدمة بعينها عليه** — وهو نفس مفهوم الـ <span dir="ltr">Socket Pair / 4-Tuple</span> الذي شُرح بالتفصيل في <a href="../05-Port-Number.md">الموضوع الخامس</a>.
+
+<h4 dir="rtl" align="right" id="source-destination-port">ب. Source و Destination Port</h4>
 
 **ما الذي "يُضاف" لعنوان الـ IP علشان الجهاز يقدر يطلع على الإنترنت؟**
 عند إرسال أي طلب (مثل فتح موقع على المتصفح)، الجهاز لا يرسل عنوان الـ IP بمفرده، بل يرفقه بالمعلومات التالية:
@@ -510,7 +532,9 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 1. **Destination Port:** رقم Port ثابت ومعروف للخدمة المطلوبة على السيرفر البعيد (مثال: `443` لـ HTTPS، `80` لـ HTTP).
 2. **Source Port:** رقم Port **عشوائي** يختاره الجهاز المُرسِل لنفسه من نطاق الـ <span dir="ltr">Ephemeral Ports</span> (منافذ مؤقتة، عادة من `49152` إلى `65535`) — وهذا الرقم هو ما يسمح للجهاز بالتفريق بين عدة اتصالات مفتوحة في نفس الوقت (مثال: فتح أكتر من تبويب في المتصفح على نفس الموقع، كل تبويب له Source Port مختلف).
 
-> 🔗 مفهوم الـ Ephemeral Ports واختياره العشوائي تم شرحه بالتفصيل في <a href="../6-osi-practical-lab.md">الموضوع السادس – OSI Practical Lab</a>.
+<h4 dir="rtl" align="right" id="ephemeral-ports">ج. الـ Ephemeral Ports</h4>
+
+مفهوم الـ Ephemeral Ports واختياره العشوائي تم شرحه بالتفصيل في <a href="../06-Lab-OSI-Model.md">الموضوع السادس – OSI Practical Lab</a>.
 
 ---
 
@@ -529,6 +553,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 | <span dir="ltr">Static NAT</span> | ترجمة ثابتة عنوان خاص واحد ↔ عنوان عام واحد بشكل دائم |
 | <span dir="ltr">Dynamic NAT</span> | ترجمة من مجموعة عناوين خاصة إلى مجموعة عناوين عامة، بشكل تلقائي غير ثابت |
 | <span dir="ltr">PAT (Port Address Translation)</span> | يُعرف أيضًا بـ <span dir="ltr">NAT Overload</span>، يسمح لعدة أجهزة بمشاركة عنوان IP عام واحد عن طريق التفريق بينهم بأرقام Ports مختلفة |
+| <span dir="ltr">CGNAT (Carrier-Grade NAT)</span> | نفس فكرة الـ PAT، لكن يطبّقها مزود خدمة الإنترنت <span dir="ltr">(ISP)</span> نفسه على مستوى شبكته بالكامل — بحيث يشارك عشرات أو مئات المشتركين المنزليين **نفس عنوان الـ Public IP الواحد**، وليس فقط أجهزة المنزل الواحد. تُستخدم بكثافة حاليًا كحل مؤقت لتأخير نفاد عناوين IPv4 مع تأخر انتشار IPv6 الكامل (راجع <a href="#ipv6-appendix">ملحق IPv6</a>) |
 
 <h4 dir="rtl" align="right" id="pat-home-router">ب. مثال تطبيقي: إزاي راوتر منزلي بـ IP عام واحد يخدم أكثر من 10 أجهزة</h4>
 
@@ -605,7 +630,7 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 | النوع | عدد المستقبِلين | مثال عملي |
 |:---:|:---:|:---:|
 | <span dir="ltr">Unicast</span> (فردي) | جهاز واحد محدد بالضبط | تصفح موقع ويب، أو مكالمة فيديو بين شخصين |
-| <span dir="ltr">Broadcast</span> (بث عام) | **كل** الأجهزة على نفس الشبكة المحلية بلا استثناء | طلب الـ DHCP الأول (Discover)، أو رسائل ARP (راجع <a href="../9-ethernet-lan.md">الموضوع التاسع</a>) |
+| <span dir="ltr">Broadcast</span> (بث عام) | **كل** الأجهزة على نفس الشبكة المحلية بلا استثناء | طلب الـ DHCP الأول (Discover)، أو رسائل ARP (راجع <a href="../09-Ethernet-LAN.md">الموضوع التاسع</a>) |
 | <span dir="ltr">Multicast</span> (بث موجّه لمجموعة) | مجموعة محددة فقط من الأجهزة المشتركة في هذا البث (راجع <a href="#multicast-loopback">البند العاشر</a>) | تحديثات بروتوكولات التوجيه (OSPF, EIGRP)، أو بث فيديو مباشر لمشتركين محددين |
 
 > 🔑 **الفرق الجوهري:** الـ Unicast يستهلك أقل موارد لكنه محدود لجهة واحدة، الـ Broadcast يصل للجميع لكنه مُكلف على أداء الشبكة كلما كبر حجمها (وهو أحد أهم أسباب <a href="#why-subnetting">الحاجة للـ Subnetting</a>)، بينما الـ Multicast حل وسط: يوصل لمجموعة مهتمة بالفعل دون إزعاج باقي الشبكة.
@@ -651,8 +676,6 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 ---
 
 <h2 dir="rtl" align="right" id="part2-subnetting">🟩 الجزء الثاني: تقسيم الشبكات <span dir="ltr">(IP Subnetting)</span></h2>
-
-> ⚠️ هذا الجزء هو **الأهم** في هذا الملف. كل خطوة هنا محلولة بالتفصيل مع أمثلة عملية، لأن فهم الـ Subnetting يعتمد بشكل كامل على التمرّن على الأرقام وليس الحفظ.
 
 <h3 dir="rtl" align="right" id="why-subnetting">1. مقدمة: ليه بنقسم الشبكة؟</h3>
 
@@ -867,7 +890,7 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 ```
 الناتج الباينري الكامل: `00111100 01011010`
 
-> 🔗 هذا التمرين يربط مباشرة بما تم شرحه عن نظام كتابة عنوان MAC بالهيكساديسيمال في <a href="#ip-vs-mac">البند الخامس من الجزء الأول</a> وفي <a href="../9-ethernet-lan.md">الموضوع التاسع</a>.
+> 🔗 هذا التمرين يربط مباشرة بما تم شرحه عن نظام كتابة عنوان MAC بالهيكساديسيمال في <a href="#ip-vs-mac">البند الخامس من الجزء الأول</a> وفي <a href="../09-Ethernet-LAN.md">الموضوع التاسع</a>.
 
 <h4 dir="rtl" align="right" id="hex-range">ز. طريقة التعبير عن مدى الاحتمالات في نظام الهيكساديسيمال</h4>
 
@@ -903,7 +926,7 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 
 <h4 dir="rtl" align="right" id="decimal-hex-direct">ط. التحويل المباشر بين الديسيمال والهيكس</h4>
 
-بالإضافة للمرور عبر الباينري (الطريقة الأشمل والأكثر استخدامًا في الشبكات)، يمكن التحويل مباشرة بين الديسيمال والهيكس باستخدام نفس جدول التكافؤ المذكور في <a href="#hex-binary-conversion">البند د</a> (حيث `A=10, B=11, C=12, D=13, E=14, F=15`):
+بالإضافة للمرور عبر الباينري (الطريقة الأشمل والأكثر استخدامًا في الشبكات)، يمكن التحويل مباشرة بين الديسيمال والهيكس باستخدام نفس جدول التكافؤ المذكور في <a href="#hex-binary-conversion">البند و</a> (حيث `A=10, B=11, C=12, D=13, E=14, F=15`):
 
 **مثال — تحويل `202` من ديسيمال إلى هيكس:** نقسم على 16 مرارًا: `202 ÷ 16 = 12` والباقي `10` ⬅ الخانة الأولى (الأصغر) = `10 = A`، والخانة الثانية = `12 = C` ⬅ الناتج `CA` بالهيكس.
 
@@ -915,7 +938,7 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 
 <span dir="ltr">CIDR (Classless Inter-Domain Routing)</span> هي طريقة مختصرة لكتابة الـ Subnet Mask، بحيث بدلًا من كتابة الأربع أوكتتات كاملة، نكتب فقط **عدد البتات التي قيمتها 1** بعد علامة السلاش `/`.
 
-**اسم هذا الرقم رسميًا هو <span dir="ltr">Prefix Length</span> (طول البادئة):** هو نفسه عدد بتات الشبكة (Network bits) مُعبَّرًا عنه كرقم مباشر بدل صيغة الـ Subnet Mask الكاملة. فمثلًا في `192.168.1.0/24`، الرقم `24` هو الـ Prefix Length، ويعني أن أول 24 بت من العنوان (البادئة) ثابتة وتمثل جزء الشبكة، بينما الـ 8 بت المتبقية متغيرة وتمثل جزء الأجهزة. أي إشارة لـ "طول الـ Prefix" أو "Prefix Length" في أي مصدر أو امتحان تعني **بالضبط** نفس الرقم المكتوب بعد السلاش في صيغة CIDR — المصطلحان مترادفان تمامًا.
+<span id="prefix-length-def"></span>**اسم هذا الرقم رسميًا هو <span dir="ltr">Prefix Length</span> (طول البادئة):** هو نفسه عدد بتات الشبكة (Network bits) مُعبَّرًا عنه كرقم مباشر بدل صيغة الـ Subnet Mask الكاملة. فمثلًا في `192.168.1.0/24`، الرقم `24` هو الـ Prefix Length، ويعني أن أول 24 بت من العنوان (البادئة) ثابتة وتمثل جزء الشبكة، بينما الـ 8 بت المتبقية متغيرة وتمثل جزء الأجهزة. أي إشارة لـ "طول الـ Prefix" أو "Prefix Length" في أي مصدر أو امتحان تعني **بالضبط** نفس الرقم المكتوب بعد السلاش في صيغة CIDR — المصطلحان مترادفان تمامًا.
 
 **معنى `/24` عمليًا:** أول 24 بت من العنوان (أول 3 أوكتتات) ثابتة وتمثل الشبكة، والـ 8 بت المتبقية (الأوكتت الأخير) للأجهزة.
 
@@ -1149,6 +1172,8 @@ $$\text{Subnet Mask} = 255.255.248.0 \;(/21)$$
 - تتطلب أن تكون الشبكات المُدمجة **متجاورة رقميًا ومتوافقة حسابيًا** (على حدود صحيحة من مضاعفات القوى)، وإلا لا يمكن دمجها بشكل صحيح.
 - تُستخدم أساسًا لتلخيص جداول التوجيه <span dir="ltr">(Route Summarization)</span> وتقليل حجمها، وليست شائعة الاستخدام داخل الشبكات المحلية الصغيرة.
 
+<h4 dir="rtl" align="right" id="route-summarization-example">مثال: تلخيص 4 شبكات (Route Summarization)</h4>
+
 **مثال تطبيقي أكبر — تلخيص 4 شبكات في مسار واحد:** عندنا 4 شبكات فرعية متجاورة يديرها نفس الراوتر: `192.168.0.0/24`, `192.168.1.0/24`, `192.168.2.0/24`, `192.168.3.0/24`. بدل ما الراوتر المجاور يحتفظ بـ 4 أسطر منفصلة في جدول التوجيه، يمكن تلخيصها في **مسار واحد فقط**:
 
 - الأوكتت الثالث للشبكات الأربع بالباينري: `00000010, 00000001, 00000010, 00000011` — أول 6 بت منها متطابقة (`000000`)، ومختلفة فقط في آخر 2 بت.
@@ -1267,11 +1292,17 @@ $$\text{Wildcard Mask} = 255.255.255.255 - \text{Subnet Mask}$$
 
 نفس مبادئ الـ Subnetting المشروحة في هذا الملف تُطبَّق حرفيًا في بيئات الحوسبة السحابية، لكن بفروقات عملية مهمة:
 
-- **AWS (Amazon Web Services):** عند إنشاء شبكة افتراضية <span dir="ltr">(VPC – Virtual Private Cloud)</span> وتقسيمها لـ Subnets، تفرض AWS **حجز 5 عناوين إضافية** في كل Subnet (وليس عنوانين فقط كالتقسيم التقليدي): أول 4 عناوين (عنوان الشبكة + 3 عناوين لأغراض داخلية مثل الراوتر الافتراضي وخدمة الـ DNS واحتياطي مستقبلي) + آخر عنوان (Broadcast، رغم أن IPv6/AWS لا يستخدم Broadcast فعليًا لكنه يبقى محجوزًا لأسباب تاريخية).
-- **الصيغة المعدَّلة في AWS:** $\text{الأجهزة الفعلية المتاحة} = 2^h - 5$ (بدلًا من $2^h - 2$ التقليدية). فمثلًا Subnet بحجم `/24` في AWS تعطي `256 - 5 = 251` عنوان مستخدم فعليًا، مقابل `254` في الشبكات التقليدية.
-- **Azure (Microsoft Azure):** يتبع نفس المبدأ تقريبًا في الشبكات الافتراضية <span dir="ltr">(VNet – Virtual Network)</span>، ويحجز أيضًا 5 عناوين لكل Subnet لنفس الأسباب.
+<h4 dir="rtl" align="right" id="aws-vpc">أ. AWS VPC</h4>
 
-> ⚠️ هذا فرق عملي مهم جدًا: أي شخص يصمم شبكة سحابية ويحسب عدد الأجهزة بقانون `2ʰ - 2` التقليدي فقط، هيلاقي إنه في الواقع أقل بـ 3 عناوين من حسابه — فلازم يستخدم `2ʰ - 5` عند التخطيط لبيئة AWS أو Azure تحديدًا.
+عند إنشاء شبكة افتراضية <span dir="ltr">(VPC – Virtual Private Cloud)</span> وتقسيمها لـ Subnets، تفرض <span dir="ltr">AWS (Amazon Web Services)</span> **حجز 5 عناوين إضافية** في كل Subnet (وليس عنوانين فقط كالتقسيم التقليدي): أول 4 عناوين (عنوان الشبكة + 3 عناوين لأغراض داخلية مثل الراوتر الافتراضي وخدمة الـ DNS واحتياطي مستقبلي) + آخر عنوان (Broadcast، رغم أن AWS لا يستخدم Broadcast فعليًا لكنه يبقى محجوزًا لأسباب تاريخية).
+
+<h4 dir="rtl" align="right" id="aws-reservation-formula">ب. حجز 5 عناوين بدل 2</h4>
+
+**الصيغة المعدَّلة في AWS:** $\text{الأجهزة الفعلية المتاحة} = 2^h - 5$ (بدلًا من $2^h - 2$ التقليدية). فمثلًا Subnet بحجم `/24` في AWS تعطي `256 - 5 = 251` عنوان مستخدم فعليًا، مقابل `254` في الشبكات التقليدية. هذا فرق عملي مهم: أي شخص يحسب عدد الأجهزة بالقانون التقليدي فقط، هيلاقي إنه في الواقع أقل بـ 3 عناوين من حسابه.
+
+<h4 dir="rtl" align="right" id="azure-vnet">ج. Azure VNet</h4>
+
+<span dir="ltr">Azure (Microsoft Azure)</span> يتبع نفس المبدأ تقريبًا في الشبكات الافتراضية <span dir="ltr">(VNet – Virtual Network)</span>، ويحجز أيضًا 5 عناوين لكل Subnet لنفس الأسباب.
 
 ---
 
@@ -1315,6 +1346,58 @@ $$\text{Wildcard Mask} = 255.255.255.255 - \text{Subnet Mask}$$
 - الشبكة الثالثة: `2001:db8:acad:0003::/64`
 
 بدون أي حاجة لحسابات باينري معقدة أو قوانين `2ⁿ`/`2ʰ` كما في IPv4 — مجرد زيادة رقم هيكس بسيط لكل شبكة فرعية جديدة.
+
+<h4 dir="rtl" align="right" id="ipv6-compression">ج. قواعد اختصار عنوان IPv6</h4>
+
+عنوان IPv6 الكامل طويل (8 مجموعات هيكس)، لذلك توجد قاعدتان رسميتان لاختصار كتابته:
+
+1. **حذف الأصفار البادئة في كل مجموعة:** `00cd` تُكتب `cd`، و`0000` تُكتب `0`.
+2. **استبدال أطول سلسلة متتالية من المجموعات الصفرية بـ `::` مرة واحدة فقط في العنوان بالكامل** (لا يجوز استخدامها مرتين، لأن هذا يجعل عدد المجموعات المحذوفة غامضًا).
+
+**مثال:** العنوان الكامل `2001:0db8:0000:0000:0000:0000:1257:0000` يُختصر إلى `2001:db8::1257:0`.
+
+<h4 dir="rtl" align="right" id="ndp">د. Neighbor Discovery Protocol (NDP)</h4>
+
+في IPv4، يعتمد الجهاز على بروتوكول <span dir="ltr">ARP</span> لمعرفة عنوان الـ MAC المرتبط بعنوان IP معين على نفس الشبكة (راجع <a href="../09-Ethernet-LAN.md">الموضوع التاسع</a>). في IPv6، **لا يوجد ARP إطلاقًا** — بديله هو بروتوكول <span dir="ltr">NDP (Neighbor Discovery Protocol)</span>، الذي يقوم بنفس الوظيفة (وأكثر) باستخدام رسائل Multicast بدلًا من Broadcast، بالإضافة لمهام أخرى مثل اكتشاف الراوترات المتاحة على الشبكة تلقائيًا.
+
+<h4 dir="rtl" align="right" id="slaac">هـ. SLAAC (التهيئة الذاتية بدون DHCP)</h4>
+
+<span dir="ltr">SLAAC (Stateless Address Autoconfiguration)</span> هي آلية تسمح لجهاز IPv6 بتوليد عنوان IP كامل لنفسه تلقائيًا **دون الحاجة لسيرفر DHCP على الإطلاق**: يحصل الجهاز على الـ Prefix (أول 64 بت) من رسالة إعلان يبثها الراوتر عبر NDP، ثم يولّد جزء الجهاز (آخر 64 بت) بنفسه — غالبًا عبر EUI-64 المشتق من عنوان الـ MAC (راجع <a href="#assignment-table">البند 12</a>)، أو عبر رقم عشوائي لأسباب خصوصية.
+
+<h4 dir="rtl" align="right" id="ipv6-transition">و. آليات الانتقال بين IPv4 و IPv6</h4>
+
+نظرًا لأن معظم شبكات العالم لا تزال تعتمد على IPv4 جزئيًا، توجد آليات للسماح بتعايش النظامين خلال فترة الانتقال:
+
+| الآلية | الوصف |
+|:---:|:---:|
+| <span dir="ltr">Dual-Stack</span> | تشغيل IPv4 و IPv6 **في نفس الوقت** على نفس الجهاز/الواجهة، بحيث يختار الجهاز البروتوكول المناسب حسب الوجهة — الحل الأكثر شيوعًا واستقرارًا حاليًا |
+| <span dir="ltr">Tunneling</span> (مثل 6to4) | تغليف حزم IPv6 داخل حزم IPv4 لنقلها عبر بنية تحتية لا تدعم IPv6 بشكل أصلي، حتى تصل لنقطة تدعم IPv6 فتُفك التغليف |
+
+---
+---
+
+<h2 dir="rtl" align="right" id="practice-problems">📝 مسائل تدريب ذاتي (بدون حل مباشر)</h2>
+
+حاول تحل المسائل دي بنفسك الأول باستخدام الخطوات المشروحة في <a href="#solving-steps">البند السابع من الجزء الثاني</a>، وبعدين قارن إجابتك بمفتاح الإجابات في الآخر.
+
+1. عندك عنوان `10.20.30.40/27`. أوجد: عنوان الشبكة، عنوان البث، أول وآخر عنوان صالح، وعدد الأجهزة المتاحة.
+2. عندك شبكة كلاس B الافتراضية `172.16.0.0/16`، ومطلوب تقسيمها لعدد **10 شبكات فرعية على الأقل**. أوجد صيغة الـ CIDR المناسبة وعدد الشبكات الفعلي الناتج.
+3. عندك شبكة `192.168.100.0/24`، ومطلوب تقسيمها بحيث كل شبكة فرعية تحتوي على **40 جهاز على الأقل**. أوجد صيغة الـ CIDR المناسبة وعدد الأجهزة الفعلي المتاح لكل شبكة.
+4. عندك عنوان جهاز `192.168.1.130/26`. أوجد عنوان الشبكة وعنوان البث الخاصين به.
+5. **(VLSM)** عندك النطاق `172.20.0.0/16`، ومطلوب تقسيمه لثلاث شبكات فرعية باستخدام VLSM بالمتطلبات التالية: القسم الأول 300 جهاز، القسم الثاني 60 جهاز، القسم الثالث 10 أجهزة. رتّب التخصيص من الأكبر للأصغر وأوجد الشبكة الفرعية (Subnet) الكاملة لكل قسم.
+6. عندك شبكة كلاس A `45.0.0.0/8`، ومطلوب تقسيمها لعدد **500 شبكة فرعية على الأقل**. أوجد صيغة الـ CIDR المناسبة.
+
+<details>
+<summary>🔑 اضغط هنا لإظهار مفتاح الإجابات</summary>
+
+1. الشبكة: `10.20.30.32/27` — البث: `10.20.30.63` — أول عنوان: `10.20.30.33` — آخر عنوان: `10.20.30.62` — عدد الأجهزة: `2⁵-2 = 30`.
+2. نحتاج `2ⁿ ≥ 10` ⬅ `2⁴ = 16` (أصغر قوة تفي بالغرض) ⬅ نستلف 4 بت ⬅ `/16 + 4 = /20`، وينتج فعليًا **16 شبكة فرعية**.
+3. نحتاج `2ʰ - 2 ≥ 40` ⬅ `2⁶ - 2 = 62` (أصغر قوة تفي بالغرض) ⬅ بتات الأجهزة = 6 ⬅ `/32 - 6 = /26`، وعدد الأجهزة الفعلي = **62 جهاز**.
+4. حجم القفزة لـ `/26` = 64 ⬅ الشبكة تبدأ من أقرب مضاعف لـ 64 أقل من أو يساوي 130، وهو 128 ⬅ عنوان الشبكة: `192.168.1.128` — عنوان البث: `192.168.1.191`.
+5. **القسم الأول (300):** `2⁹-2=510` ⬅ `172.20.0.0/23`. **القسم الثاني (60):** `2⁶-2=62` ⬅ `172.20.2.0/26` (يبدأ بعد نهاية القسم الأول مباشرة). **القسم الثالث (10):** `2⁴-2=14` ⬅ `172.20.2.64/28` (يبدأ بعد نهاية القسم الثاني مباشرة).
+6. نحتاج `2ⁿ ≥ 500` ⬅ `2⁹ = 512` (أصغر قوة تفي بالغرض) ⬅ نستلف 9 بت ⬅ `/8 + 9 = /17`.
+
+</details>
 
 ---
 ---
