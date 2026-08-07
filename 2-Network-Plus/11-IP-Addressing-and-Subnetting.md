@@ -38,7 +38,7 @@
 | 2 | <a href="#subnet-mask-basics"><span dir="ltr">Subnet Mask</span>: تعريفه وقواعده</a> | - |
 | 3 | <a href="#anding">عملية <span dir="ltr">ANDing</span></a> | - |
 | 4 | <a href="#number-systems">أنظمة العد وطرق التحويل بينها</a> | <a href="#number-systems-intro">Base 10 / Base 2 / Base 16 (+نبذة عن Octal)</a><br>&nbsp;&nbsp;&nbsp;<a href="#weights-table">جدول الأوزان (الجدول السحري)</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-decimal-conversion">تحويل ديسيمال ↔ باينري (+أمثلة إضافية)</a><br>&nbsp;&nbsp;&nbsp;<a href="#division-method">طريقة القسمة المتتالية على 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#full-ip-binary-example">مثال شامل: تحويل IP كامل أوكتت بأوكتت</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-range">مدى الاحتمالات في الباينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-binary-conversion">تحويل هيكس ↔ باينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-range">مدى الاحتمالات في الهيكس</a><br>&nbsp;&nbsp;&nbsp;<a href="#bit-count-rule">معرفة عدد البتات لأي رقم (+مثال شامل)</a><br>&nbsp;&nbsp;&nbsp;<a href="#decimal-hex-direct">التحويل المباشر ديسيمال↔هيكس</a> |
-| 5 | <a href="#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | <a href="#prefix-length-def">تعريف Prefix Length</a><br>&nbsp;&nbsp;&nbsp;<a href="#cidr-cheat-sheet">جدول CIDR المرجعي السريع (/8–/30)</a><br>&nbsp;&nbsp;&nbsp;<a href="#point-to-point-links">شبكات الربط النقطي /30 و /31 (RFC 3021)</a> |
+| 5 | <a href="#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | <a href="#prefix-length-def">تعريف Prefix Length</a><br>&nbsp;&nbsp;&nbsp;<a href="#cidr-cheat-sheet">جدول CIDR المرجعي السريع (/8–/30)</a><br>&nbsp;&nbsp;&nbsp;<a href="#point-to-point-links">شبكات الربط النقطي /30 و /31 (RFC 3021) و/32</a> |
 | 6 | <a href="#subnetting-laws">القوانين الأساسية للتقسيم</a> | <a href="#law-num-subnets">عدد الشبكات 2ⁿ</a><br>&nbsp;&nbsp;&nbsp;<a href="#law-num-hosts">عدد الأجهزة 2ʰ − 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#law-block-size">حجم القفزة Block Size</a> |
 | 7 | <a href="#solving-steps">خطوات حل أي مسألة <span dir="ltr">Subnetting</span></a> | - |
 | 8 | <a href="#worked-examples">أمثلة محلولة خطوة بخطوة</a> | <a href="#example-easy">مثال سهل</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-medium">مثال متوسط (معطى: عدد الأجهزة)</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-advanced">مثال متقدم (معطى: عدد الشبكات)</a> |
@@ -995,13 +995,20 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 | `/29` | `255.255.255.248` | 6 | 8 |
 | `/30` | `255.255.255.252` | 2 | 4 |
 
-<h4 dir="rtl" align="right" id="point-to-point-links">ب. شبكات الربط النقطي (/30 و /31)</h4>
+<h4 dir="rtl" align="right" id="point-to-point-links">ب. شبكات الربط النقطي (/30 و /31) و/32</h4>
 
 الوصلة التي تربط بين راوترين مباشرة <span dir="ltr">(Point-to-Point Link)</span> تحتاج جهازين فقط، فاستخدام Subnet Mask عادي مثل `/24` (254 عنوان متاح) يكون **هدرًا فادحًا** في عناوين الـ IP.
 
 **الحل التقليدي — `/30`:** يوفر `2² - 2 = 2` عنوان صالح للاستخدام بالظبط (وعنوان Network وعنوان Broadcast محجوزان كالمعتاد) — وهو العدد المثالي تمامًا لربط راوترين ببعض، ولذلك يُعتبر المعيار الشائع تاريخيًا لوصلات الـ Point-to-Point.
 
 **المعيار الحديث — `/31` (وفق <span dir="ltr">RFC 3021</span>):** يسمح باستخدام Subnet Mask بمقاس `/31` (يوفر عنوانين فقط، بدون تخصيص عنوان Network أو Broadcast منفصلين — كلا العنوانين يُستخدمان مباشرة للجهازين) لزيادة كفاءة استخدام عناوين الـ IP بشكل أكبر، وهو شائع الاستخدام في تصميمات الشبكات الحديثة وبيئات مزودي الخدمة (ISPs) الكبيرة.
+
+**الحالة القصوى — `/32`:** يمثل **مضيفًا واحدًا فقط <span dir="ltr">(Host Route)</span>** بلا أي بتات متاحة للأجهزة إطلاقًا (`2⁰ = 1` عنوان واحد بالضبط). يُستخدم غالبًا لتحديد مسار دقيق لجهاز بعينه في جدول التوجيه، أو لعناوين واجهات الـ Loopback على الراوترات.
+
+<div align="center">
+<img src="images/11-28-cidr-notation-25-to-32-table.png" width="400">
+<br><em>جدول مرجعي: Dotted Decimal مقابل CIDR Notation من /25 حتى /32</em>
+</div>
 
 ---
 
