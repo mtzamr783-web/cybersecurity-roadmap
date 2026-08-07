@@ -14,19 +14,19 @@
 |:---:|:---:|:---:|
 | - | <a href="#part1-ip-address">🟦 الجزء الأول: عنوان الـ IP</a> | - |
 | 1 | <a href="#ip-definition-importance">تعريف عنوان الـ IP وأهميته</a> | - |
-| 2 | <a href="#ipv4-components">مكونات عنوان الـ IPv4</a> | <span dir="ltr">Bit / Byte / Octet</span><br>&nbsp;&nbsp;&nbsp;<a href="#octet-system">نظام الأوكتت بالتفصيل (Dotted-Decimal, حدود الأوكتت)</a> |
+| 2 | <a href="#ipv4-components">مكونات عنوان الـ IPv4</a> | <a href="#bit-byte-octet-terms">Bit / Byte / Octet</a><br>&nbsp;&nbsp;&nbsp;<a href="#octet-system">نظام الأوكتت بالتفصيل (Dotted-Decimal, حدود الأوكتت)</a> |
 | 3 | <a href="#ipv4-vs-ipv6">نبذة: <span dir="ltr">IPv4</span> مقابل <span dir="ltr">IPv6</span> (مقارنة كاملة)</a> | - |
 | 4 | <a href="#ip-layer-nature">الطبقة التي يعمل بها الـ IP وثباته</a> | - |
 | 5 | <a href="#ip-vs-mac">الفرق بين الـ <span dir="ltr">IP</span> والـ <span dir="ltr">MAC Address</span></a> | <a href="#mac-address-review">مراجعة الـ MAC Address</a><br>&nbsp;&nbsp;&nbsp;<a href="#mac-ip-comparison-table">جدول المقارنة الكامل</a><br>&nbsp;&nbsp;&nbsp;<a href="#why-two-addresses">ليه محتاجين عنوانين مش واحد بس</a><br>&nbsp;&nbsp;&nbsp;<a href="#flat-vs-hierarchical">Flat مقابل Hierarchical</a> |
 | 6 | <a href="#iana">منظمة <span dir="ltr">IANA</span> وسجلات الإنترنت</a> | <a href="#iana-registry-hierarchy">التسلسل الهرمي للسجلات</a><br>&nbsp;&nbsp;&nbsp;<a href="#whois-registry">سجل WHOIS</a> |
 | 7 | <a href="#ip-classes">فئات الـ <span dir="ltr">IP (Classes A–E)</span></a> | <a href="#class-ranges">مدى كل فئة</a><br>&nbsp;&nbsp;&nbsp;<a href="#class-network-host-split">الفرق بين الفئات</a><br>&nbsp;&nbsp;&nbsp;<a href="#why-d-e-no-mask">ليه D, E مالهمش Subnet Mask</a> |
 | 8 | <a href="#network-host-id">أجزاء عنوان الـ <span dir="ltr">IP</span>: <span dir="ltr">Network ID</span> و<span dir="ltr">Host ID</span></a> | - |
-| 9 | <a href="#network-host-broadcast">أنواع العناوين داخل الشبكة</a> | <span dir="ltr">Network / Host / Broadcast Address</span><br>&nbsp;&nbsp;&nbsp;<a href="#quiz-examples">3 أمثلة محلولة (Class A/B/C)</a> |
+| 9 | <a href="#network-host-broadcast">أنواع العناوين داخل الشبكة</a> | <a href="#network-host-broadcast-terms">Network / Host / Broadcast Address</a><br>&nbsp;&nbsp;&nbsp;<a href="#quiz-examples">3 أمثلة محلولة (Class A/B/C)</a> |
 | 10 | <a href="#ip-types">أنواع عناوين الـ IP</a> | <a href="#private-public-ip">Private و Public (+فئات الـ Public لكل Class)</a><br>&nbsp;&nbsp;&nbsp;<a href="#apipa-virtual-ip">APIPA (وأنه Non-routable) و Virtual IP</a><br>&nbsp;&nbsp;&nbsp;<a href="#multicast-loopback">Multicast (+عناوين شهيرة وربطها بالـ MAC) و Loopback</a><br>&nbsp;&nbsp;&nbsp;<a href="#reserved-addresses">عناوين محجوزة أخرى</a> |
 | 11 | <a href="#network-address-benefit">فائدة عنوان الشبكة في التحكم والحماية</a> | <a href="#acl-concept">ACL</a><br>&nbsp;&nbsp;&nbsp;<a href="#firewall-example">مثال الجدار الناري</a> |
 | 12 | <a href="#ip-assignment-methods">طرق حصول الجهاز على عنوان <span dir="ltr">IP</span> وإعداداته</a> | <a href="#assignment-table">DHCP / DHCPv6 / Static / APIPA / EUI-64</a><br>&nbsp;&nbsp;&nbsp;<a href="#default-gateway">Default Gateway</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-with-ip">الأجهزة التي تمتلك عنوان IP</a><br>&nbsp;&nbsp;&nbsp;<a href="#ipconfig-renew">أمر ipconfig /renew</a><br>&nbsp;&nbsp;&nbsp;<a href="#dhcp-relay-agent">DHCP Relay Agent (Helper Address)</a> |
 | 13 | <a href="#routing">التوجيه: جدول التوجيه وأنواع المسارات</a> | <a href="#routing-table">جدول التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#routing-protocols">بروتوكولات التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#router-uses-ip">كيف يستخدم الراوتر الـ IP للتوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="#default-vs-static-route">Default Route مقابل Static Route</a> |
-| 14 | <a href="#ip-header">عملية التغليف وهيدر الـ IP</a> | حقول أساسية (Source/Destination/TTL/Protocol)<br>&nbsp;&nbsp;&nbsp;DSCP/ToS (QoS)<br>&nbsp;&nbsp;&nbsp;Identification, Flags, Fragment Offset (التجزئة) |
+| 14 | <a href="#ip-header">عملية التغليف وهيدر الـ IP</a> | <a href="#ip-header-basic-fields">حقول أساسية (Source/Destination/TTL/Protocol)</a><br>&nbsp;&nbsp;&nbsp;<a href="#dscp-tos">DSCP/ToS (QoS)</a><br>&nbsp;&nbsp;&nbsp;<a href="#fragmentation-fields">Identification, Flags, Fragment Offset (التجزئة)</a> |
 | 15 | <a href="#ip-port-relationship">العلاقة بين IP والـ <span dir="ltr">Port Number</span></a> | <a href="#socket-concept">مفهوم الـ Socket</a><br>&nbsp;&nbsp;&nbsp;<a href="#source-destination-port">Source و Destination Port</a><br>&nbsp;&nbsp;&nbsp;<a href="#ephemeral-ports">الـ Ephemeral Ports</a> |
 | 16 | <a href="#nat">ترجمة عناوين الشبكة <span dir="ltr">NAT</span></a> | <a href="#nat-types">أنواعه</a><br>&nbsp;&nbsp;&nbsp;<a href="#pat-home-router">مثال: راوتر منزلي بـ IP عام واحد لأكثر من 10 أجهزة</a><br>&nbsp;&nbsp;&nbsp;<a href="#nat-table-records">سجلات NAT (NAT Table)</a><br>&nbsp;&nbsp;&nbsp;<a href="#nat-terms">مصطلحاته</a><br>&nbsp;&nbsp;&nbsp;<a href="#port-forwarding-dmz">Port Forwarding و DMZ</a> |
 | 17 | <a href="#network-monitoring">مراقبة الشبكة عبر عنوان الـ IP</a> | - |
@@ -37,9 +37,9 @@
 | 1 | <a href="#why-subnetting">مقدمة: ليه بنقسم الشبكة؟</a> | - |
 | 2 | <a href="#subnet-mask-basics"><span dir="ltr">Subnet Mask</span>: تعريفه وقواعده</a> | - |
 | 3 | <a href="#anding">عملية <span dir="ltr">ANDing</span></a> | - |
-| 4 | <a href="#number-systems">أنظمة العد وطرق التحويل بينها</a> | Base 10 / Base 2 / Base 16 (+نبذة عن Octal)<br>&nbsp;&nbsp;&nbsp;<a href="#weights-table">جدول الأوزان (الجدول السحري)</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-decimal-conversion">تحويل ديسيمال ↔ باينري (+أمثلة إضافية)</a><br>&nbsp;&nbsp;&nbsp;<a href="#division-method">طريقة القسمة المتتالية على 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#full-ip-binary-example">مثال شامل: تحويل IP كامل أوكتت بأوكتت</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-range">مدى الاحتمالات في الباينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-binary-conversion">تحويل هيكس ↔ باينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-range">مدى الاحتمالات في الهيكس</a><br>&nbsp;&nbsp;&nbsp;<a href="#bit-count-rule">معرفة عدد البتات لأي رقم (+مثال شامل)</a><br>&nbsp;&nbsp;&nbsp;<a href="#decimal-hex-direct">التحويل المباشر ديسيمال↔هيكس</a> |
+| 4 | <a href="#number-systems">أنظمة العد وطرق التحويل بينها</a> | <a href="#number-systems-intro">Base 10 / Base 2 / Base 16 (+نبذة عن Octal)</a><br>&nbsp;&nbsp;&nbsp;<a href="#weights-table">جدول الأوزان (الجدول السحري)</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-decimal-conversion">تحويل ديسيمال ↔ باينري (+أمثلة إضافية)</a><br>&nbsp;&nbsp;&nbsp;<a href="#division-method">طريقة القسمة المتتالية على 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#full-ip-binary-example">مثال شامل: تحويل IP كامل أوكتت بأوكتت</a><br>&nbsp;&nbsp;&nbsp;<a href="#binary-range">مدى الاحتمالات في الباينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-binary-conversion">تحويل هيكس ↔ باينري</a><br>&nbsp;&nbsp;&nbsp;<a href="#hex-range">مدى الاحتمالات في الهيكس</a><br>&nbsp;&nbsp;&nbsp;<a href="#bit-count-rule">معرفة عدد البتات لأي رقم (+مثال شامل)</a><br>&nbsp;&nbsp;&nbsp;<a href="#decimal-hex-direct">التحويل المباشر ديسيمال↔هيكس</a> |
 | 5 | <a href="#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | <a href="#prefix-length-def">تعريف Prefix Length</a><br>&nbsp;&nbsp;&nbsp;<a href="#cidr-cheat-sheet">جدول CIDR المرجعي السريع (/8–/30)</a><br>&nbsp;&nbsp;&nbsp;<a href="#point-to-point-links">شبكات الربط النقطي /30 و /31 (RFC 3021)</a> |
-| 6 | <a href="#subnetting-laws">القوانين الأساسية للتقسيم</a> | عدد الشبكات <span dir="ltr">2ⁿ</span><br>&nbsp;&nbsp;&nbsp;عدد الأجهزة <span dir="ltr">2ʰ − 2</span><br>&nbsp;&nbsp;&nbsp;حجم القفزة <span dir="ltr">Block Size</span> |
+| 6 | <a href="#subnetting-laws">القوانين الأساسية للتقسيم</a> | <a href="#law-num-subnets">عدد الشبكات 2ⁿ</a><br>&nbsp;&nbsp;&nbsp;<a href="#law-num-hosts">عدد الأجهزة 2ʰ − 2</a><br>&nbsp;&nbsp;&nbsp;<a href="#law-block-size">حجم القفزة Block Size</a> |
 | 7 | <a href="#solving-steps">خطوات حل أي مسألة <span dir="ltr">Subnetting</span></a> | - |
 | 8 | <a href="#worked-examples">أمثلة محلولة خطوة بخطوة</a> | <a href="#example-easy">مثال سهل</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-medium">مثال متوسط (معطى: عدد الأجهزة)</a><br>&nbsp;&nbsp;&nbsp;<a href="#example-advanced">مثال متقدم (معطى: عدد الشبكات)</a> |
 | 9 | <a href="#subnet-id-boundaries">حساب <span dir="ltr">Subnet ID</span> وحدود كل شبكة فرعية</a> | - |
@@ -82,7 +82,7 @@
 <br><em>شكل عنوان الـ IPv4: 4 أوكتت × 8 بت = 32 بت</em>
 </div>
 
-**المصطلحات الأساسية:**
+<span id="bit-byte-octet-terms"></span>**المصطلحات الأساسية:**
 
 | المصطلح | التعريف | مثال |
 |:---:|:---:|:---:|
@@ -300,6 +300,8 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <h3 dir="rtl" align="right" id="network-host-broadcast">9. أنواع العناوين داخل الشبكة</h3>
 
+<span id="network-host-broadcast-terms"></span>
+
 | النوع | التعريف | مثال (على شبكة `192.168.1.0/24`) |
 |:---:|:---:|:---:|
 | <span dir="ltr">Network Address</span> | أول عنوان في نطاق الشبكة، يمثل الشبكة نفسها ولا يُخصَّص لأي جهاز | `192.168.1.0` |
@@ -484,12 +486,14 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 
 <h3 dir="rtl" align="right" id="ip-header">14. عملية التغليف وهيدر الـ IP</h3>
 
-عند إرسال البيانات، يقوم الجهاز بعملية **التغليف <span dir="ltr">(Encapsulation)</span>** التي شُرحت بالتفصيل في <a href="../04-OSI-Model.md">الموضوع الرابع</a> و<a href="../07-TCP-IP-Model.md">الموضوع السابع</a>، حيث تُضاف عند طبقة الشبكة معلومات **هيدر الـ IP <span dir="ltr">(IP Header)</span>** والتي تحتوي على أهم الحقول التالية:
+عند إرسال البيانات، يقوم الجهاز بعملية **التغليف <span dir="ltr">(Encapsulation)</span>** التي شُرحت بالتفصيل في <a href="../04-OSI-Model.md">الموضوع الرابع</a> و<a href="../07-TCP-IP-Model.md">الموضوع السابع</a>، حيث تُضاف عند طبقة الشبكة معلومات **هيدر الـ IP <span dir="ltr">(IP Header)</span>**:
 
 <div align="center">
 <img src="images/7-9-ip-header-fields.png" width="600">
 <br><em>تغليف البيانات (Data Encapsulation) وحقول هيدر الـ IP كاملة</em>
 </div>
+
+<h4 dir="rtl" align="right" id="ip-header-basic-fields">أ. الحقول الأساسية</h4>
 
 | الحقل | الوظيفة |
 |:---:|:---:|
@@ -501,11 +505,21 @@ ISPs / LIRs (مزودو خدمة الإنترنت والسجلات المحلي�
 | <span dir="ltr">TTL (Time to Live)</span> | يحدد أقصى عدد قفزات <span dir="ltr">(Hops)</span> يمكن أن تمر بها الحزمة قبل إسقاطها، لمنع دورانها إلى الأبد |
 | <span dir="ltr">Protocol</span> | يوضح البروتوكول المستخدم في الطبقة الأعلى (مثل TCP أو UDP، راجع <a href="../07-TCP-IP-Model.md">الموضوع السابع</a>) |
 | <span dir="ltr">Checksum</span> | قيمة تُستخدم للتحقق من سلامة الهيدر نفسه، والتأكد إنه لم يتعرض لأي تلف أثناء النقل |
+| <span dir="ltr">Options</span> | حقل اختياري إضافي، نادرًا ما يُستخدم في الحركة العادية، مخصص لميزات متقدمة مثل التسجيل الأمني أو تتبع المسار |
+
+<h4 dir="rtl" align="right" id="dscp-tos">ب. DSCP / ToS (QoS)</h4>
+
+| الحقل | الوظيفة |
+|:---:|:---:|
 | <span dir="ltr">DSCP / ToS (Type of Service)</span> | حقل يُستخدم لتحديد **أولوية جودة الخدمة <span dir="ltr">(QoS)</span>** للحزمة، بحيث يقدر الراوتر يعطي أولوية أعلى لحزم حساسة للتأخير (مثل مكالمات الصوت VoIP) عن حزم أقل حساسية (مثل تحميل ملف) |
+
+<h4 dir="rtl" align="right" id="fragmentation-fields">ج. Identification, Flags, Fragment Offset (التجزئة)</h4>
+
+| الحقل | الوظيفة |
+|:---:|:---:|
 | <span dir="ltr">Identification</span> | رقم تعريفي فريد يُعطى لكل حزمة أصلية **قبل** تقسيمها، بحيث لو الحزمة اتقسّمت لأجزاء (Fragments)، كل الأجزاء بتحمل نفس الرقم عشان الجهاز المستقبل يعرف إنها تابعة لنفس الحزمة الأصلية |
 | <span dir="ltr">Flags</span> | بتات تتحكم في عملية التقسيم <span dir="ltr">(Fragmentation)</span>، أهمها `DF (Don't Fragment)` اللي يمنع تقسيم الحزمة نهائيًا، و`MF (More Fragments)` اللي يوضح إن فيه أجزاء تانية جاية بعد الجزء ده |
 | <span dir="ltr">Fragment Offset</span> | يوضح **ترتيب/موضع** كل جزء (Fragment) بالنسبة للحزمة الأصلية الكاملة، عشان الجهاز المستقبل يقدر يعيد تجميع الأجزاء بالترتيب الصحيح |
-| <span dir="ltr">Options</span> | حقل اختياري إضافي، نادرًا ما يُستخدم في الحركة العادية، مخصص لميزات متقدمة مثل التسجيل الأمني أو تتبع المسار |
 
 > 💡 **التقسيم والتجميع <span dir="ltr">(Fragmentation & Reassembly)</span>:** لو كانت الحزمة أكبر من الحد الأقصى لحجم الوحدة القابلة للنقل <span dir="ltr">(MTU – Maximum Transmission Unit)</span> لأي وصلة في طريقها، يقوم الراوتر بتقسيمها لأجزاء أصغر (باستخدام حقلي Identification و Fragment Offset لتمييزها وترتيبها)، ويتم تجميعها مرة أخرى عند وصولها للجهاز المستقبل النهائي فقط — الأجهزة الوسيطة لا تعيد تجميعها.
 
@@ -737,6 +751,8 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 <h3 dir="rtl" align="right" id="number-systems">4. أنظمة العد وطرق التحويل بينها</h3>
 
 فهم الـ Subnetting يعتمد بشكل كامل على القدرة على التحويل بسهولة بين ثلاثة أنظمة عد:
+
+<span id="number-systems-intro"></span>
 
 | النظام | الاسم | القاعدة |
 |:---:|:---:|:---:|
@@ -996,11 +1012,13 @@ Network ID:  11000000.10101000.00000001.00000000   (192.168.1.0)
 <br><em>سبب طرح 2 من معادلة عدد الأجهزة</em>
 </div>
 
-**القانون الأول: عدد الشبكات الفرعية**
+<h4 dir="rtl" align="right" id="law-num-subnets">أ. القانون الأول: عدد الشبكات الفرعية</h4>
+
 $$\text{عدد الشبكات} = 2^n$$
 حيث **n** = عدد البتات التي تم استلافها من جزء الأجهزة وتحويلها لجزء الشبكة (أي عدد الواحدات الإضافية في الـ Subnet Mask بعد المدى الافتراضي للفئة).
 
-**القانون الثاني: عدد الأجهزة المتاحة في كل شبكة فرعية**
+<h4 dir="rtl" align="right" id="law-num-hosts">ب. القانون الثاني: عدد الأجهزة المتاحة في كل شبكة فرعية</h4>
+
 $$\text{عدد الأجهزة} = 2^h - 2$$
 حيث **h** = عدد البتات المتبقية لجزء الأجهزة (أي عدد الأصفار في الـ Subnet Mask).
 
@@ -1009,7 +1027,8 @@ $$\text{عدد الأجهزة} = 2^h - 2$$
 - **الأول:** عنوان الشبكة نفسه <span dir="ltr">(Network ID)</span> — لا يُوزَّع لأي جهاز، هو ممثل الشبكة فقط.
 - **الأخير:** عنوان البث <span dir="ltr">(Broadcast Address)</span> — مخصص لإرسال بيانات لكل أجهزة الشبكة دفعة واحدة، وليس لجهاز بعينه.
 
-**القانون الثالث: حجم القفزة (Block Size)**
+<h4 dir="rtl" align="right" id="law-block-size">ج. القانون الثالث: حجم القفزة (Block Size)</h4>
+
 حجم القفزة هو الفرق بين بداية كل شبكة فرعية والتالية لها، ويُحسب كالتالي:
 $$\text{Block Size} = 256 - \text{قيمة الأوكتت المتغير في الـ Subnet Mask}$$
 
