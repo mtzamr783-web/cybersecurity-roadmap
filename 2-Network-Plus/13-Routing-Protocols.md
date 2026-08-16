@@ -1,6 +1,6 @@
 <div dir="rtl">
 
-# الموضوع الثالث عشر: بروتوكولات التوجيه (Routing Protocols)
+# الثالث عشر: بروتوكولات التوجيه (Routing Protocols)
 
 ## 📑 جدول المحتويات
 
@@ -9,7 +9,7 @@
 | 1 | [مقدمة عن بروتوكولات التوجيه](#intro-routing-protocols) | [تعريف ووظائف](#routing-protocol-definition)<br>[لماذا نحتاج بروتوكولات التوجيه](#why-routing-protocols) |
 | 2 | [تصنيف بروتوكولات التوجيه](#routing-protocols-classification) | [الداخلي IGP مقابل الخارجي EGP](#igp-vs-egp)<br>[معايير التمييز بين البروتوكولات](#routing-protocol-distinguishing-factors)<br>[الخوارزميات الثلاث](#three-algorithms-overview) |
 | 3 | [خوارزمية أقصر مسار Distance Vector](#distance-vector-algorithm) | [مبدأ العمل](#dv-how-it-works)<br>[تبادل جداول التوجيه](#dv-table-exchange)<br>&nbsp;&nbsp;&nbsp;[مشكلة دوران البيانات](#routing-loops)<br>&nbsp;&nbsp;&nbsp;[طرق منع الدوران](#loop-prevention-methods)<br>[مثال عملي لبناء جدول التوجيه](#dv-worked-example)<br>[حالة استقرار الشبكة Convergence](#convergence) |
-| 4 | [بروتوكول RIP](#rip-protocol) | [الإصدارات RIPv1 وRIPv2](#rip-versions)<br>[تواقيت RIP](#rip-timers)<br>[خصائص عامة](#rip-general-properties) |
+| 4 | [بروتوكول RIP](#rip-protocol) | [الإصدارات RIPv1 وRIPv2](#rip-versions)<br>[الفرق بين RIP وRIPng](#rip-vs-ripng)<br>[تواقيت RIP](#rip-timers)<br>[خصائص عامة](#rip-general-properties) |
 | 5 | [بروتوكول IGRP](#igrp-protocol) | [آلية العمل والنظام المتري](#igrp-metric)<br>[Autonomous System](#autonomous-system)<br>[تواقيت IGRP](#igrp-timers) |
 | 6 | [مقارنة RIP و IGRP](#rip-vs-igrp) | - |
 | 7 | [خوارزمية حالة الربط Link State](#link-state-algorithm) | [مبدأ العمل](#ls-how-it-works)<br>[النظام الهرمي Areas](#ls-hierarchy)<br>[الجداول الثلاثة](#ls-three-tables) |
@@ -210,6 +210,23 @@
 **الفرق الجوهري بين الإصدارين:** RIPv1 صُمم في وقت لم تكن فيه شبكات VLSM شائعة، فهو يفترض أن كل الشبكات تتبع أقنعة الفئات الافتراضية (Class A/B/C)، بينما RIPv2 أضاف دعم قناع الشبكة الفرعية ضمن كل مسار مُعلَن عنه، بالإضافة لتحويل طريقة الإرسال من البث العام <span dir="ltr">Broadcast</span> (الذي يصل لكل الأجهزة على الشبكة المحلية ويستهلك مواردها) إلى البث المتعدد <span dir="ltr">Multicast</span> (الذي يصل فقط للروترات المهتمة بهذه التحديثات، أي التي تشغّل RIP نفسه).
 
 > 🔗 **ربط بالموضوع الحادي عشر:** فهم الفرق بين <span dir="ltr">Classful</span> و<span dir="ltr">Classless</span> يعتمد على استيعاب [VLSM وCIDR](11-IP-Addressing-and-IP-Subnetting.md) اللذين تم شرحهما بالتفصيل في موضوع عنونة IP والتقسيم الفرعي.
+
+<h3 dir="rtl" align="right" id="rip-vs-ripng">الفرق بين <span dir="ltr">RIP</span> و<span dir="ltr">RIPng</span></h3>
+
+**<span dir="ltr">RIPng</span>** اختصار لـ <span dir="ltr">**RIP next generation**</span> (الجيل التالي من RIP)، وهو **نسخة معدَّلة بالكامل من RIP مخصصة للعمل مع عناوين IPv6** بدلاً من IPv4 — أي أنه ليس "إصدارًا ثالثًا" لنفس RIPv1/RIPv2، بل بروتوكول منفصل يُعاد بناء حزمه وآليته من الأساس ليتوافق مع بنية عنونة IPv6 (راجع [الموضوع 14: IPv6](14-IPv6.md) لمراجعة بنية العنونة الكاملة).
+
+| الخاصية | <span dir="ltr">RIP</span> (v1 / v2) | <span dir="ltr">RIPng</span> |
+|:---:|:---:|:---:|
+| **إصدار IP المدعوم** | IPv4 فقط | IPv6 فقط |
+| **منفذ النقل** <span dir="ltr">(UDP Port)</span> | 520 | **521** |
+| **عنوان البث المتعدد** | RIPv1: Broadcast / RIPv2: `224.0.0.9` | `FF02::9` (بث متعدد محلي الرابط <span dir="ltr">Link-Local Multicast</span>) |
+| **دعم المصادقة المدمجة** <span dir="ltr">(Authentication)</span> | RIPv1: لا / RIPv2: نعم (كلمة مرور أو MD5) | **لا يوجد دعم مدمج** — يعتمد بدلاً من ذلك على أمان طبقة IPsec الخاصة بـ IPv6 نفسها |
+| **مفهوم Classful/Classless** | RIPv1: Classful / RIPv2: Classless | **غير منطبق أصلاً** — IPv6 لا يحتوي على مفهوم الفئات (Class A/B/C) من الأساس، فكل مسار يُعلَن مع طول البادئة <span dir="ltr">(Prefix Length)</span> مباشرة |
+| **النظام المتري** | عدد القفزات (حتى 15) | **نفس الآلية بالضبط** — عدد القفزات، بحد أقصى 15 (16 = غير قابل للوصول) |
+| **المسافة الإدارية** | 120 | **120** (نفس القيمة) |
+| **التواقيت** (Update/Invalid/Hold-Down/Flush) | 30 / 180 / 180 / 240 ثانية | **نفس القيم بالضبط** |
+
+**الخلاصة:** RIPng يحافظ على **نفس فلسفة وآلية عمل RIP الأساسية بالكامل** (خوارزمية Distance Vector، نفس النظام المتري، نفس التواقيت، نفس المسافة الإدارية) — التغييرات الوحيدة هي التغييرات **الإلزامية** للتوافق مع IPv6: منفذ نقل مختلف، عنوان بث متعدد بصيغة IPv6، والاستغناء عن المصادقة المدمجة لصالح IPsec. بمعنى آخر: RIPng هو RIP نفسه، لكن "مُغلَّف" بطبقة عنونة IPv6 بدلاً من IPv4.
 
 <h3 dir="rtl" align="right" id="rip-timers">تواقيت بروتوكول RIP</h3>
 
