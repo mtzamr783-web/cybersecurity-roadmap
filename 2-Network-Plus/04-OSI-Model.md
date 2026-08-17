@@ -1,36 +1,37 @@
+<div dir="rtl">
+
 <div align="center">
 
-# نموذج OSI (OSI Model)
- 
----
- 
-## جدول المحتويات
+# 🌐 الموضوع الرابع: نموذج الـ <span dir="ltr">OSI Model</span> بالتفصيل
 
-| الرقم | الموضوع |
-|:---:|---|
-| 1 | [مقدمة عن الموضوع](#مقدمة-عن-الموضوع) |
-| 2 | [خصائص وسمات الـ OSI Model](#خصائص-وسمات-الـ-osi-model) |
-| 3 | [الطبقات السبعة بالترتيب](#الطبقات-السبعة-بالترتيب) |
-| 4 | [1) طبقة الـ Application Layer](#1-طبقة-الـ-application-layer-الطبقة-السابعة) |
-| 5 | [2) طبقة الـ Presentation Layer](#2-طبقة-الـ-presentation-layer-الطبقة-السادسة) |
-| 6 | [3) طبقة الـ Session Layer](#3-طبقة-الـ-session-layer-الطبقة-الخامسة) |
-| 7 | [4) طبقة الـ Transport Layer](#4-طبقة-الـ-transport-layer-الطبقة-الرابعة) |
-| 8 | [5) طبقة الـ Network Layer](#5-طبقة-الـ-network-layer-الطبقة-الثالثة) |
-| 9 | [6) طبقة الـ Data Link Layer](#6-طبقة-الـ-data-link-layer-الطبقة-الثانية) |
-| 10 | [7) طبقة الـ Physical Layer](#7-طبقة-الـ-physical-layer-الطبقة-الأولى) |
-| 11 | [جدول ملخص لكل الطبقات السبعة](#جدول-ملخص-لكل-الطبقات-السبعة-للمراجعة-السريعة) |
-| 12 | [الأجهزة اللي بتشتغل في كل طبقة](#الأجهزة-اللي-بتشتغل-في-كل-طبقة) |
-| 13 | [البروتوكولات اللي بتشتغل في كل طبقة](#البروتوكولات-اللي-بتشتغل-في-كل-طبقة) |
-| 14 | [الخدمات والتطبيقات المرتبطة بكل طبقة](#الخدمات-والتطبيقات-المرتبطة-بكل-طبقة) |
-| 15 | [مقارنة سريعة: OSI مقابل TCP/IP](#مقارنة-سريعة-osi-مقابل-tcpip) |
-| 16 | [خلاصة سريعة](#خلاصة-سريعة) |
- 
----
 </div>
 
-<div dir="rtl">
- 
-## مقدمة عن الموضوع
+---
+
+<h2 dir="rtl" align="right">📌 جدول المحتويات</h2>
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | <a href="#intro">مقدمة عن الموضوع</a> | - |
+| 2 | <a href="#osi-characteristics">خصائص وسمات الـ <span dir="ltr">OSI Model</span></a> | <a href="#layers-grouping">تقسيم الطبقات لمجموعتين رئيسيتين</a><br>&nbsp;&nbsp;&nbsp;<a href="#pdu-concept">وحدة البيانات لكل طبقة (PDU)</a><br>&nbsp;&nbsp;&nbsp;<a href="#peer-to-peer-communication">الاتصال المنطقي بين نفس الطبقة (Peer-to-Peer)</a> |
+| 3 | <a href="#seven-layers-order">الطبقات السبعة بالترتيب</a> | - |
+| 4 | <a href="#application-layer">1) طبقة الـ Application Layer (السابعة)</a> | <a href="#application-layer-protocols">أشهر بروتوكولاتها</a> |
+| 5 | <a href="#presentation-layer">2) طبقة الـ Presentation Layer (السادسة)</a> | <a href="#presentation-layer-functions">وظائف الطبقة الأساسية</a><br>&nbsp;&nbsp;&nbsp;<a href="#presentation-translation">Translation / Coding & Decoding</a><br>&nbsp;&nbsp;&nbsp;<a href="#presentation-encryption">Encryption / Decryption</a><br>&nbsp;&nbsp;&nbsp;<a href="#presentation-compression">Compression / De-compression</a><br>&nbsp;&nbsp;&nbsp;<a href="#presentation-formatting">Formatting Data Type</a> |
+| 6 | <a href="#session-layer">3) طبقة الـ Session Layer (الخامسة)</a> | <a href="#session-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="#session-establishment">إنشاء وإدارة وإنهاء الجلسات</a><br>&nbsp;&nbsp;&nbsp;<a href="#session-synchronization">Synchronization (التزامن)</a><br>&nbsp;&nbsp;&nbsp;<a href="#session-dialog-control">Dialog Control</a> |
+| 7 | <a href="#transport-layer">4) طبقة الـ Transport Layer (الرابعة)</a> | <a href="#transport-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="#transport-segmentation">Segmentation & Sequencing</a><br>&nbsp;&nbsp;&nbsp;<a href="#transport-flow-control">Flow Control</a><br>&nbsp;&nbsp;&nbsp;<a href="#transport-determine-protocol">Determine Protocol</a><br><a href="#tcp-vs-udp-detailed">مقارنة تفصيلية بين TCP و UDP</a><br><a href="#three-way-handshake">آلية الـ Three-Way Handshake</a> |
+| 8 | <a href="#network-layer">5) طبقة الـ Network Layer (الثالثة)</a> | <a href="#network-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="#network-logical-addressing">Logical Addressing</a><br>&nbsp;&nbsp;&nbsp;<a href="#network-routing">Routing</a><br><a href="#routing-protocols-overview">أشهر بروتوكولات الـ Routing</a> |
+| 9 | <a href="#data-link-layer">6) طبقة الـ Data Link Layer (الثانية)</a> | <a href="#data-link-sublayers">تقسيم الطبقة لـ Sublayers (LLC / MAC)</a><br><a href="#data-link-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="#data-link-framing">Framing (التأطير)</a><br>&nbsp;&nbsp;&nbsp;<a href="#data-link-error-detection">Error Detection and Correction</a><br>&nbsp;&nbsp;&nbsp;<a href="#data-link-media-access">Access for Media for Upper Layers</a> |
+| 10 | <a href="#physical-layer">7) طبقة الـ Physical Layer (الأولى)</a> | <a href="#physical-encoding">Encoding</a><br>&nbsp;&nbsp;&nbsp;<a href="#physical-ethernet-standards">معايير الـ Ethernet الشائعة</a> |
+| 11 | <a href="#seven-layers-summary-table">جدول ملخص لكل الطبقات السبعة</a> | - |
+| 12 | <a href="#devices-per-layer">الأجهزة اللي بتشتغل في كل طبقة</a> | <a href="#devices-upper-layers">طبقات Application/Presentation/Session</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-transport-layer">طبقة Transport</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-network-layer">طبقة Network</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-data-link-layer">طبقة Data Link</a><br>&nbsp;&nbsp;&nbsp;<a href="#devices-physical-layer">طبقة Physical</a><br><a href="#devices-summary-table">جدول ملخص سريع للأجهزة</a> |
+| 13 | <a href="#protocols-per-layer">البروتوكولات اللي بتشتغل في كل طبقة</a> | <a href="#protocols-application-layer">طبقة Application</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-presentation-layer">طبقة Presentation</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-session-layer">طبقة Session</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-transport-layer">طبقة Transport</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-network-layer">طبقة Network</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-data-link-layer">طبقة Data Link</a><br>&nbsp;&nbsp;&nbsp;<a href="#protocols-physical-layer">طبقة Physical</a><br><a href="#protocols-summary-table">جدول ملخص سريع للبروتوكولات</a> |
+| 14 | <a href="#services-and-applications">الخدمات والتطبيقات المرتبطة بكل طبقة</a> | - |
+| 15 | <a href="#osi-vs-tcpip-quick">مقارنة سريعة: OSI مقابل TCP/IP</a> | - |
+| 16 | <a href="#quick-summary">خلاصة سريعة</a> | - |
+
+---
+
+<h2 dir="rtl" align="right" id="intro">1️⃣ مقدمة عن الموضوع</h2>
  
 الـ **OSI Model** (Open Systems Interconnection Model) هو نموذج مرجعي بيوضح إزاي عملية الاتصال بين جهازين على الشبكة بتتم، من لحظة إن المستخدم يكتب أو يبعت بيانات لحد ما البيانات دي توصل للجهاز التاني وتترجم مرة تانية لحاجة مفهومة.
  
@@ -42,9 +43,9 @@
  
 ---
  
-## خصائص وسمات الـ OSI Model
+<h2 dir="rtl" align="right" id="osi-characteristics">2️⃣ خصائص وسمات الـ <span dir="ltr">OSI Model</span></h2>
  
-### 1. تقسيم الطبقات لمجموعتين رئيسيتين
+<h3 dir="rtl" align="right" id="layers-grouping">1. تقسيم الطبقات لمجموعتين رئيسيتين</h3>
  
 الـ 7 طبقات بتتقسم لمجموعتين حسب قربهم من المستخدم أو من الشبكة:
  
@@ -53,7 +54,7 @@
 | **<span dir="ltr">Upper Layers</span> (طبقات عليا)** | <span dir="ltr">Application – Presentation – Session (7, 6, 5)</span> | قريبة من المستخدم، وظيفتها التعامل مع البيانات وتجهيزها بشكل يفهمه البرنامج والمستخدم |
 | **<span dir="ltr">Lower Layers</span> (طبقات سفلى)** | <span dir="ltr">Transport – Network – Data Link – Physical (4, 3, 2, 1)</span> | قريبة من الشبكة والوسط الناقل (<span dir="ltr">Media</span>)، ووظيفتها نقل البيانات فعليًا من جهاز لجهاز |
  
-### 2. كل طبقة عندها وحدة بيانات خاصة بيها (PDU - Protocol Data Unit)
+<h3 dir="rtl" align="right" id="pdu-concept">2. كل طبقة عندها وحدة بيانات خاصة بيها (<span dir="ltr">PDU - Protocol Data Unit</span>)</h3>
  
 كل طبقة بتستقبل البيانات من الطبقة اللي فوقها، وبتضيف عليها **Header** (وأحيانًا Trailer) خاص بيها يحتوي على معلومات بيستخدمها نفس البروتوكول في الطبقة المقابلة عند الجهاز المستقبل. العملية دي اسمها **Encapsulation**.
  
@@ -79,21 +80,33 @@ Frame [MACs | MACr | IP Packet]
 Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الوسط الناقل (Air, Cable, Fiber...)
 ```
  
-![مخطط توضيحي لعملية الـ Encapsulation من الـ Data لحد الـ Bits](images/data-encapsulation-process.png)
+<div align="center">
+<img src="images/data-encapsulation-process.png" width="600">
+<br>
+<em>مخطط توضيحي لعملية الـ Encapsulation من الـ Data لحد الـ Bits</em>
+</div>
  
 عند الجهاز المستقبل، العملية بتحصل بالعكس تمامًا وتتسمى **Decapsulation**: كل طبقة بتشيل الـ Header الخاص بيها وتبعت الباقي للطبقة اللي فوقها، لحد ما البيانات ترجع لصورتها الأصلية (Data) وتوصل لطبقة الـ Application عند المستقبل.
  
-![مخطط شامل يوضح رحلة البيانات كاملة من جهاز المُرسِل للمُستقبِل عبر كل الطبقات السبعة](images/osi-full-example-samir-madoha.png)
+<div align="center">
+<img src="images/osi-full-example-samir-madoha.png" width="600">
+<br>
+<em>مخطط شامل يوضح رحلة البيانات كاملة من جهاز المُرسِل للمُستقبِل عبر كل الطبقات السبعة</em>
+</div>
  
-### 3. الاتصال المنطقي بين نفس الطبقة (Peer-to-Peer Communication)
+<h3 dir="rtl" align="right" id="peer-to-peer-communication">3. الاتصال المنطقي بين نفس الطبقة (<span dir="ltr">Peer-to-Peer Communication</span>)</h3>
  
 كل طبقة في جهاز الإرسال "بتتكلم" منطقيًا مع نفس الطبقة المقابلة لها في جهاز الاستقبال، باستخدام بروتوكول خاص بكل طبقة (مثلاً: Application protocol, Transport protocol, إلخ)، حتى لو فعليًا البيانات بتنزل لحد الطبقة الفيزيائية وتعدي على الوسط الناقل الفعلي.
  
-![الشكل الكامل للـ OSI Model موضح فيه اسم الـ PDU وبروتوكول كل طبقة بين جهاز الإرسال والاستقبال](images/osi-model-full-diagram.png)
+<div align="center">
+<img src="images/osi-model-full-diagram.png" width="600">
+<br>
+<em>الشكل الكامل للـ OSI Model موضح فيه اسم الـ PDU وبروتوكول كل طبقة بين جهاز الإرسال والاستقبال</em>
+</div>
  
 ---
  
-## الطبقات السبعة بالترتيب
+<h2 dir="rtl" align="right" id="seven-layers-order">3️⃣ الطبقات السبعة بالترتيب</h2>
  
 - 7 - Application Layer
 - 6 - Presentation Layer
@@ -107,13 +120,13 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
  
 ---
  
-## 1) طبقة الـ Application Layer (الطبقة السابعة)
+<h2 dir="rtl" align="right" id="application-layer">4️⃣ 1) طبقة الـ <span dir="ltr">Application Layer</span> (الطبقة السابعة)</h2>
  
 دي الطبقة اللي بيتعامل معاها المستخدم بشكل مباشر، وهي "واجهة" التطبيقات مع الشبكة. الطبقة دي **مش هي البرنامج نفسه** (زي المتصفح أو تطبيق الإيميل)، لكنها المسؤولة عن توفير الخدمات والبروتوكولات اللي البرنامج بيحتاجها عشان يتواصل عبر الشبكة.
  
 يعني لما تفتح متصفح وتكتب رابط موقع، طبقة الـ Application هي اللي بتحدد "إيه البروتوكول" اللي هيُستخدم عشان الطلب ده يتنفذ (زي HTTP أو HTTPS).
  
-### أشهر بروتوكولات الـ Application Layer
+<h3 dir="rtl" align="right" id="application-layer-protocols">أشهر بروتوكولات الـ <span dir="ltr">Application Layer</span></h3>
  
 | البروتوكول | الاسم الكامل | الوظيفة |
 |---|---|---|
@@ -128,48 +141,56 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
  
 ---
  
-## 2) طبقة الـ Presentation Layer (الطبقة السادسة)
+<h2 dir="rtl" align="right" id="presentation-layer">5️⃣ 2) طبقة الـ <span dir="ltr">Presentation Layer</span> (الطبقة السادسة)</h2>
  
 هي الطبقة المسؤولة عن **"عرض" البيانات بشكل تقدر الطبقات التانية تفهمه**، يعني بتشتغل كـ "مترجم" بين طبقة الـ Application (اللي بتفهم لغة البرنامج) والطبقات الأقل منها (اللي بتفهم بيانات في شكل معين موحّد زي الـ Binary).
  
-![الوظائف الأربعة الأساسية لطبقة الـ Presentation](images/presentation-layer-functions.png)
+<div align="center">
+<img src="images/presentation-layer-functions.png" width="600">
+<br>
+<em>الوظائف الأربعة الأساسية لطبقة الـ Presentation</em>
+</div>
  
-### وظائف الطبقة الأساسية
+<h3 dir="rtl" align="right" id="presentation-layer-functions">وظائف الطبقة الأساسية</h3>
  
-#### أ) Translation / Coding & Decoding
+<h4 dir="rtl" align="right" id="presentation-translation">أ) <span dir="ltr">Translation / Coding &amp; Decoding</span></h4>
 عملية تحويل أي بيانات (نصوص، صور، فيديوهات...) من الصيغة اللي فاهمها التطبيق، إلى صيغة الـ **Binary (0/1)** اللي هي اللغة الوحيدة اللي الأجهزة بتفهمها فعليًا، والعكس صحيح عند الاستقبال (تحويل الـ Binary لصورته الأصلية اللي يقدر التطبيق يستخدمها ويعرضها).
  
-#### ب) Encryption / Decryption
+<h4 dir="rtl" align="right" id="presentation-encryption">ب) <span dir="ltr">Encryption / Decryption</span></h4>
 عملية تشفير البيانات المرسلة قبل ما تتبعت، عشان تحميها من إن أي جهة غير مصرح لها تقدر تفتحها أو تفهمها لو قدرت تعترض الاتصال. من أشهر تقنيات التشفير: **SSL/TLS**، وخوارزميات الـ **Hashing** زي **MD5**.
  
-#### ج) Compression / De-compression
+<h4 dir="rtl" align="right" id="presentation-compression">ج) <span dir="ltr">Compression / De-compression</span></h4>
 عملية ضغط حجم البيانات قبل الإرسال، بهدف:
 - تقليل الحجم الكلي للبيانات المنقولة.
 - تقليل الوقت المستغرق في النقل.
 - ترشيد استهلاك عرض النطاق الترددي (Bandwidth).
-#### د) Formatting Data Type
+<h4 dir="rtl" align="right" id="presentation-formatting">د) <span dir="ltr">Formatting Data Type</span></h4>
 التأكد من إن صيغة البيانات (زي نوع الملف: صورة، فيديو، نص...) متوافقة مع الجهاز أو البرنامج المستقبِل، خصوصًا لما يكون فيه اختلاف بين نظام تشغيل المُرسِل والمُستقبِل، أو بين البرامج المستخدمة في الطرفين.
  
-![رحلة البيانات داخل طبقة الـ Presentation: من Data إلى Translation فـ Compression فـ Encryption ثم عكس العملية عند الاستقبال](images/presentation-layer-process.png)
+<div align="center">
+<img src="images/presentation-layer-process.png" width="600">
+<br>
+<em>رحلة البيانات داخل طبقة الـ Presentation: من Data إلى Translation فـ Compression فـ Encryption ثم عكس العملية عند الاستقبال</em>
+</div>
  
 **أمثلة على بروتوكولات/صيغ الطبقة دي:** SSL/TLS، JPEG، PNG، MPEG.
  
 ---
  
-## 3) طبقة الـ Session Layer (الطبقة الخامسة)
+<h2 dir="rtl" align="right" id="session-layer">6️⃣ 3) طبقة الـ <span dir="ltr">Session Layer</span> (الطبقة الخامسة)</h2>
  
 وظيفة الطبقة دي إنها مسؤولة عن **إنشاء وإدارة وإنهاء الجلسات (Sessions)** بين جهازين أو أكثر عايزين يتواصلوا مع بعض، بحيث تفضل الجلسة محافظة على استمراريتها طول فترة انتقال البيانات، وتضمن إن الاتصال ينقطع بشكل آمن في حالة انتهاء المحادثة أو حصول أي مشكلة.
  
-### وظائف الطبقة بالتفصيل
+<h3 dir="rtl" align="right" id="session-layer-functions">وظائف الطبقة بالتفصيل</h3>
  
-#### أ) إنشاء وإدارة وإنهاء الجلسات (Session Establishment, Maintenance & Termination)
+<h4 dir="rtl" align="right" id="session-establishment">أ) إنشاء وإدارة وإنهاء الجلسات (<span dir="ltr">Session Establishment, Maintenance &amp; Termination</span>)</h4>
 - بتفتح قناة اتصال بين البرنامجين/الجهازين وتتفق معاهم على بروتوكولات الاتصال.
 - بتحافظ على استمرارية الاتصال طول مدة تبادل البيانات.
 - بتتأكد من إغلاق الاتصال بشكل آمن عند انتهاء الحاجة إليه أو عند حدوث أي مشكلة تمنع استكمال الجلسة.
-#### ب) Synchronization (التزامن)
+<h4 dir="rtl" align="right" id="session-synchronization">ب) <span dir="ltr">Synchronization</span> (التزامن)</h4>
 في حالة نقل البيانات الكبيرة، بتضيف الطبقة دي "نقاط تحقق" (Checkpoints) دوريّة جوه تدفق البيانات المُرسَل. فلو حصل انقطاع في الاتصال أو تعطل في نقل البيانات، مش هيبقى ضروري إعادة إرسال البيانات من أولها تاني، وإنما بيتم استئناف الإرسال من عند آخر نقطة تحقق ناجحة، وده بيوفر وقت وموارد كبيرة.
  
-#### ج) Dialog Control (التحكم في الحوار / اتجاه تدفق البيانات)
+<h4 dir="rtl" align="right" id="session-dialog-control">ج) <span dir="ltr">Dialog Control</span> (التحكم في الحوار / اتجاه تدفق البيانات)</h4>
 بتحدد الطريقة اللي البيانات بتتدفق بيها بين الطرفين، وفيه 3 أنواع:
  
 | النوع | الوصف |
@@ -182,25 +203,29 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
  
 ---
  
-## 4) طبقة الـ Transport Layer (الطبقة الرابعة)
+<h2 dir="rtl" align="right" id="transport-layer">7️⃣ 4) طبقة الـ <span dir="ltr">Transport Layer</span> (الطبقة الرابعة)</h2>
  
 طبقة مهمة جدًا، وظيفتها الأساسية إنها **تضمن وصول البيانات كاملة وبالترتيب الصحيح** من جهاز المُرسِل لجهاز المُستقبِل، وبمعدل نقل (سرعة) يتناسب مع إمكانيات الجهازين، عن طريق تقسيم البيانات القادمة من الطبقات العليا إلى وحدات أصغر يسهل إدارتها ونقلها، ثم إعادة تجميعها تاني بشكل صحيح عند الوصول.
  
-![الوظائف الثلاثة الأساسية لطبقة الـ Transport: Segmentation - Flow Control - Determine Protocol](images/transport-layer-functions.png)
+<div align="center">
+<img src="images/transport-layer-functions.png" width="600">
+<br>
+<em>الوظائف الثلاثة الأساسية لطبقة الـ Transport: Segmentation - Flow Control - Determine Protocol</em>
+</div>
  
-### وظائف الطبقة بالتفصيل
+<h3 dir="rtl" align="right" id="transport-layer-functions">وظائف الطبقة بالتفصيل</h3>
  
-#### أ) Segmentation & Sequencing (التقسيم والترقيم)
+<h4 dir="rtl" align="right" id="transport-segmentation">أ) <span dir="ltr">Segmentation &amp; Sequencing</span> (التقسيم والترقيم)</h4>
 - **Segmentation:** تقسيم البيانات القادمة من الطبقات العليا (اللي بتكون بحجم كبير) إلى أجزاء أصغر تُسمى **Segments**، عشان يسهل نقلها عبر الشبكة بدل إرسالها كوحدة واحدة ضخمة (وده بيقلل فرصة الأخطاء وبيسهل إعادة الإرسال لو جزء منها اتلف بدل الرسالة كلها).
 - عند الاستقبال، بتتم عملية **De-segmentation**: إعادة تجميع الأجزاء دي مرة تانية بنفس ترتيبها الأصلي عشان تتكون البيانات الكاملة زي ما كانت.
 - **Sequencing:** كل Segment بياخد رقم تسلسلي (Sequence Number)، عشان لو وصلت الأجزاء بترتيب مختلف (بسبب اختلاف المسارات في الشبكة)، يقدر الجهاز المستقبِل يرتبها صح تاني حسب الرقم بتاعها.
-#### ب) Flow Control (التحكم في التدفق)
+<h4 dir="rtl" align="right" id="transport-flow-control">ب) <span dir="ltr">Flow Control</span> (التحكم في التدفق)</h4>
 بيضمن إن معدل نقل البيانات (Transfer Rate) يكون مناسب لإمكانيات كل الأجهزة المشتركة في الاتصال. فمثلاً لو جهاز بيرسل بسرعة 100 Mbps، وجهاز الاستقبال (زي موبايل) مش قادر يستوعب غير 10 Mbps، الطبقة دي بتظبط سرعة الإرسال على 10 Mbps عشان منعش يحصل فقد في البيانات (Data Loss) بسبب إن جهاز الاستقبال متغرقش (Overwhelmed).
  
-#### ج) Determine Protocol (اختيار البروتوكول المناسب)
+<h4 dir="rtl" align="right" id="transport-determine-protocol">ج) <span dir="ltr">Determine Protocol</span> (اختيار البروتوكول المناسب)</h4>
 الطبقة دي هي اللي بتحدد نوع البروتوكول المناسب لطبيعة البيانات المرسلة والنشاط المطلوب، وفيه بروتوكولين أساسيين:
  
-### مقارنة تفصيلية بين TCP و UDP
+<h3 dir="rtl" align="right" id="tcp-vs-udp-detailed">مقارنة تفصيلية بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span></h3>
  
 | | **TCP (Transmission Control Protocol)** | **UDP (User Datagram Protocol)** |
 |---|---|---|
@@ -211,7 +236,7 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
 | **أمثلة استخدام** | تحميل الملفات، خدمة الإيميل، تصفح المواقع (أي حاجة لازم توصل كاملة صح) | المكالمات الصوتية والفيديو (VoIP)، البث المباشر (Live Streaming/Broadcasting)، الألعاب أونلاين |
 | **السبب في الاستخدام** | لو بتنزل ملف أو بتبعت إيميل، مينفعش يوصل جزء منه ناقص أو فيه خطأ | لو بتتفرج على مباراة لايف وحصل تقطيع بسيط، الفيديو بيكمل عادي وميرجعش يعيد الجزء الناقص، لأن الأهم هو استمرارية البث في الوقت الحقيقي (Real-Time) |
  
-### آلية الـ Three-Way Handshake (خاصة بـ TCP)
+<h3 dir="rtl" align="right" id="three-way-handshake">آلية الـ <span dir="ltr">Three-Way Handshake</span> (خاصة بـ <span dir="ltr">TCP</span>)</h3>
  
 عشان TCP يضمن إن الاتصال "موثوق" (Reliable)، بيستخدم آلية تُسمى **Three-Way Handshake** قبل ما يبدأ نقل البيانات الفعلي، بتتكون من 3 خطوات:
  
@@ -220,19 +245,27 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
 3. المُرسِل بيرد بـ **ACK** (Acknowledge) لتأكيد بدء الاتصال فعليًا.
 بعد الخطوات الثلاثة دي، الاتصال بيتأسس رسميًا (Connection Established) ويبدأ نقل البيانات الفعلي بين الطرفين، وكل طرف بيستخدم **Window Size** بتحدد عدد الـ Segments اللي ممكن تتبعت قبل ما يستنى تأكيد (ACK) من الطرف التاني.
  
-![مخطط يوضح خطوات الـ Three-Way Handshake بين المُرسِل والمُستقبِل](images/tcp-three-way-handshake.png)
+<div align="center">
+<img src="images/tcp-three-way-handshake.png" width="600">
+<br>
+<em>مخطط يوضح خطوات الـ Three-Way Handshake بين المُرسِل والمُستقبِل</em>
+</div>
  
 ---
  
-## 5) طبقة الـ Network Layer (الطبقة الثالثة)
+<h2 dir="rtl" align="right" id="network-layer">8️⃣ 5) طبقة الـ <span dir="ltr">Network Layer</span> (الطبقة الثالثة)</h2>
  
 الطبقة دي مسؤولة بشكل أساسي عن حاجتين: **تحديد عنوان كل جهاز على الشبكة**، و**اختيار أفضل مسار لنقل البيانات** من المُرسِل للمُستقبِل، حتى لو كانوا على شبكات مختلفة تمامًا.
  
-![الوظيفتان الأساسيتان لطبقة الـ Network: Logical Addressing و Routing](images/network-layer-addressing-routing.png)
+<div align="center">
+<img src="images/network-layer-addressing-routing.png" width="600">
+<br>
+<em>الوظيفتان الأساسيتان لطبقة الـ Network: Logical Addressing و Routing</em>
+</div>
  
-### وظائف الطبقة بالتفصيل
+<h3 dir="rtl" align="right" id="network-layer-functions">وظائف الطبقة بالتفصيل</h3>
  
-#### أ) Logical Addressing (العنونة المنطقية)
+<h4 dir="rtl" align="right" id="network-logical-addressing">أ) <span dir="ltr">Logical Addressing</span> (العنونة المنطقية)</h4>
 كل جهاز متصل بالشبكة بياخد عنوان **IP** مميز وفريد بيميزه عن باقي الأجهزة، وده أساسي جدًا خصوصًا لو الاتصال هيعدي بين شبكات مختلفة (زي الإنترنت). الطبقة دي بتاخد الـ **Segment** القادم من طبقة الـ Transport، وتضيف عليه:
 - **IP Source (IPs):** عنوان الجهاز المُرسِل.
 - **IP Destination (IPr):** عنوان الجهاز المُستقبِل.
@@ -242,10 +275,10 @@ Bits → 0100111001011100010 → إشارات (Signals) تتبعت عبر الو
 Packet = [ IP Source | IP Destination | Data Segment ]
 ```
  
-#### ب) Routing (توجيه المسار)
+<h4 dir="rtl" align="right" id="network-routing">ب) <span dir="ltr">Routing</span> (توجيه المسار)</h4>
 هي عملية اختيار **أفضل مسار (Best Path)** ممكن تاخده البيانات عشان توصل من الشبكة المصدر للشبكة الهدف، عن طريق أجهزة متخصصة اسمها **Routers** بتستخدم بروتوكولات معينة (Routing Protocols) عشان تحدد أنسب طريق بناءً على معايير زي: عدد القفزات (Hops)، السرعة، الازدحام على الشبكة... إلخ.
  
-### أشهر بروتوكولات الـ Routing
+<h3 dir="rtl" align="right" id="routing-protocols-overview">أشهر بروتوكولات الـ <span dir="ltr">Routing</span></h3>
  
 | البروتوكول | الاسم الكامل | الفكرة |
 |---|---|---|
@@ -258,11 +291,11 @@ Packet = [ IP Source | IP Destination | Data Segment ]
  
 ---
  
-## 6) طبقة الـ Data Link Layer (الطبقة الثانية)
+<h2 dir="rtl" align="right" id="data-link-layer">9️⃣ 6) طبقة الـ <span dir="ltr">Data Link Layer</span> (الطبقة الثانية)</h2>
  
 هي الطبقة المسؤولة عن **تجهيز البيانات بشكل نهائي قبل ما تتحول لإشارات فعلية على الوسط الناقل**، وكمان مسؤولة عن التأكد من وصول البيانات بدون أخطاء بين جهازين متصلين مباشرة على نفس الشبكة المحلية.
 
-### تقسيم الطبقة لـ Sublayers
+<h3 dir="rtl" align="right" id="data-link-sublayers">تقسيم الطبقة لـ <span dir="ltr">Sublayers</span></h3>
 
 فعليًا، الطبقة دي بتتقسم لطبقتين فرعيتين (<span dir="ltr">Sublayers</span>) عشان تقدر توزع مسؤولياتها بشكل أدق:
 
@@ -273,9 +306,9 @@ Packet = [ IP Source | IP Destination | Data Segment ]
 
 > **ملحوظة:** لازم متلخبطش بين اختصار الـ **<span dir="ltr">MAC</span>** الخاص بالـ <span dir="ltr">Sublayer</span> دي، واختصار الـ **<span dir="ltr">MAC Address</span>** نفسه؛ الاتنين مرتبطين ببعض لكن مش نفس الحاجة بالظبط.
 
-### وظائف الطبقة بالتفصيل
+<h3 dir="rtl" align="right" id="data-link-layer-functions">وظائف الطبقة بالتفصيل</h3>
  
-#### أ) Framing (التأطير)
+<h4 dir="rtl" align="right" id="data-link-framing">أ) <span dir="ltr">Framing</span> (التأطير)</h4>
 عملية تحويل الـ **Packet** القادم من طبقة الـ Network إلى وحدة بيانات جديدة اسمها **Frame**، عن طريق إضافة:
 - **MAC Source (MACs):** العنوان الفيزيائي (MAC Address) الخاص بكرت الشبكة (NIC) بتاع الجهاز المُرسِل.
 - **MAC Destination (MACr):** العنوان الفيزيائي بتاع الجهاز المُستقبِل.
@@ -285,12 +318,20 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
  
 العملية دي بتُسمى كمان **Frame Encapsulation**، وهي آخر مرحلة قبل ما البيانات تتحول لـ Bits وتترسل فعليًا عبر الوسط الناقل.
  
-![مسار تحول البيانات بالكامل من Data Segment إلى Packet ثم Frame ثم Bits](images/data-encapsulation-process.png)
+<div align="center">
+<img src="images/data-encapsulation-process.png" width="600">
+<br>
+<em>مسار تحول البيانات بالكامل من Data Segment إلى Packet ثم Frame ثم Bits</em>
+</div>
  
-#### ب) Error Detection and Correction (اكتشاف وتصحيح الأخطاء)
+<h4 dir="rtl" align="right" id="data-link-error-detection">ب) <span dir="ltr">Error Detection and Correction</span> (اكتشاف وتصحيح الأخطاء)</h4>
 دي وظيفة تانية مهمة جدًا للطبقة دي، بتضمن إن البيانات اللي وصلت للطبقة المقابلة عند المستقبِل هي فعلًا نفس البيانات اللي اتبعتت من غير أي تلف أو تشويه حصل أثناء انتقالها عبر الوسط الناقل (بسبب تشويش كهرومغناطيسي مثلًا، أو أي عائق فيزيائي).
  
-![توضيح لفكرة اكتشاف الأخطاء أثناء انتقال البيانات بين المُرسِل والمُستقبِل](images/datalink-error-detection.png)
+<div align="center">
+<img src="images/datalink-error-detection.png" width="600">
+<br>
+<em>توضيح لفكرة اكتشاف الأخطاء أثناء انتقال البيانات بين المُرسِل والمُستقبِل</em>
+</div>
  
 من أشهر تقنيات اكتشاف الأخطاء:
  
@@ -300,7 +341,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **Checksum** | حساب قيمة رقمية معينة (Checksum) بناءً على محتوى البيانات، وإعادة حسابها عند الاستقبال؛ لو القيمتين مختلفتين معناه حصل تلف في البيانات |
 | **CRC (Cyclic Redundancy Check)** | تقنية أكثر دقة من الاتنين اللي قبلها، بتُستخدم بشكل واسع في شبكات الإيثرنت للتأكد من سلامة الـ Frame كامل |
  
-#### ج) Access for Media for Upper Layers (التحكم في الوصول للوسط الناقل)
+<h4 dir="rtl" align="right" id="data-link-media-access">ج) <span dir="ltr">Access for Media for Upper Layers</span> (التحكم في الوصول للوسط الناقل)</h4>
 الطبقة دي كمان بتنظم إزاي الأجهزة المتصلة على نفس الوسط الناقل (زي كابل واحد أو شبكة لاسلكية واحدة) تقدر "تاخد دورها" في الإرسال من غير ما يحصل تصادم (Collision) بين البيانات المرسلة من أكتر من جهاز في نفس الوقت.
  
 من أهم التقنيات المستخدمة في الموضوع ده: **<span dir="ltr">CSMA (Carrier Sense Multiple Access)</span>**، وفكرتها إن الجهاز قبل ما يبعت بياناته، بيتأكد الأول (<span dir="ltr">Sense</span>) إن الوسط الناقل (<span dir="ltr">Carrier</span>) فاضي ومفيهوش نقل بيانات تاني شغال، عشان يتجنب حدوث تصادم (<span dir="ltr">Collision</span>) مع بيانات جهاز تاني بيرسل في نفس اللحظة.
@@ -312,15 +353,23 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">CSMA/CD (Collision Detection)</span>** | الشبكات السلكية القديمة (<span dir="ltr">Ethernet</span> بالـ <span dir="ltr">Hubs</span>) | الجهاز بيبعت بياناته، ولو حصل تصادم فعليًا مع جهاز تاني، الاتنين بيكتشفوا التصادم ده وبيوقفوا الإرسال ويعيدوا المحاولة بعد فترة عشوائية |
 | **<span dir="ltr">CSMA/CA (Collision Avoidance)</span>** | الشبكات اللاسلكية (<span dir="ltr">Wi-Fi</span>) | لأن الأجهزة اللاسلكية مش قادرة تكتشف التصادم فعليًا زي السلكية، فبتحاول **تتجنبه من الأساس** قبل ما يحصل، عن طريق إرسال إشارة صغيرة الأول تحجز بيها الوسط الناقل لفترة معينة قبل ما تبعت البيانات الفعلية |
 
-![توضيح لفكرة CSMA وتجنب التصادم بين الأجهزة المشتركة في نفس الوسط الناقل](images/csma-collision-diagram.png)
+<div align="center">
+<img src="images/csma-collision-diagram.png" width="600">
+<br>
+<em>توضيح لفكرة CSMA وتجنب التصادم بين الأجهزة المشتركة في نفس الوسط الناقل</em>
+</div>
  
-![مثال عملي يوضح دور الـ Data Link Layer في عملية الـ Framing والوصول للوسط الناقل بين راوترين](images/datalink-framing-access-media.png)
+<div align="center">
+<img src="images/datalink-framing-access-media.png" width="600">
+<br>
+<em>مثال عملي يوضح دور الـ Data Link Layer في عملية الـ Framing والوصول للوسط الناقل بين راوترين</em>
+</div>
  
 **أمثلة على بروتوكولات/تقنيات الطبقة دي:** Ethernet، Wi-Fi، PPP (Point-to-Point Protocol).
  
 ---
  
-## 7) طبقة الـ Physical Layer (الطبقة الأولى)
+<h2 dir="rtl" align="right" id="physical-layer">🔟 7) طبقة الـ <span dir="ltr">Physical Layer</span> (الطبقة الأولى)</h2>
  
 هي آخر طبقة في رحلة الإرسال، ومسؤوليتها إنها تاخد الـ **Frame** القادم من طبقة الـ Data Link وتحوله لسلسلة من **Bits** (0 و 1)، وبعدين تحول الـ Bits دي إلى **إشارات فيزيائية فعلية** (كهربائية، ضوئية، أو راديوية) بتنتقل عبر الوسط الناقل (Media) الفعلي زي الكابلات أو الهواء.
  
@@ -331,11 +380,11 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 - سرعة النقل (Data Rate) ومواصفات المنافذ (Ports) والأجهزة المستخدمة في التوصيل الفيزيائي.
 عند الاستقبال، العملية بتحصل بالعكس تمامًا: الجهاز المُستقبِل بيستقبل الإشارة الفيزيائية، ويحولها مرة تانية لـ <span dir="ltr">Bits</span>، وبعدين يبعتها لطبقة الـ <span dir="ltr">Data Link</span> عشان تبدأ رحلة الـ <span dir="ltr">Decapsulation</span> صعودًا لحد ما توصل البيانات لصورتها الأصلية عند المستخدم.
 
-### Encoding: إزاي الـ Bits بتتحول لإشارة فعلية؟
+<h3 dir="rtl" align="right" id="physical-encoding"><span dir="ltr">Encoding</span>: إزاي الـ <span dir="ltr">Bits</span> بتتحول لإشارة فعلية؟</h3>
 
 مش كفاية إن الجهاز يبعت الإشارة، لازم كمان الجهاز المستقبِل يعرف يميز أصلًا مين الـ **0** ومين الـ **1** جوه الإشارة اللي وصلته. العملية دي اسمها **<span dir="ltr">Encoding</span>**، ومن أشهر طرقها: **<span dir="ltr">Manchester Encoding</span>**، وهي طريقة بتعتمد على تغيير اتجاه الإشارة (من عالي لواطي أو العكس) في منتصف كل نبضة (<span dir="ltr">Pulse</span>) عشان تحدد هل دي 0 ولا 1، وده بيدي ميزة إضافية إن الجهاز المستقبِل يقدر "يتزامن" (<span dir="ltr">Synchronize</span>) مع توقيت الإرسال بسهولة أكتر.
 
-### معايير الـ Ethernet الشائعة
+<h3 dir="rtl" align="right" id="physical-ethernet-standards">معايير الـ <span dir="ltr">Ethernet</span> الشائعة</h3>
 
 كل معيار من معايير الـ <span dir="ltr">Ethernet</span> بيحدد نوع الكابل المستخدم والسرعة القصوى للنقل، وده جزء أساسي من مسؤوليات الـ <span dir="ltr">Physical Layer</span>:
 
@@ -350,9 +399,13 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
  
 ---
  
-## جدول ملخص لكل الطبقات السبعة (للمراجعة السريعة)
+<h2 dir="rtl" align="right" id="seven-layers-summary-table">1️⃣1️⃣ جدول ملخص لكل الطبقات السبعة (للمراجعة السريعة)</h2>
  
-![رسم توضيحي شامل للطبقات السبع للـ OSI Model مع أهم البروتوكولات لكل طبقة](images/osi-7-layers-summary.png)
+<div align="center">
+<img src="images/osi-7-layers-summary.png" width="600">
+<br>
+<em>رسم توضيحي شامل للطبقات السبع للـ OSI Model مع أهم البروتوكولات لكل طبقة</em>
+</div>
  
 | # | الطبقة (Layer) | وحدة البيانات (PDU) | الوظيفة باختصار | أمثلة بروتوكولات/تقنيات |
 |---|---|---|---|---|
@@ -366,13 +419,13 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
  
 ---
 
-## الأجهزة اللي بتشتغل في كل طبقة
+<h2 dir="rtl" align="right" id="devices-per-layer">1️⃣2️⃣ الأجهزة اللي بتشتغل في كل طبقة</h2>
 
 بعد ما اتعرفنا على وظيفة كل طبقة من الطبقات السبعة، مهم جدًا كمان نعرف **مين الجهاز (Device) اللي بيشتغل فعليًا على كل طبقة**، ويقرأ الـ Header بتاعها ويتخذ قراره بناءً عليه. الموضوع ده مهم جدًا في الشبكات وفي الأمن السيبراني، لأنه بيوضحلك بالظبط "مين بيشوف إيه" في الشبكة، وبالتالي مين هو الجهاز المسؤول لو حصلت مشكلة أو هجوم عند طبقة معينة.
 
 > **ملحوظة:** بعض الأجهزة الحديثة بقت **متعددة الطبقات (Multilayer Devices)**، يعني بتقدر تشتغل على أكتر من طبقة في نفس الوقت (زي الـ <span dir="ltr">Layer 3 Switch</span> اللي بيجمع بين وظائف السويتش والراوتر). التصنيف اللي جاي دلوقتي هو التصنيف **الأساسي/التقليدي** لكل جهاز حسب الطبقة اللي "بيتخذ قراره" فيها بشكل أساسي.
 
-### 7, 6, 5) طبقات الـ Application / Presentation / Session
+<h3 dir="rtl" align="right" id="devices-upper-layers">7, 6, 5) طبقات الـ <span dir="ltr">Application / Presentation / Session</span></h3>
 
 الطبقات العليا مالهاش "جهاز هاردوير" مخصص ليها زي باقي الطبقات، لأنها أساسًا شغل برمجي (Software) جوه الأجهزة نفسها. لكن فيه أجهزة/خدمات بتشتغل على مستوى الطبقات دي:
 
@@ -383,7 +436,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Application Firewall / NGFW (Next-Generation Firewall)</span>** | بيفحص محتوى البيانات نفسه (زي نوع الملف أو محتوى الطلب) مش بس العنوان أو البورت |
 | **<span dir="ltr">Load Balancer (Layer 7)</span>** | بيوزع الطلبات على أكتر من سيرفر بناءً على محتوى الطلب نفسه (زي نوع الرابط المطلوب) |
 
-### 4) طبقة الـ Transport Layer
+<h3 dir="rtl" align="right" id="devices-transport-layer">4) طبقة الـ <span dir="ltr">Transport Layer</span></h3>
 
 الطبقة دي بتشتغل على مستوى الـ **Port Numbers** والـ **Segments**، فأي جهاز بيشتغل هنا بياخد قراره بناءً على البورت مثلاً، مش بس العنوان:
 
@@ -392,7 +445,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Firewall (Stateful / Layer 4)</span>** | بيسمح أو يمنع الاتصال بناءً على رقم البورت (Port) وحالة الاتصال (Stateful Inspection)، زي منع أي حد من الاتصال على بورت معين |
 | **<span dir="ltr">Load Balancer (Layer 4)</span>** | بيوزع الاتصالات على السيرفرات بناءً على الـ IP والبورت، من غير ما يبص جوه محتوى البيانات |
 
-### 3) طبقة الـ Network Layer
+<h3 dir="rtl" align="right" id="devices-network-layer">3) طبقة الـ <span dir="ltr">Network Layer</span></h3>
 
 دي أهم طبقة لمعظم أجهزة التوجيه (Routing) في الشبكة، لأنها الطبقة اللي بتشتغل بعنونة الـ **IP Address**:
 
@@ -402,7 +455,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Layer 3 Switch (Multilayer Switch)</span>** | سويتش بيقدر كمان ياخد قرارات توجيه (Routing) زي الراوتر بين شبكات فرعية (VLANs/Subnets) مختلفة، وده بيدمج وظائف الطبقة 2 والطبقة 3 مع بعض |
 | **<span dir="ltr">Traditional/Packet-Filtering Firewall</span>** | بيسمح أو يمنع المرور بناءً على عنوان الـ IP بتاع المصدر أو الوجهة |
 
-### 2) طبقة الـ Data Link Layer
+<h3 dir="rtl" align="right" id="devices-data-link-layer">2) طبقة الـ <span dir="ltr">Data Link Layer</span></h3>
 
 الطبقة دي بتشتغل بعنونة الـ **MAC Address** جوه نفس الشبكة المحلية (LAN)، والجهاز الأشهر فيها هو السويتش:
 
@@ -413,7 +466,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Wireless Access Point (WAP)</span>** | بيوصل الأجهزة اللاسلكية (Wi-Fi) بالشبكة السلكية، وبيشتغل أساسًا على مستوى الـ MAC Address زي السويتش لكن للأجهزة اللاسلكية |
 | **<span dir="ltr">Network Interface Card (NIC)</span>** | كرت الشبكة بتاع الجهاز نفسه، وهو المسؤول عن إضافة/قراءة عنوان الـ MAC Address بتاع الجهاز |
 
-### 1) طبقة الـ Physical Layer
+<h3 dir="rtl" align="right" id="devices-physical-layer">1) طبقة الـ <span dir="ltr">Physical Layer</span></h3>
 
 آخر طبقة، ومفيهاش أي "عنونة منطقية" خالص، لأنها بتتعامل مع الإشارة الفيزيائية والوسط الناقل بشكل مباشر:
 
@@ -424,7 +477,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Cables / Media</span>** | الوسط الناقل الفعلي زي كابلات النحاس (Copper) والألياف الضوئية (Fiber Optic) |
 | **<span dir="ltr">Media Converter</span>** | بيحول الإشارة من نوع وسط ناقل لنوع تاني، زي التحويل من كابل نحاس لألياف ضوئية والعكس |
 
-### جدول ملخص سريع للأجهزة حسب الطبقة
+<h3 dir="rtl" align="right" id="devices-summary-table">جدول ملخص سريع للأجهزة حسب الطبقة</h3>
 
 | الطبقة | أشهر جهاز يمثلها | نوع العنونة اللي بيشتغل بيها |
 |---|---|---|
@@ -436,11 +489,11 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 
 ---
 
-## البروتوكولات اللي بتشتغل في كل طبقة
+<h2 dir="rtl" align="right" id="protocols-per-layer">1️⃣3️⃣ البروتوكولات اللي بتشتغل في كل طبقة</h2>
 
 زي ما اتعرفنا على الأجهزة اللي بتشتغل في كل طبقة، مهم بنفس الدرجة نعرف **البروتوكولات (Protocols)** اللي بتشتغل في كل طبقة، لأن الجهاز في حد ذاته مجرد "هاردوير"، والبروتوكول هو "القاعدة" أو "اللغة" اللي بتحدد إزاي البيانات بتتعامل وتتفهم بين الأجهزة. كل بروتوكول من دول له تعريف مختصر يوضح وظيفته الأساسية.
 
-**7) طبقة الـ Application:**
+<h3 dir="rtl" align="right" id="protocols-application-layer">7) طبقة الـ <span dir="ltr">Application</span></h3>
 
 | البروتوكول | تعريف مختصر |
 |---|---|
@@ -454,7 +507,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">Telnet</span>** | نفس فكرة SSH في التحكم عن بُعد، لكن من غير أي تشفير (قديم وغير آمن) |
 | **<span dir="ltr">SNMP</span>** | بيُستخدم لمراقبة وإدارة أجهزة الشبكة عن بُعد |
 
-**6) طبقة الـ Presentation:**
+<h3 dir="rtl" align="right" id="protocols-presentation-layer">6) طبقة الـ <span dir="ltr">Presentation</span></h3>
 
 | البروتوكول/المعيار | تعريف مختصر |
 |---|---|
@@ -462,7 +515,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">JPEG, PNG, GIF</span>** | صيغ ترميز وضغط الصور |
 | **<span dir="ltr">MPEG</span>** | صيغة ترميز وضغط الفيديو والصوت |
 
-**5) طبقة الـ Session:**
+<h3 dir="rtl" align="right" id="protocols-session-layer">5) طبقة الـ <span dir="ltr">Session</span></h3>
 
 | البروتوكول | تعريف مختصر |
 |---|---|
@@ -470,14 +523,14 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">RPC (Remote Procedure Call)</span>** | بيسمح لبرنامج إنه ينفّذ كود على جهاز تاني عن بُعد كأنه بينفذه محليًا |
 | **<span dir="ltr">PPTP</span>** | بروتوكول قديم لإنشاء جلسات اتصال VPN مشفّرة |
 
-**4) طبقة الـ Transport:**
+<h3 dir="rtl" align="right" id="protocols-transport-layer">4) طبقة الـ <span dir="ltr">Transport</span></h3>
 
 | البروتوكول | تعريف مختصر |
 |---|---|
 | **<span dir="ltr">TCP</span>** | نقل بيانات موثوق ومضمون، بيتأكد من وصول كل البيانات صح بالترتيب |
 | **<span dir="ltr">UDP</span>** | نقل بيانات سريع من غير أي ضمانات أو تأكيد استلام |
 
-**3) طبقة الـ Network:**
+<h3 dir="rtl" align="right" id="protocols-network-layer">3) طبقة الـ <span dir="ltr">Network</span></h3>
 
 | البروتوكول | تعريف مختصر |
 |---|---|
@@ -487,7 +540,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">IPSec</span>** | بيوفر تشفير ومصادقة لحزم الـ IP، بيُستخدم كتير في شبكات VPN |
 | بروتوكولات التوجيه (<span dir="ltr">RIP, OSPF, EIGRP, BGP</span>) | اتشرحوا بالتفصيل فوق في قسم الطبقة دي؛ مسؤولين عن تبادل معلومات المسارات بين الراوترات |
 
-**2) طبقة الـ Data Link:**
+<h3 dir="rtl" align="right" id="protocols-data-link-layer">2) طبقة الـ <span dir="ltr">Data Link</span></h3>
 
 | البروتوكول/المعيار | تعريف مختصر |
 |---|---|
@@ -497,11 +550,11 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 | **<span dir="ltr">CSMA/CD</span>** | آلية قديمة لاكتشاف التصادم في الشبكات السلكية |
 | **<span dir="ltr">CSMA/CA</span>** | آلية لتجنب التصادم من الأساس في الشبكات اللاسلكية |
 
-**1) طبقة الـ Physical:**
+<h3 dir="rtl" align="right" id="protocols-physical-layer">1) طبقة الـ <span dir="ltr">Physical</span></h3>
 
 مفيش بروتوكولات بالمعنى التقليدي في الطبقة دي، لأنها بتتعامل مع الإشارات الفيزيائية مباشرة من غير أي "منطق" أو قواعد بيانات، لكن فيها **معايير تقنية (Standards)** بتحدد شكل الإشارة والسرعة، زي معايير الإيثرنت (<span dir="ltr">10BASE-T, 100BASE-TX, 1000BASE-T</span>) اللي بتحدد نوع الوسيط والسرعة المتوافقة معاه.
 
-### جدول ملخص سريع للبروتوكولات حسب الطبقة
+<h3 dir="rtl" align="right" id="protocols-summary-table">جدول ملخص سريع للبروتوكولات حسب الطبقة</h3>
 
 | الطبقة | أشهر بروتوكول يمثلها |
 |---|---|
@@ -515,7 +568,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 
 ---
 
-## الخدمات والتطبيقات المرتبطة بكل طبقة
+<h2 dir="rtl" align="right" id="services-and-applications">1️⃣4️⃣ الخدمات والتطبيقات المرتبطة بكل طبقة</h2>
 
 بعد ما اتعرفنا على الأجهزة والبروتوكولات، آخر حاجة مهم نميّزها هي الفرق بين **التطبيق (Application)** و**الخدمة (Service)**:
 
@@ -545,7 +598,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 
 ---
 
-## مقارنة سريعة: OSI مقابل TCP/IP
+<h2 dir="rtl" align="right" id="osi-vs-tcpip-quick">1️⃣5️⃣ مقارنة سريعة: <span dir="ltr">OSI</span> مقابل <span dir="ltr">TCP/IP</span></h2>
 
 زي ما اتقال في المقدمة، الـ <span dir="ltr">TCP/IP Model</span> هو النموذج العملي المستخدم فعليًا، وبيدمج بعض طبقات الـ <span dir="ltr">OSI</span> مع بعضها في طبقة واحدة. الجدول ده بس تمهيد سريع، وهنتكلم عنه بالتفصيل في ملف منفصل:
 
@@ -558,7 +611,7 @@ Frame = [ MAC Source | MAC Destination | IP Packet ]
 
 ---
 
-## خلاصة سريعة
+<h2 dir="rtl" align="right" id="quick-summary">1️⃣6️⃣ خلاصة سريعة</h2>
  
 - الـ OSI Model بيقسم عملية الاتصال لـ **7 طبقات**، كل طبقة ليها وظيفة مستقلة ومحددة.
 - الطبقات العليا (7, 6, 5) قريبة من المستخدم، والطبقات السفلى (4, 3, 2, 1) قريبة من الوسط الناقل.
