@@ -2,7 +2,7 @@
 
 # 📚 فهرس مواضيع كورس Network+ الشامل
 
-الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 10 في مكان واحد.
+الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 14 في مكان واحد.
 
 تحت كل عنوان موضوع هتلاقي **الجدول الأصلي بتاعه بالظبط** زي ما هو موجود جوه ملفه، وكل رابط في الجدول بيوديك **على طول للنقطة المطلوبة** جوه الملف من غير ما تفتحه وتدور فيه يدويًا.
 
@@ -22,6 +22,10 @@
 | 8 | [الأوساط الفيزيائية وكابلات التوصيل](./08-Physical-Media.md) | الكابلات المحورية والمجدولة والضوئية والمتسلسلة، لوحة تجميع الكابلات، معايير التسمية والأسلاك المهيكلة (TIA/EIA-568)، وخصائص كابلات الشبكة |
 | 9 | [تقنيات الإيثرنت والشبكات المحلية](./09-Ethernet-LAN.md) | تقنيات Token Ring وARC-Net وEthernet، التحكم في الوصول للوسيط (Collision/Broadcast Domain)، عنونة MAC، صيغة الإطار، وعلاقة الإيثرنت بنموذج OSI |
 | 10 | [أجهزة الشبكات](./10-Networking-Devices.md) | مهايئات الشبكة (NIC، Modem، Transceiver)، الأجهزة الأساسية (Hub/Bridge/Switch/WAP)، أجهزة الربط بين الشبكات (Router/Firewall)، أجهزة إضافية متخصصة، وخدمتا DNS وDHCP |
+| 11 | [عنوان الـ IP وتقسيم الشبكات](./11-IP-Addressing-and-IP-Subnetting.md) | عنونة IPv4 وفئاتها، الفرق بين IP وMAC، NAT، أنظمة العد والتحويل بينها، CIDR، قوانين التقسيم (Subnetting)، VLSM وSupernetting، تطبيقات سحابية، وملحق أساسيات IPv6 |
+| 12 | [مقدمة في التوجيه](./12-Introduction-to-IP-Routing.md) | دور الراوتر ومهامه، جدول التوجيه وARP Cache، مثال متكامل لتوجيه البيانات، Static وDynamic Routing، Administrative Distance، خوارزميات التوجيه، وRoute Summarization |
+| 13 | [بروتوكولات التوجيه](./13-Routing-Protocols.md) | خوارزميات Distance Vector وLink State وHybrid، بروتوكولات RIP وIGRP وOSPF وIS-IS وEIGRP وBGP، جداول المقارنة الشاملة، واختيار البروتوكول المناسب |
+| 14 | [بروتوكول الإصدار السادس (IPv6)](./14-IPv6.md) | هيكل الهيدر وأنواع العناوين، NDP كبديل لـ ARP، طرق التوزيع (SLAAC/DHCPv6)، أوامر Cisco IOS، تقنيات الانتقال من IPv4 إلى IPv6، وMobile IPv6 |
 
 ---
 
@@ -108,23 +112,24 @@
 
 ## 4) 📘 [الموضوع الرابع: نموذج الـ OSI Model بالتفصيل](./04-OSI-Model.md)
 
-| المحتويات |
-|---|
-| [مقدمة عن الموضوع](./04-OSI-Model.md#مقدمة-عن-الموضوع) |
-| [خصائص وسمات الـ OSI Model](./04-OSI-Model.md#خصائص-وسمات-الـ-osi-model) |
-| [الطبقات السبعة بالترتيب](./04-OSI-Model.md#الطبقات-السبعة-بالترتيب) |
-| [1) طبقة الـ Application Layer](./04-OSI-Model.md#1-طبقة-الـ-application-layer-الطبقة-السابعة) |
-| [2) طبقة الـ Presentation Layer](./04-OSI-Model.md#2-طبقة-الـ-presentation-layer-الطبقة-السادسة) |
-| [3) طبقة الـ Session Layer](./04-OSI-Model.md#3-طبقة-الـ-session-layer-الطبقة-الخامسة) |
-| [4) طبقة الـ Transport Layer](./04-OSI-Model.md#4-طبقة-الـ-transport-layer-الطبقة-الرابعة) |
-| [5) طبقة الـ Network Layer](./04-OSI-Model.md#5-طبقة-الـ-network-layer-الطبقة-الثالثة) |
-| [6) طبقة الـ Data Link Layer](./04-OSI-Model.md#6-طبقة-الـ-data-link-layer-الطبقة-الثانية) |
-| [7) طبقة الـ Physical Layer](./04-OSI-Model.md#7-طبقة-الـ-physical-layer-الطبقة-الأولى) |
-| [جدول ملخص لكل الطبقات السبعة](./04-OSI-Model.md#جدول-ملخص-لكل-الطبقات-السبعة-للمراجعة-السريعة) |
-| [الأجهزة اللي بتشتغل في كل طبقة](./04-OSI-Model.md#الأجهزة-اللي-بتشتغل-في-كل-طبقة) |
-| [مقارنة سريعة: OSI مقابل TCP/IP](./04-OSI-Model.md#مقارنة-سريعة-osi-مقابل-tcpip) |
-| [طريقة حفظ ترتيب الطبقات (Mnemonic)](./04-OSI-Model.md#طريقة-حفظ-ترتيب-الطبقات-mnemonic) |
-| [خلاصة سريعة](./04-OSI-Model.md#خلاصة-سريعة) |
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | <a href="./04-OSI-Model.md#intro">مقدمة عن الموضوع</a> | - |
+| 2 | <a href="./04-OSI-Model.md#osi-characteristics">خصائص وسمات الـ <span dir="ltr">OSI Model</span></a> | <a href="./04-OSI-Model.md#layers-grouping">تقسيم الطبقات لمجموعتين رئيسيتين</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#pdu-concept">وحدة البيانات لكل طبقة (PDU)</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#peer-to-peer-communication">الاتصال المنطقي بين نفس الطبقة (Peer-to-Peer)</a> |
+| 3 | <a href="./04-OSI-Model.md#seven-layers-order">الطبقات السبعة بالترتيب</a> | - |
+| 4 | <a href="./04-OSI-Model.md#application-layer">1) طبقة الـ Application Layer (السابعة)</a> | <a href="./04-OSI-Model.md#application-layer-protocols">أشهر بروتوكولاتها</a> |
+| 5 | <a href="./04-OSI-Model.md#presentation-layer">2) طبقة الـ Presentation Layer (السادسة)</a> | <a href="./04-OSI-Model.md#presentation-layer-functions">وظائف الطبقة الأساسية</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#presentation-translation">Translation / Coding & Decoding</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#presentation-encryption">Encryption / Decryption</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#presentation-compression">Compression / De-compression</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#presentation-formatting">Formatting Data Type</a> |
+| 6 | <a href="./04-OSI-Model.md#session-layer">3) طبقة الـ Session Layer (الخامسة)</a> | <a href="./04-OSI-Model.md#session-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#session-establishment">إنشاء وإدارة وإنهاء الجلسات</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#session-synchronization">Synchronization (التزامن)</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#session-dialog-control">Dialog Control</a> |
+| 7 | <a href="./04-OSI-Model.md#transport-layer">4) طبقة الـ Transport Layer (الرابعة)</a> | <a href="./04-OSI-Model.md#transport-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#transport-segmentation">Segmentation & Sequencing</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#transport-flow-control">Flow Control</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#transport-determine-protocol">Determine Protocol</a><br><a href="./04-OSI-Model.md#tcp-vs-udp-detailed">مقارنة تفصيلية بين TCP و UDP</a><br><a href="./04-OSI-Model.md#three-way-handshake">آلية الـ Three-Way Handshake</a> |
+| 8 | <a href="./04-OSI-Model.md#network-layer">5) طبقة الـ Network Layer (الثالثة)</a> | <a href="./04-OSI-Model.md#network-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#network-logical-addressing">Logical Addressing</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#network-routing">Routing</a><br><a href="./04-OSI-Model.md#routing-protocols-overview">أشهر بروتوكولات الـ Routing</a> |
+| 9 | <a href="./04-OSI-Model.md#data-link-layer">6) طبقة الـ Data Link Layer (الثانية)</a> | <a href="./04-OSI-Model.md#data-link-sublayers">تقسيم الطبقة لـ Sublayers (LLC / MAC)</a><br><a href="./04-OSI-Model.md#data-link-layer-functions">وظائف الطبقة بالتفصيل</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#data-link-framing">Framing (التأطير)</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#data-link-error-detection">Error Detection and Correction</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#data-link-media-access">Access for Media for Upper Layers</a> |
+| 10 | <a href="./04-OSI-Model.md#physical-layer">7) طبقة الـ Physical Layer (الأولى)</a> | <a href="./04-OSI-Model.md#physical-encoding">Encoding</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#physical-ethernet-standards">معايير الـ Ethernet الشائعة</a> |
+| 11 | <a href="./04-OSI-Model.md#seven-layers-summary-table">جدول ملخص لكل الطبقات السبعة</a> | - |
+| 12 | <a href="./04-OSI-Model.md#devices-per-layer">الأجهزة اللي بتشتغل في كل طبقة</a> | <a href="./04-OSI-Model.md#devices-upper-layers">طبقات Application/Presentation/Session</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#devices-transport-layer">طبقة Transport</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#devices-network-layer">طبقة Network</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#devices-data-link-layer">طبقة Data Link</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#devices-physical-layer">طبقة Physical</a><br><a href="./04-OSI-Model.md#devices-summary-table">جدول ملخص سريع للأجهزة</a> |
+| 13 | <a href="./04-OSI-Model.md#protocols-per-layer">البروتوكولات اللي بتشتغل في كل طبقة</a> | <a href="./04-OSI-Model.md#protocols-application-layer">طبقة Application</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-presentation-layer">طبقة Presentation</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-session-layer">طبقة Session</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-transport-layer">طبقة Transport</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-network-layer">طبقة Network</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-data-link-layer">طبقة Data Link</a><br>&nbsp;&nbsp;&nbsp;<a href="./04-OSI-Model.md#protocols-physical-layer">طبقة Physical</a><br><a href="./04-OSI-Model.md#protocols-summary-table">جدول ملخص سريع للبروتوكولات</a> |
+| 14 | <a href="./04-OSI-Model.md#services-and-applications">الخدمات والتطبيقات المرتبطة بكل طبقة</a> | - |
+| 15 | <a href="./04-OSI-Model.md#osi-vs-tcpip-quick">مقارنة سريعة: OSI مقابل TCP/IP</a> | - |
+| 16 | <a href="./04-OSI-Model.md#quick-summary">خلاصة سريعة</a> | - |
 
 ---
 
@@ -173,19 +178,20 @@
 
 ## 7) 📘 [الموضوع السابع: نموذج الـ TCP/IP ومقارنته بالـ OSI](./07-TCP-IP-Model.md)
 
-| الرقم | الموضوع |
-|---|---|
-| 1 | [تعريف نموذج <span dir="ltr">TCP/IP</span> وأشكال استخدامه](./07-TCP-IP-Model.md#1-تعريف-نموذج-tcpip-وأشكال-استخدامه) |
-| 2 | [ليه لسه بندرس <span dir="ltr">OSI Model</span> والشغال فعليًا هو <span dir="ltr">TCP/IP</span>؟](./07-TCP-IP-Model.md#2-ليه-لسه-بندرس-osi-model-والشغال-فعليا-هو-tcpip) |
-| 3 | [النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)](./07-TCP-IP-Model.md#3-النسخة-القديمة-4-طبقات-مقابل-النسخة-المحدثة-5-طبقات) |
-| 4 | [المقارنة التفصيلية بين <span dir="ltr">OSI</span> و <span dir="ltr">TCP/IP</span>](./07-TCP-IP-Model.md#4-المقارنة-التفصيلية-بين-osi-و-tcpip) |
-| 5 | [وظيفة كل طبقة في نموذج <span dir="ltr">TCP/IP</span>](./07-TCP-IP-Model.md#5-وظيفة-كل-طبقة-في-نموذج-tcpip) |
-| 6 | [أهم البروتوكولات العاملة في كل طبقة](./07-TCP-IP-Model.md#6-أهم-البروتوكولات-العاملة-في-كل-طبقة) |
-| 7 | [الفرق بين <span dir="ltr">TCP</span> و <span dir="ltr">UDP</span>](./07-TCP-IP-Model.md#7-الفرق-بين-tcp-و-udp) |
-| 8 | [المسميات (<span dir="ltr">PDU</span>) وعملية <span dir="ltr">Encapsulation / Decapsulation</span>](./07-TCP-IP-Model.md#8-المسميات-pdu-وعملية-encapsulation--decapsulation) |
-| 9 | [سبب التسمية <span dir="ltr">TCP/IP</span>](./07-TCP-IP-Model.md#9-سبب-التسمية-tcpip) |
-| 10 | [جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)](./07-TCP-IP-Model.md#10-جدول-مرجعي-أشهر-20-بورت-مراجعة-سريعة) |
-| 11 | [كبسولة المذاكرة السريعة](./07-TCP-IP-Model.md#11-كبسولة-المذاكرة-السريعة) |
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [تعريف نموذج TCP/IP وأشكال استخدامه](./07-TCP-IP-Model.md#tcpip-definition) | - |
+| 2 | [ليه لسه بندرس OSI Model والشغال فعليًا هو TCP/IP؟](./07-TCP-IP-Model.md#why-osi-still-taught) | - |
+| 3 | [النسخة القديمة (4 طبقات) مقابل النسخة المحدثة (5 طبقات)](./07-TCP-IP-Model.md#tcpip-4-vs-5-layers) | - |
+| 4 | [المقارنة التفصيلية بين OSI و TCP/IP](./07-TCP-IP-Model.md#osi-tcpip-detailed-mapping) | - |
+| 5 | [وظيفة كل طبقة في نموذج TCP/IP](./07-TCP-IP-Model.md#tcpip-layer-functions) | - |
+| 6 | [أهم البروتوكولات العاملة في كل طبقة](./07-TCP-IP-Model.md#tcpip-protocols-by-layer) | - |
+| 7 | [الفرق بين TCP و UDP](./07-TCP-IP-Model.md#tcp-vs-udp) | - |
+| 8 | [عناوين الـ IP بالتفصيل](./07-TCP-IP-Model.md#ip-addressing) | [تعريف عنوان الـ IP وتركيب العنوان](./07-TCP-IP-Model.md#ip-definition-structure)<br>[فئات عناوين IPv4 (Classes) وسبب ظهور CIDR](./07-TCP-IP-Model.md#ip-classes-cidr)<br>[العناوين الخاصة والعامة (RFC 1918)](./07-TCP-IP-Model.md#ip-private-public)<br>[أنواع الإرسال (Unicast, Broadcast, Multicast, Anycast)](./07-TCP-IP-Model.md#ip-transmission-types)<br>[تركيب حزمة IP وحقول الهيدر](./07-TCP-IP-Model.md#ip-header-fields)<br>[مقارنة IPv4 و IPv6 وصيغ الكتابة](./07-TCP-IP-Model.md#ipv4-vs-ipv6)<br>[تقسيم الشبكات (Subnetting)](./07-TCP-IP-Model.md#subnetting) |
+| 9 | [المسميات (PDU) وعملية Encapsulation/Decapsulation وحقول الهيدرز](./07-TCP-IP-Model.md#pdu-encapsulation) | [مسميات البيانات في كل طبقة (PDU)](./07-TCP-IP-Model.md#pdu-table)<br>[عملية Encapsulation و Decapsulation ومبدأ Same-Layer Interaction](./07-TCP-IP-Model.md#encapsulation-decapsulation)<br>[حقول هيدر Frame (طبقة Network Access)](./07-TCP-IP-Model.md#frame-header-fields)<br>[حقول هيدر TCP و UDP](./07-TCP-IP-Model.md#tcp-udp-header-fields) |
+| 10 | [سبب التسمية TCP/IP](./07-TCP-IP-Model.md#tcpip-naming-reason) | - |
+| 11 | [جدول مرجعي: أشهر 20 بورت (مراجعة سريعة)](./07-TCP-IP-Model.md#common-ports-reference) | - |
+| 12 | [كبسولة المذاكرة السريعة](./07-TCP-IP-Model.md#summary-table) | - |
 
 ---
 
@@ -234,6 +240,133 @@
 | 7 | [مقارنة شاملة بين كل الأجهزة](./10-Networking-Devices.md#devices-comparison) | - |
 | 8 | [البروتوكولات المستخدمة في كل جهاز](./10-Networking-Devices.md#devices-protocols) | - |
 | 9 | [جدول ملخص شامل للمراجعة السريعة](./10-Networking-Devices.md#summary-table) | - |
+
+---
+
+## 11) 📘 [الموضوع الحادي عشر: عنوان الـ IP وتقسيم الشبكات (IP Address and Subnetting)](./11-IP-Addressing-and-IP-Subnetting.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| - | <a href="./11-IP-Addressing-and-IP-Subnetting.md#part1-ip-address">🟦 الجزء الأول: عنوان الـ IP</a> | - |
+| 1 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-definition-importance">تعريف عنوان الـ IP وأهميته</a> | - |
+| 2 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ipv4-components">مكونات عنوان الـ IPv4</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#bit-byte-octet-terms">Bit / Byte / Octet</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#octet-system">نظام الأوكتت بالتفصيل (Dotted-Decimal, حدود الأوكتت)</a> |
+| 3 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ipv4-vs-ipv6">نبذة: <span dir="ltr">IPv4</span> مقابل <span dir="ltr">IPv6</span> (مقارنة كاملة)</a> | - |
+| 4 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-layer-nature">الطبقة التي يعمل بها الـ IP وثباته</a> | - |
+| 5 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-vs-mac">الفرق بين الـ <span dir="ltr">IP</span> والـ <span dir="ltr">MAC Address</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#mac-address-review">مراجعة الـ MAC Address</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#mac-ip-comparison-table">جدول المقارنة الكامل</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#why-two-addresses">ليه محتاجين عنوانين مش واحد بس</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#flat-vs-hierarchical">Flat مقابل Hierarchical</a> |
+| 6 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#iana">منظمة <span dir="ltr">IANA</span> وسجلات الإنترنت</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#iana-registry-hierarchy">التسلسل الهرمي للسجلات</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#whois-registry">سجل WHOIS</a> |
+| 7 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-classes">فئات الـ <span dir="ltr">IP (Classes A–E)</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#class-ranges">مدى كل فئة</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#class-network-host-split">الفرق بين الفئات</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#why-d-e-no-mask">ليه D, E مالهمش Subnet Mask</a> |
+| 8 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#network-host-id">أجزاء عنوان الـ <span dir="ltr">IP</span>: <span dir="ltr">Network ID</span> و<span dir="ltr">Host ID</span></a> | - |
+| 9 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#network-host-broadcast">أنواع العناوين داخل الشبكة</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#network-host-broadcast-terms">Network / Host / Broadcast Address</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#quiz-examples">3 أمثلة محلولة (Class A/B/C)</a> |
+| 10 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-types">أنواع عناوين الـ IP</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#private-public-ip">Private و Public (+فئات الـ Public لكل Class)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#apipa-virtual-ip">APIPA (وأنه Non-routable) و Virtual IP</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#multicast-loopback">Multicast (+عناوين شهيرة وربطها بالـ MAC) و Loopback</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#reserved-addresses">عناوين محجوزة أخرى</a> |
+| 11 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#network-address-benefit">فائدة عنوان الشبكة في التحكم والحماية</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#acl-concept">ACL</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#firewall-example">مثال الجدار الناري</a> |
+| 12 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-assignment-methods">طرق حصول الجهاز على عنوان <span dir="ltr">IP</span> وإعداداته</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#assignment-table">DHCP / DHCPv6 / Static / APIPA / EUI-64</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#default-gateway">Default Gateway</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#devices-with-ip">الأجهزة التي تمتلك عنوان IP</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#ipconfig-renew">أمر ipconfig /renew</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#dhcp-relay-agent">DHCP Relay Agent (Helper Address)</a> |
+| 13 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#routing">التوجيه: جدول التوجيه وأنواع المسارات</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#routing-table">جدول التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#routing-protocols">بروتوكولات التوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#router-uses-ip">كيف يستخدم الراوتر الـ IP للتوجيه</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#default-vs-static-route">Default Route مقابل Static Route</a> |
+| 14 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-header">عملية التغليف وهيدر الـ IP</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-header-basic-fields">حقول أساسية (Source/Destination/TTL/Protocol)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#dscp-tos">DSCP/ToS (QoS)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#fragmentation-fields">Identification, Flags, Fragment Offset (التجزئة)</a> |
+| 15 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-port-relationship">العلاقة بين IP والـ <span dir="ltr">Port Number</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#socket-concept">مفهوم الـ Socket</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#source-destination-port">Source و Destination Port</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#ephemeral-ports">الـ Ephemeral Ports</a> |
+| 16 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#nat">ترجمة عناوين الشبكة <span dir="ltr">NAT</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#nat-types">أنواعه</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#pat-home-router">مثال: راوتر منزلي بـ IP عام واحد لأكثر من 10 أجهزة</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#nat-table-records">سجلات NAT (NAT Table)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#nat-terms">مصطلحاته</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#port-forwarding-dmz">Port Forwarding و DMZ</a> |
+| 17 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#network-monitoring">مراقبة الشبكة عبر عنوان الـ IP</a> | - |
+| 18 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#transmission-types">طرق إرسال البيانات: <span dir="ltr">Unicast, Broadcast, Multicast</span></a> | - |
+| 19 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ip-security-concepts">اعتبارات أمنية مرتبطة بعناوين IP والتقسيم</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#segmentation-vlans">عزل الشبكات و VLANs</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#spoofing-broadcast-storms">انتحال العناوين و Broadcast Storms</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#classful-vs-classless-routing">Classful مقابل Classless Routing</a> |
+| 20 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#cli-reference">أدوات التشخيص والأوامر العملية (<span dir="ltr">CLI</span>)</a> | - |
+| - | <a href="./11-IP-Addressing-and-IP-Subnetting.md#part2-subnetting">🟩 الجزء الثاني: تقسيم الشبكات</a> | - |
+| 1 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#why-subnetting">مقدمة: ليه بنقسم الشبكة؟</a> | - |
+| 2 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#subnet-mask-basics"><span dir="ltr">Subnet Mask</span>: تعريفه وقواعده</a> | - |
+| 3 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#anding">عملية <span dir="ltr">ANDing</span></a> | - |
+| 4 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#number-systems">أنظمة العد وطرق التحويل بينها</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#number-systems-intro">Base 10 / Base 2 / Base 16 (+نبذة عن Octal)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#weights-table">جدول الأوزان (الجدول السحري)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#binary-decimal-conversion">تحويل ديسيمال ↔ باينري (+أمثلة إضافية)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#division-method">طريقة القسمة المتتالية على 2</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#full-ip-binary-example">مثال شامل: تحويل IP كامل أوكتت بأوكتت</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#binary-range">مدى الاحتمالات في الباينري</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#hex-binary-conversion">تحويل هيكس ↔ باينري</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#hex-range">مدى الاحتمالات في الهيكس</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#bit-count-rule">معرفة عدد البتات لأي رقم (+مثال شامل)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#decimal-hex-direct">التحويل المباشر ديسيمال↔هيكس</a> |
+| 5 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#cidr">نظام <span dir="ltr">CIDR</span> وكتابة السلاش</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#prefix-length-def">تعريف Prefix Length</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#cidr-cheat-sheet">جدول CIDR المرجعي السريع (/8–/30)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#point-to-point-links">شبكات الربط النقطي /30 و /31 (RFC 3021) و/32</a> |
+| 6 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#subnetting-laws">القوانين الأساسية للتقسيم</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#law-num-subnets">عدد الشبكات 2ⁿ</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#law-num-hosts">عدد الأجهزة 2ʰ − 2</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#law-block-size">حجم القفزة Block Size</a> |
+| 7 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#solving-steps">خطوات حل أي مسألة <span dir="ltr">Subnetting</span></a> | - |
+| 8 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#worked-examples">أمثلة محلولة خطوة بخطوة</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#example-easy">مثال سهل</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#example-medium">مثال متوسط (معطى: عدد الأجهزة)</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#example-advanced">مثال متقدم (معطى: عدد الشبكات)</a> |
+| 9 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#subnet-id-boundaries">حساب <span dir="ltr">Subnet ID</span> وحدود كل شبكة فرعية</a> | - |
+| 10 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm"><span dir="ltr">VLSM</span>: التقسيم متغير الطول</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm-definition">تعريفه والفرق عن Subnetting العادي</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm-steps">خطوات الحل</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm-mini-example">مثال مصغّر خطوة بخطوة</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm-big-example">مثال شامل: كلاس A + وصلة راوترين</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#vlsm-common-mistake">تحذير: خطأ ترتيب التخصيص</a> |
+| 11 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#supernetting"><span dir="ltr">Supernetting</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#route-summarization-example">مثال تلخيص 4 شبكات (Route Summarization)</a> |
+| 12 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#identify-class">معرفة الفئة من الـ <span dir="ltr">IP</span> والـ <span dir="ltr">Subnet Mask</span></a> | - |
+| 13 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#octet-split">تقسيم أوكتت واحد بين الشبكات والأجهزة</a> | - |
+| 14 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#find-network-of-host">إيجاد عنوان شبكة جهاز معين</a> | - |
+| 15 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#troubleshooting">مسائل الخدع والأخطاء الشائعة (Troubleshooting)</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#same-mask-different-subnet">نفس الـ Mask، شبكات مختلفة</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#invalid-ip-assignment">تحديد العناوين غير الصالحة</a> |
+| 16 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#case-study">دراسة حالة كاملة: تصميم شبكة شركة (<span dir="ltr">VLSM Case Study</span>)</a> | - |
+| 17 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#cheat-sheet-summary">ملخص شامل: كل القوانين الرياضية في جدول واحد</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#all-formulas-table">جدول القوانين</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#wildcard-mask">Wildcard Mask</a> |
+| 18 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#cloud-subnetting">تطبيقات الـ Subnetting في البيئات السحابية</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#aws-vpc">AWS VPC</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#azure-vnet">Azure VNet</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#aws-reservation-formula">حجز 5 عناوين بدل 2</a> |
+| 19 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#advanced-routing-concepts">مفاهيم هندسية متقدمة في التوجيه والعناوين</a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#anycast">Anycast</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#overlapping-ip">تداخل العناوين و Double/Twice NAT</a> |
+| 20 | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ipv6-appendix">ملحق: أساسيات عنونة وتقسيم <span dir="ltr">IPv6</span></a> | <a href="./11-IP-Addressing-and-IP-Subnetting.md#ipv6-address-types">تركيب العنوان وأنواعه</a><br>&nbsp;&nbsp;&nbsp;<a href="./11-IP-Addressing-and-IP-Subnetting.md#ipv6-subnetting">تقسيم شبكات IPv6</a> |
+| - | <a href="./11-IP-Addressing-and-IP-Subnetting.md#practice-problems">📝 مسائل تدريب ذاتي (بدون حل مباشر)</a> | - |
+| - | <a href="./11-IP-Addressing-and-IP-Subnetting.md#review-questions">❓ أسئلة المراجعة الشاملة</a> | - |
+
+---
+
+## 12) 📘 [الموضوع الثاني عشر: مقدمة في التوجيه (Introduction to IP Routing)](./12-Introduction-to-IP-Routing.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | <a href="./12-Introduction-to-IP-Routing.md#intro-to-routing">مقدمة في التوجيه</a> | - |
+| 2 | <a href="./12-Introduction-to-IP-Routing.md#router-role">جهاز الراوتر ومهامه</a> | - |
+| 3 | <a href="./12-Introduction-to-IP-Routing.md#network-address-basis">لماذا يعتمد التوجيه على عنوان الشبكة لا عنوان الجهاز</a> | - |
+| 4 | <a href="./12-Introduction-to-IP-Routing.md#network-types">أنواع الشبكات بالنسبة للراوتر</a> | <a href="./12-Introduction-to-IP-Routing.md#directly-connected">الشبكات المتصلة مباشرة</a><br><a href="./12-Introduction-to-IP-Routing.md#remote-networks">الشبكات البعيدة (Remote Networks)</a> |
+| 5 | <a href="./12-Introduction-to-IP-Routing.md#routing-table">جدول التوجيه</a> | <a href="./12-Introduction-to-IP-Routing.md#show-ip-route">أمر show ip route</a><br>&nbsp;&nbsp;&nbsp;<a href="./12-Introduction-to-IP-Routing.md#route-source-codes">رموز مصدر المسار</a> |
+| 6 | <a href="./12-Introduction-to-IP-Routing.md#arp-cache">ARP Cache ودوره في عملية التوجيه</a> | - |
+| 7 | <a href="./12-Introduction-to-IP-Routing.md#routing-requirements">البيانات التي يحتاجها الراوتر لتوجيه البيانات</a> | - |
+| 8 | <a href="./12-Introduction-to-IP-Routing.md#end-to-end-example">مثال متكامل: توجيه البيانات من PC1 إلى PC2</a> | <a href="./12-Introduction-to-IP-Routing.md#arp-request-step">الحصول على الماك عبر ARP</a><br><a href="./12-Introduction-to-IP-Routing.md#router-hop-actions">مهام الراوتر أثناء التوجيه</a> |
+| 9 | <a href="./12-Introduction-to-IP-Routing.md#routing-and-osi-layers">عملية التوجيه وطبقات OSI / TCP-IP</a> | - |
+| 10 | <a href="./12-Introduction-to-IP-Routing.md#routing-types">أنواع عملية التوجيه (Static / Dynamic)</a> | - |
+| 11 | <a href="./12-Introduction-to-IP-Routing.md#static-routing">التوجيه الساكن (Static Routing)</a> | <a href="./12-Introduction-to-IP-Routing.md#static-routing-syntax">صيغة الأمر والأمثلة</a><br><a href="./12-Introduction-to-IP-Routing.md#static-routing-commands">أوامر المشاهدة والتحقق</a><br><a href="./12-Introduction-to-IP-Routing.md#default-route">المسار الافتراضي (Default Route)</a><br><a href="./12-Introduction-to-IP-Routing.md#floating-static-route">Floating Static Route</a><br><a href="./12-Introduction-to-IP-Routing.md#recursive-vs-directly-attached">Recursive vs Directly Attached</a> |
+| 12 | <a href="./12-Introduction-to-IP-Routing.md#dynamic-routing">التوجيه الديناميكي (Dynamic Routing)</a> | <a href="./12-Introduction-to-IP-Routing.md#dynamic-routing-terms">المصطلحات المشتركة بين بروتوكولات التوجيه</a> |
+| 13 | <a href="./12-Introduction-to-IP-Routing.md#routing-loops">مشكلة حلقات التوجيه (Routing Loops) وحلولها</a> | - |
+| 14 | <a href="./12-Introduction-to-IP-Routing.md#administrative-distance">المسافة الإدارية (Administrative Distance)</a> | <a href="./12-Introduction-to-IP-Routing.md#ad-worked-example">مثال عملي محلول</a> |
+| 15 | <a href="./12-Introduction-to-IP-Routing.md#metric-calculation">المعيار (Metric) وطرق حسابه</a> | - |
+| 16 | <a href="./12-Introduction-to-IP-Routing.md#routing-algorithms">خوارزميات التوجيه</a> | <a href="./12-Introduction-to-IP-Routing.md#distance-vector">Distance Vector</a><br>&nbsp;&nbsp;&nbsp;<a href="./12-Introduction-to-IP-Routing.md#rip">RIP</a><br>&nbsp;&nbsp;&nbsp;<a href="./12-Introduction-to-IP-Routing.md#eigrp">EIGRP</a><br><a href="./12-Introduction-to-IP-Routing.md#link-state">Link State</a><br>&nbsp;&nbsp;&nbsp;<a href="./12-Introduction-to-IP-Routing.md#ospf">OSPF</a><br><a href="./12-Introduction-to-IP-Routing.md#path-vector">Path Vector</a><br>&nbsp;&nbsp;&nbsp;<a href="./12-Introduction-to-IP-Routing.md#bgp">BGP</a> |
+| 17 | <a href="./12-Introduction-to-IP-Routing.md#convergence-comparison">سرعة التقارب (Convergence Time) عبر البروتوكولات</a> | - |
+| 18 | <a href="./12-Introduction-to-IP-Routing.md#classful-classless">بروتوكولات Classful و Classless</a> | - |
+| 19 | <a href="./12-Introduction-to-IP-Routing.md#route-summarization">تلخيص المسارات (Route Summarization)</a> | - |
+| 20 | <a href="./12-Introduction-to-IP-Routing.md#igp-vs-egp">التوجيه الداخلي والخارجي (IGP و EGP)</a> | - |
+| 21 | <a href="./12-Introduction-to-IP-Routing.md#nat-and-routing">NAT وعلاقته بالتوجيه</a> | - |
+| 22 | <a href="./12-Introduction-to-IP-Routing.md#protocol-vs-routed">الفرق بين Routing Protocol و Routed Protocol</a> | - |
+| 23 | <a href="./12-Introduction-to-IP-Routing.md#summary-table">جدول تلخيصي</a> | - |
+
+---
+
+## 13) 📘 [الموضوع الثالث عشر: بروتوكولات التوجيه (Routing Protocols)](./13-Routing-Protocols.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن بروتوكولات التوجيه](./13-Routing-Protocols.md#intro-routing-protocols) | [تعريف ووظائف](./13-Routing-Protocols.md#routing-protocol-definition)<br>[لماذا نحتاج بروتوكولات التوجيه](./13-Routing-Protocols.md#why-routing-protocols) |
+| 2 | [تصنيف بروتوكولات التوجيه](./13-Routing-Protocols.md#routing-protocols-classification) | [الداخلي IGP مقابل الخارجي EGP](./13-Routing-Protocols.md#igp-vs-egp)<br>[معايير التمييز بين البروتوكولات](./13-Routing-Protocols.md#routing-protocol-distinguishing-factors)<br>[الخوارزميات الثلاث](./13-Routing-Protocols.md#three-algorithms-overview) |
+| 3 | [خوارزمية أقصر مسار Distance Vector](./13-Routing-Protocols.md#distance-vector-algorithm) | [مبدأ العمل](./13-Routing-Protocols.md#dv-how-it-works)<br>[تبادل جداول التوجيه](./13-Routing-Protocols.md#dv-table-exchange)<br>&nbsp;&nbsp;&nbsp;[مشكلة دوران البيانات](./13-Routing-Protocols.md#routing-loops)<br>&nbsp;&nbsp;&nbsp;[طرق منع الدوران](./13-Routing-Protocols.md#loop-prevention-methods)<br>[مثال عملي لبناء جدول التوجيه](./13-Routing-Protocols.md#dv-worked-example)<br>[حالة استقرار الشبكة Convergence](./13-Routing-Protocols.md#convergence) |
+| 4 | [بروتوكول RIP](./13-Routing-Protocols.md#rip-protocol) | [الإصدارات RIPv1 وRIPv2](./13-Routing-Protocols.md#rip-versions)<br>[تواقيت RIP](./13-Routing-Protocols.md#rip-timers)<br>[خصائص عامة](./13-Routing-Protocols.md#rip-general-properties) |
+| 5 | [بروتوكول IGRP](./13-Routing-Protocols.md#igrp-protocol) | [آلية العمل والنظام المتري](./13-Routing-Protocols.md#igrp-metric)<br>[Autonomous System](./13-Routing-Protocols.md#autonomous-system)<br>[تواقيت IGRP](./13-Routing-Protocols.md#igrp-timers) |
+| 6 | [مقارنة RIP و IGRP](./13-Routing-Protocols.md#rip-vs-igrp) | - |
+| 7 | [خوارزمية حالة الربط Link State](./13-Routing-Protocols.md#link-state-algorithm) | [مبدأ العمل](./13-Routing-Protocols.md#ls-how-it-works)<br>[النظام الهرمي Areas](./13-Routing-Protocols.md#ls-hierarchy)<br>[الجداول الثلاثة](./13-Routing-Protocols.md#ls-three-tables) |
+| 8 | [بروتوكول OSPF](./13-Routing-Protocols.md#ospf-protocol) | [المناطق Areas](./13-Routing-Protocols.md#ospf-areas)<br>[معرّف الراوتر Router ID](./13-Routing-Protocols.md#ospf-router-id)<br>[انتخاب DR وBDR](./13-Routing-Protocols.md#ospf-dr-bdr)<br>[العناوين والتقنية](./13-Routing-Protocols.md#ospf-addressing)<br>[المسافة الإدارية والتواقيت](./13-Routing-Protocols.md#ospf-ad-timers) |
+| 9 | [بروتوكول IS-IS](./13-Routing-Protocols.md#isis-protocol) | [مبدأ العمل والعناوين NSAP](./13-Routing-Protocols.md#isis-nsap)<br>[مقارنة IS-IS مع OSPF](./13-Routing-Protocols.md#isis-vs-ospf)<br>&nbsp;&nbsp;&nbsp;[تواقيت IS-IS](./13-Routing-Protocols.md#isis-timers) |
+| 10 | [خوارزمية Hybrid](./13-Routing-Protocols.md#hybrid-algorithm) | [الفكرة العامة](./13-Routing-Protocols.md#hybrid-concept) |
+| 11 | [بروتوكول EIGRP](./13-Routing-Protocols.md#eigrp-protocol) | [الجداول الثلاثة](./13-Routing-Protocols.md#eigrp-tables)<br>[النظام المتري وDUAL](./13-Routing-Protocols.md#eigrp-metric-dual)<br>[العدد الأقصى للأجهزة](./13-Routing-Protocols.md#eigrp-scale)<br>[المسافة الإدارية](./13-Routing-Protocols.md#eigrp-ad-timers)<br>&nbsp;&nbsp;&nbsp;[تواقيت EIGRP](./13-Routing-Protocols.md#eigrp-timers) |
+| 12 | [مقارنة شاملة بين الخوارزميات الثلاث](./13-Routing-Protocols.md#three-algorithms-comparison) | [أنواع الإرسال المستخدمة](./13-Routing-Protocols.md#algorithms-transmission-types)<br>[التلخيص التلقائي بين البروتوكولات](./13-Routing-Protocols.md#auto-summarization) |
+| 13 | [بروتوكولات التوجيه الخارجي EGP](./13-Routing-Protocols.md#egp-intro) | [التعريف والمفهوم](./13-Routing-Protocols.md#egp-definition)<br>[الفرق بين الداخلي والخارجي](./13-Routing-Protocols.md#igp-vs-egp-detailed) |
+| 14 | [بروتوكول BGP](./13-Routing-Protocols.md#bgp-protocol) | [نظام AS والجيران](./13-Routing-Protocols.md#bgp-as-neighbors)<br>[الجداول الثلاثة](./13-Routing-Protocols.md#bgp-tables)<br>[نظام الـ Attributes](./13-Routing-Protocols.md#bgp-attributes)<br>[أنواع BGP: eBGP وiBGP](./13-Routing-Protocols.md#ebgp-vs-ibgp)<br>[بطء BGP وأسبابه](./13-Routing-Protocols.md#bgp-slowness)<br>[مقارنة BGP وRIP](./13-Routing-Protocols.md#bgp-vs-rip)<br>[المسافة الإدارية والتواقيت](./13-Routing-Protocols.md#bgp-ad-timers) |
+| 15 | [جداول تجميعية شاملة](./13-Routing-Protocols.md#summary-tables) | [جدول بروتوكولات التوجيه الداخلي](./13-Routing-Protocols.md#igp-summary-table)<br>[جدول المسافة الإدارية](./13-Routing-Protocols.md#ad-summary-table)<br>[استخدامات كل بروتوكول](./13-Routing-Protocols.md#protocol-use-cases)<br>[إعادة توزيع المسارات](./13-Routing-Protocols.md#route-redistribution) |
+| 16 | [كيف تختار بروتوكول التوجيه المناسب](./13-Routing-Protocols.md#choosing-routing-protocol) | - |
+| 17 | [ربط الموضوع بالأمن السيبراني](./13-Routing-Protocols.md#routing-security) | [تقنية Passive Interface](./13-Routing-Protocols.md#passive-interface) |
+| 18 | [جدول المراجعة السريعة](./13-Routing-Protocols.md#cheat-sheet) | - |
+
+---
+
+## 14) 📘 [الموضوع الرابع عشر: بروتوكول الإصدار السادس (TCP/IPv6)](./14-IPv6.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن IPv6](./14-IPv6.md#introduction) | [تعريف IPv6](./14-IPv6.md#definition)<br>[لماذا احتجنا إلى IPv6؟](./14-IPv6.md#why-ipv6)<br>[أهداف وفوائد IPv6](./14-IPv6.md#goals-benefits)<br>[مميزات وعيوب IPv6](./14-IPv6.md#pros-cons) |
+| 2 | [مقارنة عامة بين IPv4 و IPv6](./14-IPv6.md#ipv4-vs-ipv6-overview) | [الفرق في الحجم والتكوين](./14-IPv6.md#size-structure)<br>[الفاصلة مقابل الأوكتيت](./14-IPv6.md#separator-difference) |
+| 3 | [هيكل الـ Header في IPv6](./14-IPv6.md#ipv6-header) | [الشكل العام لهيدر IPv6](./14-IPv6.md#header-overview)<br>[مقارنة تفصيلية بين حقول IPv4 و IPv6](./14-IPv6.md#header-comparison)<br>[عمليات التجزئة والفرق بين الإصدارين](./14-IPv6.md#fragmentation)<br>[Extension Headers](./14-IPv6.md#extension-headers) |
+| 4 | [عمليات إرسال البيانات وتغليفها](./14-IPv6.md#data-encapsulation) | [الفرق بين تغليف البيانات في IPv4 و IPv6](./14-IPv6.md#encapsulation-diff)<br>[العمليات الإضافية الجديدة في IPv6](./14-IPv6.md#additional-processes)<br>[بديل ARP في IPv6 (NDP)](./14-IPv6.md#ndp-vs-arp)<br>&nbsp;&nbsp;&nbsp;[مصطلح NS و NA و DAD](./14-IPv6.md#dad-process)<br>&nbsp;&nbsp;&nbsp;[حالات عنوان IPv6](./14-IPv6.md#address-states) |
+| 5 | [بنية عنوان IPv6 وكتابته](./14-IPv6.md#address-structure) | [صيغة العنوان المنطقي (128 بت)](./14-IPv6.md#address-format)<br>[كتابة العنوان بالنظام الست عشري](./14-IPv6.md#hex-writing)<br>[عدد الخانات والبتات والأوكتيدات](./14-IPv6.md#segments-bits)<br>[قواعد اختصار العنوان](./14-IPv6.md#shortening-rules)<br>[أخطاء شائعة في الاختصار](./14-IPv6.md#common-mistakes) |
+| 6 | [الـ Prefix بديل الـ Subnet](./14-IPv6.md#prefix-concept) | [تعريف Prefix ومهامه](./14-IPv6.md#prefix-definition)<br>[قيمة Prefix Value](./14-IPv6.md#prefix-value)<br>[تحديد جزء الشبكة وجزء الأجهزة](./14-IPv6.md#network-host-portion)<br>&nbsp;&nbsp;&nbsp;[مثال محسوب: تحديد Network Address](./14-IPv6.md#network-address-example) |
+| 7 | [أنواع عناوين IPv6](./14-IPv6.md#address-types) | [نظرة عامة على الأنواع](./14-IPv6.md#types-overview)<br>[عناوين Unicast](./14-IPv6.md#unicast-addresses)<br>&nbsp;&nbsp;&nbsp;[Link-Local Unicast (APIPA)](./14-IPv6.md#link-local)<br>&nbsp;&nbsp;&nbsp;[Unique Local Address (Private IP)](./14-IPv6.md#unique-local-address)<br>&nbsp;&nbsp;&nbsp;[Global Unicast Address (Public IP)](./14-IPv6.md#global-unicast-address)<br>[مقارنة شاملة بين أنواع Unicast](./14-IPv6.md#unicast-comparison)<br>[Privacy Extensions (العناوين المؤقتة)](./14-IPv6.md#privacy-extensions)<br>[عناوين Anycast](./14-IPv6.md#anycast)<br>[عناوين Multicast](./14-IPv6.md#multicast)<br>&nbsp;&nbsp;&nbsp;[Solicited-Node Multicast Address](./14-IPv6.md#solicited-node)<br>[عناوين خاصة محجوزة](./14-IPv6.md#special-addresses) |
+| 8 | [عملية NAT في IPv6](./14-IPv6.md#nat-ipv6) | — |
+| 9 | [طرق توزيع عناوين IPv6](./14-IPv6.md#assigning-methods) | [SLAAC](./14-IPv6.md#slaac)<br>[DHCPv6 Stateful](./14-IPv6.md#dhcpv6-stateful)<br>[DHCPv6 Stateless](./14-IPv6.md#dhcpv6-stateless)<br>[العنوان الثابت Static](./14-IPv6.md#static-assignment)<br>[اكتشاف DHCPv6 Server عبر Multicast](./14-IPv6.md#dhcpv6-discovery) |
+| 10 | [بروتوكولات IPv6](./14-IPv6.md#ipv6-protocols) | [علاقة IPv6 بطبقات النموذج المرجعي](./14-IPv6.md#ipv6-osi-layers)<br>[DNS في IPv6 (AAAA)](./14-IPv6.md#dns-ipv6)<br>[بروتوكولات التوجيه في IPv6](./14-IPv6.md#ipv6-routing-protocols) |
+| 11 | [أوامر Cisco IOS الأساسية لـ IPv6](./14-IPv6.md#cisco-ios-commands) | [تفعيل التوجيه بـ IPv6](./14-IPv6.md#enable-ipv6-routing)<br>[تعيين عنوان يدوياً](./14-IPv6.md#manual-address-config)<br>[تفعيل SLAAC على الواجهة](./14-IPv6.md#enable-slaac)<br>[إعداد DHCPv6](./14-IPv6.md#dhcpv6-config) |
+| 12 | [الانتقال من IPv4 إلى IPv6](./14-IPv6.md#ipv4-to-ipv6-transition) | [Dual Stack](./14-IPv6.md#dual-stack)<br>[Tunneling](./14-IPv6.md#tunneling)<br>[NAT64 / NAT-PT](./14-IPv6.md#nat64-pt)<br>[تواصل الشبكات المختلطة](./14-IPv6.md#mixed-communication) |
+| 13 | [Mobile IPv6 (نبذة سريعة)](./14-IPv6.md#mobile-ipv6) | — |
+| 14 | [جدول ملخص شامل](./14-IPv6.md#cheat-sheet) | — |
 
 ---
 
