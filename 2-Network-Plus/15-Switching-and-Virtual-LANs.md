@@ -1,9 +1,9 @@
 <div dir="rtl">
 
-# 1️⃣5️⃣ Switching and Virtual LANs
+<h1 align="center">1️⃣5️⃣ Switching and Virtual LANs</h1>
 
 <p dir="rtl" align="right">
-الموضوع ده من أهم مواضيع الـ Network+، لأنه بيشرح إزاي جهاز الـ <strong>Switch</strong> بيشتغل جوه بجوه (Layer 2 Operations)، وإزاي بيمنع مشكلة دوران البيانات (Loops) عن طريق بروتوكول الـ <strong>STP</strong>، وإزاي بنقسم الشبكة الواحدة منطقيًا لعدة شبكات باستخدام الـ <strong>VLANs</strong>. الملف مرتب من الأبسط للأعمق: هنبدأ بمشكلة الـ Hub، بعدين أساسيات السويتش، بعدين آلية عمله الداخلية، بعدين مشكلة الدوران وحلها، بعدين تجميع الوصلات، بعدين تقسيم الشبكة لـ VLANs ونقلها عبر الترانك، وأخيرًا تصميم الشبكات الكبيرة والأمان والمراقبة. الموضوع مرتبط جدًا بملف <a href="09-Ethernet-LAN.md">Topic 9 - Ethernet/LAN</a> وملف <a href="10-Networking-Devices.md">Topic 10 - Networking Devices</a>، فلو حابب تراجع أساسيات الإيثرنت والسويتش قبل ما تكمل، ده هيساعدك.
+جهاز الـ <strong>Switch</strong> بيشتغل على <strong>Layer 2 (Data Link Layer)</strong> من نموذج الـ OSI، وبيتعلم عناوين الأجهزة المتصلة بيه ويوجه البيانات للمنفذ الصح بس بدل ما يبثها للجميع زي الـ Hub. الملف ده بيغطي آلية عمل السويتش الداخلية، وبروتوكول الـ <strong>STP</strong> اللي بيمنع دوران البيانات، وتجميع الوصلات، وتقسيم الشبكة لـ <strong>VLANs</strong> ونقلها عبر الترانك، وأخيرًا تصميم الشبكات الكبيرة والأمان والمراقبة. الموضوع مرتبط بملف <a href="09-Ethernet-LAN.md">Topic 9 - Ethernet/LAN</a> وملف <a href="10-Networking-Devices.md">Topic 10 - Networking Devices</a>.
 </p>
 
 ---
@@ -18,7 +18,7 @@
 | 4 | [عملية منع دوران البيانات](#loop-prevention) | [أسباب حدوث الدوران](#why-loops-happen)<br>[مشاكل الدوران](#loop-problems) |
 | 5 | [بروتوكول الـ STP](#stp) | [تعريف البروتوكول ووظيفته](#stp-definition)<br>[رسائل الـ BPDU](#bpdu)<br>[قيمة الأولوية](#bridge-priority)<br>[انتخاب الـ Root Bridge](#root-bridge-election)<br>[تكلفة المسار](#path-cost)<br>[أدوار المنافذ](#port-roles)<br>&nbsp;&nbsp;&nbsp;[Root Port](#root-port)<br>&nbsp;&nbsp;&nbsp;[Designated Port](#designated-port)<br>&nbsp;&nbsp;&nbsp;[Blocked Port](#blocked-port)<br>[حالات منافذ STP](#port-states)<br>[عملية الاستقرار Convergence](#stp-convergence)<br>[تقنيات حماية إضافية للـ STP](#stp-protections) |
 | 6 | [تجميع الوصلات EtherChannel](#etherchannel) | [تعريفه وفائدته](#etherchannel-definition)<br>[بروتوكولات التفاوض](#etherchannel-protocols) |
-| 7 | [الشبكات المحلية الافتراضية VLANs](#vlan) | [تعريف الـ VLAN وأهميته](#vlan-definition)<br>[مميزات وفوائد الـ VLAN](#vlan-benefits)<br>[علاقة الراوتر بالـ VLAN](#vlan-router-relation)<br>[أنواع الـ VLAN](#vlan-types)<br>[طرق تخصيص المنافذ](#vlan-port-assignment)<br>[الـ VMPS](#vmps)<br>[تسمية الـ VLANs](#vlan-naming)<br>[أنواع منافذ الـ VLAN](#vlan-port-types)<br>[الـ VLAN ID](#vlan-id) |
+| 7 | [الشبكات المحلية الافتراضية VLANs](#vlan) | [تعريف الـ VLAN وأهميته](#vlan-definition)<br>[مميزات وفوائد الـ VLAN](#vlan-benefits)<br>[علاقة الراوتر بالـ VLAN](#vlan-router-relation)<br>[أنواع الـ VLAN](#vlan-types)<br>[طرق تخصيص المنافذ](#vlan-port-assignment)<br>[الـ VMPS](#vmps)<br>[تسمية الـ VLANs](#vlan-naming)<br>[أنواع منافذ الـ VLAN](#vlan-port-types)<br>[الـ VLAN ID](#vlan-id)<br>[مقارنة: Collision مقابل Broadcast Domain](#collision-vs-broadcast) |
 | 8 | [الترانك Trunking](#trunking) | [تعريف الترانك ووظيفته](#trunking-definition)<br>[بروتوكول ISL](#isl)<br>[بروتوكول 802.1Q](#dot1q)<br>[بروتوكول DTP](#dtp)<br>[بروتوكول VTP](#vtp) |
 | 9 | [تصميم الشبكة الهرمي وأنواع السويتش](#switch-hierarchy) | [Access Switch](#access-switch)<br>[Distribution Switch](#distribution-switch)<br>[Core Switch](#core-switch) |
 | 10 | [أمان منافذ السويتش](#port-security) | [هجمات شائعة تستهدف السويتش](#switching-attacks)<br>[ربط أكثر من جهاز بمنفذ واحد](#multiple-devices-port)<br>[حماية 802.1X و NAC](#dot1x-nac)<br>[إعدادات Port Violation](#port-violation)<br>[طرق ربط المنافذ بالعناوين](#port-mac-binding) |
@@ -64,7 +64,7 @@
 </p>
 
 <p dir="rtl" align="right">
-السويتش التقليدي (Layer 2 Switch) بيتعامل مع البيانات على مستوى الـ <strong>Frames</strong> والعناوين الفيزيائية (MAC Addresses) بس، من غير ما يفهم عناوين الـ IP. لكن الجملة الشهيرة اللي بتتقال في الكورسات هي إن "السويتش هو جهاز Layer 2، لكن السويتشات الحديثة بقت Layer 3 Switches" - يعني فيه سويتشات متقدمة بقت قادرة تعمل Routing بين الشبكات الفرعية المختلفة (زي الراوتر بالظبط)، وده هيتفصل أكتر في قسم <a href="#switch-hierarchy">تصميم الشبكة الهرمي</a> لاحقًا في الملف ده، وراجع كمان <a href="12-Introduction-to-IP-Routing.md">Topic 12</a> و<a href="13-Routing-Protocols.md">Topic 13</a>.
+السويتش التقليدي (Layer 2 Switch) بيتعامل مع البيانات على مستوى الـ <strong>Frames</strong> والعناوين الفيزيائية (MAC Addresses) بس، من غير ما يفهم عناوين الـ IP. لكن الجملة الشهيرة اللي بتتقال في الكورسات هي إن "السويتش هو جهاز Layer 2، لكن السويتشات الحديثة بقت Layer 3 Switches" - يعني فيه سويتشات متقدمة بقت قادرة تعمل Routing بين الشبكات الفرعية المختلفة (زي الراوتر بالظبط)، وده هيتفصل أكتر في قسم تصميم الشبكة الهرمي لاحقًا في الملف ده، وراجع كمان <a href="12-Introduction-to-IP-Routing.md">Topic 12</a> و<a href="13-Routing-Protocols.md">Topic 13</a>.
 </p>
 
 <h3 dir="rtl" align="right" id="switch-functions">🔹 وظائف ومهام السويتش</h3>
@@ -138,7 +138,7 @@
 </p>
 
 <p dir="rtl" align="right">
-كل ما زاد عدد الأجهزة المتصلة بالشبكة، كل ما زاد حجم الجدول ده، وحجم الجدول محدود بمساحة الذاكرة المخصصة له في السويتش، فلو الجدول امتلأ بالكامل، السويتش ممكن يضطر يعامل الفريمات الجديدة كإغراق (Flooding) بدل التحويل المباشر لحد ما تتوفر مساحة. (ملحوظة: امتلاء الجدول ده ممكن يحصل عمدًا كهجوم، هنشرحه في قسم <a href="#switching-attacks">هجمات السويتش</a> لاحقًا).
+كل ما زاد عدد الأجهزة المتصلة بالشبكة، كل ما زاد حجم الجدول ده، وحجم الجدول محدود بمساحة الذاكرة المخصصة له في السويتش، فلو الجدول امتلأ بالكامل، السويتش ممكن يضطر يعامل الفريمات الجديدة كإغراق (Flooding) بدل التحويل المباشر لحد ما تتوفر مساحة. (ملحوظة: امتلاء الجدول ده ممكن يحصل عمدًا كهجوم، هنشرحه في قسم هجمات السويتش لاحقًا).
 </p>
 
 <h3 dir="rtl" align="right" id="forward-filter">🔹 قرارات التصفية والإرسال (Forward/Filter Decisions)</h3>
@@ -352,6 +352,7 @@
 <li><strong>BPDU Guard:</strong> بتتفعل غالبًا مع PortFast، ووظيفتها إنها تقفل المنفذ تلقائيًا (Err-Disabled) لو استقبل رسالة BPDU بشكل غير متوقع، لأن ده معناه إن حد وصل سويتش أو جهاز مش مصرح بيه على منفذ كان المفروض يكون لجهاز نهائي بس.</li>
 <li><strong>Root Guard:</strong> بتمنع أي منفذ معين من أنه يقبل يبقى Root Port، يعني بتمنع سويتش خارجي (زي سويتش موصل غلط أو بقصد سيء) من أنه يفوز بمنصب الـ Root Bridge على حساب السويتش الأساسي المعتمد في التصميم.</li>
 <li><strong>Loop Guard:</strong> بتحمي من حدوث Loop في حالة إن منفذ كان في وضع Blocking توقف عن استقبال رسائل BPDU بشكل غير طبيعي (مش بسبب سقوط الوصلة فعليًا)، فبدل ما يتحول تلقائيًا لـ Forwarding بالخطأ، الميزة دي بتخليه يفضل في وضع Blocking للأمان.</li>
+<li><strong>UDLD (UniDirectional Link Detection):</strong> بروتوكول من Cisco بيكتشف مشكلة مختلفة تمامًا عن اللي فوق: وصلة فيبر (أو نحاس) بقت شغالة في اتجاه واحد بس (Unidirectional Link)، يعني طرف بيقدر يبعت للتاني بس مش العكس. المشكلة دي خطيرة لأن بروتوكول STP نفسه بيعتمد على تبادل رسائل BPDU في الاتجاهين عشان يكتشف الـ Loops، فلو الاتصال بقى اتجاه واحد بس، STP ممكن يفشل يكتشف Loop حقيقي وتسيب المنفذ يفتح غلط. UDLD بيتأكد من سلامة الاتصال في الاتجاهين ولو اكتشف مشكلة بيقفل المنفذ تلقائيًا قبل ما تسبب Loop فعلي.</li>
 </ul>
 
 ---
@@ -461,6 +462,21 @@
 كل VLAN بيتحدد برقم تعريفي فريد (VLAN ID) بيتراوح من <strong>1 إلى 4094</strong> حسب المعيار (802.1Q). بعض الأرقام محجوزة لأغراض خاصة (زي VLAN 1 اللي بيكون الـ Default VLAN، والمدى من 1002-1005 المحجوز تاريخيًا في أجهزة Cisco لبروتوكولات قديمة). الرقم ده هو اللي بيتم وضعه كعلامة (Tag) على الفريم عند مروره على وصلة الـ Trunk، عشان السويتش المستقبِل يعرف الفريم ده تابع لأنهي VLAN.
 </p>
 
+<h3 dir="rtl" align="right" id="collision-vs-broadcast">🔹 مقارنة سريعة: Collision Domain مقابل Broadcast Domain</h3>
+
+<p dir="rtl" align="right">
+دلوقتي وبعد ما اتكلمنا عن مجال التصادم مع السويتش، ومجال البث مع الـ VLANs، نقدر نلخص الفرق بين المفهومين في جدول واحد:
+</p>
+
+<table align="center">
+<tr><th>المقارنة</th><th>Collision Domain</th><th>Broadcast Domain</th></tr>
+<tr><td>بيتقسم بواسطة</td><td>كل منفذ سويتش (Micro-segmentation)</td><td>كل VLAN منفصل، أو كل منفذ راوتر</td></tr>
+<tr><td>الجهاز المسؤول عن التقسيم</td><td>Switch / Bridge</td><td>Router / Layer 3 Switch / VLAN</td></tr>
+<tr><td>مع الـ Hub</td><td>مجال واحد لكل الأجهزة المتصلة</td><td>مجال واحد لكل الأجهزة المتصلة</td></tr>
+<tr><td>مع الـ Switch (بدون VLANs)</td><td>مجال منفصل لكل منفذ</td><td>مجال واحد لكل السويتش</td></tr>
+<tr><td>مع الـ Switch (باستخدام VLANs)</td><td>مجال منفصل لكل منفذ</td><td>مجال منفصل لكل VLAN</td></tr>
+</table>
+
 ---
 
 <h2 dir="rtl" align="right" id="trunking">8️⃣ الترانك (Trunking)</h2>
@@ -507,10 +523,18 @@
 <li>بيدعم مفهوم الـ <strong>Native VLAN</strong>: وهو VLAN معين بيتفق عليه طرفي وصلة الترانك، وبياخد معاملة خاصة إنه بيتبعت من غير علامة (Untagged) على الوصلة، وأي فريم بييجي من غير علامة على الترانك بيُفترض تلقائيًا إنه تابع للـ Native VLAN.</li>
 </ul>
 
+<p dir="rtl" align="right">
+<strong>Native VLAN Mismatch:</strong> لازم طرفي وصلة الترانك يتفقوا على نفس رقم الـ Native VLAN بالظبط. لو سويتش معرّف الـ Native VLAN عنده رقم 1 والسويتش التاني معرّفه رقم 99 مثلاً، هيحصل خلط: أي فريم Untagged جاي من الطرف الأول هيتفسر غلط على إنه تابع لـ VLAN 99 عند الطرف التاني، وده بيسبب تسريب بيانات بين الـ VLANs (VLAN Leaking) ومشاكل في بروتوكول STP، وغالبًا بيظهر تحذير Native VLAN Mismatch في سجلات السويتش (Logs) لما يحصل.
+</p>
+
+<p dir="rtl" align="right">
+<strong>حجم الفريم بعد الـ Tagging (Baby Giant Frames):</strong> إضافة الـ 4 بايت بتاعة هيدر الـ 802.1Q Tag بتخلي أقصى حجم للفريم يزيد من 1518 بايت (الحجم القياسي للإيثرنت) لـ 1522 بايت، والفريم اللي حجمه في المدى ده بيتسمى <strong>Baby Giant Frame</strong>. بعض المعدات القديمة كانت بترفض الفريمات دي باعتبارها فريمات غير صالحة (Giant Frames)، فمن المهم إن كل أجهزة الشبكة تدعم المعيار 802.1Q بشكل صحيح عشان تتعامل مع الحجم الإضافي ده من غير مشاكل.
+</p>
+
 <h3 dir="rtl" align="right" id="dtp">🔹 بروتوكول DTP (Dynamic Trunking Protocol)</h3>
 
 <p dir="rtl" align="right">
-<strong>DTP</strong> هو بروتوكول خاص بشركة Cisco بيسمح لمنفذين متصلين ببعض في سويتشين مختلفين إنهم يتفاوضوا تلقائيًا على تحويل الوصلة بينهم من Access Port لـ Trunk Port من غير تدخل يدوي، بمجرد ما الطرفين يتفقوا إن كل واحد فيهم قادر يشتغل Trunk. الميزة دي مريحة لكنها بتُعتبر ثغرة أمنية لو اتسابت شغالة على منافذ Access العادية، لأن أي جهاز غريب متصل ممكن يحاول يتفاوض على ترقية المنفذ لـ Trunk ويوصل لبيانات كل الـ VLANs (هنشرح الهجوم ده بالتفصيل في قسم <a href="#switching-attacks">هجمات السويتش</a>)، فالممارسة الأمنية السليمة إنك تعطل DTP يدويًا وتحدد نوع المنفذ (Access أو Trunk) بشكل صريح.
+<strong>DTP</strong> هو بروتوكول خاص بشركة Cisco بيسمح لمنفذين متصلين ببعض في سويتشين مختلفين إنهم يتفاوضوا تلقائيًا على تحويل الوصلة بينهم من Access Port لـ Trunk Port من غير تدخل يدوي، بمجرد ما الطرفين يتفقوا إن كل واحد فيهم قادر يشتغل Trunk. الميزة دي مريحة لكنها بتُعتبر ثغرة أمنية لو اتسابت شغالة على منافذ Access العادية، لأن أي جهاز غريب متصل ممكن يحاول يتفاوض على ترقية المنفذ لـ Trunk ويوصل لبيانات كل الـ VLANs (هنشرح الهجوم ده بالتفصيل في قسم هجمات السويتش)، فالممارسة الأمنية السليمة إنك تعطل DTP يدويًا وتحدد نوع المنفذ (Access أو Trunk) بشكل صريح.
 </p>
 
 <h3 dir="rtl" align="right" id="vtp">🔹 بروتوكول VTP (VLAN Trunking Protocol)</h3>
@@ -646,5 +670,36 @@
 <p dir="rtl" align="right">
 <strong>RSPAN</strong> هو امتداد لخاصية الـ SPAN، بيسمح بنسخ البيانات من منفذ على سويتش معين وإرسالها لمنفذ مراقبة على سويتش <strong>مختلف تمامًا</strong> في مكان تاني من الشبكة، عن طريق تخصيص VLAN خاص بنقل بيانات المراقبة دي عبر الشبكة كلها (RSPAN VLAN). الفايدة الأساسية إنك مش مضطر يكون جهاز المراقبة قريب فيزيائيًا من السويتش اللي عايز تراقبه، ده مفيد جدًا في الشبكات الكبيرة الموزعة على أكتر من مبنى أو طابق.
 </p>
+
+---
+
+## 📋 جدول المراجعة السريعة (Quick Review)
+
+<table align="center">
+<tr><th>المفهوم</th><th>أهم النقاط</th></tr>
+<tr><td><strong>Hub</strong></td><td>Layer 1، مجال تصادم واحد لكل الأجهزة، بيعمل Flooding دايمًا</td></tr>
+<tr><td><strong>Switch</strong></td><td>Layer 2، مجال تصادم منفصل لكل منفذ، بيتعلم عناوين MAC</td></tr>
+<tr><td><strong>Switching Methods</strong></td><td>Store-and-Forward (الأدق) / Cut-Through (الأسرع) / Fragment-Free (حل وسط)</td></tr>
+<tr><td><strong>MAC Aging Time</strong></td><td>300 ثانية (5 دقائق) افتراضيًا</td></tr>
+<tr><td><strong>Bridge Priority الافتراضية</strong></td><td>32768</td></tr>
+<tr><td><strong>ترتيب اختيار Root Bridge</strong></td><td>أقل Priority أولاً، ثم أصغر MAC Address عند التعادل</td></tr>
+<tr><td><strong>Path Cost (STP)</strong></td><td>10 Mbps=100 / 100 Mbps=19 / 1 Gbps=4 / 10 Gbps=2</td></tr>
+<tr><td><strong>أدوار منافذ STP</strong></td><td>Root Port (RP) - Designated Port (DP) - Blocked Port (BP)</td></tr>
+<tr><td><strong>حالات منافذ STP</strong></td><td>Blocking → Listening → Learning → Forwarding (أو Disabled)</td></tr>
+<tr><td><strong>زمن استقرار STP التقليدي</strong></td><td>حوالي 30-50 ثانية (802.1D)، أسرع بكتير مع RSTP</td></tr>
+<tr><td><strong>حماية STP</strong></td><td>PortFast / BPDU Guard / Root Guard / Loop Guard / UDLD</td></tr>
+<tr><td><strong>EtherChannel</strong></td><td>تجميع وصلات فيزيائية لوصلة منطقية واحدة، بروتوكولاته LACP (معياري) و PAgP (Cisco)</td></tr>
+<tr><td><strong>مدى VLAN ID</strong></td><td>1 إلى 4094 (802.1Q)</td></tr>
+<tr><td><strong>Default VLAN</strong></td><td>VLAN 1</td></tr>
+<tr><td><strong>Trunking Protocols</strong></td><td>ISL (Cisco، تغليف كامل) و 802.1Q (معياري، حقل 4 بايت)</td></tr>
+<tr><td><strong>حجم الفريم بعد 802.1Q Tag</strong></td><td>1522 بايت (Baby Giant Frame) بدل 1518 بايت</td></tr>
+<tr><td><strong>DTP</strong></td><td>تفاوض تلقائي لتحويل منفذ لـ Trunk (Cisco) - يُفضّل تعطيله أمنيًا</td></tr>
+<tr><td><strong>VTP</strong></td><td>توزيع إعدادات الـ VLANs تلقائيًا بين السويتشات (Cisco)</td></tr>
+<tr><td><strong>هرم التصميم</strong></td><td>Access (أجهزة المستخدمين) → Distribution (Inter-VLAN Routing) → Core (سرعة النقل)</td></tr>
+<tr><td><strong>هجمات السويتش الشائعة</strong></td><td>MAC Flooding (إغراق CAM Table) و VLAN Hopping (Switch Spoofing / Double Tagging)</td></tr>
+<tr><td><strong>Port Violation Modes</strong></td><td>Protect (تجاهل) - Restrict (تجاهل + تسجيل) - Shutdown (قفل المنفذ)</td></tr>
+<tr><td><strong>معايير PoE</strong></td><td>802.3af (~15.4W) / 802.3at (~30W) / 802.3bt (~60-100W)</td></tr>
+<tr><td><strong>SPAN مقابل RSPAN</strong></td><td>SPAN لمراقبة داخل نفس السويتش، RSPAN لمراقبة عن بعد عبر VLAN مخصص</td></tr>
+</table>
 
 </div>
