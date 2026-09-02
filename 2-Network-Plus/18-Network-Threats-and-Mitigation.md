@@ -2,24 +2,26 @@
 
 # الموضوع الثامن عشر: تهديدات الشبكة والتخفيف منها (Network Threats and Mitigation)
 
-<div align="center"><img src="images/18-1-ddos-banner.jpg" width="600"></div>
+<div align="center"><img src="images/18-18-network-security-banner.jpg" width="600"></div>
 
 ## جدول المحتويات
 
 | # | القسم الرئيسي | المواضيع الفرعية |
 |:---:|:---:|:---:|
 | 1 | [مقدمة عن الموضوع](#introduction) | - |
-| 2 | [هجمات حجب الخدمة](#dos-ddos-family) | [DoS](#dos-attack)<br>[DDoS](#ddos-attack)<br>[SYN Flood](#syn-flood)<br>[Smurf Attack](#smurf-attack)<br>[Fraggle Attack](#fraggle-attack)<br>[Ping of Death](#ping-of-death)<br>[TFN وشبكة الزومبي](#tfn-zombie-master) |
+| 2 | [هجمات حجب الخدمة](#dos-ddos-family) | [DoS](#dos-attack)<br>[DDoS](#ddos-attack)<br>[SYN Flood](#syn-flood)<br>[Smurf Attack](#smurf-attack)<br>&nbsp;&nbsp;[أنواع Smurf](#smurf-types)<br>[Fraggle Attack](#fraggle-attack)<br>[Ping of Death](#ping-of-death)<br>[TFN وشبكة الزومبي](#tfn-zombie-master) |
 | 3 | [البرمجيات الخبيثة](#malware) | [الفيروسات](#viruses)<br>[الديدان](#worms)<br>[حصان طروادة](#trojan-horse)<br>[Rootkit](#rootkit)<br>[Ransomware](#ransomware)<br>[Spyware & Keyloggers](#spyware-keyloggers)<br>[Logic Bombs](#logic-bombs) |
 | 4 | [مهاجمو الشبكات](#threat-actors) | [White Hat](#white-hat)<br>[Grey Hat](#grey-hat)<br>[Black Hat](#black-hat) |
 | 5 | [أدوات وتقنيات الهجوم على الشبكة](#attack-tools) | [هجمات الانتحال Spoofing](#spoofing-attacks)<br>&nbsp;&nbsp;[IP Spoofing](#ip-spoofing)<br>&nbsp;&nbsp;[ARP Spoofing](#arp-spoofing)<br>&nbsp;&nbsp;[DNS Spoofing](#dns-spoofing)<br>&nbsp;&nbsp;[MAC Spoofing](#mac-spoofing)<br>[هجمات طبقة التطبيقات](#application-layer-attacks)<br>[البوابة الخلفية Backdoor](#backdoor)<br>[ActiveX Attacks](#activex-attacks) |
-| 6 | [جمع المعلومات عن الشبكة قبل الهجوم](#reconnaissance) | - |
+| 6 | [جمع المعلومات عن الشبكة قبل الهجوم](#reconnaissance) | [فحص المنافذ Port Scanning](#port-scanning) |
 | 7 | [التقاط حزم البيانات](#packet-sniffing) | - |
 | 8 | [هجمات كلمات المرور](#password-attacks) | [Brute Force / تخمين كلمة السر](#password-guessing)<br>[هجوم الشخص في المنتصف MITM](#mitm) |
 | 9 | [تهديدات الشبكات اللاسلكية](#wireless-threats) | [Rogue Access Point](#rogue-ap)<br>[Evil Twin Attack](#evil-twin)<br>[Jamming](#jamming)<br>[Deauthentication Attack](#deauth) |
 | 10 | [الهندسة الاجتماعية](#social-engineering) | - |
-| 11 | [تقنيات التخفيف من تهديدات الشبكة](#mitigation-techniques) | 18 تقنية تفصيلية |
-| 12 | [جدول المراجعة السريع](#cheat-sheet) | - |
+| 11 | [تقنيات التخفيف من تهديدات الشبكة](#mitigation-techniques) | 19 تقنية تفصيلية |
+| 12 | [السياسات وأفضل الممارسات](#policies-best-practices) | [قيود الترخيص](#licensing-restrictions)<br>[ضوابط التصدير الدولية](#export-controls)<br>[سياسات الاستجابة للحوادث](#incident-response-policy)<br>[دورة حياة النظام](#system-life-cycle) |
+| 13 | [أجهزة الحماية الفيزيائية](#physical-security-devices) | [أجهزة الكشف](#detection-devices)<br>[أجهزة الردع](#deterrent-devices)<br>[أجهزة المنع والتحكم بالوصول](#prevention-devices) |
+| 14 | [جدول المراجعة السريع](#cheat-sheet) | - |
 
 ---
 
@@ -56,6 +58,8 @@
 
 <div align="center"><img src="images/18-3-dos-attack-diagram.png" width="550"><br><em>هجوم DoS: مصدر واحد يغرق السيرفر بالطلبات ويمنع المستخدمين الشرعيين من الوصول</em></div>
 
+<div align="center"><img src="images/18-25-dos-dns-resolver-arabic-diagram.webp" width="550"><br><em>مثال آخر لهجوم DoS: مهاجم واحد يرسل حركة ضخمة عبر خوادم DNS Resolver تتجه لضرب هدف واحد (Target Victim)</em></div>
+
 <p dir="rtl" align="right">
 <strong>مدى الخطورة:</strong> بما إنه بييجي من مصدر واحد، فهو أسهل نسبياً في الاكتشاف والحجب (بمنع الـ IP المصدر مثلاً) مقارنة بالـ DDoS، لكنه لسه فعّال ضد أنظمة ضعيفة الموارد.
 </p>
@@ -67,6 +71,8 @@
 </p>
 
 <div align="center"><img src="images/18-4-ddos-attack-diagram.png" width="550"><br><em>هجوم DDoS: المهاجم يتحكم في عدد ضخم من الأجهزة المخترقة لضرب هدف واحد في نفس اللحظة</em></div>
+
+<div align="center"><img src="images/18-19-ddos-controller-zombies-diagram.png" width="550"><br><em>بنية هجوم DDoS الكاملة: المهاجم يتحكم في جهاز Controller مركزي، وهو بدوره يوجّه شبكة كاملة من أجهزة الزومبي لضرب الضحية معاً</em></div>
 
 <p dir="rtl" align="right">
 <strong>الفرق الجوهري بين DoS و DDoS:</strong>
@@ -87,6 +93,8 @@
 
 <div align="center"><img src="images/18-5-syn-flood-diagram.png" width="600"><br><em>هجوم SYN Flood: المهاجم يرسل طلبات SYN متعددة فيبقى السيرفر مشغولاً بانتظار إكمال الـ Handshake ويصبح غير متاح للمستخدم الشرعي</em></div>
 
+<div align="center"><img src="images/18-23-syn-flood-denied-user-diagram.png" width="500"><br><em>نفس الفكرة من زاوية أخرى: حزم SYN مزوّرة (Spoofed) من عدة مهاجمين تجاه الجهة المستهدفة، بينما الجهة الحميدة (Denied User/System) تُمنع من الوصول للخدمة</em></div>
+
 <h3 dir="rtl" align="right" id="smurf-attack">2.4 هجوم السنافر (Smurf Attack)</h3>
 
 <p dir="rtl" align="right">
@@ -94,6 +102,31 @@
 </p>
 
 <div align="center"><img src="images/18-6-smurf-attack-diagram.png" width="600"><br><em>هجوم Smurf: طلب ICMP واحد بعنوان مصدر مزوّر يتحول إلى ردود ضخمة من شبكة كاملة تتجه كلها للضحية</em></div>
+
+<p dir="rtl" align="right">
+<strong>آلية العمل خطوة بخطوة:</strong> (1) المهاجم يرسل طلب ICMP Echo Request بعنوان مصدر مزوّر هو عنوان الضحية ← (2) الحزمة توجَّه لعنوان Broadcast الخاص بالشبكة فتصل لكل جهاز فيها ← (3) كل جهاز في الشبكة يرسل رد ICMP Echo Reply تلقائياً للعنوان المصدر المزوّر ← (4) كل هذه الردود مجتمعة تصل للضحية في نفس اللحظة وتُغرقها، وينتج عن ذلك هجوم DDoS فعلي رغم إن نقطة الانطلاق الأصلية مهاجم واحد فقط.
+</p>
+
+<div align="center"><img src="images/18-22-smurf-detailed-steps-diagram.png" width="650"><br><em>الخطوات التفصيلية لهجوم Smurf مرقّمة: من إرسال طلب ICMP المزوّر وحتى وصول كل الردود للضحية مسبباً DDoS</em></div>
+
+<h4 dir="rtl" align="right" id="smurf-types">2.4.1 أنواع هجوم السنافر (Types of Smurf Attacks)</h4>
+
+<p dir="rtl" align="right">
+بيُقسَّم هجوم Smurf عادةً إلى نوعين حسب نطاق الاستهداف:
+</p>
+
+<ul dir="rtl">
+<li><strong>Basic Smurf Attack:</strong> يستهدف شبكة واحدة (Broadcast Network واحدة) بعدد كبير جداً من طلبات ICMP، بحيث تُغرق الضحية بردود شبكة واحدة فقط لكن بكثافة عالية.</li>
+<li><strong>Advanced Smurf Attack:</strong> يستهدف عدة شبكات (Broadcast Networks متعددة) في نفس الوقت، وبيوجّه الردود المجمَّعة من كل الشبكات دي لضحية واحدة — وده بيضاعف حجم الهجوم بشكل كبير جداً مقارنة بالنوع الأساسي.</li>
+</ul>
+
+<div align="center"><img src="images/18-24-smurf-basic-advanced-types-diagram.png" width="600"><br><em>الفرق بين Basic Smurf Attack (استهداف شبكة واحدة) وAdvanced Smurf Attack (استهداف عدة شبكات في آن واحد)</em></div>
+
+<p dir="rtl" align="right">
+<strong>متغيّر آخر شائع لنفس الفكرة:</strong> بدلاً من الاعتماد على Broadcast مباشرة، بعض الأدوات بتستخدم جهاز وسيط (زي راوتر أو Reflector) بحيث المهاجم يرسل حزمة بعنوان مستقبِل خاطئ (Spoofed) عبر هذا الجهاز الوسيط، وهو بدوره يعيد توجيه الحزمة لكل الأجهزة المتصلة به، فترد كل الأجهزة على الجهاز الوسيط بردودها إلى أن تتجمّع الاستجابات وتضرب الهدف الحقيقي — نفس مبدأ الانعكاس والتضخيم لكن بمسار مختلف قليلاً عن الـ Broadcast التقليدي.
+</p>
+
+<div align="center"><img src="images/18-20-smurf-udp-broadcast-diagram.jpg" width="500"><br><em>متغيّر آخر لهجوم الانعكاس: المهاجم يرسل حزم عبر جهاز وسيط (Router) بعنوان مصدر مزوّر، فترد كل الأجهزة المتصلة بردودها المجمَّعة على الهدف</em></div>
 
 <h3 dir="rtl" align="right" id="fraggle-attack">2.5 هجوم Fraggle</h3>
 
@@ -140,6 +173,8 @@ Fraggle هو نسخة معدّلة من هجوم Smurf، بنفس الفكرة �
 <h2 dir="rtl" align="right" id="malware">3. البرمجيات الخبيثة (Malware)</h2>
 
 <h3 dir="rtl" align="right" id="viruses">3.1 الفيروسات (Viruses)</h3>
+
+<div align="center"><img src="images/18-11-malware-banner.jpg" width="500"></div>
 
 <p dir="rtl" align="right">
 الفيروس هو برنامج خبيث بيحتاج <strong>ملف مضيف (Host File)</strong> أو تدخّل من المستخدم عشان ينتشر — يعني مبيقدرش ينسخ نفسه وينتقل من جهاز لآخر من غير ما حد يفتح ملف مصاب أو ينفّذ برنامج مصاب. بمجرد ما الملف المصاب يتفتح، الفيروس بيربط نفسه ببرامج أو ملفات تانية في الجهاز وينتشر داخلياً.
@@ -300,6 +335,10 @@ IP Spoofing هي تقنية بيقوم فيها المهاجم بتعديل عن
 <strong>الأهمية:</strong> ده يُعتبر <strong>الطريقة الأساسية والأشهر لتنفيذ هجوم Man-in-the-Middle داخل الشبكات المحلية</strong> — لازم تتفهمه كويس جداً لأنه أساس عملي هتقابله كتير في اختبارات الاختراق.
 </p>
 
+<div align="center"><img src="images/18-26-arp-spoofing-request-response-diagram.jpeg" width="500"><br><em>المهاجم يعترض طلبات وردود ARP بين نقطة الوصول والضحية بدلاً من المسار الطبيعي المباشر</em></div>
+
+<div align="center"><img src="images/18-27-arp-spoofing-attacker-router-diagram.png" width="500"><br><em>بعد نجاح التسميم، كل حركة بيانات المستخدم (User) المتجهة للراوتر والإنترنت تمر أولاً عبر جهاز المهاجم (Attacker)</em></div>
+
 <h4 dir="rtl" align="right" id="dns-spoofing">5.1.3 تزوير الـ DNS (DNS Spoofing / DNS Cache Poisoning)</h4>
 
 <p dir="rtl" align="right">
@@ -310,6 +349,10 @@ DNS Spoofing هو التلاعب في استجابات نظام أسماء ال�
 <strong>طرق التنفيذ الشائعة:</strong> تسميم ذاكرة التخزين المؤقت لسيرفر DNS (Cache Poisoning) بإدخال سجلات مزيفة فيها، أو التلاعب مباشرة في استجابات DNS المارة عبر الشبكة المحلية بعد الوصول لموقع MITM (غالباً بعد تنفيذ ARP Spoofing أولاً).
 </p>
 
+<div align="center"><img src="images/18-32-dns-spoofing-fake-records-diagram.png" width="550"><br><em>المهاجم يحقن سجلات DNS مزيّفة (Injects Fake Records) في السيرفر، فيتحول طلب المستخدم لموقع خبيث بدلاً من الموقع الشرعي</em></div>
+
+<div align="center"><img src="images/18-31-dns-spoofing-fraud-site-diagram.png" width="500"><br><em>مثال تطبيقي: طلب المستخدم لموقع بنكه الحقيقي يُعاد توجيهه عبر سيرفر DNS مخترق إلى موقع احتيالي مطابق للشكل</em></div>
+
 <h4 dir="rtl" align="right" id="mac-spoofing">5.1.4 تزوير عنوان الـ MAC (MAC Spoofing)</h4>
 
 <p dir="rtl" align="right">
@@ -319,6 +362,9 @@ DNS Spoofing هو التلاعب في استجابات نظام أسماء ال�
 <p dir="rtl" align="right">
 <strong>الاستخدامات الشائعة لهذا الهجوم:</strong> تجاوز آليات التصفية المبنية على عنوان MAC (MAC Filtering) المستخدمة في بعض شبكات الـ Wi-Fi كطبقة حماية، انتحال هوية جهاز موثوق للوصول لموارد شبكة مقيّدة، أو كخطوة تمهيدية ضمن هجمات أعقد زي MITM أو تجاوز بوابات الدخول الأسيرة (Captive Portals).
 </p>
+
+<div align="center"><img src="images/18-33-mac-spoofing-diagram.png" width="450"><br><em>المهاجم (AE:10:10:10:10:08) يزوّر عنوان MAC ليطابق جهازاً شرعياً على السويتش، فيستقبل حركة البيانات الموجَّهة لذلك الجهاز بدلاً منه</em></div>
+
 
 <h3 dir="rtl" align="right" id="application-layer-attacks">5.2 هجمات طبقة التطبيقات (Application Layer Attacks)</h3>
 
@@ -339,6 +385,8 @@ DNS Spoofing هو التلاعب في استجابات نظام أسماء ال�
 <p dir="rtl" align="right">
 الـ Backdoor هي طريقة دخول خفية للنظام بتتجاوز آليات المصادقة والحماية العادية. ممكن تكون مزروعة عمداً من مطوّر النظام (لأغراض صيانة مثلاً وممكن يُساء استخدامها)، أو مزروعة من مهاجم بعد اختراق ناجح عشان يضمن دخول مستقبلي للجهاز حتى لو اتقفلت الثغرة الأصلية اللي دخل منها. غالباً بتُزرع عن طريق Trojan Horse.
 </p>
+
+<div align="center"><img src="images/18-28-backdoor-c2-diagram.png" width="600"><br><em>المهاجم يثبّت Backdoor على النظام الهدف، وتُستخدم المنافذ المفتوحة عبرها لإرسال بيانات حساسة لسيرفر التحكم (Command-and-Control Server) خارج نطاق الجدار الناري</em></div>
 
 <h3 dir="rtl" align="right" id="activex-attacks">5.4 هجمات ActiveX (ActiveX Attacks)</h3>
 
@@ -361,6 +409,26 @@ ActiveX هي تقنية قديمة من مايكروسوفت كانت بتسمح
 
 <p dir="rtl" align="right">
 المعلومات المُجمَّعة (نوع نظام التشغيل، الخدمات الشغالة، إصدارات البرامج، هيكل الشبكة، أسماء الموظفين...) بتُستخدم لتحديد أضعف نقطة دخول ممكنة.
+</p>
+
+<h3 dir="rtl" align="right" id="port-scanning">6.1 فحص المنافذ (Port Scanning)</h3>
+
+<p dir="rtl" align="right">
+فحص المنافذ من أشهر تقنيات الـ Active Reconnaissance. المهاجم (أو الفاحص الأمني في حالة الاستخدام الشرعي) بيرسل حزم لكل منفذ (Port) على الجهاز الهدف عشان يعرف حالته: <strong>Open</strong> (فيه خدمة شغالة وبتستقبل اتصالات)، <strong>Closed</strong> (المنفذ متاح لكن مفيش خدمة شغالة عليه)، أو <strong>Filtered</strong> (فيه جدار حماية بيمنع الوصول للمنفذ ومش واضح لو مفتوح أو مقفول).
+</p>
+
+<p dir="rtl" align="right">
+<strong>أشهر أنواعه:</strong>
+</p>
+
+<ul dir="rtl">
+<li><strong>TCP Connect Scan (Full Open Scan):</strong> بيكمّل الـ Three-Way Handshake بالكامل مع كل منفذ — دقيق لكن سهل الاكتشاف لأنه بيسجّل اتصال كامل في اللوجات.</li>
+<li><strong>SYN Scan (Half-Open / Stealth Scan):</strong> بيرسل SYN بس وبيقفل الاتصال بمجرد استقبال SYN-ACK بدون إكمال الـ Handshake — أسرع وأصعب في الاكتشاف، وده أشهر نوع مستخدم عملياً.</li>
+<li><strong>UDP Scan:</strong> لفحص المنافذ اللي بتستخدم UDP بدل TCP — أبطأ وأقل دقة لأن UDP بروتوكول بلا اتصال (Connectionless).</li>
+</ul>
+
+<p dir="rtl" align="right">
+<strong>الأداة الأشهر:</strong> Nmap، وهي الأداة المرجعية القياسية في هذا المجال سواء للاستخدام الدفاعي (معرفة إيه اللي ظاهر من شبكتك للخارج) أو الهجومي.
 </p>
 
 ---
@@ -387,6 +455,8 @@ ActiveX هي تقنية قديمة من مايكروسوفت كانت بتسمح
 محاولة الوصول لحساب عن طريق تجربة كلمات مرور متعددة حتى الوصول للصحيحة. له نوعان رئيسيان: <strong>Brute Force</strong> (تجربة كل الاحتمالات الممكنة بشكل منهجي)، و <strong>Dictionary Attack</strong> (تجربة قائمة كلمات شائعة أو مسرّبة مسبقاً). كلمة مرور معقدة وطويلة ومتغيّرة دورياً بتقلل احتمالية نجاح هذا النوع من الهجمات بشكل كبير.
 </p>
 
+<div align="center"><img src="images/18-29-brute-force-flowchart.webp" width="600"><br><em>آلية عمل Brute Force: بوت آلي يجرّب تخمين كلمة المرور بشكل متكرر، وفي حالة الفشل يجرّب توليفة أخرى من الحروف حتى ينجح</em></div>
+
 <h3 dir="rtl" align="right" id="mitm">8.2 هجوم الشخص في المنتصف (Man-in-the-Middle – MITM) ⚠️ هام</h3>
 
 <p dir="rtl" align="right">
@@ -394,6 +464,8 @@ ActiveX هي تقنية قديمة من مايكروسوفت كانت بتسمح
 </p>
 
 <div align="center"><img src="images/18-14-mitm-attack-diagram.jpg" width="550"><br><em>هجوم MITM: المهاجم يعترض الاتصال الأصلي بين المستخدم والسيرفر ويقف في المنتصف دون علم أي من الطرفين</em></div>
+
+<div align="center"><img src="images/18-21-mitm-new-connection-diagram.png" width="550"><br><em>توضيح بديل لنفس الفكرة: الاتصال الأصلي (Original Connection) بين المستخدم والسيرفر يُقطع تماماً، ويفتح المهاجم اتصالاً جديداً (New Connection) يمر من خلاله هو نفسه بين الطرفين</em></div>
 
 <p dir="rtl" align="right">
 <strong>إزاي بيقدر المهاجم يقف في المنتصف؟ (من أشهر الطرق):</strong>
@@ -425,11 +497,15 @@ ActiveX هي تقنية قديمة من مايكروسوفت كانت بتسمح
 نقطة وصول لاسلكية (Wireless Access Point) بتتوصل بالشبكة بدون تصريح رسمي من إدارة الشبكة — سواء زرعها موظف بحسن نية (Shadow IT) لتسهيل استخدامه الشخصي، أو زرعها مهاجم عمداً. وجودها بيفتح ثغرة أمنية غير مُراقَبة في الشبكة المحمية، حتى لو مكانتش بنية خبيثة من البداية.
 </p>
 
+<div align="center"><img src="images/18-34-rogue-access-point-diagram.png" width="500"><br><em>نقطة وصول غير مصرح بها (Rogue AP) موجودة بجانب نقطة الوصول الشرعية داخل نطاق الشبكة</em></div>
+
 <h3 dir="rtl" align="right" id="evil-twin">9.2 هجوم التوأم الشرير (Evil Twin Attack)</h3>
 
 <p dir="rtl" align="right">
 Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: المهاجم بينشئ نقطة وصول لاسلكية مزيّفة <strong>بنفس اسم الشبكة الشرعية (SSID)</strong> بالضبط — أحياناً بإشارة أقوى من الشبكة الحقيقية — عشان يخدع أجهزة المستخدمين (اللي بتتصل تلقائياً بالشبكات المألوفة) للاتصال بيها بدلاً من الشبكة الأصلية دون ما يلاحظوا الفرق. بمجرد ما الضحية يتصل، كل حركة بياناته بتمر عبر جهاز المهاجم مباشرة — وده أساساً هجوم MITM لكن على مستوى الطبقة اللاسلكية.
 </p>
+
+<div align="center"><img src="images/18-35-evil-twin-ssid-mac-diagram.png" width="450"><br><em>نقطتا وصول بنفس اسم الشبكة (SSID) وعنوان الـ MAC، بنطاقين متداخلين يتنافسان على اتصال نفس الأجهزة — المستخدم لا يقدر يميّز الشرعية من المزيّفة</em></div>
 
 <p dir="rtl" align="right">
 <strong>الفرق عن Rogue AP العادي:</strong> الـ Rogue AP ممكن يكون بحسن نية أو باسم مختلف تماماً، أما الـ Evil Twin فهو محاكاة متعمدة ودقيقة لهوية شبكة موثوقة بهدف الخداع المباشر.
@@ -447,6 +523,8 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 هجوم Deauth بيستغل ثغرة في بروتوكول 802.11 (Wi-Fi) — إطارات إلغاء المصادقة (Deauthentication Frames) في الإصدارات القديمة مش مشفّرة أو موثّقة (Unauthenticated Management Frames). المهاجم بيرسل إطارات Deauth مزوّرة تدّعي إنها من نقطة الوصول نفسها، بتجبر جهاز الضحية على قطع الاتصال بالشبكة فوراً وتكرار المحاولة.
 </p>
 
+<div align="center"><img src="images/18-30-deauthentication-attack-diagram.png" width="500"><br><em>المهاجم يرسل إطارات Deauth للضحية فتنقطع الاتصال بنقطة الوصول الشرعية (Connection Termination)، ثم يخدعها للاتصال به هو مباشرة كأنه نقطة الوصول</em></div>
+
 <p dir="rtl" align="right">
 <strong>الاستخدامات الشائعة:</strong> هجوم حجب خدمة مباشر (منع الضحية من الاتصال بالشبكة تكراراً)، أو كخطوة تمهيدية لهجمات أخرى — زي إجبار جهاز الضحية على إعادة الاتصال (Reconnect) عشان يلتقط المهاجم عملية المصافحة (WPA Handshake) ويحاول كسر كلمة المرور منها لاحقاً، أو دفع الضحية للاتصال بشبكة Evil Twin بدلاً من الشبكة الحقيقية.
 </p>
@@ -455,7 +533,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 
 <h2 dir="rtl" align="right" id="social-engineering">10. الهندسة الاجتماعية (Social Engineering)</h2>
 
-<div align="center"><img src="images/18-11-malware-banner.jpg" width="500"></div>
+<div align="center"><img src="images/18-17-social-engineering-banner.jpg" width="500"></div>
 
 <p dir="rtl" align="right">
 الهندسة الاجتماعية — أو "فن اختراق العقول" — هي مجموعة تقنيات نفسية بيستخدمها المهاجم لخداع البشر (مش الأنظمة) عشان يخليهم يفصحوا عن معلومات حساسة أو يقوموا بأفعال تخدم مصلحة المهاجم، بدلاً من استغلال ثغرة تقنية في النظام. المبدأ الأساسي: <strong>الإنسان غالباً أضعف حلقة في منظومة الأمان</strong>، مهما كانت الأنظمة التقنية محمية بإحكام.
@@ -487,7 +565,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 <h2 dir="rtl" align="right" id="mitigation-techniques">11. القسم الثاني: تقنيات التخفيف من تهديدات الشبكة (Mitigation Techniques)</h2>
 
 <p dir="rtl" align="right">
-معرفة الهجوم بدون معرفة طريقة التخفيف منه معلومة ناقصة. القسم ده بيغطي 18 تقنية أساسية بتشكل معاً استراتيجية دفاع متعددة الطبقات (Defense in Depth).
+معرفة الهجوم بدون معرفة طريقة التخفيف منه معلومة ناقصة. القسم ده بيغطي 19 تقنية أساسية بتشكل معاً استراتيجية دفاع متعددة الطبقات (Defense in Depth).
 </p>
 
 <h3 dir="rtl" align="right" id="network-monitoring">11.1 مراقبة الشبكة (Network Monitoring)</h3>
@@ -540,7 +618,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 
 <h3 dir="rtl" align="right" id="physical-security">11.7 توفير الحماية الفيزيائية</h3>
 <p dir="rtl" align="right">
-حماية الأجهزة والبنية التحتية فيزيائياً (غرف سيرفرات مقفلة، كاميرات مراقبة، بطاقات دخول، أقفال للـ Racks) — لأن أي حماية برمجية بتفقد قيمتها لو المهاجم قدر يوصل فيزيائياً للجهاز مباشرة.
+حماية الأجهزة والبنية التحتية فيزيائياً — لأن أي حماية برمجية بتفقد قيمتها لو المهاجم قدر يوصل فيزيائياً للجهاز مباشرة. الأنواع التفصيلية لأجهزة الحماية الفيزيائية (كشف، ردع، منع) موضّحة بالكامل في <a href="#physical-security-devices">القسم 13</a>.
 </p>
 
 <h3 dir="rtl" align="right" id="disable-unused-services">11.8 إغلاق البروتوكولات والخدمات غير المستخدمة</h3>
@@ -567,7 +645,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 
 <h3 dir="rtl" align="right" id="network-policy">11.12 إنشاء السياسة الخاصة بالشبكة (Network Security Policy)</h3>
 <p dir="rtl" align="right">
-وثيقة رسمية بتحدد القواعد والمعايير الأمنية المتوقعة من كل مستخدمي ومسؤولي الشبكة — بتشمل قواعد استخدام مقبول (Acceptable Use Policy)، وسياسات الاستجابة للحوادث (Incident Response)، وضوابط الوصول، وغيرها. بدون سياسة موثّقة وواضحة، الحماية بتبقى عشوائية وغير متسقة.
+وثيقة رسمية بتحدد القواعد والمعايير الأمنية المتوقعة من كل مستخدمي ومسؤولي الشبكة — بتشمل قواعد استخدام مقبول (Acceptable Use Policy) وضوابط الوصول وغيرها. بدون سياسة موثّقة وواضحة، الحماية بتبقى عشوائية وغير متسقة. سياسات أكثر تخصصاً (الاستجابة للحوادث، الترخيص، دورة حياة النظام) موضّحة بالتفصيل في <a href="#policies-best-practices">القسم 12</a>.
 </p>
 
 <h3 dir="rtl" align="right" id="strong-passwords">11.13 إنشاء كلمات سر معقدة ومتغيّرة</h3>
@@ -585,7 +663,17 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 تدريب دوري للموظفين والمستخدمين على التعرف على محاولات الهندسة الاجتماعية والتصيّد والممارسات الآمنة. بما إن الإنسان غالباً أضعف حلقة، التوعية من أهم وأرخص وأفعل طبقات الدفاع.
 </p>
 
-<h3 dir="rtl" align="right" id="vuln-scan-vs-pentest">11.16 الفحص الدوري: Vulnerability Scanning مقابل Penetration Testing</h3>
+<h3 dir="rtl" align="right" id="baseline-review">11.16 مراجعة الخطوط الأساسية الأمنية (Reviewing Baselines)</h3>
+
+<p dir="rtl" align="right">
+الـ Baseline هي وثيقة توضّح <strong>الحالة الآمنة والمعتمدة</strong> لإعدادات نظام أو جهاز معين لحظة تأمينه بشكل صحيح لأول مرة — إعدادات الجدار الناري، المنافذ المفتوحة، البرامج المثبَّتة، الحسابات المُصرَّح بها، وغيرها. مراجعة الخط الأساسي (Baseline Review) معناها المقارنة الدورية بين <strong>الحالة الحالية الفعلية</strong> للنظام وبين الـ Baseline المعتمدة، لاكتشاف أي انحراف أو تغيير غير مصرّح به (Configuration Drift) ممكن يكون ناتج عن خطأ بشري أو حتى مؤشر على اختراق تم بالفعل.
+</p>
+
+<p dir="rtl" align="right">
+<strong>الفرق عن Vulnerability Scanning:</strong> فحص الثغرات بيدوّر على نقاط ضعف معروفة عالمياً، أما مراجعة الـ Baseline فبتدوّر تحديداً على أي <strong>تغيير عن الإعداد الآمن المعتمد للمؤسسة نفسها</strong>، حتى لو التغيير ده مش ثغرة معروفة رسمياً.
+</p>
+
+<h3 dir="rtl" align="right" id="vuln-scan-vs-pentest">11.17 الفحص الدوري: Vulnerability Scanning مقابل Penetration Testing</h3>
 
 <p dir="rtl" align="right">
 كلاهما فحص دوري لأمن الشبكة، لكن بفرق جوهري في العمق والهدف:
@@ -607,7 +695,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 <tr><td align="center">التكلفة والوقت</td><td align="center">أقل</td><td align="center">أعلى</td></tr>
 </table>
 
-<h3 dir="rtl" align="right" id="patch-management">11.17 إدارة التحديثات واستراتيجية التراجع (Patch Management & Rollback Strategy)</h3>
+<h3 dir="rtl" align="right" id="patch-management">11.18 إدارة التحديثات واستراتيجية التراجع (Patch Management & Rollback Strategy)</h3>
 
 <p dir="rtl" align="right">
 تطبيق التحديثات الأمنية (Patches) بشكل منتظم ومنظّم على أنظمة التشغيل والبرامج والأجهزة، لإغلاق الثغرات المعروفة قبل ما يستغلها مهاجم. عملية Patch Management السليمة بتمر بمراحل: تحديد التحديثات المطلوبة → اختبارها في بيئة تجريبية (Staging) قبل النشر الفعلي → نشرها على الإنتاج (Production) بشكل مجدوَل → التحقق من نجاحها.
@@ -617,14 +705,92 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 <strong>استراتيجية التراجع (Rollback Strategy):</strong> خطة احتياطية جاهزة للتراجع الفوري عن أي تحديث بيسبب مشاكل غير متوقعة (تعطّل خدمة، تعارض مع برامج أخرى) والعودة للإصدار المستقر السابق بأسرع وقت ممكن، بدون الحاجة لإعادة بناء النظام من الصفر. أخذ نسخة احتياطية (Backup/Snapshot) قبل أي تحديث هو الأساس اللي بيخلي الـ Rollback ممكناً وسريعاً.
 </p>
 
-<h3 dir="rtl" align="right" id="asset-disposal">11.18 الطريقة السليمة في التخلص من المخلفات (Asset Disposal)</h3>
+<h3 dir="rtl" align="right" id="asset-disposal">11.19 الطريقة السليمة في التخلص من المخلفات (Asset Disposal)</h3>
 <p dir="rtl" align="right">
-عند التخلص من أجهزة أو وسائط تخزين قديمة (هارد ديسك، USB، سيرفرات) لازم تتم عملية مسح آمن للبيانات (Secure Data Wipe / Degaussing) أو تدمير فيزيائي للوسيط (Physical Destruction/Shredding) قبل التخلص منه، لمنع استعادة بيانات حساسة من معدّات مُتخلَّص منها — نقطة ضعف شائعة ومُهمَلة غالباً في السياسات الأمنية.
+عند التخلص من أجهزة أو وسائط تخزين قديمة (هارد ديسك، USB، سيرفرات) لازم تتم عملية مسح آمن للبيانات (Secure Data Wipe / Degaussing) أو تدمير فيزيائي للوسيط (Physical Destruction/Shredding) قبل التخلص منه، لمنع استعادة بيانات حساسة من معدّات مُتخلَّص منها — نقطة ضعف شائعة ومُهمَلة غالباً في السياسات الأمنية. هذه الخطوة أيضاً جزء أساسي من دورة حياة النظام الموضّحة في القسم التالي.
 </p>
 
 ---
 
-<h2 dir="rtl" align="right" id="cheat-sheet">12. جدول المراجعة السريع (Cheat Sheet)</h2>
+<h2 dir="rtl" align="right" id="policies-best-practices">12. السياسات وأفضل الممارسات (Policies and Best Practices)</h2>
+
+<p dir="rtl" align="right">
+بعيداً عن الجوانب التقنية البحتة، فيه مجموعة من السياسات الإدارية والقانونية اللي لازم أي مؤسسة تراعيها كجزء من استراتيجيتها الأمنية الشاملة.
+</p>
+
+<h3 dir="rtl" align="right" id="licensing-restrictions">12.1 قيود الترخيص (Licensing Restrictions)</h3>
+
+<p dir="rtl" align="right">
+استخدام البرامج والأنظمة لازم يكون بترخيص قانوني سليم (Per-Seat, Per-Device, Subscription, Open Source...). البرامج غير المرخّصة أو المقرصنة مش بس مخالفة قانونية بتعرّض المؤسسة لغرامات، لكنها كمان — زي ما اتشرح في قسم البرمجيات الخبيثة — مصدر شائع جداً لدخول الفيروسات والـ Trojans والـ Rootkits، لأن مصادرها غير موثوقة وغالباً بتتطلب تعطيل آليات الحماية والتحقق. متابعة تراخيص البرامج (Software Asset Management) جزء من النظافة الأمنية العامة للمؤسسة.
+</p>
+
+<h3 dir="rtl" align="right" id="export-controls">12.2 ضوابط التصدير الدولية (International Export Controls)</h3>
+
+<p dir="rtl" align="right">
+بعض الدول (وعلى رأسها الولايات المتحدة عبر لوائح مثل EAR وITAR) بتفرض قيوداً قانونية على تصدير تقنيات معينة — وعلى رأسها برمجيات وأجهزة <strong>التشفير القوي (Strong Encryption)</strong> — لدول أو جهات معينة. أي مؤسسة بتعمل دولياً أو بتنشر حلول أمنية (VPN، أدوات تشفير...) عبر حدود دولية لازم تكون على وعي بالقيود دي عشان تتجنب مخالفات قانونية جسيمة.
+</p>
+
+<h3 dir="rtl" align="right" id="incident-response-policy">12.3 سياسات الاستجابة للحوادث (Incident Response Policies)</h3>
+
+<p dir="rtl" align="right">
+وثيقة رسمية بتحدد بالتفصيل خطوات التصرف عند وقوع حادث أمني (اختراق، تسريب بيانات، إصابة بـ Ransomware...)، بدل ما يكون رد الفعل عشوائي وقت الأزمة. المراحل الأساسية المعروفة بـ <strong>PICERL</strong>:
+</p>
+
+<ol dir="rtl">
+<li><strong>Preparation (التحضير):</strong> بناء الخطة والأدوات والفريق مسبقاً قبل وقوع أي حادث.</li>
+<li><strong>Identification (التحديد):</strong> اكتشاف وتأكيد وقوع الحادث فعلاً.</li>
+<li><strong>Containment (الاحتواء):</strong> عزل المشكلة لمنع انتشارها لباقي الشبكة.</li>
+<li><strong>Eradication (الاستئصال):</strong> إزالة السبب الجذري للحادث بالكامل (الفيروس، الثغرة المستغَلة...).</li>
+<li><strong>Recovery (الاستعادة):</strong> إعادة الأنظمة المتأثرة للعمل الطبيعي بأمان.</li>
+<li><strong>Lessons Learned (الدروس المستفادة):</strong> تحليل الحادث بعد انتهائه لتحسين السياسات ومنع تكراره.</li>
+</ol>
+
+<h3 dir="rtl" align="right" id="system-life-cycle">12.4 دورة حياة النظام (System Life Cycle)</h3>
+
+<p dir="rtl" align="right">
+أي جهاز أو نظام في المؤسسة بيمر بمراحل محددة، ولكل مرحلة اعتبارات أمنية خاصة بيها:
+</p>
+
+<ol dir="rtl">
+<li><strong>التخطيط والشراء (Planning / Procurement):</strong> تحديد المتطلبات الأمنية قبل شراء أي جهاز أو نظام جديد.</li>
+<li><strong>النشر (Deployment):</strong> تثبيت النظام بإعدادات آمنة معتمدة (Baseline) من اليوم الأول.</li>
+<li><strong>التشغيل والصيانة (Operation / Maintenance):</strong> المرحلة الأطول — تشمل التحديثات الدورية (Patch Management)، المراقبة، ومراجعة الخط الأساسي بشكل مستمر.</li>
+<li><strong>التقاعد والتخلص (Retirement / Disposal):</strong> المرحلة الأخيرة، وتشمل عملية التخلص السليم من الأصل (Asset Disposal) الموضّحة في قسم تقنيات التخفيف.</li>
+</ol>
+
+---
+
+<h2 dir="rtl" align="right" id="physical-security-devices">13. أجهزة الحماية الفيزيائية (Physical Security Devices)</h2>
+
+<p dir="rtl" align="right">
+الحماية الفيزيائية بتكمّل الحماية المنطقية (Logical Security) — أي حماية برمجية بتفقد قيمتها لو المهاجم قدر يوصل فيزيائياً للجهاز أو غرفة السيرفرات مباشرة. بتُصنَّف الأجهزة عادةً لثلاث فئات حسب دورها:
+</p>
+
+<h3 dir="rtl" align="right" id="detection-devices">13.1 أجهزة الكشف (Detection Devices)</h3>
+<p dir="rtl" align="right">
+دورها اكتشاف وقوع محاولة اختراق فيزيائي وقت حدوثها أو بعده. أمثلة: <strong>كاميرات المراقبة (CCTV)</strong>، وأجهزة <strong>كشف الحركة (Motion Detectors)</strong>.
+</p>
+
+<h3 dir="rtl" align="right" id="deterrent-devices">13.2 أجهزة الردع (Deterrent Devices)</h3>
+<p dir="rtl" align="right">
+دورها إقناع أي متطفل محتمل بعدم المحاولة من الأساس، بدون منعه فعلياً لو أصرّ. أمثلة: لافتات تحذيرية، إضاءة قوية للمناطق المحيطة بالمبنى، وكاميرات المراقبة الظاهرة بشكل واضح (نفس الجهاز ممكن يكون رادعاً وكاشفاً في نفس الوقت).
+</p>
+
+<h3 dir="rtl" align="right" id="prevention-devices">13.3 أجهزة المنع والتحكم بالوصول (Prevention / Access Control Devices)</h3>
+<p dir="rtl" align="right">
+دورها منع الدخول الفعلي غير المصرح به من الأساس. أمثلة:
+</p>
+<ul dir="rtl">
+<li><strong>الأقفال (Locks):</strong> تقليدية أو إلكترونية (Electronic Locks).</li>
+<li><strong>بطاقات الدخول الذكية (Smart Cards / Badge Readers):</strong> للتحقق من الهوية قبل السماح بالدخول.</li>
+<li><strong>أجهزة القياسات الحيوية (Biometric Scanners):</strong> بصمة الإصبع، بصمة الوجه، قزحية العين.</li>
+<li><strong>مصائد الدخول (Mantraps / Access Control Vestibules):</strong> ممر مزدوج الأبواب لا يسمح بفتح الباب الثاني إلا بعد إغلاق الأول، لمنع دخول أكثر من شخص بتصريح واحد (Tailgating — راجع قسم الهندسة الاجتماعية).</li>
+<li><strong>الحراسة الأمنية والحواجز الخارجية (Security Guards / Fencing / Bollards):</strong> الطبقة الأولى من الحماية المحيطية للمبنى.</li>
+</ul>
+
+---
+
+<h2 dir="rtl" align="right" id="cheat-sheet">14. جدول المراجعة السريع (Cheat Sheet)</h2>
 
 | الهجوم / التقنية | الفئة | الفكرة الأساسية |
 |:---:|:---:|:---:|
@@ -650,6 +816,7 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 | Backdoor | تقنية هجوم | باب دخول خفي يتجاوز المصادقة |
 | ActiveX Attack | تقنية هجوم | كود خبيث يعمل بصلاحيات كاملة عبر المتصفح |
 | Reconnaissance | مرحلة تمهيدية | جمع معلومات قبل الهجوم (Passive/Active) |
+| Port Scanning | مرحلة تمهيدية | تحديد المنافذ المفتوحة والخدمات الشغالة (TCP Connect / SYN / UDP Scan) |
 | Packet Sniffing | التقاط بيانات | اعتراض حزم الشبكة غير المشفّرة |
 | Password Guessing | هجوم كلمات مرور | Brute Force / Dictionary Attack |
 | MITM | هجوم اعتراض | التموضع بين طرفين للتنصت أو التعديل |
@@ -665,8 +832,16 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 | Least Privilege | تخفيف | أقل صلاحية كافية لأداء المهمة |
 | Vulnerability Scanning | تخفيف | فحص آلي للثغرات دون استغلالها |
 | Penetration Testing | تخفيف | محاكاة هجوم حقيقي واستغلال الثغرات فعلياً |
+| Baseline Review | تخفيف | مقارنة الحالة الحالية بالإعداد الآمن المعتمد لاكتشاف أي انحراف |
 | Patch Management & Rollback | تخفيف | تحديث منظّم + خطة تراجع عند الفشل |
 | Security Awareness | تخفيف | تدريب المستخدمين على التهديدات |
 | Asset Disposal | تخفيف | مسح آمن أو تدمير فيزيائي قبل التخلص من الأجهزة |
+| Licensing Restrictions | سياسات | استخدام برامج مرخّصة قانونياً لتجنّب المخاطر والمخالفات |
+| International Export Controls | سياسات | قيود تصدير تقنيات التشفير عبر الحدود (EAR / ITAR) |
+| Incident Response Policy | سياسات | خطة PICERL: تحضير، تحديد، احتواء، استئصال، استعادة، دروس مستفادة |
+| System Life Cycle | سياسات | مراحل الأصل: تخطيط، نشر، تشغيل وصيانة، تقاعد وتخلص |
+| Detection Devices | حماية فيزيائية | كاميرات مراقبة وأجهزة كشف حركة |
+| Deterrent Devices | حماية فيزيائية | لافتات وإضاءة لردع المتطفلين |
+| Prevention Devices | حماية فيزيائية | أقفال، بطاقات ذكية، بصمات حيوية، Mantraps |
 
 </div>
