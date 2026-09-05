@@ -12,11 +12,11 @@
 | 2 | [هجمات حجب الخدمة](#dos-ddos-family) | [DoS](#dos-attack)<br>[DDoS](#ddos-attack)<br>[SYN Flood](#syn-flood)<br>[Smurf Attack](#smurf-attack)<br>&nbsp;&nbsp;[أنواع Smurf](#smurf-types)<br>[Fraggle Attack](#fraggle-attack)<br>[Ping of Death](#ping-of-death)<br>[TFN وشبكة الزومبي](#tfn-zombie-master) |
 | 3 | [البرمجيات الخبيثة](#malware) | [الفيروسات](#viruses)<br>[الديدان](#worms)<br>[حصان طروادة](#trojan-horse)<br>[Rootkit](#rootkit)<br>[Ransomware](#ransomware)<br>[Spyware & Keyloggers](#spyware-keyloggers)<br>[Logic Bombs](#logic-bombs) |
 | 4 | [مهاجمو الشبكات](#threat-actors) | [White Hat](#white-hat)<br>[Grey Hat](#grey-hat)<br>[Black Hat](#black-hat) |
-| 5 | [أدوات وتقنيات الهجوم على الشبكة](#attack-tools) | [هجمات الانتحال Spoofing](#spoofing-attacks)<br>&nbsp;&nbsp;[IP Spoofing](#ip-spoofing)<br>&nbsp;&nbsp;[ARP Spoofing](#arp-spoofing)<br>&nbsp;&nbsp;[DNS Spoofing](#dns-spoofing)<br>&nbsp;&nbsp;[MAC Spoofing](#mac-spoofing)<br>[هجمات طبقة التطبيقات](#application-layer-attacks)<br>[البوابة الخلفية Backdoor](#backdoor)<br>[ActiveX Attacks](#activex-attacks) |
+| 5 | [أدوات وتقنيات الهجوم على الشبكة](#attack-tools) | [هجمات الانتحال Spoofing](#spoofing-attacks)<br>&nbsp;&nbsp;[IP Spoofing](#ip-spoofing)<br>&nbsp;&nbsp;[ARP Spoofing](#arp-spoofing)<br>&nbsp;&nbsp;[DNS Spoofing](#dns-spoofing)<br>&nbsp;&nbsp;[MAC Spoofing](#mac-spoofing)<br>[هجمات طبقة التطبيقات](#application-layer-attacks)<br>[البوابة الخلفية Backdoor](#backdoor)<br>[ActiveX Attacks](#activex-attacks)<br>[VLAN Hopping](#vlan-hopping)<br>[Man-in-the-Browser (MitB)](#mitb)<br>[Zero-Day Attack](#zero-day) |
 | 6 | [جمع المعلومات عن الشبكة قبل الهجوم](#reconnaissance) | [فحص المنافذ Port Scanning](#port-scanning) |
 | 7 | [التقاط حزم البيانات](#packet-sniffing) | - |
 | 8 | [هجمات كلمات المرور](#password-attacks) | [Brute Force / تخمين كلمة السر](#password-guessing)<br>[هجوم الشخص في المنتصف MITM](#mitm) |
-| 9 | [تهديدات الشبكات اللاسلكية](#wireless-threats) | [Rogue Access Point](#rogue-ap)<br>[Evil Twin Attack](#evil-twin)<br>[Jamming](#jamming)<br>[Deauthentication Attack](#deauth) |
+| 9 | [تهديدات الشبكات اللاسلكية](#wireless-threats) | [Rogue Access Point](#rogue-ap)<br>[Evil Twin Attack](#evil-twin)<br>[Jamming](#jamming)<br>[Deauthentication Attack](#deauth)<br>[WPS PIN Attack](#wps-attack) |
 | 10 | [الهندسة الاجتماعية](#social-engineering) | - |
 | 11 | [تقنيات التخفيف من تهديدات الشبكة](#mitigation-techniques) | 19 تقنية تفصيلية |
 | 12 | [السياسات وأفضل الممارسات](#policies-best-practices) | [قيود الترخيص](#licensing-restrictions)<br>[ضوابط التصدير الدولية](#export-controls)<br>[سياسات الاستجابة للحوادث](#incident-response-policy)<br>[دورة حياة النظام](#system-life-cycle) |
@@ -365,7 +365,6 @@ DNS Spoofing هو التلاعب في استجابات نظام أسماء ال�
 
 <div align="center"><img src="images/18-33-mac-spoofing-diagram.png" width="450"><br><em>المهاجم (AE:10:10:10:10:08) يزوّر عنوان MAC ليطابق جهازاً شرعياً على السويتش، فيستقبل حركة البيانات الموجَّهة لذلك الجهاز بدلاً منه</em></div>
 
-
 <h3 dir="rtl" align="right" id="application-layer-attacks">5.2 هجمات طبقة التطبيقات (Application Layer Attacks)</h3>
 
 <p dir="rtl" align="right">
@@ -392,6 +391,53 @@ DNS Spoofing هو التلاعب في استجابات نظام أسماء ال�
 
 <p dir="rtl" align="right">
 ActiveX هي تقنية قديمة من مايكروسوفت كانت بتسمح بتشغيل مكونات برمجية تفاعلية (Controls) داخل متصفح Internet Explorer. المشكلة الأمنية إن الـ ActiveX Controls كانت بتشتغل بصلاحيات كاملة على النظام (زي أي برنامج تنفيذي عادي) وبدون بيئة عزل (Sandbox) صارمة زي الموجودة في المتصفحات الحديثة. المهاجم كان بيقدر يبني ActiveX Control خبيث ويستضيفه في صفحة ويب، وبمجرد ما المستخدم يزور الصفحة ويوافق على تشغيله (أو حتى تلقائياً في إعدادات ضعيفة)، الكود الخبيث بيشتغل بصلاحيات كاملة على جهاز الضحية.
+</p>
+
+<h3 dir="rtl" align="right" id="vlan-hopping">5.5 القفز بين الشبكات الافتراضية (VLAN Hopping)</h3>
+
+<p dir="rtl" align="right">
+VLAN Hopping هو هجوم على مستوى <strong>الطبقة الثانية (Data Link Layer)</strong> بيسمح للمهاجم بالوصول لحركة بيانات VLAN تانية غير الـ VLAN اللي هو متصل بيها أصلاً، رغم إن الهدف الأساسي من تقسيم الشبكة لـ VLANs هو العزل المنطقي بين الأقسام المختلفة. له طريقتان أساسيتان:
+</p>
+
+<ul dir="rtl">
+<li><strong>Switch Spoofing:</strong> المهاجم بيعدّل إعدادات جهازه ليتصرف وكأنه سويتش (باستخدام بروتوكولات زي DTP - Dynamic Trunking Protocol) عشان يقنع السويتش الحقيقي بإنشاء رابط Trunk معاه. رابط الـ Trunk بينقل حركة بيانات <strong>كل الـ VLANs</strong> وليس VLAN واحد بس، وبكده المهاجم بيوصل لحركة بيانات كل الأقسام المعزولة.</li>
+<li><strong>Double Tagging:</strong> المهاجم بيبني حزمة فيها <strong>وسمان (Tags) من نوع 802.1Q</strong> بدلاً من وسم واحد — الوسم الخارجي بيمثل VLAN المهاجم نفسه (وبيتشال تلقائياً من أول سويتش يعالج الحزمة)، والوسم الداخلي المخفي بيمثل الـ VLAN المستهدف. النتيجة إن الحزمة بتتسرب لـ VLAN تاني غير المصرح له بالوصول له، وده هجوم من اتجاه واحد فقط (One-Way) وبيشتغل غالباً لما الـ VLAN الأصلي بتاع المهاجم يكون نفسه الـ Native VLAN على رابط الـ Trunk.</li>
+</ul>
+
+<p dir="rtl" align="right">
+<strong>التخفيف:</strong> تعطيل الـ DTP التلقائي على المنافذ (Manual Trunk Configuration)، وعدم استخدام VLAN 1 كـ Native VLAN الافتراضي، وفصل الـ Native VLAN عن أي VLAN بيانات فعلي مستخدم.
+</p>
+
+<h3 dir="rtl" align="right" id="mitb">5.6 هجوم الشخص في المتصفح (Man-in-the-Browser – MitB)</h3>
+
+<p dir="rtl" align="right">
+MitB هو نوع فرعي متخصص من هجوم <strong>Man-in-the-Middle</strong> (الموضّح بالتفصيل في <a href="#mitm">القسم 8.2</a>)، لكن الفرق الجوهري إن الاعتراض هنا بيحصل <strong>داخل المتصفح نفسه</strong> بدلاً من مستوى الشبكة. المهاجم بيصيب جهاز الضحية ببرمجية خبيثة (غالباً Trojan متخصص أو Browser Extension خبيث) بتحقن كود داخل المتصفح وتراقب أو تعدّل البيانات <strong>قبل ما تتشفّر</strong> بواسطة HTTPS/TLS أو بعد فك تشفيرها مباشرة — يعني حتى لو الاتصال بالكامل مشفّر ومحمي على مستوى الشبكة، المهاجم لسه شايف البيانات بوضوح لأنه واقف على مستوى التطبيق نفسه.
+</p>
+
+<p dir="rtl" align="right">
+<strong>الاستخدامات الشائعة:</strong> التلاعب في معاملات مصرفية إلكترونية أثناء تنفيذها (تغيير رقم حساب المستفيد أو المبلغ دون علم الضحية)، سرقة بيانات دخول من نماذج تسجيل الدخول، وحقن محتوى إضافي في صفحات ويب شرعية.
+</p>
+
+<p dir="rtl" align="right">
+<strong>الفرق عن MITM التقليدي:</strong> MITM التقليدي (زي اللي بيحصل عبر ARP Spoofing) بيعترض حركة البيانات وهي <strong>عابرة عبر الشبكة</strong>، بينما MitB بيعترضها وهي لسه <strong>داخل الجهاز نفسه</strong> — وده بيخليه فعّال حتى مع اتصالات HTTPS المشفّرة بالكامل، وأصعب في الاكتشاف بأدوات مراقبة الشبكة التقليدية.
+</p>
+
+<h3 dir="rtl" align="right" id="zero-day">5.7 هجوم يوم الصفر (Zero-Day Attack)</h3>
+
+<p dir="rtl" align="right">
+هجوم Zero-Day هو استغلال ثغرة أمنية <strong>غير معروفة أصلاً للشركة المصنّعة للبرنامج أو النظام</strong> — يعني لسه معملهاش تحديث أمني (Patch) يسدّها، لأن المطوّرين نفسهم لسه مش عارفين بوجودها. الاسم "Zero-Day" جاي من إن المطوّر عنده <strong>صفر يوم</strong> فرصة للاستعداد أو إصلاح الثغرة قبل ما تُستغل فعلياً.
+</p>
+
+<p dir="rtl" align="right">
+<strong>آلية العمل:</strong> المهاجم (أو باحث أمني) بيكتشف الثغرة قبل أي حد تاني، وبيبني كود استغلال (Exploit) خاص بيها. لو الاكتشاف وقع في إيد مهاجم Black Hat، بيقدر يستخدمها فوراً ضد أي نظام لسه مش محدّث، من غير ما يكون فيه أي دفاع معروف ضدها في الوقت ده.
+</p>
+
+<p dir="rtl" align="right">
+<strong>الخطورة:</strong> من أخطر أنواع الهجمات على الإطلاق لأن <strong>مفيش حماية موجودة أصلاً</strong> وقت وقوع الهجوم (لا Patch ولا حتى توقيع معروف في برامج مكافحة الفيروسات)، وبتُستخدم غالباً في هجمات مستهدفة عالية القيمة (زي التجسس الصناعي أو هجمات دول على بنية تحتية حساسة) قبل ما تُكتشف وتتسرب للعامة.
+</p>
+
+<p dir="rtl" align="right">
+<strong>التخفيف:</strong> بما إن الثغرة نفسها مجهولة، الدفاع بيعتمد على طبقات غير مباشرة: أنظمة كشف السلوك الشاذ (Behavior-based IDS/IPS بدل الاعتماد على التوقيعات فقط)، تحديث الأنظمة بسرعة بمجرد صدور الـ Patch الرسمي (راجع <a href="#patch-management">Patch Management</a>)، وتقليل سطح الهجوم عموماً (Least Functionality، Least Privilege) عشان لو حصل استغلال، الضرر يفضل محدود.
 </p>
 
 ---
@@ -529,6 +575,24 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 <strong>الاستخدامات الشائعة:</strong> هجوم حجب خدمة مباشر (منع الضحية من الاتصال بالشبكة تكراراً)، أو كخطوة تمهيدية لهجمات أخرى — زي إجبار جهاز الضحية على إعادة الاتصال (Reconnect) عشان يلتقط المهاجم عملية المصافحة (WPA Handshake) ويحاول كسر كلمة المرور منها لاحقاً، أو دفع الضحية للاتصال بشبكة Evil Twin بدلاً من الشبكة الحقيقية.
 </p>
 
+<p dir="rtl" align="right">
+<strong>⚠️ ملاحظة أمنية — الحماية في WPA3:</strong> معيار <strong>WPA3</strong> بيتصدى لهجوم Deauth بشكل جذري عن طريق تقنية <strong>PMF (Protected Management Frames – معيار 802.11w)</strong>، واللي بتفرض تشفير وتوثيق إطارات الإدارة (Management Frames) — ومنها إطارات إلغاء المصادقة نفسها. يعني في شبكة WPA3 مفعّل عليها PMF، أي إطار Deauth مزوّر من المهاجم هيتم رفضه فوراً لأنه مش موقّع بمفتاح الشبكة الصحيح، وده بيقفل الثغرة اللي هجوم Deauth بيعتمد عليها من الأساس. الشبكات اللي لسه بتستخدم WPA2 بدون PMF تفضل عرضة لهذا الهجوم بشكل كامل.
+</p>
+
+<h3 dir="rtl" align="right" id="wps-attack">9.5 هجوم تخمين رمز الـ WPS (WPS PIN Attack)</h3>
+
+<p dir="rtl" align="right">
+ميزة <strong>WPS (Wi-Fi Protected Setup)</strong> صُممت لتسهيل الاتصال بشبكة Wi-Fi على المستخدم العادي — بدل كتابة كلمة مرور طويلة ومعقدة، يكفي إدخال رمز PIN مكوّن من 8 أرقام (أو الضغط على زر فيزيائي على الراوتر). المشكلة إن تصميم بروتوكول WPS نفسه فيه ثغرة تصميمية خطيرة: الراوتر بيتحقق من نصف رمز الـ PIN (4 أرقام) بشكل مستقل عن النصف التاني، وبيرد برسالة خطأ مختلفة حسب أي نصف غلط — وده بيقلل عدد الاحتمالات اللي المهاجم محتاج يجربها من 10^8 لأقل من 11,000 احتمال فقط، وهو رقم صغير جداً يمكن تجربته بالكامل (Brute Force) خلال ساعات قليلة باستخدام أدوات متخصصة (زي Reaver).
+</p>
+
+<p dir="rtl" align="right">
+<strong>الخطورة:</strong> بمجرد ما المهاجم يعرف رمز الـ WPS الصحيح، بيقدر يستخرج كلمة مرور شبكة الـ Wi-Fi (WPA/WPA2 Passphrase) مباشرة من الراوتر، بغض النظر عن مدى تعقيد كلمة المرور نفسها — لأن الثغرة في آلية WPS مش في كلمة المرور ذاتها.
+</p>
+
+<p dir="rtl" align="right">
+<strong>التخفيف:</strong> أفضل حل هو <strong>تعطيل ميزة WPS بالكامل</strong> من إعدادات الراوتر، خصوصاً وضع إدخال الـ PIN عن بُعد. لو الميزة مش قابلة للتعطيل الكامل في جهاز معين، الاعتماد على زر WPS الفيزيائي فقط (Push-Button) أفضل نسبياً من وضع الـ PIN القابل للتخمين عن بعد.
+</p>
+
 ---
 
 <h2 dir="rtl" align="right" id="social-engineering">10. الهندسة الاجتماعية (Social Engineering)</h2>
@@ -554,6 +618,8 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 <li><strong>Baiting (الطعم):</strong> ترك جهاز USB مصاب في مكان عام بشكل متعمد ليلتقطه أحد الموظفين ويوصّله بجهازه بدافع الفضول.</li>
 <li><strong>Tailgating / Piggybacking:</strong> الدخول الفعلي لمبنى محمي بالتسلل خلف موظف مصرّح له دون تصريح مستقل.</li>
 <li><strong>Vishing / Smishing:</strong> نفس فكرة الـ Phishing لكن عبر المكالمات الصوتية (Vishing) أو الرسائل النصية القصيرة SMS (Smishing).</li>
+<li><strong>Watering Hole Attack:</strong> بدل ما المهاجم يستهدف الضحية مباشرة، بيحدد أولاً موقع ويب أو منصة شرعية بيزورها الضحايا المستهدفون بشكل منتظم (زي موقع نقابة مهنية أو منتدى متخصص)، وبيخترق الموقع ده نفسه ويزرع فيه كود خبيث. لما الضحايا يزوروا الموقع الموثوق العادي بتاعهم، بيتصابوا تلقائياً دون ما يشكّوا في حاجة — تشبيه الاسم بمفترس بيكمن عند "مورد مياه" وينتظر فرائسه تيجي لوحدها بدل ما يطاردها.</li>
+<li><strong>Dumpster Diving (الغوص في القمامة):</strong> تفتيش سلة المهملات أو المخلفات الورقية الخاصة بشركة أو فرد للحصول على معلومات حساسة تم التخلص منها بإهمال — مستندات فيها بيانات موظفين، كلمات مرور مكتوبة، مخططات شبكة، أو حتى أجهزة تخزين قديمة لم تُمسح بشكل آمن. تقنية بسيطة وغير تقنية بالمرة، لكنها فعّالة جداً في مرحلة جمع المعلومات (Reconnaissance) قبل تنفيذ هجوم أكبر، وهي السبب الرئيسي وراء أهمية التخلص السليم من المخلفات الموضّح في <a href="#asset-disposal">قسم Asset Disposal</a>.</li>
 </ul>
 
 <p dir="rtl" align="right">
@@ -815,6 +881,9 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 | Application Layer Attack | تقنية هجوم | يستهدف طبقة التطبيقات مباشرة (SQLi, XSS) |
 | Backdoor | تقنية هجوم | باب دخول خفي يتجاوز المصادقة |
 | ActiveX Attack | تقنية هجوم | كود خبيث يعمل بصلاحيات كاملة عبر المتصفح |
+| VLAN Hopping | تقنية هجوم (Layer 2) | Switch Spoofing أو Double Tagging للوصول لـ VLAN غير مصرح به |
+| Man-in-the-Browser (MitB) | تقنية هجوم | اعتراض البيانات داخل المتصفح نفسه، فعّال حتى مع HTTPS |
+| Zero-Day Attack | تقنية هجوم | استغلال ثغرة غير معروفة أصلاً قبل صدور أي تحديث لها |
 | Reconnaissance | مرحلة تمهيدية | جمع معلومات قبل الهجوم (Passive/Active) |
 | Port Scanning | مرحلة تمهيدية | تحديد المنافذ المفتوحة والخدمات الشغالة (TCP Connect / SYN / UDP Scan) |
 | Packet Sniffing | التقاط بيانات | اعتراض حزم الشبكة غير المشفّرة |
@@ -823,8 +892,11 @@ Evil Twin هو نوع متخصص وخبيث من الـ Rogue Access Point: ال
 | Rogue Access Point | هجوم لاسلكي | نقطة وصول غير مصرح بها |
 | Evil Twin | هجوم لاسلكي | نقطة وصول مزيّفة بنفس اسم الشبكة الأصلية |
 | Jamming | هجوم لاسلكي | تشويش الترددات لمنع الاتصال |
-| Deauthentication Attack | هجوم لاسلكي | فصل الأجهزة قسراً باستغلال إطارات غير موثّقة |
+| Deauthentication Attack | هجوم لاسلكي | فصل الأجهزة قسراً باستغلال إطارات غير موثّقة (محمي في WPA3 عبر PMF/802.11w) |
+| WPS PIN Attack | هجوم لاسلكي | تخمين رمز WPS الضعيف لاستخراج كلمة مرور Wi-Fi |
 | Social Engineering | استغلال بشري | خداع الأفراد بدل استغلال الأنظمة |
+| Watering Hole Attack | هندسة اجتماعية / استغلال بشري | اختراق موقع موثوق يزوره الضحايا بانتظام بدل استهدافهم مباشرة |
+| Dumpster Diving | هندسة اجتماعية / جمع معلومات | تفتيش المخلفات للحصول على معلومات حساسة تم التخلص منها بإهمال |
 | IDS | تخفيف | كشف التهديدات وتنبيه فقط (Passive) |
 | IPS | تخفيف | كشف ومنع فوري للتهديدات (In-line) |
 | NAC | تخفيف | التحقق من هوية وأمان الجهاز قبل السماح بالاتصال |
