@@ -185,7 +185,7 @@ Ethernet adapter Ethernet:
 <table>
 <tr><th align="center">الأمر</th><th align="center">الوظيفة</th></tr>
 <tr><td align="center"><code>ip addr</code> (أو <code>ip a</code>)</td><td align="center">عرض عناوين IP لكل واجهة شبكة — معادل <code>ipconfig</code> الأساسي</td></tr>
-<tr><td align="center"><code>ip route</code></td><td align="center">عرض جدول التوجيه المحلي — معادل <code>route print</code> (الموضّح في القسم 11)</td></tr>
+<tr><td align="center"><code>ip route</code></td><td align="center">عرض جدول التوجيه المحلي — معادل <code>route print</code> (الموضّح في القسم 12)</td></tr>
 <tr><td align="center"><code>ip link</code></td><td align="center">عرض حالة واجهات الشبكة نفسها (Up/Down) وعنوان MAC لكل واحدة</td></tr>
 </table>
 
@@ -642,7 +642,7 @@ ftp&gt; </code></pre></div>
 </table>
 
 <p dir="rtl" align="right">
-<strong>ملاحظة أمنية مهمة:</strong> بروتوكول FTP التقليدي بينقل بيانات الدخول (اسم المستخدم وكلمة المرور) والملفات نفسها <strong>بدون أي تشفير</strong> — يعني معرّض بالكامل لهجوم Packet Sniffing (الموضّح في الموضوع 18). البدائل الآمنة الحديثة هي <strong>SFTP</strong> (SSH File Transfer Protocol، بيشتغل فوق SSH المشفّر الموضّح في القسم 16) أو <strong>FTPS</strong> (FTP over SSL/TLS).
+<strong>ملاحظة أمنية مهمة:</strong> بروتوكول FTP التقليدي بينقل بيانات الدخول (اسم المستخدم وكلمة المرور) والملفات نفسها <strong>بدون أي تشفير</strong> — يعني معرّض بالكامل لهجوم Packet Sniffing (الموضّح في الموضوع 18). البدائل الآمنة الحديثة هي <strong>SFTP</strong> (SSH File Transfer Protocol، بيشتغل فوق SSH المشفّر الموضّح في القسم 17) أو <strong>FTPS</strong> (FTP over SSL/TLS).
 </p>
 
 ---
@@ -650,7 +650,7 @@ ftp&gt; </code></pre></div>
 <h2 dir="rtl" align="right" id="cisco-show-commands">19. أوامر تشخيص على أجهزة سيسكو (show commands)</h2>
 
 <p dir="rtl" align="right">
-كل الأدوات اللي اتشرحت لحد دلوقتي بتتنفذ من <strong>جهاز المستخدم النهائي</strong> (كمبيوتر أو سيرفر) للتشخيص من زاويته. لكن أحياناً المشكلة لازم تتشخّص من <strong>داخل جهاز الشبكة نفسه</strong> (راوتر أو سويتش سيسكو)، وده بيتم عن طريق أوامر <code>show</code> المتخصصة اللي بتشتغل من داخل واجهة سطر أوامر سيسكو (Cisco IOS CLI) بعد تسجيل الدخول للجهاز (غالباً عبر SSH — راجع القسم 16، أو Console Cable مباشرة).
+كل الأدوات اللي اتشرحت لحد دلوقتي بتتنفذ من <strong>جهاز المستخدم النهائي</strong> (كمبيوتر أو سيرفر) للتشخيص من زاويته. لكن أحياناً المشكلة لازم تتشخّص من <strong>داخل جهاز الشبكة نفسه</strong> (راوتر أو سويتش سيسكو)، وده بيتم عن طريق أوامر <code>show</code> المتخصصة اللي بتشتغل من داخل واجهة سطر أوامر سيسكو (Cisco IOS CLI) بعد تسجيل الدخول للجهاز (غالباً عبر SSH — راجع القسم 17، أو Console Cable مباشرة).
 </p>
 
 <h3 dir="rtl" align="right" id="show-interface">19.1 أمر show interface</h3>
@@ -676,7 +676,7 @@ GigabitEthernet0/1 is up, line protocol is up
 <h3 dir="rtl" align="right" id="show-route">19.3 أمر show ip route</h3>
 
 <p dir="rtl" align="right">
-بيعرض <strong>جدول التوجيه (Routing Table)</strong> الخاص بالراوتر نفسه — نفس فكرة <code>route print</code> (القسم 11) بالظبط، لكن من منظور جهاز الشبكة (الراوتر) نفسه، مش من منظور جهاز المستخدم النهائي. بيوضح كل المسارات المعروفة للراوتر (سواء متعلمة تلقائياً عبر بروتوكولات توجيه ديناميكية أو مُعدّة يدوياً كمسارات ثابتة - Static Routes) والواجهة المستخدمة للوصول لكل مسار.
+بيعرض <strong>جدول التوجيه (Routing Table)</strong> الخاص بالراوتر نفسه — نفس فكرة <code>route print</code> (القسم 12) بالظبط، لكن من منظور جهاز الشبكة (الراوتر) نفسه، مش من منظور جهاز المستخدم النهائي. بيوضح كل المسارات المعروفة للراوتر (سواء متعلمة تلقائياً عبر بروتوكولات توجيه ديناميكية أو مُعدّة يدوياً كمسارات ثابتة - Static Routes) والواجهة المستخدمة للوصول لكل مسار.
 </p>
 
 <div align="center"><pre><code>Router# show ip route
