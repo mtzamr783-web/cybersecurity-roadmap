@@ -442,7 +442,7 @@ MitB هو نوع فرعي متخصص من هجوم <strong>Man-in-the-Middle</st
 
 ---
 
-<h2 dir="rtl" align="right" id="reconnaissance">6. سابعاً: التعرف على الشبكة وجمع المعلومات (Reconnaissance / Footprinting)</h2>
+<h2 dir="rtl" align="right" id="reconnaissance">6. سادساً: التعرف على الشبكة وجمع المعلومات (Reconnaissance / Footprinting)</h2>
 
 <p dir="rtl" align="right">
 دي عادةً <strong>أول مرحلة</strong> في أي هجوم حقيقي منظّم، قبل حتى تنفيذ أي حزمة خبيثة. المهاجم بيجمع أكبر قدر ممكن من المعلومات عن الهدف عشان يحدد نقطة الضعف الأنسب ويختار السلاح والطريقة المناسبة للاختراق. تنقسم عادةً إلى:
@@ -479,7 +479,7 @@ MitB هو نوع فرعي متخصص من هجوم <strong>Man-in-the-Middle</st
 
 ---
 
-<h2 dir="rtl" align="right" id="packet-sniffing">7. ثامناً: التقاط حزم البيانات (Packet Sniffing)</h2>
+<h2 dir="rtl" align="right" id="packet-sniffing">7. سابعاً: التقاط حزم البيانات (Packet Sniffing)</h2>
 
 <p dir="rtl" align="right">
 الـ Packet Sniffing هي عملية اعتراض ومراقبة حزم البيانات المارة داخل الشبكة باستخدام أدوات متخصصة (زي Wireshark). في الشبكات غير المشفّرة، أي شخص عنده وصول للوسط الناقل (خصوصاً في شبكات الـ Hub القديمة أو الشبكات اللاسلكية غير المؤمّنة) بيقدر يلتقط الحزم ويقرأ محتواها كامل — بما فيها كلمات المرور، رسائل، بيانات حساسة — لو مفيش تشفير (زي HTTPS/TLS) بيحميها.
