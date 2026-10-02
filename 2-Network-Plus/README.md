@@ -2,7 +2,7 @@
 
 # 📚 فهرس مواضيع كورس Network+ الشامل
 
-الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`2-Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 20 في مكان واحد.
+الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`2-Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 23 في مكان واحد.
 
 تحت كل عنوان موضوع هتلاقي **الجدول الأصلي بتاعه بالظبط** زي ما هو موجود جوه ملفه، وكل رابط في الجدول بيوديك **على طول للنقطة المطلوبة** جوه الملف من غير ما تفتحه وتدور فيه يدويًا.
 
@@ -31,9 +31,12 @@
 | 17 | [المصادقة والتحكم بالوصول](./17-Authentication-and-Access-Control.md) | عناصر المصادقة وMFA/SSO، الشهادات الرقمية وPKI، SSL/TLS، بروتوكولات PAP/CHAP/EAP، أطر AAA (RADIUS/TACACS+)، Kerberos، 802.1X وNAC، قوائم التحكم ACL، الشبكات الافتراضية VPN وIPsec، خدمات الوصول عن بعد RAS، ونماذج التحكم الحديثة RBAC/Zero Trust |
 | 18 | [تهديدات الشبكة والتخفيف منها](./18-Network-Threats-and-Mitigation.md) | هجمات حجب الخدمة DoS/DDoS، البرمجيات الخبيثة، تصنيف المهاجمين، أدوات الهجوم وهجمات الانتحال Spoofing، جمع المعلومات وفحص المنافذ، التقاط الحزم، هجمات كلمات المرور، تهديدات الشبكات اللاسلكية، الهندسة الاجتماعية، 19 تقنية للتخفيف، السياسات وأفضل الممارسات، وأجهزة الحماية الفيزيائية |
 | 19 | [الأمن المادي والمخاطر](./19-Physical-Security-and-Risk.md) | الخطر الداخلي مقابل الخارجي، الجدار الناري وأجياله، IDS/IPS، أجهزة التحكم بالوصول الفيزيائي، الأمن الفيزيائي للبنية التحتية، VPN Concentrators، UTM، DMZ والمناطق الأمنية، Honeypots/Honeynets/Decoys، فحص الثغرات واختبار الاختراق، التعافي من الكوارث BCP/DRP، مفاهيم المخاطر، ومقاييس الأداء SLA/MTTR/MTBF |
+| 20 | [الشبكات الواسعة (WAN)](./20-Wide-Area-Network-%28WAN%29.md) | مقارنة LAN/MAN/WAN، مصطلحات WAN الأساسية، أنواع الاتصالات (Dedicated/Circuit/Packet-Switched)، وسائط النقل الفيزيائية، DMVPN وSD-WAN، البدائل الرقمية (ISDN/DSL/Cable)، ATM، Frame Relay، بروتوكول PPP وLMI، مكونات WAN وتقنية MPLS، معايير سرعة الشبكة (T-Carrier/SONET)، Metro Ethernet، SIP Trunk، خدمات ISP، مقاييس المراقبة، وتقنيات WAN Optimization |
+| 21 | [أدوات سطر الأوامر](./21-Command-Line-Tools.md) | أهمية أدوات التشخيص، Traceroute وipconfig (وأمر ip في Linux)، Ping وPathPing وiperf، nmap، أوامر ARP، nslookup وdig، route وnetstat وnbtstat، tcpdump، Telnet وSSH وFTP، وأوامر show على أجهزة سيسكو |
+| 22 | [استكشاف أعطال الشبكة وإصلاحها](./22-Network-Troubleshooting.md) | مفهوم الـ Troubleshooting وسياسته، نموذج خطوات حل المشكلة (CompTIA)، نصائح عملية وأولويات المشاكل، تصنيف الحالات الشائعة (سلكية/منطقية/لاسلكية/توسعية)، NIC Teaming، أدوات الفحص المادية، التوثيق وخطوط الأساس وLessons Learned |
+| 23 | [إدارة ومراقبة وتحسين أداء الشبكة](./23-Network-Management-Monitoring-Optimization.md) | مراقبة الشبكة (SNMP وSyslog وSIEM وNetFlow وsFlow وIPFIX)، أدوات Wireshark وNmap وفاحصات الثغرات، IDS/IPS، توثيق الشبكة وIPAM، مقاييس الأداء (Bandwidth/Throughput/Goodput، Latency/Jitter/Packet Loss، Five Nines، Baseline)، QoS وDSCP والطوابير، توزيع الحمل وFHRP، السلامة وتجزئة الشبكة، Traffic Shaping/Policing وProxy وCDN، الشبكات الافتراضية وSDN، شبكات التخزين، الحوسبة السحابية، تركيب المعدات وRack، وإدارة التغيير |
 
----
-| 20 | [الشبكات الواسعة (WAN)](./20-Wide-Area-Network-(WAN).md) | مقارنة LAN/MAN/WAN، مصطلحات WAN الأساسية، أنواع الاتصالات (Dedicated/Circuit/Packet-Switched)، وسائط النقل الفيزيائية، DMVPN وSD-WAN، البدائل الرقمية (ISDN/DSL/Cable)، ATM، Frame Relay، بروتوكول PPP وLMI، مكونات WAN وتقنية MPLS، معايير سرعة الشبكة (T-Carrier/SONET)، Metro Ethernet، SIP Trunk، خدمات ISP، مقاييس المراقبة، وتقنيات WAN Optimization |
+🏁 **ولما تخلّص كل المواضيع:** [خاتمة الكورس](#course-conclusion)
 
 ---
 
@@ -479,27 +482,156 @@
 
 ---
 
-## 20) 📘 [الموضوع العشرون: الشبكات الواسعة (Wide Area Networks – WAN)](./20-Wide-Area-Network-(WAN).md)
+## 20) 📘 [الموضوع العشرون: الشبكات الواسعة (Wide Area Networks – WAN)](./20-Wide-Area-Network-%28WAN%29.md)
 
 | # | القسم الرئيسي | المواضيع الفرعية |
 |:---:|:---:|:---:|
-| 1 | [مقدمة عن الموضوع](./20-Wide-Area-Network-(WAN).md#introduction) | [تعريف WAN](./20-Wide-Area-Network-(WAN).md#wan-definition)<br>[الجهة المسؤولة عن ربط الفروع](./20-Wide-Area-Network-(WAN).md#who-connects-branches)<br>[من المسؤول عن إنشائها عالمياً](./20-Wide-Area-Network-(WAN).md#who-governs-wan)<br>[مقارنة LAN/MAN/WAN](./20-Wide-Area-Network-(WAN).md#lan-man-wan-comparison) |
-| 2 | [مصطلحات الشبكة الواسعة الأساسية](./20-Wide-Area-Network-(WAN).md#wan-terminology) | CPE, DTE, DCE, ISP, CSU/DSU, Demarc, Local Loop, CO, POP, Toll Network, PSTN, POTS |
-| 3 | [أنواع اتصالات الشبكة الواسعة](./20-Wide-Area-Network-(WAN).md#wan-connection-types) | [Dedicated](./20-Wide-Area-Network-(WAN).md#dedicated-connection)<br>[Circuit-Switched](./20-Wide-Area-Network-(WAN).md#circuit-switched)<br>[Packet-Switched](./20-Wide-Area-Network-(WAN).md#packet-switched) |
-| 4 | [وسائط النقل الفيزيائية](./20-Wide-Area-Network-(WAN).md#transmission-mediums) | [Copper](./20-Wide-Area-Network-(WAN).md#copper-medium)<br>[Fiber](./20-Wide-Area-Network-(WAN).md#fiber-medium)<br>[Wireless](./20-Wide-Area-Network-(WAN).md#wireless-medium)<br>[Satellite](./20-Wide-Area-Network-(WAN).md#satellite-medium) |
-| 5 | [تقنية DMVPN](./20-Wide-Area-Network-(WAN).md#dmvpn) | [SD-WAN](./20-Wide-Area-Network-(WAN).md#sd-wan) |
-| 6 | [البدائل الرقمية لخطوط الهاتف التقليدية](./20-Wide-Area-Network-(WAN).md#digital-alternatives) | [ISDN](./20-Wide-Area-Network-(WAN).md#isdn)<br>[DSL](./20-Wide-Area-Network-(WAN).md#dsl)<br>[Cable Broadband](./20-Wide-Area-Network-(WAN).md#cable-broadband)<br>[Dial-up](./20-Wide-Area-Network-(WAN).md#dial-up)<br>[PRI](./20-Wide-Area-Network-(WAN).md#pri) |
-| 7 | [تقنية ATM](./20-Wide-Area-Network-(WAN).md#atm) | - |
-| 8 | [بروتوكول ترحيل أُطر المعلومات (Frame Relay)](./20-Wide-Area-Network-(WAN).md#frame-relay) | [التعريف](./20-Wide-Area-Network-(WAN).md#frame-relay-definition)<br>[أشكال الربط](./20-Wide-Area-Network-(WAN).md#frame-relay-topologies)<br>[إشارات Frame Relay وLMI](./20-Wide-Area-Network-(WAN).md#frame-relay-signaling)<br>[معدل تدفق البيانات](./20-Wide-Area-Network-(WAN).md#frame-relay-data-rate) |
-| 9 | [بروتوكول PPP](./20-Wide-Area-Network-(WAN).md#ppp) | [PAP و CHAP](./20-Wide-Area-Network-(WAN).md#ppp-authentication)<br>[دور NCP](./20-Wide-Area-Network-(WAN).md#ppp-ncp) |
-| 10 | [مكونات شبكة WAN وتقنية MPLS](./20-Wide-Area-Network-(WAN).md#wan-components-mpls) | [مكونات الشبكة](./20-Wide-Area-Network-(WAN).md#wan-components)<br>[تقنية MPLS](./20-Wide-Area-Network-(WAN).md#mpls-tech)<br>[أجهزة MPLS](./20-Wide-Area-Network-(WAN).md#mpls-devices)<br>[عملية الـ Label](./20-Wide-Area-Network-(WAN).md#mpls-label)<br>[الفرق بين WAN طبقة 2 و3](./20-Wide-Area-Network-(WAN).md#l2-vs-l3-wan) |
-| 11 | [معايير سرعة الشبكة الواسعة](./20-Wide-Area-Network-(WAN).md#wan-speed-standards) | [T1/T3, E1/E3](./20-Wide-Area-Network-(WAN).md#t-carrier)<br>[OC-3 – OC-192 (SONET)](./20-Wide-Area-Network-(WAN).md#sonet-oc) |
-| 12 | [تقنية Metro Ethernet](./20-Wide-Area-Network-(WAN).md#metro-ethernet) | - |
-| 13 | [بروتوكول SIP Trunk](./20-Wide-Area-Network-(WAN).md#sip-trunk) | - |
-| 14 | [مزود الخدمة (ISP) وخدماته](./20-Wide-Area-Network-(WAN).md#isp-services) | [خدمة الإنترنت](./20-Wide-Area-Network-(WAN).md#internet-service)<br>[خدمة ربط الفروع](./20-Wide-Area-Network-(WAN).md#branch-connectivity-service)<br>[إدارة الخدمات](./20-Wide-Area-Network-(WAN).md#service-management) |
-| 15 | [مقاييس مراقبة أداء الشبكة الواسعة](./20-Wide-Area-Network-(WAN).md#wan-monitoring-metrics) | [مقاييس الفحص الأساسية](./20-Wide-Area-Network-(WAN).md#scanning-metrics)<br>[مقاييس جودة الأداء](./20-Wide-Area-Network-(WAN).md#performance-metrics) |
-| 16 | [تقنيات تحسين أداء الشبكة الواسعة (WAN Optimization)](./20-Wide-Area-Network-(WAN).md#wan-optimization) | - |
-| 17 | [جدول المراجعة السريع](./20-Wide-Area-Network-(WAN).md#cheat-sheet-20) | - |
+| 1 | [مقدمة عن الموضوع](./20-Wide-Area-Network-%28WAN%29.md#introduction) | [تعريف WAN](./20-Wide-Area-Network-%28WAN%29.md#wan-definition)<br>[الجهة المسؤولة عن ربط الفروع](./20-Wide-Area-Network-%28WAN%29.md#who-connects-branches)<br>[من المسؤول عن إنشائها عالمياً](./20-Wide-Area-Network-%28WAN%29.md#who-governs-wan)<br>[مقارنة LAN/MAN/WAN](./20-Wide-Area-Network-%28WAN%29.md#lan-man-wan-comparison) |
+| 2 | [مصطلحات الشبكة الواسعة الأساسية](./20-Wide-Area-Network-%28WAN%29.md#wan-terminology) | CPE, DTE, DCE, ISP, CSU/DSU, Demarc, Local Loop, CO, POP, Toll Network, PSTN, POTS |
+| 3 | [أنواع اتصالات الشبكة الواسعة](./20-Wide-Area-Network-%28WAN%29.md#wan-connection-types) | [Dedicated](./20-Wide-Area-Network-%28WAN%29.md#dedicated-connection)<br>[Circuit-Switched](./20-Wide-Area-Network-%28WAN%29.md#circuit-switched)<br>[Packet-Switched](./20-Wide-Area-Network-%28WAN%29.md#packet-switched) |
+| 4 | [وسائط النقل الفيزيائية](./20-Wide-Area-Network-%28WAN%29.md#transmission-mediums) | [Copper](./20-Wide-Area-Network-%28WAN%29.md#copper-medium)<br>[Fiber](./20-Wide-Area-Network-%28WAN%29.md#fiber-medium)<br>[Wireless](./20-Wide-Area-Network-%28WAN%29.md#wireless-medium)<br>[Satellite](./20-Wide-Area-Network-%28WAN%29.md#satellite-medium) |
+| 5 | [تقنية DMVPN](./20-Wide-Area-Network-%28WAN%29.md#dmvpn) | [SD-WAN](./20-Wide-Area-Network-%28WAN%29.md#sd-wan) |
+| 6 | [البدائل الرقمية لخطوط الهاتف التقليدية](./20-Wide-Area-Network-%28WAN%29.md#digital-alternatives) | [ISDN](./20-Wide-Area-Network-%28WAN%29.md#isdn)<br>[DSL](./20-Wide-Area-Network-%28WAN%29.md#dsl)<br>[Cable Broadband](./20-Wide-Area-Network-%28WAN%29.md#cable-broadband)<br>[Dial-up](./20-Wide-Area-Network-%28WAN%29.md#dial-up)<br>[PRI](./20-Wide-Area-Network-%28WAN%29.md#pri) |
+| 7 | [تقنية ATM](./20-Wide-Area-Network-%28WAN%29.md#atm) | - |
+| 8 | [بروتوكول ترحيل أُطر المعلومات (Frame Relay)](./20-Wide-Area-Network-%28WAN%29.md#frame-relay) | [التعريف](./20-Wide-Area-Network-%28WAN%29.md#frame-relay-definition)<br>[أشكال الربط](./20-Wide-Area-Network-%28WAN%29.md#frame-relay-topologies)<br>[إشارات Frame Relay وLMI](./20-Wide-Area-Network-%28WAN%29.md#frame-relay-signaling)<br>[معدل تدفق البيانات](./20-Wide-Area-Network-%28WAN%29.md#frame-relay-data-rate) |
+| 9 | [بروتوكول PPP](./20-Wide-Area-Network-%28WAN%29.md#ppp) | [PAP و CHAP](./20-Wide-Area-Network-%28WAN%29.md#ppp-authentication)<br>[دور NCP](./20-Wide-Area-Network-%28WAN%29.md#ppp-ncp) |
+| 10 | [مكونات شبكة WAN وتقنية MPLS](./20-Wide-Area-Network-%28WAN%29.md#wan-components-mpls) | [مكونات الشبكة](./20-Wide-Area-Network-%28WAN%29.md#wan-components)<br>[تقنية MPLS](./20-Wide-Area-Network-%28WAN%29.md#mpls-tech)<br>[أجهزة MPLS](./20-Wide-Area-Network-%28WAN%29.md#mpls-devices)<br>[عملية الـ Label](./20-Wide-Area-Network-%28WAN%29.md#mpls-label)<br>[الفرق بين WAN طبقة 2 و3](./20-Wide-Area-Network-%28WAN%29.md#l2-vs-l3-wan) |
+| 11 | [معايير سرعة الشبكة الواسعة](./20-Wide-Area-Network-%28WAN%29.md#wan-speed-standards) | [T1/T3, E1/E3](./20-Wide-Area-Network-%28WAN%29.md#t-carrier)<br>[OC-3 – OC-192 (SONET)](./20-Wide-Area-Network-%28WAN%29.md#sonet-oc) |
+| 12 | [تقنية Metro Ethernet](./20-Wide-Area-Network-%28WAN%29.md#metro-ethernet) | - |
+| 13 | [بروتوكول SIP Trunk](./20-Wide-Area-Network-%28WAN%29.md#sip-trunk) | - |
+| 14 | [مزود الخدمة (ISP) وخدماته](./20-Wide-Area-Network-%28WAN%29.md#isp-services) | [خدمة الإنترنت](./20-Wide-Area-Network-%28WAN%29.md#internet-service)<br>[خدمة ربط الفروع](./20-Wide-Area-Network-%28WAN%29.md#branch-connectivity-service)<br>[إدارة الخدمات](./20-Wide-Area-Network-%28WAN%29.md#service-management) |
+| 15 | [مقاييس مراقبة أداء الشبكة الواسعة](./20-Wide-Area-Network-%28WAN%29.md#wan-monitoring-metrics) | [مقاييس الفحص الأساسية](./20-Wide-Area-Network-%28WAN%29.md#scanning-metrics)<br>[مقاييس جودة الأداء](./20-Wide-Area-Network-%28WAN%29.md#performance-metrics) |
+| 16 | [تقنيات تحسين أداء الشبكة الواسعة (WAN Optimization)](./20-Wide-Area-Network-%28WAN%29.md#wan-optimization) | - |
+| 17 | [جدول المراجعة السريع](./20-Wide-Area-Network-%28WAN%29.md#cheat-sheet-20) | - |
+
+---
+
+## 21) 📘 [الموضوع الحادي والعشرون: أدوات سطر الأوامر (Command-Line Tools)](./21-Command-Line-Tools.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن الموضوع](./21-Command-Line-Tools.md#introduction) | - |
+| 2 | [التعريف بالموضوع وأهميته وفوائده](./21-Command-Line-Tools.md#definition-importance) | - |
+| 3 | [أداة التعقب Traceroute / tracert](./21-Command-Line-Tools.md#traceroute) | - |
+| 4 | [أداة ipconfig](./21-Command-Line-Tools.md#ipconfig) | [الاستخدام الأساسي](./21-Command-Line-Tools.md#ipconfig-basic)<br>[ipconfig /all](./21-Command-Line-Tools.md#ipconfig-all)<br>[ipconfig /release](./21-Command-Line-Tools.md#ipconfig-release)<br>[ipconfig /renew](./21-Command-Line-Tools.md#ipconfig-renew)<br>[المعادل في Linux: أمر ip](./21-Command-Line-Tools.md#ip-command) |
+| 5 | [أداة Ping](./21-Command-Line-Tools.md#ping) | [رسائل وأخطاء Ping](./21-Command-Line-Tools.md#ping-messages)<br>[خيارات التحكم في الباكيت](./21-Command-Line-Tools.md#ping-options) |
+| 6 | [أداة PathPing](./21-Command-Line-Tools.md#pathping) | [المعادل في Linux/Unix](./21-Command-Line-Tools.md#pathping-linux-equivalent) |
+| 7 | [أداة قياس عرض النطاق iperf](./21-Command-Line-Tools.md#iperf) | - |
+| 8 | [أداة فحص المنافذ nmap](./21-Command-Line-Tools.md#nmap) | - |
+| 9 | [أوامر بروتوكول ARP](./21-Command-Line-Tools.md#arp-commands) | [arp -a](./21-Command-Line-Tools.md#arp-a)<br>[arp -s](./21-Command-Line-Tools.md#arp-s)<br>[arp -d](./21-Command-Line-Tools.md#arp-d) |
+| 10 | [تشخيص DNS: nslookup و dig](./21-Command-Line-Tools.md#dns-diagnostics) | [nslookup](./21-Command-Line-Tools.md#nslookup)<br>[dig](./21-Command-Line-Tools.md#dig) |
+| 11 | [أمر hostname](./21-Command-Line-Tools.md#hostname) | - |
+| 12 | [أمر route](./21-Command-Line-Tools.md#route-print) | [route print](./21-Command-Line-Tools.md#route-print-sub)<br>[route add/change/delete](./21-Command-Line-Tools.md#route-modify) |
+| 13 | [أمر nbtstat](./21-Command-Line-Tools.md#nbtstat) | - |
+| 14 | [أمر netstat](./21-Command-Line-Tools.md#netstat) | [-r](./21-Command-Line-Tools.md#netstat-r)<br>[-o](./21-Command-Line-Tools.md#netstat-o)<br>[-a](./21-Command-Line-Tools.md#netstat-a)<br>[-b](./21-Command-Line-Tools.md#netstat-b)<br>[-n](./21-Command-Line-Tools.md#netstat-n) |
+| 15 | [أداة التقاط الحزم tcpdump](./21-Command-Line-Tools.md#tcpdump) | - |
+| 16 | [أوامر Telnet](./21-Command-Line-Tools.md#telnet) | - |
+| 17 | [أمر SSH](./21-Command-Line-Tools.md#ssh) | - |
+| 18 | [أوامر FTP](./21-Command-Line-Tools.md#ftp) | - |
+| 19 | [أوامر تشخيص على أجهزة سيسكو](./21-Command-Line-Tools.md#cisco-show-commands) | [show interface](./21-Command-Line-Tools.md#show-interface)<br>[show running-config](./21-Command-Line-Tools.md#show-config)<br>[show ip route](./21-Command-Line-Tools.md#show-route) |
+| 20 | [جدول المراجعة السريع](./21-Command-Line-Tools.md#cheat-sheet-21) | - |
+
+---
+
+## 22) 📘 [الموضوع الثاني والعشرون: استكشاف أعطال الشبكة وإصلاحها (Network Troubleshooting)](./22-Network-Troubleshooting.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة عن الموضوع والتعريف به](./22-Network-Troubleshooting.md#introduction) | - |
+| 2 | [ما هي الـ Troubleshooting](./22-Network-Troubleshooting.md#what-is-troubleshooting) | - |
+| 3 | [العوامل التي تقوم عليها عملية الترابلشوت](./22-Network-Troubleshooting.md#troubleshooting-factors) | - |
+| 4 | [أهمية العملية وأهدافها](./22-Network-Troubleshooting.md#importance-goals) | - |
+| 5 | [سياسة استكشاف الأعطال (Troubleshooting Policy)](./22-Network-Troubleshooting.md#troubleshooting-policy) | - |
+| 6 | [نموذج الخطوات لحل المشكلة (CompTIA)](./22-Network-Troubleshooting.md#nine-step-model) | [1. جمع المعلومات](./22-Network-Troubleshooting.md#step1)<br>[2. تعريف المناطق المعقدة](./22-Network-Troubleshooting.md#step2)<br>[3. تحديد ما الذي تغيّر](./22-Network-Troubleshooting.md#step3)<br>[4. اختيار السبب الأكثر احتمالاً](./22-Network-Troubleshooting.md#step4)<br>[5. مناهج بناء النظرية](./22-Network-Troubleshooting.md#theory-approaches)<br>[6. التحقق من التصعيد](./22-Network-Troubleshooting.md#step5)<br>[7. إنشاء الحل](./22-Network-Troubleshooting.md#step6)<br>[8. تطبيق الحل والاختبار](./22-Network-Troubleshooting.md#step7)<br>[9. تحديد التأثيرات المحتملة](./22-Network-Troubleshooting.md#step8)<br>[10. التوثيق](./22-Network-Troubleshooting.md#step9)<br>[مقارنة مع نموذج CompTIA الرسمي](./22-Network-Troubleshooting.md#official-7-step) |
+| 7 | [ما يُفترض حدوثه بعد إنهاء حل المشكلة](./22-Network-Troubleshooting.md#after-resolution) | - |
+| 8 | [نصائح عملية إضافية للترابلشوت](./22-Network-Troubleshooting.md#practical-tips) | [الأشياء البسيطة أولاً (SSS)](./22-Network-Troubleshooting.md#sss)<br>[ترتيب أولويات المشاكل](./22-Network-Troubleshooting.md#prioritization)<br>[فحص إعدادات السوفت وير](./22-Network-Troubleshooting.md#software-config-check)<br>[الظروف الفيزيائية المحيطة](./22-Network-Troubleshooting.md#physical-conditions)<br>[الفحص من الفيروسات](./22-Network-Troubleshooting.md#virus-check) |
+| 9 | [تصنيف حالات مشاكل الشبكة الشائعة](./22-Network-Troubleshooting.md#common-issues) | [الحالات الفيزيائية/السلكية](./22-Network-Troubleshooting.md#physical-issues)<br>[الحالات المنطقية/خدمات الشبكة](./22-Network-Troubleshooting.md#logical-issues)<br>[الحالات اللاسلكية](./22-Network-Troubleshooting.md#wireless-issues)<br>[الحالات التوسعية](./22-Network-Troubleshooting.md#escalated-issues) |
+| 10 | [تجميع بطاقات الشبكة (NIC Teaming)](./22-Network-Troubleshooting.md#nic-teaming) | - |
+| 11 | [أدوات استكشاف الأعطال المادية](./22-Network-Troubleshooting.md#hardware-tools) | - |
+| 12 | [التوثيق وخطوط الأساس](./22-Network-Troubleshooting.md#documentation-baselines) | [Network Baseline](./22-Network-Troubleshooting.md#network-baseline)<br>[Lessons Learned](./22-Network-Troubleshooting.md#lessons-learned) |
+| 13 | [الإحصاء السنوي للمشكلات ومتابعة التكرار](./22-Network-Troubleshooting.md#annual-statistics) | - |
+| 14 | [جدول المراجعة السريع](./22-Network-Troubleshooting.md#cheat-sheet-22) | - |
+
+---
+
+## 23) 📘 [الموضوع الثالث والعشرون (الأخير): إدارة ومراقبة وتحسين أداء الشبكة (Management, Monitoring, and Optimization)](./23-Network-Management-Monitoring-Optimization.md)
+
+| # | القسم الرئيسي | المواضيع الفرعية |
+|:---:|:---:|:---:|
+| 1 | [مقدمة والتعريف بالموضوع](./23-Network-Management-Monitoring-Optimization.md#introduction) | [المسؤول عن المراقبة](./23-Network-Management-Monitoring-Optimization.md#who-monitors)<br>[ماذا يتم من خلال المراقبة](./23-Network-Management-Monitoring-Optimization.md#what-monitoring-does)<br>[تحديد الأداء عبر المراقبة](./23-Network-Management-Monitoring-Optimization.md#determining-performance) |
+| 2 | [بروتوكول SNMP](./23-Network-Management-Monitoring-Optimization.md#snmp) | [التعريف والأهمية](./23-Network-Management-Monitoring-Optimization.md#snmp-definition)<br>[الوظائف](./23-Network-Management-Monitoring-Optimization.md#snmp-functions)<br>[المكونات](./23-Network-Management-Monitoring-Optimization.md#snmp-components)<br>[الإصدارات](./23-Network-Management-Monitoring-Optimization.md#snmp-versions)<br>[الأوامر والمنافذ](./23-Network-Management-Monitoring-Optimization.md#snmp-commands)<br>[الأمان والـ OID](./23-Network-Management-Monitoring-Optimization.md#snmp-extras) |
+| 3 | [بروتوكول Syslog](./23-Network-Management-Monitoring-Optimization.md#syslog) | [التعريف وآلية العمل](./23-Network-Management-Monitoring-Optimization.md#syslog-definition)<br>[سيرفر Syslog ومكوناته](./23-Network-Management-Monitoring-Optimization.md#syslog-server)<br>[مستويات الرسائل](./23-Network-Management-Monitoring-Optimization.md#syslog-levels)<br>[تحديد مستوى الاستقبال](./23-Network-Management-Monitoring-Optimization.md#syslog-level-selection)<br>[شكل الرسالة و PRI](./23-Network-Management-Monitoring-Optimization.md#syslog-message-format)<br>[نظام SIEM وربط السجلات](./23-Network-Management-Monitoring-Optimization.md#siem) |
+| 4 | [بروتوكول NetFlow](./23-Network-Management-Monitoring-Optimization.md#netflow) | [التعريف وآلية العمل](./23-Network-Management-Monitoring-Optimization.md#netflow-definition)<br>[المكونات وطريقة العمل](./23-Network-Management-Monitoring-Optimization.md#netflow-mechanism)<br>[الاعتمادية في التحليل](./23-Network-Management-Monitoring-Optimization.md#netflow-dependency)<br>[سيرفر NetFlow](./23-Network-Management-Monitoring-Optimization.md#netflow-server)<br>[الإصدارات](./23-Network-Management-Monitoring-Optimization.md#netflow-versions)<br>[مفهوم Flow](./23-Network-Management-Monitoring-Optimization.md#netflow-flow)<br>[تقنية sFlow](./23-Network-Management-Monitoring-Optimization.md#sflow)<br>[بروتوكول IPFIX](./23-Network-Management-Monitoring-Optimization.md#ipfix) |
+| 5 | [برنامج Wireshark](./23-Network-Management-Monitoring-Optimization.md#wireshark) | [التعريف](./23-Network-Management-Monitoring-Optimization.md#wireshark-definition)<br>[آلية العمل والوظيفة](./23-Network-Management-Monitoring-Optimization.md#wireshark-mechanism)<br>[المكونات](./23-Network-Management-Monitoring-Optimization.md#wireshark-components)<br>[طرق الالتقاط SPAN/TAP](./23-Network-Management-Monitoring-Optimization.md#capture-methods)<br>[الفلاتر](./23-Network-Management-Monitoring-Optimization.md#wireshark-filters) |
+| 6 | [برنامج NMAP](./23-Network-Management-Monitoring-Optimization.md#nmap-tool) | [أشهر أوامر Nmap](./23-Network-Management-Monitoring-Optimization.md#nmap-commands)<br>[برامج فحص الثغرات](./23-Network-Management-Monitoring-Optimization.md#vulnerability-scanners) |
+| 7 | [نظام كشف التسلل IDS](./23-Network-Management-Monitoring-Optimization.md#ids-topic23) | - |
+| 8 | [نظام كشف ومنع التسلل IPS](./23-Network-Management-Monitoring-Optimization.md#ips-topic23) | [مقارنة IDS و IPS](./23-Network-Management-Monitoring-Optimization.md#ids-vs-ips) |
+| 9 | [توثيق الشبكة (Network Documentation)](./23-Network-Management-Monitoring-Optimization.md#network-documentation) | [المخططات وأنواعها](./23-Network-Management-Monitoring-Optimization.md#diagrams)<br>[الفيزيائي مقابل المنطقي](./23-Network-Management-Monitoring-Optimization.md#physical-vs-logical)<br>[مستندات إضافية](./23-Network-Management-Monitoring-Optimization.md#extra-documents)<br>[إدارة الأصول](./23-Network-Management-Monitoring-Optimization.md#asset-management)<br>[IPAM](./23-Network-Management-Monitoring-Optimization.md#ipam)<br>[توثيق المورّدين](./23-Network-Management-Monitoring-Optimization.md#vendor-documentation)<br>[خطوط الأساس](./23-Network-Management-Monitoring-Optimization.md#baselines-topic23) |
+| 10 | [قياسات ومؤشرات أداء الشبكة](./23-Network-Management-Monitoring-Optimization.md#performance-metrics) | [Bandwidth / Throughput / Goodput](./23-Network-Management-Monitoring-Optimization.md#bandwidth-throughput-goodput)<br>[Latency / Jitter / Packet Loss](./23-Network-Management-Monitoring-Optimization.md#latency-jitter-packet-loss)<br>[Availability / Five Nines](./23-Network-Management-Monitoring-Optimization.md#availability-uptime)<br>[Baseline / Benchmarking](./23-Network-Management-Monitoring-Optimization.md#baseline-benchmarking)<br>[مؤشرات الواجهات](./23-Network-Management-Monitoring-Optimization.md#interface-statistics) |
+| 11 | [جودة الخدمة (QoS)](./23-Network-Management-Monitoring-Optimization.md#qos) | - |
+| 12 | [أنواع QoS](./23-Network-Management-Monitoring-Optimization.md#qos-types) | - |
+| 13 | [حل مشكلة الازدحام بواسطة QoS](./23-Network-Management-Monitoring-Optimization.md#qos-congestion-solution) | - |
+| 14 | [أنواع التأخير في الشبكة](./23-Network-Management-Monitoring-Optimization.md#delay-types) | [Processing Delay](./23-Network-Management-Monitoring-Optimization.md#processing-delay)<br>[Queuing Delay](./23-Network-Management-Monitoring-Optimization.md#queuing-delay)<br>[Serialization Delay](./23-Network-Management-Monitoring-Optimization.md#serialization-delay)<br>[Propagation Delay](./23-Network-Management-Monitoring-Optimization.md#propagation-delay) |
+| 15 | [أضرار الازدحام في الشبكة](./23-Network-Management-Monitoring-Optimization.md#congestion-damages) | [Lack of Bandwidth](./23-Network-Management-Monitoring-Optimization.md#lack-bandwidth)<br>[Packet Loss](./23-Network-Management-Monitoring-Optimization.md#packet-loss)<br>[Delay](./23-Network-Management-Monitoring-Optimization.md#delay-damage)<br>[Jitter](./23-Network-Management-Monitoring-Optimization.md#jitter-damage) |
+| 16 | [التصنيف والتعليم (Classification and Marking)](./23-Network-Management-Monitoring-Optimization.md#classification-marking) | - |
+| 17 | [صفوف البيانات (Queues) وأنواعها](./23-Network-Management-Monitoring-Optimization.md#queues) | - |
+| 18 | [نظام CoS](./23-Network-Management-Monitoring-Optimization.md#cos) | - |
+| 19 | [درجات البيانات في QoS (DSCP)](./23-Network-Management-Monitoring-Optimization.md#dscp) | - |
+| 20 | [توزيع الحمل (Load Balancing / NLB / Cluster)](./23-Network-Management-Monitoring-Optimization.md#load-balancing) | [NLB و Cluster](./23-Network-Management-Monitoring-Optimization.md#nlb-cluster-types)<br>[مستويات التوزيع](./23-Network-Management-Monitoring-Optimization.md#load-balancing-levels)<br>[Load Balancers والخوارزميات](./23-Network-Management-Monitoring-Optimization.md#load-balancers-algorithms)<br>[بروتوكولات FHRP](./23-Network-Management-Monitoring-Optimization.md#fhrp) |
+| 21 | [السياسات والإجراءات واللوائح](./23-Network-Management-Monitoring-Optimization.md#policies-procedures) | [السياسات](./23-Network-Management-Monitoring-Optimization.md#policies-list)<br>[الإجراءات](./23-Network-Management-Monitoring-Optimization.md#procedures-list)<br>[المستندات القياسية](./23-Network-Management-Monitoring-Optimization.md#business-documents)<br>[اللوائح التنظيمية](./23-Network-Management-Monitoring-Optimization.md#regulations) |
+| 22 | [إجراءات السلامة](./23-Network-Management-Monitoring-Optimization.md#safety-practices) | [السلامة الكهربائية](./23-Network-Management-Monitoring-Optimization.md#electrical-safety)<br>[سلامة التركيب](./23-Network-Management-Monitoring-Optimization.md#installation-safety)<br>[إجراءات الطوارئ](./23-Network-Management-Monitoring-Optimization.md#emergency-procedures)<br>[HVAC](./23-Network-Management-Monitoring-Optimization.md#hvac)<br>[ESD ومكافحة الحرائق](./23-Network-Management-Monitoring-Optimization.md#esd-fire) |
+| 23 | [تجزئة الشبكة](./23-Network-Management-Monitoring-Optimization.md#network-segmentation) | [Medianets](./23-Network-Management-Monitoring-Optimization.md#medianets)<br>[VTC](./23-Network-Management-Monitoring-Optimization.md#vtc)<br>[الأنظمة القديمة](./23-Network-Management-Monitoring-Optimization.md#legacy-systems)<br>[فصل الشبكات الخاصة/العامة](./23-Network-Management-Monitoring-Optimization.md#public-private-separation)<br>[Honeypot/Honeynet](./23-Network-Management-Monitoring-Optimization.md#honeypot-topic23)<br>[بيئة الاختبار](./23-Network-Management-Monitoring-Optimization.md#testing-lab)<br>[الامتثال](./23-Network-Management-Monitoring-Optimization.md#compliance) |
+| 24 | [إضافات تحسين الأداء](./23-Network-Management-Monitoring-Optimization.md#optimization-additions) | [الاتصالات الموحدة](./23-Network-Management-Monitoring-Optimization.md#unified-communications)<br>[Traffic Shaping vs Policing](./23-Network-Management-Monitoring-Optimization.md#traffic-shaping)<br>[Traffic Policing](./23-Network-Management-Monitoring-Optimization.md#traffic-policing)<br>[محركات التخزين المؤقت](./23-Network-Management-Monitoring-Optimization.md#caching-engines)<br>[Proxy و Web Caching](./23-Network-Management-Monitoring-Optimization.md#proxy-web-caching)<br>[CDN](./23-Network-Management-Monitoring-Optimization.md#cdn)<br>[High Availability](./23-Network-Management-Monitoring-Optimization.md#ha-topic23)<br>[Fault Tolerance](./23-Network-Management-Monitoring-Optimization.md#ft-topic23)<br>[النسخ الاحتياطي](./23-Network-Management-Monitoring-Optimization.md#backups-topic23)<br>[CARP](./23-Network-Management-Monitoring-Optimization.md#carp) |
+| 25 | [الشبكات الافتراضية (Virtual Networking)](./23-Network-Management-Monitoring-Optimization.md#virtual-networking) | [Hypervisor](./23-Network-Management-Monitoring-Optimization.md#hypervisor)<br>[vSwitch](./23-Network-Management-Monitoring-Optimization.md#vswitch)<br>[vNIC](./23-Network-Management-Monitoring-Optimization.md#vnic)<br>[أنماط vNIC](./23-Network-Management-Monitoring-Optimization.md#vnic-modes)<br>[vRouter](./23-Network-Management-Monitoring-Optimization.md#vrouter)<br>[vFirewall](./23-Network-Management-Monitoring-Optimization.md#vfirewall)<br>[SDN](./23-Network-Management-Monitoring-Optimization.md#sdn)<br>[معمارية SDN و NFV](./23-Network-Management-Monitoring-Optimization.md#sdn-architecture)<br>[Jumbo Frame](./23-Network-Management-Monitoring-Optimization.md#jumbo-frame) |
+| 26 | [شبكات التخزين](./23-Network-Management-Monitoring-Optimization.md#storage-networks) | [SAN](./23-Network-Management-Monitoring-Optimization.md#san)<br>[مصطلحات SAN](./23-Network-Management-Monitoring-Optimization.md#san-terms)<br>[NAS](./23-Network-Management-Monitoring-Optimization.md#nas)<br>[iSCSI](./23-Network-Management-Monitoring-Optimization.md#iscsi)<br>[Fibre Channel / FCoE](./23-Network-Management-Monitoring-Optimization.md#fibre-channel)<br>[InfiniBand](./23-Network-Management-Monitoring-Optimization.md#infiniband) |
+| 27 | [الحوسبة السحابية](./23-Network-Management-Monitoring-Optimization.md#cloud-computing) | [نماذج الخدمة](./23-Network-Management-Monitoring-Optimization.md#cloud-service-models)<br>[نماذج النشر](./23-Network-Management-Monitoring-Optimization.md#cloud-deployment-models)<br>[طرق الاتصال](./23-Network-Management-Monitoring-Optimization.md#cloud-connectivity)<br>[الاعتبارات الأمنية](./23-Network-Management-Monitoring-Optimization.md#cloud-security)<br>[العلاقة بين المحلي والسحابي](./23-Network-Management-Monitoring-Optimization.md#cloud-vs-local)<br>[مفاهيم سحابية أساسية](./23-Network-Management-Monitoring-Optimization.md#cloud-concepts) |
+| 28 | [تركيب المعدات وموقعها](./23-Network-Management-Monitoring-Optimization.md#equipment-location) | [MDF/IDF](./23-Network-Management-Monitoring-Optimization.md#mdf-idf)<br>[إدارة الكابلات](./23-Network-Management-Monitoring-Optimization.md#cable-management)<br>[إدارة الطاقة](./23-Network-Management-Monitoring-Optimization.md#power-management-topic23)<br>[وضع الأجهزة](./23-Network-Management-Monitoring-Optimization.md#device-placement)<br>[التسميات](./23-Network-Management-Monitoring-Optimization.md#labeling)<br>[مراقبة وأمان الـ Rack](./23-Network-Management-Monitoring-Optimization.md#rack-monitoring-security)<br>[أساسيات الـ Rack و Demarc](./23-Network-Management-Monitoring-Optimization.md#rack-basics) |
+| 29 | [إدارة التغيير (Change Management)](./23-Network-Management-Monitoring-Optimization.md#change-management) | - |
+| 30 | [جدول المراجعة السريع](./23-Network-Management-Monitoring-Optimization.md#cheat-sheet-23) | [جدول المنافذ](./23-Network-Management-Monitoring-Optimization.md#ports-table)<br>[أسئلة مراجعة](./23-Network-Management-Monitoring-Optimization.md#quick-review-questions) |
+
+---
+
+<h2 dir="rtl" align="right" id="course-conclusion">🏁 خاتمة الكورس</h2>
+
+<p dir="rtl" align="right">
+وصلنا لآخر صفحة في الفهرس، وكده تكون خلّصت كورس <strong>CompTIA Network+</strong> كامل: <strong>23 موضوع</strong> اتذاكروا واتوثّقوا واحد ورا التاني، مش مجرد مشاهدة، لأن كل موضوع اتكتب بإيدك وبأسلوبك وبقى مرجع تقدر ترجعله في أي وقت.
+</p>
+
+<p dir="rtl" align="right">
+<strong>الرحلة اللي عدّيت بيها، على مراحل:</strong>
+</p>
+
+<ul dir="rtl">
+<li><strong>الأساسات (المواضيع 1 – 7):</strong> يعني إيه شبكة، المصطلحات، نموذجا OSI وTCP/IP، أرقام المنافذ، والتطبيق العملي على الأجهزة الافتراضية.</li>
+<li><strong>البنية الفيزيائية وطبقة الربط (8 – 10، 15):</strong> الكابلات والأوساط، الإيثرنت، أجهزة الشبكة، والسويتشينج وVLANs.</li>
+<li><strong>العنونة والتوجيه (11 – 14):</strong> عناوين IP وSubnetting وVLSM، التوجيه، بروتوكولات التوجيه، وIPv6.</li>
+<li><strong>اللاسلكي والأمن (16 – 19):</strong> الشبكات اللاسلكية، المصادقة والتحكم بالوصول، التهديدات وطرق التخفيف، والأمن المادي وإدارة المخاطر.</li>
+<li><strong>الشبكات الواسعة والتشغيل العملي (20 – 22):</strong> الـ WAN، أدوات سطر الأوامر، ومنهجية استكشاف الأعطال.</li>
+<li><strong>الإدارة والمراقبة والتحسين (23):</strong> SNMP وSyslog وNetFlow، جودة الخدمة، توزيع الحمل، الافتراضية والتخزين والسحابة، وإدارة التغيير.</li>
+</ul>
+
+<p dir="rtl" align="right">
+الترتيب ده مقصود: بدأت من "إزاي البيانات بتتحرك"، ووصلت لـ "إزاي تبني الشبكة وتأمّنها وتشخّصها وتديرها". وده بالظبط الفرق بين إنك تحفظ معلومات، وإنك تفهم الشبكة كنظام متكامل.
+</p>
+
+<p dir="rtl" align="right">
+<strong>إزاي تستفيد من الريبو ده بعد كده:</strong>
+</p>
+
+<ul dir="rtl">
+<li>استخدم <strong>جداول المراجعة السريعة</strong> اللي في آخر كل موضوع قبل أي امتحان أو مقابلة عمل، وارجع للتفاصيل بس لما تحتاجها.</li>
+<li>الـ Subnetting ومسائل الـ VLSM (الموضوع 11) <strong>مهارة بتتثبّت بالتمرين المتكرر</strong> مش بالقراءة، فاستمر تحلّ مسائل جديدة بنفسك.</li>
+<li>كرّر اللابات العملية (3 و6) وجرّب أدوات الموضوع 21 على شبكة معملية بتاعتك، فالتطبيق هو اللي بيحوّل المعلومة لخبرة.</li>
+<li>لما تقابل مشكلة حقيقية، شغّل نموذج الخطوات من الموضوع 22 بالترتيب بدل التخمين.</li>
+</ul>
+
+<p dir="rtl" align="right">
+الشبكات هي الأساس اللي بيتبني عليه الأمن السيبراني: مش هتقدر تحمي حاجة مش فاهم إزاي بتشتغل. وبكده أنهيت المحطة دي من الـ Roadmap وبقى عندك قاعدة قوية تكمل عليها للمحطة الجاية.
+</p>
+
+<p dir="rtl" align="right">
+<strong>بالتوفيق في الامتحان والمشوار كله. 🚀</strong>
+</p>
 
 ---
 
