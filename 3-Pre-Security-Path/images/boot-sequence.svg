@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250" role="img" aria-label="Boot Sequence: From Power Button to Desktop">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="250" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Boot Sequence: From Power Button to Desktop</text>
+<rect x="18" y="70" width="148" height="100" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="92.0" y="106.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">1. Power On</text>
+<text x="92.0" y="124.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">PSU feeds</text>
+<text x="92.0" y="142.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">the motherboard</text>
+<line x1="168" y1="120" x2="192" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="194" y="70" width="148" height="100" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="268.0" y="106.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2. Firmware</text>
+<text x="268.0" y="124.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">BIOS / UEFI chip</text>
+<text x="268.0" y="142.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">starts the CPU</text>
+<line x1="344" y1="120" x2="368" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="370" y="70" width="148" height="100" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="444.0" y="106.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">3. POST</text>
+<text x="444.0" y="124.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Self-test of CPU,</text>
+<text x="444.0" y="142.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">RAM, GPU, storage</text>
+<line x1="520" y1="120" x2="544" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="546" y="70" width="148" height="100" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="620.0" y="106.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">4. Bootloader</text>
+<text x="620.0" y="124.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Found on storage,</text>
+<text x="620.0" y="142.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">loaded into RAM</text>
+<line x1="696" y1="120" x2="720" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="722" y="70" width="148" height="100" rx="9" fill="#e5e7eb" stroke="#1f2937" stroke-width="1.6"/>
+<text x="796.0" y="106.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">5. OS Kernel</text>
+<text x="796.0" y="124.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Services start,</text>
+<text x="796.0" y="142.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">login / desktop</text>
+<text x="450.0" y="205" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Each step depends on the success of the previous one</text>
+<text x="450.0" y="228" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">A failure at a step points to the component responsible for it</text>
+</svg>
