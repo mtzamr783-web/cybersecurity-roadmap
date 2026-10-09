@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270" width="900" height="270" role="img" aria-label="PowerShell Pipeline: Objects Flow Between Cmdlets">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="270" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">PowerShell Pipeline: Objects Flow Between Cmdlets</text>
+<rect x="24" y="70" width="170" height="84" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="109.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Get-Process</text>
+<text x="109.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">all running processes</text>
+<line x1="196" y1="112" x2="240" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="218" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">pipe</text>
+<rect x="244" y="70" width="170" height="84" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="329.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Where-Object</text>
+<text x="329.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">keep matching ones</text>
+<line x1="416" y1="112" x2="460" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="438" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">pipe</text>
+<rect x="464" y="70" width="170" height="84" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="549.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Sort-Object</text>
+<text x="549.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">order by a property</text>
+<line x1="636" y1="112" x2="680" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="658" y="100" text-anchor="middle" font-size="12" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">pipe</text>
+<rect x="684" y="70" width="170" height="84" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="769.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Select-Object</text>
+<text x="769.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">pick properties / top N</text>
+<text x="450.0" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Each cmdlet passes full objects (with properties), not plain text</text>
+<text x="450.0" y="224" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">So you can filter and sort by property without text parsing tricks</text>
+<text x="450.0" y="246" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">CMD passes plain text only, which is why PowerShell is stronger for investigation</text>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="900" height="430" role="img" aria-label="Where the Operating System Sits">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="430" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Where the Operating System Sits</text>
+<rect x="30" y="52" width="840" height="130" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="50" y="76" text-anchor="start" font-size="14" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">User Space (restricted access)</text>
+<rect x="50" y="92" width="150" height="70" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.6"/>
+<text x="125.0" y="122.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Browser</text>
+<text x="125.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">apps</text>
+<rect x="212" y="92" width="150" height="70" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.6"/>
+<text x="287.0" y="122.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Office</text>
+<text x="287.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">apps</text>
+<rect x="374" y="92" width="150" height="70" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.6"/>
+<text x="449.0" y="122.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Terminal</text>
+<text x="449.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">CLI / shell</text>
+<rect x="536" y="92" width="150" height="70" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.6"/>
+<text x="611.0" y="122.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Desktop</text>
+<text x="611.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">GUI</text>
+<rect x="698" y="92" width="150" height="70" rx="9" fill="#ffffff" stroke="#16a34a" stroke-width="1.6"/>
+<text x="773.0" y="122.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Services</text>
+<text x="773.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">background</text>
+<rect x="30" y="196" width="840" height="34" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="450" y="218" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">System Calls: the only controlled doorway into the kernel</text>
+<line x1="450" y1="184" x2="450" y2="196" stroke="#ea580c" stroke-width="2" marker-end="url(#a)"/>
+<rect x="30" y="244" width="840" height="120" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="50" y="268" text-anchor="start" font-size="14" font-weight="700" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif">Kernel Space (unrestricted access, kernel mode)</text>
+<rect x="50" y="282" width="150" height="66" rx="9" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="125.0" y="310.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Processes</text>
+<text x="125.0" y="328.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">scheduling</text>
+<rect x="212" y="282" width="150" height="66" rx="9" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="287.0" y="310.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Memory</text>
+<text x="287.0" y="328.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">allocation</text>
+<rect x="374" y="282" width="150" height="66" rx="9" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="449.0" y="310.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">File System</text>
+<text x="449.0" y="328.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">drives</text>
+<rect x="536" y="282" width="150" height="66" rx="9" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="611.0" y="310.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Users</text>
+<text x="611.0" y="328.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">permissions</text>
+<rect x="698" y="282" width="150" height="66" rx="9" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
+<text x="773.0" y="310.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Devices</text>
+<text x="773.0" y="328.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">drivers</text>
+<rect x="30" y="378" width="840" height="40" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="450" y="403" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Hardware: CPU, RAM, storage, network card, peripherals</text>
+</svg>
