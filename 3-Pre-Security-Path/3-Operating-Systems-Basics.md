@@ -8,11 +8,11 @@
 <thead><tr><th align="right" style="text-align:right">#</th><th align="right" style="text-align:right">الغرفة</th><th align="right" style="text-align:right">الموضوعات بالترتيب</th></tr></thead>
 <tbody>
 <tr><td align="right" style="text-align:right">—</td><td align="right" style="text-align:right"><a href="#module-intro">مقدمة الوحدة</a></td><td align="right" style="text-align:right">تعريف نظام التشغيل ولماذا تُعد الوحدة محورية للمحلل الأمني</td></tr>
-<tr><td align="right" style="text-align:right">1</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-1">Operating Systems Introduction</a></td><td align="right" style="text-align:right"><a href="#t1-1">1.1 التعريف بالغرفة وهدفها</a><br><a href="#t1-2">1.2 ما هو نظام التشغيل وأين يقع</a><br><a href="#t1-3">1.3 أنواع أنظمة التشغيل واستخداماتها</a><br><a href="#t1-4">1.4 عائلات أنظمة التشغيل الرئيسية</a><br><a href="#t1-5">1.5 لماذا توجد أنظمة تشغيل كثيرة</a><br><a href="#t1-6">1.6 واجبات نظام التشغيل</a><br><a href="#t1-7">1.7 أدوات نظام التشغيل</a><br><a href="#t1-8">1.8 كيف نتفاعل مع نظام التشغيل: GUI و CLI</a><br><a href="#t1-9">1.9 النواة ومساحتا النواة والمستخدم</a><br><a href="#t1-10">1.10 مكالمات النظام (System Calls)</a><br><a href="#t1-11">1.11 أمن نظام التشغيل</a><br><a href="#t1-12">1.12 سيناريو: ماذا يحدث عند فتح ملف مستند</a></td></tr>
+<tr><td align="right" style="text-align:right">1</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-1">Operating Systems Introduction</a></td><td align="right" style="text-align:right"><a href="#t1-1">1.1 التعريف بالغرفة وهدفها</a><br><a href="#t1-2">1.2 ما هو نظام التشغيل وأين يقع</a><br><a href="#t1-3">1.3 واجبات نظام التشغيل</a><br><a href="#t1-4">1.4 أنواع أنظمة التشغيل واستخداماتها</a><br><a href="#t1-5">1.5 عائلات أنظمة التشغيل الرئيسية</a><br><a href="#t1-6">1.6 لماذا توجد أنظمة تشغيل كثيرة</a><br><a href="#t1-7">1.7 أدوات نظام التشغيل</a><br><a href="#t1-8">1.8 كيف نتفاعل مع نظام التشغيل: GUI و CLI</a><br><a href="#t1-9">1.9 النواة ومساحتا النواة والمستخدم</a><br><a href="#t1-10">1.10 مكالمات النظام (System Calls)</a><br><a href="#t1-11">1.11 أمن نظام التشغيل</a><br><a href="#t1-12">1.12 سيناريو: ماذا يحدث عند فتح ملف مستند</a></td></tr>
 <tr><td align="right" style="text-align:right">2</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-2">Windows Basics</a></td><td align="right" style="text-align:right"><a href="#t2-1">2.1 التعريف بالغرفة وأهدافها</a><br><a href="#t2-2">2.2 نبذة تاريخية عن ويندوز</a><br><a href="#t2-3">2.3 تسجيل الدخول والمصادقة</a><br><a href="#t2-4">2.4 أنواع الحسابات في ويندوز</a><br><a href="#t2-5">2.5 سطح المكتب وشريط المهام وقائمة ابدأ</a><br><a href="#t2-6">2.6 الأدوات والتطبيقات المدمجة</a><br><a href="#t2-7">2.7 معلومات النظام وصفحة حول الكمبيوتر</a><br><a href="#t2-8">2.8 استكشاف الملفات وإدارتها</a><br><a href="#t2-9">2.9 الإعدادات ولوحة التحكم</a><br><a href="#t2-10">2.10 تحديث ويندوز وإدارة التطبيقات</a><br><a href="#t2-11">2.11 مدير المهام (Task Manager)</a><br><a href="#t2-12">2.12 أمان ويندوز (Windows Security)</a><br><a href="#t2-13">2.13 الزاوية الأمنية: ما الذي يهم المحلل في ويندوز</a><br><a href="#t2-14">2.14 التطبيق العملي: يوم موظف جديد</a><br><a href="#t2-15">2.15 سيناريو: فحص محطة عمل مشبوهة</a></td></tr>
-<tr><td align="right" style="text-align:right">3</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-3">Linux CLI Basics</a></td><td align="right" style="text-align:right"><a href="#t3-1">3.1 التعريف بالغرفة وأهميتها</a><br><a href="#t3-2">3.2 الـ Shell والـ Terminal والـ CLI</a><br><a href="#t3-3">3.3 هيكل نظام الملفات</a><br><a href="#t3-4">3.4 الأذونات (Permissions)</a><br><a href="#t3-5">3.5 التنقل: pwd و cd و ls</a><br><a href="#t3-6">3.6 قراءة الملفات: cat و less و head و tail</a><br><a href="#t3-7">3.7 إنشاء وإدارة الملفات والمجلدات: mkdir و touch و cp و mv و rm</a><br><a href="#t3-8">3.8 تغيير الأذونات والمالك: chmod و chown</a><br><a href="#t3-9">3.9 البحث: find و grep</a><br><a href="#t3-10">3.10 إدارة العمليات: ps و top و kill</a><br><a href="#t3-11">3.11 الصلاحيات العالية: sudo</a><br><a href="#t3-12">3.12 استكشاف الشبكة: ip و ifconfig و netstat</a><br><a href="#t3-13">3.13 الزاوية الأمنية: لينكس في عين المحلل</a><br><a href="#t3-14">3.14 سيناريو: خادم لينكس يتعرض لتخمين كلمات المرور</a></td></tr>
+<tr><td align="right" style="text-align:right">3</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-3">Linux CLI Basics</a></td><td align="right" style="text-align:right"><a href="#t3-1">3.1 التعريف بالغرفة وأهميتها</a><br><a href="#t3-2">3.2 الـ Shell والـ Terminal والـ CLI</a><br><a href="#t3-3">3.3 هيكل نظام الملفات</a><br><a href="#t3-4">3.4 الأذونات (Permissions)</a><br><a href="#t3-5">3.5 التنقل: pwd و cd و ls</a><br><a href="#t3-6">3.6 قراءة الملفات: cat و less و head و tail</a><br><a href="#t3-7">3.7 إنشاء وإدارة الملفات والمجلدات: mkdir و touch و cp و mv و rm</a><br><a href="#t3-8">3.8 تغيير الأذونات والمالك: chmod و chown</a><br><a href="#t3-9">3.9 الصلاحيات العالية: sudo</a><br><a href="#t3-10">3.10 البحث: find و grep</a><br><a href="#t3-11">3.11 إدارة العمليات: ps و top و kill</a><br><a href="#t3-12">3.12 استكشاف الشبكة: ip و ifconfig و netstat</a><br><a href="#t3-13">3.13 الزاوية الأمنية: لينكس في عين المحلل</a><br><a href="#t3-14">3.14 سيناريو: خادم لينكس يتعرض لتخمين كلمات المرور</a></td></tr>
 <tr><td align="right" style="text-align:right">4</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-4">Windows CLI Basics</a></td><td align="right" style="text-align:right"><a href="#t4-1">4.1 التعريف بالغرفة وأهميتها</a><br><a href="#t4-2">4.2 الفرق بين CMD و PowerShell</a><br><a href="#t4-3">4.3 أوامر CMD: التنقل واستكشاف الملفات</a><br><a href="#t4-4">4.4 أوامر CMD: إدارة الملفات والمجلدات</a><br><a href="#t4-5">4.5 أوامر CMD: الشبكة</a><br><a href="#t4-6">4.6 أوامر CMD: الحسابات والمجموعات والمشاركات</a><br><a href="#t4-7">4.7 PowerShell: الأساسيات والعمليات والخدمات</a><br><a href="#t4-8">4.8 PowerShell: البحث عن الملفات والنصوص</a><br><a href="#t4-9">4.9 PowerShell: سجلات الأحداث</a><br><a href="#t4-10">4.10 أهم أرقام الأحداث (Event IDs) في ويندوز</a><br><a href="#t4-11">4.11 الزاوية الأمنية: كشف النشاط المشبوه بأوامر ويندوز</a><br><a href="#t4-12">4.12 سيناريو: حساب جديد وتخمين سابق</a></td></tr>
-<tr><td align="right" style="text-align:right">5</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-5">Operating System Security</a></td><td align="right" style="text-align:right"><a href="#t5-1">5.1 التعريف بالغرفة وأهميتها</a><br><a href="#t5-2">5.2 تقليل سطح الهجوم</a><br><a href="#t5-3">5.3 المبادئ الأساسية</a><br><a href="#t5-4">5.4 إدارة المصادقة (Authentication)</a><br><a href="#t5-5">5.5 إدارة الصلاحيات والوصول (Access Control و RBAC)</a><br><a href="#t5-6">5.6 إدارة التحديثات والترقيعات (Patch Management)</a><br><a href="#t5-7">5.7 جدار الحماية المحلي (Host-Based Firewall)</a><br><a href="#t5-8">5.8 حماية النقاط النهائية (Endpoint Protection)</a><br><a href="#t5-9">5.9 التسجيل والتدقيق (Logging و Auditing)</a><br><a href="#t5-10">5.10 تعطيل الخدمات والبروتوكولات غير الضرورية</a><br><a href="#t5-11">5.11 تشفير القرص (Full Disk Encryption)</a><br><a href="#t5-12">5.12 قائمة تحصين مختصرة</a><br><a href="#t5-13">5.13 الزاوية الأمنية: كيف نتحقق أن النظام مُحصَّن</a><br><a href="#t5-14">5.14 سيناريو: تحصين خادم قبل نشره</a><br><a href="#t5-15">5.15 أوامر لينكس</a><br><a href="#t5-16">5.16 أوامر CMD</a><br><a href="#t5-17">5.17 أوامر PowerShell</a></td></tr>
+<tr><td align="right" style="text-align:right">5</td><td dir="ltr" align="left" style="text-align:left"><a href="#room-5">Operating System Security</a></td><td align="right" style="text-align:right"><a href="#t5-1">5.1 التعريف بالغرفة وأهميتها</a><br><a href="#t5-2">5.2 تقليل سطح الهجوم</a><br><a href="#t5-3">5.3 المبادئ الأساسية</a><br><a href="#t5-4">5.4 تعطيل الخدمات والبروتوكولات غير الضرورية</a><br><a href="#t5-5">5.5 إدارة المصادقة (Authentication)</a><br><a href="#t5-6">5.6 إدارة الصلاحيات والوصول (Access Control و RBAC)</a><br><a href="#t5-7">5.7 إدارة التحديثات والترقيعات (Patch Management)</a><br><a href="#t5-8">5.8 جدار الحماية المحلي (Host-Based Firewall)</a><br><a href="#t5-9">5.9 حماية النقاط النهائية (Endpoint Protection)</a><br><a href="#t5-10">5.10 التسجيل والتدقيق (Logging و Auditing)</a><br><a href="#t5-11">5.11 تشفير القرص (Full Disk Encryption)</a><br><a href="#t5-12">5.12 قائمة تحصين مختصرة</a><br><a href="#t5-13">5.13 الزاوية الأمنية: كيف نتحقق أن النظام مُحصَّن</a><br><a href="#t5-14">5.14 سيناريو: تحصين خادم قبل نشره</a></td></tr>
 <tr><td align="right" style="text-align:right">—</td><td align="right" style="text-align:right"><a href="#module-cheatsheet">جدول الأوامر (Cheatsheet)</a></td><td align="right" style="text-align:right">ملخص أوامر لينكس وويندوز: الأمر واستخدامه ومثال عملي</td></tr>
 <tr><td align="right" style="text-align:right">—</td><td align="right" style="text-align:right"><a href="#module-glossary">جدول المصطلحات</a></td><td align="right" style="text-align:right">أهم مصطلحات الوحدة بمعانيها وأرقام الغرف</td></tr>
 </tbody>
@@ -69,7 +69,22 @@
   <sub>طبقات النظام: التطبيقات في مساحة المستخدم، والنواة في مساحتها، والعتاد في الأسفل</sub>
 </p>
 
-### <a id="t1-3"></a>1.3 أنواع أنظمة التشغيل واستخداماتها
+### <a id="t1-3"></a>1.3 واجبات نظام التشغيل
+
+يقوم نظام التشغيل بخمس مهام رئيسية:
+
+<table dir="rtl" width="100%">
+<thead><tr><th align="right" style="text-align:right">الواجب</th><th align="right" style="text-align:right">ماذا يفعل</th><th align="right" style="text-align:right">مثال</th></tr></thead>
+<tbody>
+<tr><td align="right" style="text-align:right"><b>إدارة العمليات</b> (Process Management)</td><td align="right" style="text-align:right">ينشئ العمليات وينهيها ويوزع وقت المعالج بينها (Scheduling)</td><td align="right" style="text-align:right">تشغيل المتصفح ومشغل الموسيقى معًا دون أن يعطل أحدهما الآخر</td></tr>
+<tr><td align="right" style="text-align:right"><b>إدارة الذاكرة</b> (Memory Management)</td><td align="right" style="text-align:right">يخصص الذاكرة لكل عملية ويمنع تداخلها</td><td align="right" style="text-align:right">عملية لا تستطيع قراءة ذاكرة عملية أخرى</td></tr>
+<tr><td align="right" style="text-align:right"><b>نظام الملفات والمحركات</b> (File System &amp; Drives)</td><td align="right" style="text-align:right">ينظم تخزين الملفات وقراءتها وكتابتها على الأقراص</td><td align="right" style="text-align:right"><code>NTFS</code> في ويندوز و<code>ext4</code> في لينكس</td></tr>
+<tr><td align="right" style="text-align:right"><b>إدارة المستخدمين</b> (User Management)</td><td align="right" style="text-align:right">ينشئ الحسابات ويحدد هوية كل مستخدم وصلاحياته</td><td align="right" style="text-align:right">حساب عادي وحساب مدير</td></tr>
+<tr><td align="right" style="text-align:right"><b>إدارة الأجهزة</b> (Device Management)</td><td align="right" style="text-align:right">يتعامل مع الأجهزة عبر برامج التشغيل (Drivers)</td><td align="right" style="text-align:right">الطابعة والفأرة وكرت الشبكة</td></tr>
+</tbody>
+</table>
+
+### <a id="t1-4"></a>1.4 أنواع أنظمة التشغيل واستخداماتها
 
 يُصنف نظام التشغيل بحسب **الجهاز الذي يعمل عليه والغرض منه**:
 
@@ -84,7 +99,7 @@
 </tbody>
 </table>
 
-### <a id="t1-4"></a>1.4 عائلات أنظمة التشغيل الرئيسية
+### <a id="t1-5"></a>1.5 عائلات أنظمة التشغيل الرئيسية
 
 كل فئة من الفئات السابقة تعمل عليها عائلات معروفة:
 
@@ -101,7 +116,7 @@
 
 ويلاحظ أن **Linux** تقريبًا في كل فئة، ولهذا فهمه ضروري لأي محلل.
 
-### <a id="t1-5"></a>1.5 لماذا توجد أنظمة تشغيل كثيرة
+### <a id="t1-6"></a>1.6 لماذا توجد أنظمة تشغيل كثيرة
 
 لا يوجد نظام واحد يناسب كل الأغراض، والسبب أن **الاحتياجات تتعارض**:
 
@@ -111,21 +126,6 @@
 - اختلاف **نماذج العمل** والتراخيص والبيئات التي ورثت منها كل شركة.
 
 ولهذا يتعامل المحلل الأمني مع بيئة **متنوعة** من الأنظمة، ولكل منها سجلاتها وأدواتها.
-
-### <a id="t1-6"></a>1.6 واجبات نظام التشغيل
-
-يقوم نظام التشغيل بخمس مهام رئيسية:
-
-<table dir="rtl" width="100%">
-<thead><tr><th align="right" style="text-align:right">الواجب</th><th align="right" style="text-align:right">ماذا يفعل</th><th align="right" style="text-align:right">مثال</th></tr></thead>
-<tbody>
-<tr><td align="right" style="text-align:right"><b>إدارة العمليات</b> (Process Management)</td><td align="right" style="text-align:right">ينشئ العمليات وينهيها ويوزع وقت المعالج بينها (Scheduling)</td><td align="right" style="text-align:right">تشغيل المتصفح ومشغل الموسيقى معًا دون أن يعطل أحدهما الآخر</td></tr>
-<tr><td align="right" style="text-align:right"><b>إدارة الذاكرة</b> (Memory Management)</td><td align="right" style="text-align:right">يخصص الذاكرة لكل عملية ويمنع تداخلها</td><td align="right" style="text-align:right">عملية لا تستطيع قراءة ذاكرة عملية أخرى</td></tr>
-<tr><td align="right" style="text-align:right"><b>نظام الملفات والمحركات</b> (File System &amp; Drives)</td><td align="right" style="text-align:right">ينظم تخزين الملفات وقراءتها وكتابتها على الأقراص</td><td align="right" style="text-align:right"><code>NTFS</code> في ويندوز و<code>ext4</code> في لينكس</td></tr>
-<tr><td align="right" style="text-align:right"><b>إدارة المستخدمين</b> (User Management)</td><td align="right" style="text-align:right">ينشئ الحسابات ويحدد هوية كل مستخدم وصلاحياته</td><td align="right" style="text-align:right">حساب عادي وحساب مدير</td></tr>
-<tr><td align="right" style="text-align:right"><b>إدارة الأجهزة</b> (Device Management)</td><td align="right" style="text-align:right">يتعامل مع الأجهزة عبر برامج التشغيل (Drivers)</td><td align="right" style="text-align:right">الطابعة والفأرة وكرت الشبكة</td></tr>
-</tbody>
-</table>
 
 ### <a id="t1-7"></a>1.7 أدوات نظام التشغيل
 
@@ -713,7 +713,25 @@ sudo chown alice:staff report.txt
 </tbody>
 </table>
 
-### <a id="t3-9"></a>3.9 البحث: find و grep
+### <a id="t3-9"></a>3.9 الصلاحيات العالية: sudo
+
+```bash
+sudo whoami
+sudo cat /etc/shadow
+```
+
+<table dir="rtl" width="100%">
+<thead><tr><th align="right" style="text-align:right">الأمر</th><th align="right" style="text-align:right">الشرح</th></tr></thead>
+<tbody>
+<tr><td dir="ltr" align="left" style="text-align:left"><code>sudo &lt;cmd&gt;</code></td><td align="right" style="text-align:right">تنفيذ أمر <b>بصلاحية root</b> مؤقتًا إن كان المستخدم مسموحًا له في <code>/etc/sudoers</code></td></tr>
+<tr><td dir="ltr" align="left" style="text-align:left"><code>whoami</code></td><td align="right" style="text-align:right">عرض اسم المستخدم الحالي</td></tr>
+<tr><td dir="ltr" align="left" style="text-align:left"><code>id</code></td><td align="right" style="text-align:right">عرض هوية المستخدم ومجموعاته</td></tr>
+</tbody>
+</table>
+
+ومبدأ الأمان هنا: **لا تعمل بحساب root دائمًا**، استخدم `sudo` وقت الحاجة فقط حتى تُسجَّل كل عملية مرفوعة الصلاحية بسجل.
+
+### <a id="t3-10"></a>3.10 البحث: find و grep
 
 ```bash
 find /home -name "*.txt"
@@ -739,7 +757,7 @@ cat /var/log/auth.log | grep "Failed" | tail -n 10
 </tbody>
 </table>
 
-### <a id="t3-10"></a>3.10 إدارة العمليات: ps و top و kill
+### <a id="t3-11"></a>3.11 إدارة العمليات: ps و top و kill
 
 ```bash
 ps aux
@@ -761,24 +779,6 @@ kill -9 1234
 </table>
 
 و`PID` هو رقم العملية الظاهر في `ps` و `top`.
-
-### <a id="t3-11"></a>3.11 الصلاحيات العالية: sudo
-
-```bash
-sudo whoami
-sudo cat /etc/shadow
-```
-
-<table dir="rtl" width="100%">
-<thead><tr><th align="right" style="text-align:right">الأمر</th><th align="right" style="text-align:right">الشرح</th></tr></thead>
-<tbody>
-<tr><td dir="ltr" align="left" style="text-align:left"><code>sudo &lt;cmd&gt;</code></td><td align="right" style="text-align:right">تنفيذ أمر <b>بصلاحية root</b> مؤقتًا إن كان المستخدم مسموحًا له في <code>/etc/sudoers</code></td></tr>
-<tr><td dir="ltr" align="left" style="text-align:left"><code>whoami</code></td><td align="right" style="text-align:right">عرض اسم المستخدم الحالي</td></tr>
-<tr><td dir="ltr" align="left" style="text-align:left"><code>id</code></td><td align="right" style="text-align:right">عرض هوية المستخدم ومجموعاته</td></tr>
-</tbody>
-</table>
-
-ومبدأ الأمان هنا: **لا تعمل بحساب root دائمًا**، استخدم `sudo` وقت الحاجة فقط حتى تُسجَّل كل عملية مرفوعة الصلاحية بسجل.
 
 ### <a id="t3-12"></a>3.12 استكشاف الشبكة: ip و ifconfig و netstat
 
@@ -1206,7 +1206,11 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
   <sub>طبقات الدفاع العميق، ونظام التشغيل في الطبقة الوسطى، وأهم ضوابط تحصينه</sub>
 </p>
 
-### <a id="t5-4"></a>5.4 إدارة المصادقة (Authentication)
+### <a id="t5-4"></a>5.4 تعطيل الخدمات والبروتوكولات غير الضرورية
+
+كل خدمة تعمل هي **باب مفتوح محتمل**. فتُراجع الخدمات والمنافذ وتُعطَّل غير المستخدمة، كبروتوكولات قديمة مثل `SMBv1` و `Telnet` و `FTP`، وخدمات المشاركة غير اللازمة. وفي ويندوز: `services.msc` و PowerShell، وفي لينكس: `systemctl disable --now <service>`.
+
+### <a id="t5-5"></a>5.5 إدارة المصادقة (Authentication)
 
 <table dir="rtl" width="100%">
 <thead><tr><th align="right" style="text-align:right">الضابط</th><th align="right" style="text-align:right">الشرح</th></tr></thead>
@@ -1217,22 +1221,22 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 </tbody>
 </table>
 
-### <a id="t5-5"></a>5.5 إدارة الصلاحيات والوصول (Access Control و RBAC)
+### <a id="t5-6"></a>5.6 إدارة الصلاحيات والوصول (Access Control و RBAC)
 
 - **Access Control:** تحديد من يصل إلى ماذا (ملفات، مجلدات، خدمات) عبر **الأذونات** (NTFS في ويندوز، و`rwx` في لينكس).
 - **RBAC (Role-Based Access Control):** منح الصلاحيات **بحسب الدور الوظيفي** لا لكل شخص على حدة؛ فيرث المستخدم صلاحيات دوره، وتسهل المراجعة والإلغاء.
 - **تقييد حسابات المدير:** استخدام حساب عادي في العمل اليومي ورفع الصلاحية عند الحاجة فقط (`UAC` في ويندوز و`sudo` في لينكس)، وتقليل أعضاء مجموعة المدراء.
 - **حماية الملفات الحساسة** بأذونات ضيقة وتشفير عند اللزوم.
 
-### <a id="t5-6"></a>5.6 إدارة التحديثات والترقيعات (Patch Management)
+### <a id="t5-7"></a>5.7 إدارة التحديثات والترقيعات (Patch Management)
 
 أغلب الاختراقات الناجحة تستغل **ثغرات معروفة ولها ترقيع** لم يُثبَّت بعد. ولهذا تُدار التحديثات بخطوات: **جرد** الأجهزة والبرامج، ثم **تقييم** الأهمية، ثم **اختبار** على بيئة تجريبية، ثم **نشر** منتظم، ثم **تحقق**. وتختلف الأدوات: `Windows Update` و `WSUS` في ويندوز، و`apt` و `dnf` في لينكس.
 
-### <a id="t5-7"></a>5.7 جدار الحماية المحلي (Host-Based Firewall)
+### <a id="t5-8"></a>5.8 جدار الحماية المحلي (Host-Based Firewall)
 
 جدار ناري يعمل **على الجهاز نفسه** ويحدد ما يدخل ويخرج بقواعد (Rules). وفائدته أنه يحمي الجهاز حتى لو كان داخل شبكة آمنة أو متنقلًا: ففي ويندوز **Windows Defender Firewall** بملفات تعريف (Domain / Private / Public)، وفي لينكس `ufw` و `iptables` و `nftables`. والقاعدة الذهبية: **امنع كل شيء افتراضيًا (Default Deny) واسمح بما يلزم فقط**، مع ضبط قواعد **الداخل (Inbound)** و**الخارج (Outbound)**.
 
-### <a id="t5-8"></a>5.8 حماية النقاط النهائية (Endpoint Protection)
+### <a id="t5-9"></a>5.9 حماية النقاط النهائية (Endpoint Protection)
 
 <table dir="rtl" width="100%">
 <thead><tr><th align="right" style="text-align:right">الأداة</th><th align="right" style="text-align:right">الشرح</th></tr></thead>
@@ -1244,7 +1248,7 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 
 فالـ AV يمنع المعروف، والـ EDR يرى **ما بعد الاختراق** ويوفر البيانات للتحقيق.
 
-### <a id="t5-9"></a>5.9 التسجيل والتدقيق (Logging و Auditing)
+### <a id="t5-10"></a>5.10 التسجيل والتدقيق (Logging و Auditing)
 
 بدون سجلات لا يمكن اكتشاف الاختراق ولا التحقيق فيه. ويشمل:
 
@@ -1252,10 +1256,6 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 - **لينكس:** `/var/log` و `journald` و `auditd`.
 - **التجميع المركزي:** إرسال السجلات إلى **SIEM** بعيدًا عن الجهاز، حتى لا يمسحها المهاجم.
 - **حماية السجلات** وضبط حجمها ومدة حفظها.
-
-### <a id="t5-10"></a>5.10 تعطيل الخدمات والبروتوكولات غير الضرورية
-
-كل خدمة تعمل هي **باب مفتوح محتمل**. فتُراجع الخدمات والمنافذ وتُعطَّل غير المستخدمة، كبروتوكولات قديمة مثل `SMBv1` و `Telnet` و `FTP`، وخدمات المشاركة غير اللازمة. وفي ويندوز: `services.msc` و PowerShell، وفي لينكس: `systemctl disable --now <service>`.
 
 ### <a id="t5-11"></a>5.11 تشفير القرص (Full Disk Encryption)
 
@@ -1341,7 +1341,7 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 
 ## 🧾 جدول الأوامر (Cheatsheet)
 
-### <a id="t5-15"></a>5.15 أوامر لينكس
+### أوامر لينكس
 
 <table dir="rtl" width="100%">
 <thead><tr><th align="right" style="text-align:right">الأمر</th><th align="right" style="text-align:right">الاستخدام الشائع</th><th align="right" style="text-align:right">مثال عملي</th></tr></thead>
@@ -1373,7 +1373,7 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 </tbody>
 </table>
 
-### <a id="t5-16"></a>5.16 أوامر CMD
+### أوامر CMD
 
 <table dir="rtl" width="100%">
 <thead><tr><th align="right" style="text-align:right">الأمر</th><th align="right" style="text-align:right">الاستخدام الشائع</th><th align="right" style="text-align:right">مثال عملي</th></tr></thead>
@@ -1400,7 +1400,7 @@ Get-WinEvent -FilterHashtable @{LogName='Security'; Id=4625} -MaxEvents 10
 </tbody>
 </table>
 
-### <a id="t5-17"></a>5.17 أوامر PowerShell
+### أوامر PowerShell
 
 <table dir="rtl" width="100%">
 <thead><tr><th align="right" style="text-align:right">الأمر</th><th align="right" style="text-align:right">الاستخدام الشائع</th><th align="right" style="text-align:right">مثال عملي</th></tr></thead>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" role="img" aria-label="SOC Workflow: Detect, Analyze, Assess, Contain, Document">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="300" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">SOC Workflow: Detect, Analyze, Assess, Contain, Document</text>
+<rect x="18" y="70" width="148" height="84" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="92.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">1. Detect</text>
+<text x="92.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">alert appears</text>
+<line x1="168" y1="112" x2="192" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="194" y="70" width="148" height="84" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="268.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2. Analyze</text>
+<text x="268.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">source, time, URLs</text>
+<line x1="344" y1="112" x2="368" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="370" y="70" width="148" height="84" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="444.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">3. Assess</text>
+<text x="444.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">did it succeed?</text>
+<line x1="520" y1="112" x2="544" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="546" y="70" width="148" height="84" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="620.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">4. Contain</text>
+<text x="620.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">block / rate limit</text>
+<line x1="696" y1="112" x2="720" y2="112" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="722" y="70" width="148" height="84" rx="9" fill="#e5e7eb" stroke="#1f2937" stroke-width="1.6"/>
+<text x="796.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">5. Document</text>
+<text x="796.0" y="125.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">event ID, notes</text>
+<text x="450.0" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Lessons from each step feed back into better detection rules</text>
+<path d="M808 160 L808 222 L92 222 L92 160" fill="none" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#a)"/>
+<text x="450.0" y="246" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">feedback loop</text>
+<text x="450.0" y="278" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Knowing something is wrong is half the job; the other half is knowing what the attacker wanted</text>
+</svg>

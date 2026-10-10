@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="900" height="340" role="img" aria-label="Stored XSS: How Untrusted Input Becomes Script">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="340" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Stored XSS: How Untrusted Input Becomes Script</text>
+<rect x="18" y="70" width="148" height="96" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="92.0" y="104.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Attacker</text>
+<text x="92.0" y="122.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">submits input</text>
+<text x="92.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">with script code</text>
+<line x1="168" y1="118" x2="192" y2="118" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="194" y="70" width="148" height="96" rx="9" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+<text x="268.0" y="104.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Server</text>
+<text x="268.0" y="122.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">stores it as-is</text>
+<text x="268.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">(no output encoding)</text>
+<line x1="344" y1="118" x2="368" y2="118" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="370" y="70" width="148" height="96" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="444.0" y="104.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Victim</text>
+<text x="444.0" y="122.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">opens the</text>
+<text x="444.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">normal page</text>
+<line x1="520" y1="118" x2="544" y2="118" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="546" y="70" width="148" height="96" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="620.0" y="104.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Browser</text>
+<text x="620.0" y="122.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">runs it as part</text>
+<text x="620.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">of the trusted site</text>
+<line x1="696" y1="118" x2="720" y2="118" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="722" y="70" width="148" height="96" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="796.0" y="104.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Impact</text>
+<text x="796.0" y="122.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">session / data</text>
+<text x="796.0" y="140.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">theft, page changes</text>
+<text x="450.0" y="206" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Defenses (each breaks a different step)</text>
+<rect x="26" y="220" width="200" height="64" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="126.0" y="248.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Output encoding</text>
+<text x="126.0" y="265.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">break step 2-3</text>
+<rect x="244" y="220" width="200" height="64" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="344.0" y="248.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">textContent, not innerHTML</text>
+<text x="344.0" y="265.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">safe DOM writes</text>
+<rect x="462" y="220" width="200" height="64" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="562.0" y="248.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Content-Security-Policy</text>
+<text x="562.0" y="265.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">limit script sources</text>
+<rect x="680" y="220" width="200" height="64" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="780.0" y="248.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">HttpOnly cookies</text>
+<text x="780.0" y="265.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">JS cannot read session</text>
+<text x="450.0" y="318" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">The analyst sees it in logs and responses as encoded or raw tag patterns</text>
+</svg>

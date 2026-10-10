@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" role="img" aria-label="Content Discovery: From Wordlist to Findings">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="330" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Content Discovery: From Wordlist to Findings</text>
+<rect x="30" y="64" width="170" height="80" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="115.0" y="99.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Wordlist</text>
+<text x="115.0" y="117.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">admin, login, backup...</text>
+<line x1="202" y1="104" x2="248" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="250" y="64" width="170" height="80" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="335.0" y="99.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Discovery tool</text>
+<text x="335.0" y="117.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">one request per word</text>
+<line x1="422" y1="104" x2="468" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="470" y="64" width="170" height="80" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="555.0" y="99.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Web server</text>
+<text x="555.0" y="117.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">answers each request</text>
+<line x1="642" y1="104" x2="688" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="690" y="64" width="170" height="80" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="775.0" y="99.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Analyst</text>
+<text x="775.0" y="117.9" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">reads the status codes</text>
+<text x="450.0" y="186" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">What each answer tells you</text>
+<rect x="30" y="200" width="170" height="70" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="115.0" y="230.75" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">200</text>
+<text x="115.0" y="249.75" text-anchor="middle" font-size="14" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">page exists</text>
+<rect x="250" y="200" width="170" height="70" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="335.0" y="230.75" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">301</text>
+<text x="335.0" y="249.75" text-anchor="middle" font-size="14" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">redirect (often a folder)</text>
+<rect x="470" y="200" width="170" height="70" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="555.0" y="230.75" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">403</text>
+<text x="555.0" y="249.75" text-anchor="middle" font-size="14" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">exists but protected</text>
+<rect x="690" y="200" width="170" height="70" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="775.0" y="230.75" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">404</text>
+<text x="775.0" y="249.75" text-anchor="middle" font-size="14" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">not found</text>
+<text x="450.0" y="302" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Anything other than 404 deserves a look, and defenders see the same burst in their logs</text>
+</svg>

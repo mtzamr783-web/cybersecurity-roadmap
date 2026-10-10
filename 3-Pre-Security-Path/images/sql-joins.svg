@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" role="img" aria-label="SQL Joins: Which Rows Are Returned">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="330" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">SQL Joins: Which Rows Are Returned</text>
+<defs><clipPath id="cpinner"><circle cx="188" cy="150" r="68"/></clipPath></defs><circle cx="112" cy="150" r="68" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><circle cx="188" cy="150" r="68" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><circle cx="112" cy="150" r="68" fill="#16a34a" fill-opacity="0.55" clip-path="url(#cpinner)"/><text x="82" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">users</text>
+<text x="218" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">logins</text>
+<text x="150" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">INNER JOIN</text>
+<text x="150" y="284" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">rows that match in both</text>
+<defs><clipPath id="cpleft"><circle cx="488" cy="150" r="68"/></clipPath></defs><circle cx="488" cy="150" r="68" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><circle cx="412" cy="150" r="68" fill="#16a34a" fill-opacity="0.55" stroke="#2563eb" stroke-width="2"/><text x="382" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">users</text>
+<text x="518" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">logins</text>
+<text x="450" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">LEFT JOIN</text>
+<text x="450" y="284" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">all left rows + matches</text>
+<defs><clipPath id="cpanti"><circle cx="788" cy="150" r="68"/></clipPath></defs><circle cx="712" cy="150" r="68" fill="#16a34a" fill-opacity="0.55" stroke="#2563eb" stroke-width="2"/><circle cx="788" cy="150" r="68" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><path d="M644 150 A68 68 0 0 1 720 149.99" fill="none"/><text x="682" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">users</text>
+<text x="818" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">logins</text>
+<text x="750" y="262" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">LEFT JOIN ... WHERE right IS NULL</text>
+<text x="750" y="284" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">left rows with no match</text>
+<text x="450.0" y="316" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">The right-hand example finds logins that belong to no known user</text>
+</svg>

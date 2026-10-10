@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 330" width="900" height="330" role="img" aria-label="How Text Is Stored: SOC as Bytes">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="330" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">How Text Is Stored: SOC as Bytes</text>
+<text x="110" y="90" text-anchor="end" font-size="14" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Character</text>
+<text x="110" y="150" text-anchor="end" font-size="14" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Decimal</text>
+<text x="110" y="210" text-anchor="end" font-size="14" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Hex</text>
+<text x="110" y="270" text-anchor="end" font-size="14" font-weight="700" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Binary</text>
+<rect x="170" y="66" width="200" height="40" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="270.0" y="92.3" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">S</text>
+<text x="270" y="150" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">83</text>
+<text x="270" y="210" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">53</text>
+<text x="270" y="270" text-anchor="middle" font-size="17" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">01010011</text>
+<rect x="400" y="66" width="200" height="40" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="500.0" y="92.3" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">O</text>
+<text x="500" y="150" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">79</text>
+<text x="500" y="210" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">4F</text>
+<text x="500" y="270" text-anchor="middle" font-size="17" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">01001111</text>
+<rect x="630" y="66" width="200" height="40" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="730.0" y="92.3" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">C</text>
+<text x="730" y="150" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">67</text>
+<text x="730" y="210" text-anchor="middle" font-size="18" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">43</text>
+<text x="730" y="270" text-anchor="middle" font-size="17" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">01000011</text>
+<text x="450.0" y="308" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Memory holds only: 53 4F 43  (one byte per ASCII character)</text>
+</svg>

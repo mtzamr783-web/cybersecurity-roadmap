@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" role="img" aria-label="Cyber Security Roles: Red Team and Blue Team">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="900" height="420" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="450.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Cyber Security Roles: Red Team and Blue Team</text>
+<text x="190" y="64" text-anchor="middle" font-size="15" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">Red Team (offensive)</text>
+<text x="710" y="64" text-anchor="middle" font-size="15" font-weight="700" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif">Blue Team (defensive)</text>
+<rect x="70" y="80" width="240" height="48" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="190.0" y="108.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Penetration Tester</text>
+<rect x="70" y="142" width="240" height="48" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="190.0" y="170.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Red Teamer</text>
+<rect x="590" y="80" width="240" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="710.0" y="107.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">SOC Analyst</text>
+<rect x="590" y="140" width="240" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="710.0" y="167.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Security Engineer</text>
+<rect x="590" y="200" width="240" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="710.0" y="227.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Incident Responder</text>
+<rect x="590" y="260" width="240" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="710.0" y="287.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Forensics Examiner</text>
+<rect x="590" y="320" width="240" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="710.0" y="347.9" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Malware Analyst</text>
+<rect x="350" y="150" width="200" height="100" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="450.0" y="195.75" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Shared goal</text>
+<text x="450.0" y="214.75" text-anchor="middle" font-size="14" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">protect the assets</text>
+<line x1="312" y1="138" x2="348" y2="180" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<line x1="590" y1="180" x2="552" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="450.0" y="408" text-anchor="middle" font-size="13" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Different mindsets, one purpose: each role completes the others</text>
+</svg>
