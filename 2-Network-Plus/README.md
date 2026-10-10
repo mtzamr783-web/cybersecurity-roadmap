@@ -2,7 +2,7 @@
 
 # 📚 فهرس مواضيع كورس Network+ الشامل
 
-الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`2-Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 23 في مكان واحد.
+الملف ده هو **الفهرس الرئيسي** لكل مواضيع مادة الـ **CompTIA Network+** الموجودة في فولدر [`2-Network-Plus`](./)، وهدفه إنه يجمعلك جدول المحتويات (TOC) بتاع كل موضوع من المواضيع الـ 23 في مكان واحد، بالإضافة لملف تمهيدي رقم 0 هو أول ملف في الكورس.
 
 تحت كل عنوان موضوع هتلاقي **الجدول الأصلي بتاعه بالظبط** زي ما هو موجود جوه ملفه، وكل رابط في الجدول بيوديك **على طول للنقطة المطلوبة** جوه الملف من غير ما تفتحه وتدور فيه يدويًا.
 
@@ -12,6 +12,7 @@
 
 | # | الموضوع | نبذة عن المحتوى |
 |:---:|:---:|:---:|
+| 0 | [الدرس التمهيدي: ملخص أساسيات الشبكات](./00-Lesson_Crash_Course.md) | ملخص تمهيدي من 23 درس قبل كورس Network+: مكونات الشبكة وأنواعها، الـ Topologies، نموذج OSI، عناوين IP وMAC وARP، DNS وDHCP، الأجهزة وVLAN وNAT، الأمن (Firewall/DMZ/VPN)، الـ Wi-Fi، والـ Virtualization والـ Cloud |
 | 1 | [مقدمة في الشبكات](./01-Intro-To-Network.md) | تعريف الشبكة، أهدافها ومميزاتها، عناصرها المكوّنة، أنواعها المختلفة، والطوبولوجيا الفيزيائية والمنطقية |
 | 2 | [مصطلحات الشبكات الأساسية](./02-Networking-Terminology.md) | 44 مصطلح شبكات أساسي (Network، Subnet، DHCP، DNS، Firewall...إلخ) مقسّمين حسب التصنيف: بنية وربط، أجهزة، عنونة وبروتوكولات، أمان، وشبكات لاسلكية |
 | 3 | [عملي: شبكات الأجهزة الافتراضية](./03-Lab-VM-Networking.md) | لاب عملي لإنشاء وتوصيل جهازين افتراضيين، تغيير الـ IP يدويًا، وأجزاءه، واختبار الاتصال بأمر Ping |
@@ -35,6 +36,37 @@
 | 21 | [أدوات سطر الأوامر](./21-Command-Line-Tools.md) | أهمية أدوات التشخيص، Traceroute وipconfig (وأمر ip في Linux)، Ping وPathPing وiperf، nmap، أوامر ARP، nslookup وdig، route وnetstat وnbtstat، tcpdump، Telnet وSSH وFTP، وأوامر show على أجهزة سيسكو |
 | 22 | [استكشاف أعطال الشبكة وإصلاحها](./22-Network-Troubleshooting.md) | مفهوم الـ Troubleshooting وسياسته، نموذج خطوات حل المشكلة (CompTIA)، نصائح عملية وأولويات المشاكل، تصنيف الحالات الشائعة (سلكية/منطقية/لاسلكية/توسعية)، NIC Teaming، أدوات الفحص المادية، التوثيق وخطوط الأساس وLessons Learned |
 | 23 | [إدارة ومراقبة وتحسين أداء الشبكة](./23-Network-Management-Monitoring-Optimization.md) | مراقبة الشبكة (SNMP وSyslog وSIEM وNetFlow وsFlow وIPFIX)، أدوات Wireshark وNmap وفاحصات الثغرات، IDS/IPS، توثيق الشبكة وIPAM، مقاييس الأداء (Bandwidth/Throughput/Goodput، Latency/Jitter/Packet Loss، Five Nines، Baseline)، QoS وDSCP والطوابير، توزيع الحمل وFHRP، السلامة وتجزئة الشبكة، Traffic Shaping/Policing وProxy وCDN، الشبكات الافتراضية وSDN، شبكات التخزين، الحوسبة السحابية، تركيب المعدات وRack، وإدارة التغيير |
+
+---
+
+## 0) 📘 [الدرس التمهيدي: ملخص كورس أساسيات الشبكات](./00-Lesson_Crash_Course.md)
+
+| المحتويات |
+|---:|
+| [مقدمة الملف](./00-Lesson_Crash_Course.md#module-intro) |
+| [1. مقدمة عن مجال الشبكات و CCNA](./00-Lesson_Crash_Course.md#lesson-1) |
+| [2. مكونات الشبكة وأنواع الكابلات](./00-Lesson_Crash_Course.md#lesson-2) |
+| [3. أنواع الشبكات (Network Types)](./00-Lesson_Crash_Course.md#lesson-3) |
+| [4. Network Topologies](./00-Lesson_Crash_Course.md#lesson-4) |
+| [5. Client/Server vs Workgroup (P2P)](./00-Lesson_Crash_Course.md#lesson-5) |
+| [6. أنواع الإرسال (Casting) والاتجاهات (Duplex)](./00-Lesson_Crash_Course.md#lesson-6) |
+| [7. OSI Model](./00-Lesson_Crash_Course.md#lesson-7) |
+| [8. MAC Address و NIC](./00-Lesson_Crash_Course.md#lesson-8) |
+| [9. IP Address و Subnet Mask](./00-Lesson_Crash_Course.md#lesson-9) |
+| [10. ARP](./00-Lesson_Crash_Course.md#lesson-10) |
+| [11. DHCP](./00-Lesson_Crash_Course.md#lesson-11) |
+| [12. DNS](./00-Lesson_Crash_Course.md#lesson-12) |
+| [13. Port Numbers](./00-Lesson_Crash_Course.md#lesson-13) |
+| [14. Hub vs Switch vs Router](./00-Lesson_Crash_Course.md#lesson-14) |
+| [15. Access Point](./00-Lesson_Crash_Course.md#lesson-15) |
+| [16. Wireless / Wi-Fi](./00-Lesson_Crash_Course.md#lesson-16) |
+| [17. VLAN](./00-Lesson_Crash_Course.md#lesson-17) |
+| [18. NAT وأنواعه](./00-Lesson_Crash_Course.md#lesson-18) |
+| [19. Firewall](./00-Lesson_Crash_Course.md#lesson-19) |
+| [20. DMZ](./00-Lesson_Crash_Course.md#lesson-20) |
+| [21. VPN وأنواعه](./00-Lesson_Crash_Course.md#lesson-21) |
+| [22. Virtualization و VM](./00-Lesson_Crash_Course.md#lesson-22) |
+| [23. Cloud Computing](./00-Lesson_Crash_Course.md#lesson-23) |
 
 ---
 
