@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-label="Typical Web Application Architecture">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="1000" height="400" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Typical Web Application Architecture</text>
+<rect x="20" y="150" width="120" height="100" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="80.0" y="188.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Browser</text>
+<text x="80.0" y="204.2" text-anchor="middle" font-size="11" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Client / Frontend</text>
+<text x="80.0" y="220.2" text-anchor="middle" font-size="11" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">HTML + CSS + JS</text>
+<line x1="140" y1="200" x2="178" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="180" y="150" width="120" height="100" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="240.0" y="196.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">CDN</text>
+<text x="240.0" y="213.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">static files cache</text>
+<line x1="300" y1="200" x2="328" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="328" y="150" width="120" height="100" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="388.0" y="196.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">WAF</text>
+<text x="388.0" y="213.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">filters attacks</text>
+<line x1="448" y1="200" x2="476" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="476" y="150" width="120" height="100" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="536.0" y="196.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Load Balancer</text>
+<text x="536.0" y="213.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">spreads traffic</text>
+<line x1="596" y1="200" x2="624" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="624" y="150" width="120" height="100" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="684.0" y="196.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Web Server</text>
+<text x="684.0" y="213.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Nginx / Apache</text>
+<rect x="790" y="70" width="185" height="90" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="882.5" y="111.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">App Backend</text>
+<text x="882.5" y="127.2" text-anchor="middle" font-size="11" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">PHP / Python / Node / Ruby</text>
+<rect x="790" y="240" width="185" height="90" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="882.5" y="281.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Database</text>
+<text x="882.5" y="297.2" text-anchor="middle" font-size="11" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">MySQL / PostgreSQL</text>
+<line x1="744" y1="185" x2="788" y2="125" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<line x1="882" y1="160" x2="882" y2="238" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="300" y="376" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif">Frontend runs in the browser</text>
+<text x="790" y="376" text-anchor="middle" font-size="12.5" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">Backend runs on the server</text>
+<text x="500" y="56" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Optional layers (CDN, WAF, Load Balancer) appear in larger sites; small sites go straight to the web server</text>
+</svg>

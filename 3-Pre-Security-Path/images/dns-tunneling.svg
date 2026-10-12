@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-label="DNS Tunneling: Data Hidden Inside DNS Queries">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="960" height="400" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="480.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">DNS Tunneling: Data Hidden Inside DNS Queries</text>
+<rect x="30" y="110" width="170" height="80" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="115.0" y="146.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Infected host</text>
+<text x="115.0" y="163.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">malware inside the network</text>
+<rect x="300" y="110" width="170" height="80" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="385.0" y="146.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Local DNS resolver</text>
+<text x="385.0" y="163.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">allowed outbound by default</text>
+<rect x="570" y="110" width="170" height="80" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="655.0" y="146.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Internet DNS</text>
+<text x="655.0" y="163.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">root / TLD servers</text>
+<rect x="790" y="110" width="150" height="80" rx="9" fill="#fee2e2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="865.0" y="146.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Attacker NS</text>
+<text x="865.0" y="162.2" text-anchor="middle" font-size="11" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">authoritative for the domain</text>
+<line x1="200" y1="150" x2="300" y2="150" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<line x1="470" y1="150" x2="570" y2="150" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<line x1="740" y1="150" x2="790" y2="150" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="250" y="98" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">1. query</text>
+<text x="520" y="98" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">2. recursion</text>
+<text x="765" y="98" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">3.</text>
+<rect x="60" y="230" width="840" height="46" rx="8" fill="#f9fafb" stroke="#9ca3af"/><text x="480" y="250" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Query name:</text>
+<text x="480" y="268" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Consolas, monospace"><tspan fill="#ea580c">dGhpcy1pcy1zdG9sZW4tZGF0YQ</tspan><tspan fill="#1f2937">.</tspan><tspan fill="#dc2626">c2.example.net</tspan></text>
+<text x="300" y="298" text-anchor="middle" font-size="12" font-weight="700" fill="#ea580c" font-family="Segoe UI, Arial, sans-serif">encoded stolen data (long label)</text>
+<text x="660" y="298" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="Segoe UI, Arial, sans-serif">domain the attacker controls</text>
+<text x="480" y="336" text-anchor="middle" font-size="13" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">The reply (often TXT) carries commands back to the malware. No direct connection to the attacker is ever made.</text>
+<text x="480" y="366" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Hunt for: very long or random-looking labels, many unique subdomains of one domain, TXT/NULL spikes, steady beaconing</text>
+</svg>

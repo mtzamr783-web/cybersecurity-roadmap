@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" width="1000" height="330" role="img" aria-label="Lifecycle of a Web Request">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="1000" height="330" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Lifecycle of a Web Request</text>
+<circle cx="110" cy="82" r="15" fill="#2563eb"/><text x="110" y="87.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">1</text>
+<rect x="22" y="110" width="176" height="110" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="110.0" y="152.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">DNS lookup</text>
+<text x="110.0" y="169.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">name to IP</text>
+<text x="110.0" y="186.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">example.com = 192.0.2.10</text>
+<line x1="198" y1="165" x2="216" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="306" cy="82" r="15" fill="#7c3aed"/><text x="306" y="87.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">2</text>
+<rect x="218" y="110" width="176" height="110" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="306.0" y="152.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">TCP handshake</text>
+<text x="306.0" y="169.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">SYN, SYN-ACK, ACK</text>
+<text x="306.0" y="186.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">reliable connection</text>
+<line x1="394" y1="165" x2="412" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="502" cy="82" r="15" fill="#ea580c"/><text x="502" y="87.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">3</text>
+<rect x="414" y="110" width="176" height="110" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="502.0" y="152.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">TLS handshake</text>
+<text x="502.0" y="169.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">HTTPS only</text>
+<text x="502.0" y="186.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">certificate + keys</text>
+<line x1="590" y1="165" x2="608" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="698" cy="82" r="15" fill="#16a34a"/><text x="698" y="87.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">4</text>
+<rect x="610" y="110" width="176" height="110" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="698.0" y="152.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">HTTP request</text>
+<text x="698.0" y="169.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">GET / POST ...</text>
+<text x="698.0" y="186.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">server replies with status</text>
+<line x1="786" y1="165" x2="804" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<circle cx="894" cy="82" r="15" fill="#6b7280"/><text x="894" y="87.5" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif">5</text>
+<rect x="806" y="110" width="176" height="110" rx="9" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+<text x="894.0" y="152.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Render</text>
+<text x="894.0" y="169.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">browser builds page</text>
+<text x="894.0" y="186.55" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">HTML, CSS, JS, images</text>
+<text x="500" y="284" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Step 3 is skipped for plain HTTP (port 80); open connections can be reused (keep-alive)</text>
+<text x="500" y="308" text-anchor="middle" font-size="12.5" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Each step is a place where a SOC analyst can see evidence: DNS logs, firewall logs, TLS metadata, web server logs</text>
+</svg>
