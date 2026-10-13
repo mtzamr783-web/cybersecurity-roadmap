@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-label="Incident Response Lifecycle (NIST)">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="1000" height="420" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Incident Response Lifecycle (NIST)</text>
+<rect x="35.0" y="80" width="210" height="170" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+<text x="140.0" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">1. Preparation</text>
+<text x="140.0" y="154" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">playbooks, tools</text>
+<text x="140.0" y="180" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">logging and backups</text>
+<text x="140.0" y="206" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">training</text>
+<line x1="247.0" y1="165" x2="273.0" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="275.0" y="80" width="210" height="170" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+<text x="380.0" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2. Detection and Analysis</text>
+<text x="380.0" y="154" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">alerts, triage</text>
+<text x="380.0" y="180" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">scope and impact</text>
+<text x="380.0" y="206" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">CIA assessment</text>
+<line x1="487.0" y1="165" x2="513.0" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="515.0" y="80" width="210" height="170" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="1.8"/>
+<text x="620.0" y="106" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">3. Containment,</text>
+<text x="620.0" y="124" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Eradication, Recovery</text>
+<text x="620.0" y="156" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">isolate hosts</text>
+<text x="620.0" y="182" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">remove the cause</text>
+<text x="620.0" y="208" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">restore and verify</text>
+<line x1="727.0" y1="165" x2="753.0" y2="165" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="755.0" y="80" width="210" height="170" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="860.0" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">4. Post-Incident Activity</text>
+<text x="860.0" y="154" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">lessons learned</text>
+<text x="860.0" y="180" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">new detections</text>
+<text x="860.0" y="206" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">report</text>
+<path d="M 860.0 250 L 860.0 290 L 140.0 290 L 140.0 254" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="500.0" y="312" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Lessons learned feed back into preparation</text>
+<text x="500.0" y="350" text-anchor="middle" font-size="13" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Analysis answers: what happened? which asset? which CIA pillar? how far did it spread?</text>
+<text x="500.0" y="378" text-anchor="middle" font-size="13" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Contain first to stop the damage, then remove the root cause, then restore normal service.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" role="img" aria-label="From Logs to Action: How a SIEM Fits the SOC">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="1000" height="420" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">From Logs to Action: How a SIEM Fits the SOC</text>
+<rect x="30" y="66" width="200" height="46" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="130.0" y="93.375" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Firewall / IDS / IPS</text>
+<line x1="232" y1="89" x2="336" y2="172" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="30" y="128" width="200" height="46" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="130.0" y="155.375" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Endpoints (EDR, OS logs)</text>
+<line x1="232" y1="151" x2="336" y2="186" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="30" y="190" width="200" height="46" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="130.0" y="217.375" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Servers and applications</text>
+<line x1="232" y1="213" x2="336" y2="200" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="30" y="252" width="200" height="46" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="130.0" y="279.375" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Identity and cloud</text>
+<line x1="232" y1="275" x2="336" y2="214" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="30" y="314" width="200" height="46" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="130.0" y="341.375" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">DNS / proxy / email</text>
+<line x1="232" y1="337" x2="336" y2="228" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="338" y="104" width="214" height="190" rx="12" fill="#eef2ff" stroke="#2563eb" stroke-width="2"/><text x="445" y="134" text-anchor="middle" font-size="17" font-weight="700" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif">SIEM</text>
+<text x="445" y="168" text-anchor="middle" font-size="12.5" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">1. Collect all logs</text>
+<text x="445" y="198" text-anchor="middle" font-size="12.5" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2. Normalize the format</text>
+<text x="445" y="228" text-anchor="middle" font-size="12.5" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">3. Correlate events</text>
+<text x="445" y="258" text-anchor="middle" font-size="12.5" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">4. Raise alerts</text>
+<line x1="554" y1="160" x2="640" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="642" y="92" width="200" height="56" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="742.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Alerts</text>
+<text x="742.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">prioritized</text>
+<line x1="742" y1="150" x2="742" y2="196" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="642" y="198" width="200" height="56" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="742.0" y="222.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">SOC analyst</text>
+<text x="742.0" y="239.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">triage: TP or FP?</text>
+<line x1="742" y1="256" x2="742" y2="302" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="642" y="304" width="200" height="56" rx="9" fill="#fee2e2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="742.0" y="328.125" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Response</text>
+<text x="742.0" y="344.625" text-anchor="middle" font-size="11.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">contain, eradicate, recover</text>
+<text x="500.0" y="396" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Logs from every layer are sent to one place, so a single event is not judged alone but together with the rest.</text>
+</svg>

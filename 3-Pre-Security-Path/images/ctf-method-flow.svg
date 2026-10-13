@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-label="Solving a Challenge Step by Step">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="1000" height="400" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="500.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Solving a Challenge Step by Step</text>
+<rect x="30.0" y="80" width="160" height="80" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="110.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">1. Read</text>
+<text x="110.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">description and hints</text>
+<line x1="192.0" y1="120" x2="223.0" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="225.0" y="80" width="160" height="80" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="305.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">2. Identify</text>
+<text x="305.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">file, text, image, URL?</text>
+<line x1="387.0" y1="120" x2="418.0" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="420.0" y="80" width="160" height="80" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="500.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">3. Hypothesize</text>
+<text x="500.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">encoding? crypto? web?</text>
+<line x1="582.0" y1="120" x2="613.0" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="615.0" y="80" width="160" height="80" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="695.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">4. Try a tool</text>
+<text x="695.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">one idea at a time</text>
+<line x1="777.0" y1="120" x2="808.0" y2="120" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="810.0" y="80" width="160" height="80" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="890.0" y="116.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">5. Verify</text>
+<text x="890.0" y="133.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">is the result meaningful?</text>
+<path d="M 890.0 160 L 890.0 215 L 500.0 215 L 500.0 164" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+<text x="695.0" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="Segoe UI, Arial, sans-serif">not meaningful: change the hypothesis, do not repeat the same step</text>
+<text x="500.0" y="290" text-anchor="middle" font-size="13" font-weight="400" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Keep notes of what you tried. A tool that fails still tells you what the data is NOT.</text>
+<text x="500.0" y="318" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Stuck? Re-read the description, check every piece of data, and look at the simplest explanation first.</text>
+<text x="500.0" y="352" text-anchor="middle" font-size="13" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">The same habit solves real incidents: observe, form a hypothesis, test, document.</text>
+</svg>

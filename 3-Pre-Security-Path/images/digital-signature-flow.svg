@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="980" height="440" role="img" aria-label="Digital Signature: Sign with the Private Key, Verify with the Public Key">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f2937"/></marker></defs>
+<rect width="980" height="440" rx="14" fill="#ffffff" stroke="#d1d5db"/>
+<text x="490.0" y="30" text-anchor="middle" font-size="17" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Digital Signature: Sign with the Private Key, Verify with the Public Key</text>
+<text x="40" y="66" text-anchor="start" font-size="12" font-weight="700" fill="#2563eb" font-family="Segoe UI, Arial, sans-serif">SENDER</text>
+<rect x="40" y="76" width="140" height="56" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="110.0" y="108.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Message</text>
+<line x1="182" y1="104" x2="238" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="240" y="76" width="150" height="56" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="315.0" y="100.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Hash</text>
+<text x="315.0" y="117.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">SHA-256 digest</text>
+<line x1="392" y1="104" x2="448" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="450" y="76" width="200" height="56" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="550.0" y="100.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Sign</text>
+<text x="550.0" y="117.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">with PRIVATE key</text>
+<line x1="652" y1="104" x2="708" y2="104" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="710" y="76" width="160" height="56" rx="9" fill="#fee2e2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="790.0" y="108.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Signature</text>
+<rect x="40" y="152" width="900" height="34" rx="8" fill="#f9fafb" stroke="#d1d5db"/><text x="490" y="174" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Message + Signature travel over the network (an attacker may try to change the message here)</text>
+<text x="40" y="222" text-anchor="start" font-size="12" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">RECEIVER</text>
+<rect x="40" y="232" width="150" height="56" rx="9" fill="#dbeafe" stroke="#2563eb" stroke-width="1.6"/>
+<text x="115.0" y="264.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Received message</text>
+<line x1="192" y1="260" x2="248" y2="260" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="250" y="232" width="130" height="56" rx="9" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="315.0" y="264.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Hash</text>
+<line x1="382" y1="260" x2="438" y2="260" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="440" y="232" width="130" height="56" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="505.0" y="264.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Digest A</text>
+<rect x="40" y="322" width="150" height="56" rx="9" fill="#fee2e2" stroke="#dc2626" stroke-width="1.6"/>
+<text x="115.0" y="354.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Signature</text>
+<line x1="192" y1="350" x2="248" y2="350" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="250" y="322" width="190" height="56" rx="9" fill="#ffedd5" stroke="#ea580c" stroke-width="1.6"/>
+<text x="345.0" y="346.05" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Verify</text>
+<text x="345.0" y="363.05" text-anchor="middle" font-size="12" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">with PUBLIC key</text>
+<line x1="442" y1="350" x2="498" y2="350" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<rect x="500" y="322" width="130" height="56" rx="9" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.6"/>
+<text x="565.0" y="354.55" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">Digest B</text>
+<rect x="710" y="276" width="230" height="70" rx="9" fill="#dcfce7" stroke="#16a34a" stroke-width="1.6"/>
+<text x="825.0" y="316.25" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937" font-family="Segoe UI, Arial, sans-serif">A equals B ?</text>
+<line x1="572" y1="260" x2="708" y2="300" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<line x1="632" y1="350" x2="708" y2="326" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+<text x="825" y="372" text-anchor="middle" font-size="12" font-weight="700" fill="#16a34a" font-family="Segoe UI, Arial, sans-serif">Equal: from the key owner and unchanged</text>
+<text x="825" y="392" text-anchor="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="Segoe UI, Arial, sans-serif">Different: tampered or wrong key</text>
+<text x="490.0" y="424" text-anchor="middle" font-size="12.5" font-weight="400" fill="#6b7280" font-family="Segoe UI, Arial, sans-serif">Gives Integrity + Authenticity + Non-repudiation (only the private key owner could create it)</text>
+</svg>
